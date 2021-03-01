@@ -1,0 +1,25 @@
+Year	numeric	The calendar year (1st January to 31st December) the data refers to, as YYYY.	
+
+CA	text	9-digit code for council area of residence based on boundaries as at 2nd February 2018, 9-digit country code for Scotland.	
+
+CAQF	text	Qualifier for CA.	
+
+AgeGroup	text	Refers to the patient's age. Ages have been arranged in five different groups.	
+
+AgeGroupQF	text	Qualifier for AgeGroup.	
+
+Sex	text	The patient's sex.	
+
+SexQF	text	Qualifier for Sex.	
+
+Diagnosis	text	The patient's diagnosis.	
+
+NumberOfDeaths	numeric	The total number of deaths.	
+
+NumberOfDeathsQF	text	Qualifier for NumberOfDeaths.	
+
+CrudeRate	numeric	The crude rate per 100,00 population.
+
+CrudeRateQF	text	Qualifier for CrudeRate.	
+
+EASR	numeric	The European Age-Sex Standardised Rate per 100,000 population.	

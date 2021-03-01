@@ -1,0 +1,115 @@
+```{r}
+library(tidyverse)
+library(janitor)
+library(stringr)
+```
+
+# Activity by council
+
+```{r}
+activity_by_council <- read_csv("stroke_activitybyca.csv") %>% 
+  select(-contains("QF"))
+```
+
+How many admission types?
+```{r}
+activity_by_council %>% 
+  count(AdmissionType)
+```
+
+How many diagnoses?
+```{r}
+activity_by_council %>% 
+  count(Diagnosis)
+```
+
+correlation diagnosis and admission type
+```{r}
+
+```
+
+Explore EASR by available variables
+```{r}
+activity_by_council %>% 
+  group_by(FinancialYear) %>% 
+  summarise(avg = mean(EASR)) %>% 
+  ggplot(aes(x = FinancialYear, y = avg)) +
+  geom_col()
+```
+Increase in EASR per year, peaking in 16/17 - 17/18
+
+```{r}
+activity_by_council %>% 
+  group_by(CA) %>% 
+  summarise(avg = mean(EASR)) %>% 
+  ggplot(aes(x = CA, y = avg)) +
+  geom_col()
+```
+EASR varies by council area
+
+```{r}
+activity_by_council %>% 
+  group_by(AgeGroup) %>% 
+  summarise(avg = mean(EASR)) %>% 
+  ggplot(aes(x = AgeGroup, y = avg)) +
+  geom_col()
+```
+EASR higher with age. 
+
+```{r}
+activity_by_council %>% 
+  group_by(Diagnosis) %>% 
+  summarise(avg = mean(EASR)) %>% 
+  ggplot(aes(x = Diagnosis, y = avg)) +
+  geom_col()
+```
+Higher EASR for cerebovascular disease and stroke.
+
+# Mortality by council
+
+```{r}
+mortality_by_council <- read_csv("stroke_mortalitybyca.csv") %>% 
+  select(-contains("QF")) %>% 
+  clean_names()
+```
+
+Links by ca, age_group(?), year is calendar not financial, sex, diagnosis.
+
+Useful info is number of deaths. Need to get number of deaths for each group, council area, sex, diagnosis and approx. year onto activity?
+
+```{r}
+mortality_by_council %>% 
+  distinct(year)
+
+activity_by_council %>% 
+  distinct(FinancialYear)
+```
+Mortality: 2009 - 2018
+
+Activity: 2009/10 - 2018/19
+
+```{r}
+# Remove "/[0-9][0-9]" from activity by ca
+activity_by_council <- activity_by_council %>%
+  mutate(join_year = as.numeric(str_sub(FinancialYear, start = 1, end = -4)))
+```
+
+```{r}
+activity_and_mortality <- activity_by_council %>% 
+  full_join(mortality_by_council, 
+            by = c("join_year" = "year", 
+                   "Sex" = "sex",
+                   "CA" = "ca",
+                   "AgeGroup" = "age_group",
+                   "Diagnosis" = "diagnosis"
+                   ))
+```
+
+
+Find a measure of success? Very dodgy with the mixed years, using numberof deaths and number of discharges to estimate number of admissions
+```{r}
+activity_and_mortality %>% 
+  mutate(percent_death = number_of_deaths / (number_of_deaths + NumberOfDischarges)) %>% 
+  select(percent_death)
+```
+

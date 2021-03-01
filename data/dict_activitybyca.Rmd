@@ -1,0 +1,31 @@
+Column	Type	Label
+
+FinancialYear	text	The financial year (1st April to 31st March) the data refers to, as YYYY/YY.	
+
+CA	text	9-digit code for council area of residence based on boundaries as at 2nd February 2018, 9-digit country code for Scotland.	
+
+CAQF	text	Qualifier for CA.	
+
+AdmissionType	text	The admission type (Elective, Emergency, Transfer, All).	
+
+AdmissionTypeQF	text	Qualifier for AdmissionType.	
+
+AgeGroup	text	Refers to the patient's age. Ages have been arranged in five different groups.	
+
+AgeGroupQF	text	Qualifier for AgeGroup.	
+
+Sex	text	The patient's sex.	
+
+SexQF	text	Qualifier for Sex.	
+
+Diagnosis	text	The patient's diagnosis.
+
+NumberOfDischarges	numeric	The total number of discharges.	
+
+NumberOfDiscargesQF	text	Qualifier for NumberOfDischarges.	
+
+CrudeRate	numeric	The crude rate per 100,000 population.	
+
+CrudeRateQF	text	Qualifier for CrudeRate.	
+
+EASR	numeric	The European Age-Sex Standardised Rate per 100,000 population.	
