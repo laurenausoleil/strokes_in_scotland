@@ -8,22 +8,31 @@ library(stringr)
 
 ```{r}
 activity_by_council <- read_csv("stroke_activitybyca.csv") %>% 
-  select(-contains("QF"))
+  select(-contains("QF")) %>% 
+  clean_names() %>% 
+  rename(council_area = ca)
 ```
 
 How many admission types?
 ```{r}
 activity_by_council %>% 
-  count(AdmissionType)
+  count(admission_type)
 ```
 
 How many diagnoses?
 ```{r}
 activity_by_council %>% 
-  count(Diagnosis)
+  count(diagnosis)
 ```
 
-correlation diagnosis and admission type
+Correlation diagnosis and admission type?
+
+```{r}
+
+```
+
+Or just one obs per group of characteristics.
+
 ```{r}
 
 ```
@@ -31,36 +40,36 @@ correlation diagnosis and admission type
 Explore EASR by available variables
 ```{r}
 activity_by_council %>% 
-  group_by(FinancialYear) %>% 
-  summarise(avg = mean(EASR)) %>% 
-  ggplot(aes(x = FinancialYear, y = avg)) +
+  group_by(financial_year) %>% 
+  summarise(avg = mean(easr)) %>% 
+  ggplot(aes(x = financial_year, y = avg)) +
   geom_col()
 ```
 Increase in EASR per year, peaking in 16/17 - 17/18
 
 ```{r}
 activity_by_council %>% 
-  group_by(CA) %>% 
-  summarise(avg = mean(EASR)) %>% 
-  ggplot(aes(x = CA, y = avg)) +
+  group_by(council_area) %>% 
+  summarise(avg = mean(easr)) %>% 
+  ggplot(aes(x = council_area, y = avg)) +
   geom_col()
 ```
 EASR varies by council area
 
 ```{r}
 activity_by_council %>% 
-  group_by(AgeGroup) %>% 
-  summarise(avg = mean(EASR)) %>% 
-  ggplot(aes(x = AgeGroup, y = avg)) +
+  group_by(age_group) %>% 
+  summarise(avg = mean(easr)) %>% 
+  ggplot(aes(x = age_group, y = avg)) +
   geom_col()
 ```
 EASR higher with age. 
 
 ```{r}
 activity_by_council %>% 
-  group_by(Diagnosis) %>% 
-  summarise(avg = mean(EASR)) %>% 
-  ggplot(aes(x = Diagnosis, y = avg)) +
+  group_by(diagnosis) %>% 
+  summarise(avg = mean(easr)) %>% 
+  ggplot(aes(x = diagnosis, y = avg)) +
   geom_col()
 ```
 Higher EASR for cerebovascular disease and stroke.
@@ -70,7 +79,8 @@ Higher EASR for cerebovascular disease and stroke.
 ```{r}
 mortality_by_council <- read_csv("stroke_mortalitybyca.csv") %>% 
   select(-contains("QF")) %>% 
-  clean_names()
+  clean_names() %>% 
+  rename(council_area = ca)
 ```
 
 Links by ca, age_group(?), year is calendar not financial, sex, diagnosis.
@@ -91,25 +101,79 @@ Activity: 2009/10 - 2018/19
 ```{r}
 # Remove "/[0-9][0-9]" from activity by ca
 activity_by_council <- activity_by_council %>%
-  mutate(join_year = as.numeric(str_sub(FinancialYear, start = 1, end = -4)))
+  mutate(approx_year = as.numeric(str_sub(financial_year, start = 1, end = -4)))
 ```
 
 ```{r}
 activity_and_mortality <- activity_by_council %>% 
   full_join(mortality_by_council, 
-            by = c("join_year" = "year", 
-                   "Sex" = "sex",
-                   "CA" = "ca",
-                   "AgeGroup" = "age_group",
-                   "Diagnosis" = "diagnosis"
+            by = c("approx_year" = "year", 
+                   "sex" = "sex",
+                   "council_area" = "council_area",
+                   "age_group" = "age_group",
+                   "diagnosis" = "diagnosis"
                    ))
 ```
 
 
-Find a measure of success? Very dodgy with the mixed years, using numberof deaths and number of discharges to estimate number of admissions
+Find a measure of success? Very dodgy with the mixed years, using number of deaths and number of discharges to estimate number of admissions
 ```{r}
 activity_and_mortality %>% 
-  mutate(percent_death = number_of_deaths / (number_of_deaths + NumberOfDischarges)) %>% 
-  select(percent_death)
+  mutate(est_percent_death = number_of_deaths / (number_of_deaths + number_of_discharges))
+```
+
+https://www.isdscotland.org/Health-Topics/Hospital-Care/Diagnoses/
+```{r}
+diagnosis_by_ca <- readxl::read_xlsx("Diagnosis-by-Council-Area-of-Residence-Sep19.xlsx", sheet = 4)
+# number of hospital stays and rates by 100,00 population for diagnoses by CA, age and gender.
+```
+
+Try selecting only columns with Cerebrovascular Disease, Stroke, Subarachnoid Haemorrhage, TIAs and related syndromes.
+Use standard language from NHS forms, but allow for missing capitals and include Transient Ischemic Attach as well as TIAs
+
+```{r}
+diagnosis_by_ca <- diagnosis_by_ca %>%  
+  filter(str_detect(lookup, 
+      "[Cc]erebrovascular [Dd]isease|[Ss]troke|[Ss]ubarachnoid [Hh]aemorrhage|TIAs|[Tt]ransient [Ii]schemic [Aa]ttack"))
+```
+
+
+Seperate lookup column into financial_year, council_area_named, sex, age_group, diagnosis
+
+# add space between all characters so I don't lose data with separate.
+# use list of council area names and srt_detect to get council_area and sex?
+
+```{r}
+joinable_diagnosis_by_ca  <- diagnosis_by_ca %>% 
+# financial_year
+  separate(col = lookup, into = c("financial_year", "lookup_remain1"), sep = 7, remove = FALSE) %>% 
+  
+# council_area_named
+#  separate(col = lookup_remain, into = c("council_area_named", #"lookup_remain"), sep = "[FMB]", extra = "merge")
+# # fails on Argyle and Bute, Fife and Midlothian
+  
+# diagnosis
+  separate(col = lookup_remain1, into = c("lookup_remain2", "diagnosis"), sep = " -") %>% 
+  
+# age_group
+#  separate(col = lookup_remain2, into = c("lookup_remain3", #"age_group"), sep = "[0-9]", extra = "merge") %>% 
+#  distinct(age_group)
+# # lose fist digit of age, which is recoverable for all but 1 of the #age_groups
+  
+# sex
+  mutate(sex = case_when(
+    str_detect(lookup, "Male") ~ "male",
+    str_detect(lookup, "Female") ~ "female",
+    str_detect(lookup, "Both Sexes") ~ "both_sexes"
+  )) %>% 
+
+# council_area and age_group
+  separate(col = lookup_remain2, into = c("council_area_named", "age_group"), sep = "Male|Female|Both Sexes")
+```
+
+Try to check this is working - can't figure out across
+```{r}
+# joinable_diagnosis_by_ca %>% 
+#   summarise(across(.fns = distinct(.x)))
 ```
 
