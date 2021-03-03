@@ -18,7 +18,7 @@ NumberOfDeaths	numeric	The total number of deaths.
 
 NumberOfDeathsQF	text	Qualifier for NumberOfDeaths.	
 
-CrudeRate	numeric	The crude rate per 100,000 population.
+CrudeRate	numeric	The crude rate per 100,00 population.
 
 CrudeRateQF	text	Qualifier for CrudeRate.	
 
