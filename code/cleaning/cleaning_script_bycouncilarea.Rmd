@@ -151,14 +151,17 @@ strokes_bycouncil <- discharges_by_council %>%
                    "council_area" = "council_area",
                    "age_group" = "age_group",
                    "diagnosis" = "diagnosis"
-                   ))
+                   ),
+            suffix = c("_discharge", "_mortality")
+  )
 ```
 
 Discharges and Mortality to Hospital stays
 ```{r}
 strokes_bycouncil <- strokes_bycouncil %>% 
-  inner_join(hospitalstays_by_council,
-            by = c("financial_year", "age_group", "sex", "council_area", "diagnosis"))
+  full_join(hospitalstays_by_council,
+            by = c("financial_year", "age_group", "sex", "council_area", "diagnosis")) %>% 
+  rename("hospitalstays" = "stays", "crude_rate_stays" = "rate")
 ```
 
 ----
