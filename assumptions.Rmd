@@ -1,0 +1,9 @@
+
+# Assumptions
+
+Data joined by approximate year where discreopancies in financial year and calendar year.
+
+EASR and crude rate in mortality refer to mortality per 100,000 and in hospital stays refer to hospital stays per 100,000 
+(https://www.scotpho.org.uk/health-wellbeing-and-disease/stroke/data/scottish-data/)
+
+Qualifiers removed, but could be used for extension work

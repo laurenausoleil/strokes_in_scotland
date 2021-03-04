@@ -2,22 +2,23 @@
 library(tidyverse)
 library(janitor)
 library(stringr)
+library(readxl)
 ```
 
 # Activity by council
 
 ```{r}
-activity_by_council <- read_csv("stroke_activitybyca.csv") %>% 
+activity_by_council <- read_csv("raw_data/stroke_activitybyca.csv") %>% 
   select(-contains("QF")) %>% 
   clean_names() %>% 
-  rename(council_area = ca)
+  rename(council_area = ca) %>% 
+  select(-admission_type)
 ```
-
-How many admission types?
 ```{r}
 activity_by_council %>% 
-  count(admission_type)
+  summarise(across(.fns = ~sum(is.na(.))))
 ```
+
 
 How many diagnoses?
 ```{r}
@@ -77,7 +78,7 @@ Higher EASR for cerebovascular disease and stroke.
 # Mortality by council
 
 ```{r}
-mortality_by_council <- read_csv("stroke_mortalitybyca.csv") %>% 
+mortality_by_council <- read_csv("raw_data/stroke_mortalitybyca.csv") %>% 
   select(-contains("QF")) %>% 
   clean_names() %>% 
   rename(council_area = ca)
@@ -92,7 +93,7 @@ mortality_by_council %>%
   distinct(year)
 
 activity_by_council %>% 
-  distinct(FinancialYear)
+  distinct(financial_year)
 ```
 Mortality: 2009 - 2018
 
@@ -122,9 +123,12 @@ activity_and_mortality %>%
   mutate(est_percent_death = number_of_deaths / (number_of_deaths + number_of_discharges))
 ```
 
-https://www.isdscotland.org/Health-Topics/Hospital-Care/Diagnoses/
+
+# Diagnosis by CA
+
+(https://www.isdscotland.org/Health-Topics/Hospital-Care/Diagnoses/)
 ```{r}
-diagnosis_by_ca <- readxl::read_xlsx("Diagnosis-by-Council-Area-of-Residence-Sep19.xlsx", sheet = 4)
+diagnosis_by_ca <- read_xlsx("raw_data/Diagnosis-by-Council-Area-of-Residence-Sep19.xlsx", sheet = 4)
 # number of hospital stays and rates by 100,00 population for diagnoses by CA, age and gender.
 ```
 
@@ -140,40 +144,180 @@ diagnosis_by_ca <- diagnosis_by_ca %>%
 
 Seperate lookup column into financial_year, council_area_named, sex, age_group, diagnosis
 
-# add space between all characters so I don't lose data with separate.
-# use list of council area names and srt_detect to get council_area and sex?
-
 ```{r}
 joinable_diagnosis_by_ca  <- diagnosis_by_ca %>% 
 # financial_year
   separate(col = lookup, into = c("financial_year", "lookup_remain1"), sep = 7, remove = FALSE) %>% 
-  
-# council_area_named
-#  separate(col = lookup_remain, into = c("council_area_named", #"lookup_remain"), sep = "[FMB]", extra = "merge")
-# # fails on Argyle and Bute, Fife and Midlothian
-  
 # diagnosis
-  separate(col = lookup_remain1, into = c("lookup_remain2", "diagnosis"), sep = " -") %>% 
-  
-# age_group
-#  separate(col = lookup_remain2, into = c("lookup_remain3", #"age_group"), sep = "[0-9]", extra = "merge") %>% 
-#  distinct(age_group)
-# # lose fist digit of age, which is recoverable for all but 1 of the #age_groups
-  
+  separate(col = lookup_remain1, into = c("lookup_remain2", "diagnosis"), sep = " -") %>%
 # sex
   mutate(sex = case_when(
-    str_detect(lookup, "Male") ~ "male",
-    str_detect(lookup, "Female") ~ "female",
-    str_detect(lookup, "Both Sexes") ~ "both_sexes"
-  )) %>% 
-
+    str_detect(lookup, "Male") ~ "Male",
+    str_detect(lookup, "Female") ~ "Female",
+    str_detect(lookup, "Both Sexes") ~ "All"
+  )) %>%
 # council_area and age_group
   separate(col = lookup_remain2, into = c("council_area_named", "age_group"), sep = "Male|Female|Both Sexes")
 ```
+
+
+Mutate age group to match activity and mortality data
+* This stage loses granularity of data *
+```{r}
+joinable_diagnosis_by_ca %>% distinct(age_group) %>% pull()
+activity_and_mortality %>% distinct(age_group) %>% pull()
+```
+* assumption that 65+ variable relates to those over 65 and under 75 *
+
+```{r}
+joinable_diagnosis_by_ca <- joinable_diagnosis_by_ca %>% 
+  mutate(age_group =
+    case_when(
+      age_group  == "00-14 " ~ "0-44 years",
+      age_group  == "15-24 " ~ "0-44 years",
+      age_group  == "25-34 " ~ "0-44 years",
+      age_group  == "35-44 " ~ "0-44 years",
+      age_group  == "45-54 " ~ "45-64 years",
+      age_group  == "55-64 " ~ "45-64 years",
+      age_group  == "65-74 " ~ "65-74 years",
+      age_group  == "65+ " ~ "65-74 years",
+      age_group  == "75+ " ~ "75plus years",
+      age_group  == "75-84 " ~ "75plus years",
+      age_group  == "85+ " ~ "75plus years",
+      age_group  == "All ages " ~ "All"
+    )
+  )
+```
+
+Fix diagnosis column
+
+```{r}
+joinable_diagnosis_by_ca <- joinable_diagnosis_by_ca %>% 
+  mutate(diagnosis = if_else(
+    diagnosis == "Cerebrovascular diseases", "Cerebrovascular Disease", diagnosis
+  ))
+
+```
+
+
+Check council_area_named - identifies p error
+```{r}
+joinable_diagnosis_by_ca %>% 
+  distinct(council_area_named)
+```
+
+Remove p from start of string
+```{r}
+joinable_diagnosis_by_ca <- joinable_diagnosis_by_ca %>% 
+  mutate(council_area_named = str_remove_all(string = council_area_named, pattern = "^p")) %>% 
+  select(-lookup)
+
+# check this returns 34 values
+joinable_diagnosis_by_ca %>% 
+  distinct(council_area_named)
+```
+
 
 Try to check this is working - can't figure out across
 ```{r}
 # joinable_diagnosis_by_ca %>% 
 #   summarise(across(.fns = distinct(.x)))
+```
+
+# Convert council_area_named to council_area code
+(https://www.opendata.nhs.scot/dataset/9f942fdb-e59e-44f5-b534-d6e17229cc7b/resource/967937c4-8d67-4f39-974f-fd58c4acfda5/download/ca11_ca19.csv)
+
+```{r}
+council_codes <- read_csv("raw_data/council_codes.csv") %>%
+  clean_names() %>% 
+  select(ca, ca_name) %>% 
+  mutate(ca_name =
+           str_replace_all(ca_name, " and ", " & ")) %>% 
+  rename("council_area" = "ca")
+  
+#  mutate(ca_name = case_when(
+#    ca_name == "Argyll and Bute" ~ "Argyll & Bute",
+#    ca_name == "Dumfries and Galloway" ~ "Dumfries & Galloway"
+#  ))
+```
+
+Remove duplicates codes
+```{r}
+council_codes <- council_codes %>% 
+  distinct(council_area, ca_name)
+```
+
+```{r}
+unique(council_codes$ca_name)
+```
+
+
+Join codes to diagnosis
+```{r}
+joinable_diagnosis_by_ca <- joinable_diagnosis_by_ca %>% 
+  inner_join(council_codes, 
+            by = c("council_area_named" = "ca_name")) 
+#  filter(is.na(ca)) %>% 
+#  distinct(council_area_named)
+#  this fails on Other and Scotland, which is expected.
+
+
+```
+
+# Join diagnosis to activity and mortality
+
+Check variables match
+```{r}
+# year
+joinable_diagnosis_by_ca %>% distinct(financial_year)
+activity_and_mortality %>% distinct(financial_year)
+# council area
+joinable_diagnosis_by_ca %>% distinct(council_area)
+activity_and_mortality %>% distinct(council_area)
+# age group
+joinable_diagnosis_by_ca %>% distinct(age_group)
+activity_and_mortality %>% distinct(age_group)
+# sex
+joinable_diagnosis_by_ca %>% distinct(sex)
+activity_and_mortality %>% distinct(sex)
+# diagnosis
+joinable_diagnosis_by_ca %>% distinct(diagnosis)
+activity_and_mortality %>% distinct(diagnosis)
+```
+
+
+```{r}
+diagnosis_activity_and_mortality <- activity_and_mortality %>% 
+  inner_join(joinable_diagnosis_by_ca,
+            by = c("financial_year", "age_group", "sex", "council_area", "diagnosis"))
+```
+
+```{r}
+diagnosis_activity_and_mortality %>% 
+  filter(is.na(approx_year))
+
+activity_by_council %>% 
+  distinct(approx_year)
+```
+
+```{r}
+# all data
+expand_grid(1:10, 1:6, 1:3, 1:37, 1:4)
+# expect final data to contain 26,640 rows.
+
+# activity
+expand_grid(1:10, 1:6, 1:3, 1:30, 1:4)
+# expect 21,600 rows. actual = 95040
+
+# mortality
+expand_grid(1:10, 1:6, 1:3, 1:33, c("a", "b", "c"))
+# expect 17,820. actual = 17820
+
+# diagnosis
+expand_grid(1:5, c("a", "b", "c", "d", "e"), 1:3, 1:37, 1:2)
+# expect 5,550. actual = 9,785
+
+diagnosis_by_ca %>% 
+  distinct(lookup)
 ```
 
