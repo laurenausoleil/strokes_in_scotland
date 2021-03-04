@@ -161,3 +161,10 @@ strokes_bycouncil <- strokes_bycouncil %>%
             by = c("financial_year", "age_group", "sex", "council_area", "diagnosis"))
 ```
 
+----
+Write Clean Data
+----
+```{r}
+write_csv(strokes_bycouncil, "../../data/clean_data/strokes_byca.csv")
+```
+

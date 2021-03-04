@@ -62,7 +62,7 @@ Wrangling
 
 Discharges By Health Board
 ```{r}
-# Remove "/[0-9][0-9]" from discharges by hbr
+# Remove "/[0-9][0-9]" from discharges by hb
 discharges_by_healthboard <- discharges_by_healthboard %>%
   mutate(approx_year = as.numeric(str_sub(financial_year, start = 1, end = -4)))
 ```
@@ -144,7 +144,7 @@ hospitalstays_by_healthboard <- hospitalstays_by_healthboard %>%
 
 Discharges and Mortality
 ```{r}
-strokes_byhbr <- discharges_by_healthboard %>% 
+strokes_byhb <- discharges_by_healthboard %>% 
   full_join(mortality_by_healthboard, 
             by = c("approx_year" = "year", 
                    "sex" = "sex",
@@ -156,8 +156,15 @@ strokes_byhbr <- discharges_by_healthboard %>%
 
 Discharges and Mortality to Hospital stays
 ```{r}
-strokes_byhbr <- strokes_byhbr %>% 
+strokes_byhb <- strokes_byhb %>% 
   inner_join(hospitalstays_by_healthboard,
             by = c("financial_year", "age_group", "sex", "healthboard_area", "diagnosis"))
+```
+
+----
+Write Clean Data
+----
+```{r}
+write_csv(strokes_byhb, "../../data/clean_data/strokes_byhb.csv")
 ```
 
