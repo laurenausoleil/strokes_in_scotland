@@ -144,7 +144,7 @@ hospitalstays_by_council <- hospitalstays_by_council %>%
 
 Discharges and Mortality
 ```{r}
-strokes_clean <- discharges_by_council %>% 
+strokes_bycouncil <- discharges_by_council %>% 
   full_join(mortality_by_council, 
             by = c("approx_year" = "year", 
                    "sex" = "sex",
@@ -156,7 +156,7 @@ strokes_clean <- discharges_by_council %>%
 
 Discharges and Mortality to Hospital stays
 ```{r}
-strokes_clean <- strokes_clean %>% 
+strokes_bycouncil <- strokes_bycouncil %>% 
   inner_join(hospitalstays_by_council,
             by = c("financial_year", "age_group", "sex", "council_area", "diagnosis"))
 ```

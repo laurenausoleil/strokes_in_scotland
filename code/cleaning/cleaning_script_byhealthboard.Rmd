@@ -13,72 +13,72 @@ library(readxl)
 Load datasets
 ----
 
-Discharges By Council
+Discharges By Health Board
 ```{r}
-discharges_by_council <- read_csv("../../data/raw_data/stroke_activitybyca.csv") %>% 
+discharges_by_healthboard <- read_csv("../../data/raw_data/stroke_activitybyhbr.csv") %>% 
 # Remove Qualifiers
   select(-contains("QF")) %>% 
 # Clean Names
   clean_names() %>% 
 # Make Readable
-  rename(council_area = ca) %>% 
+  rename(healthboard_area = hbr) %>% 
 # Remove Unused Variable
   select(-admission_type)
 ```
 
-Mortality By Council
+Mortality By Health Board
 ```{r}
-mortality_by_council <- read_csv("../../data/raw_data/stroke_mortalitybyca.csv") %>% 
+mortality_by_healthboard <- read_csv("../../data/raw_data/stroke_mortalitybyhbr.csv") %>% 
 # Remove Qualifer
   select(-contains("QF")) %>% 
 # Clean names
   clean_names() %>% 
 # Make Readable
-  rename(council_area = ca)
+  rename(healthboard_area = hbr)
 ```
 
-Hospital Stays By Council
+Hospital Stays By Health Board
 ```{r}
-hospitalstays_by_council <- read_xlsx("../../data/raw_data/Diagnosis-by-Council-Area-of-Residence-Sep19.xlsx", sheet = 4)
+hospitalstays_by_healthboard <- read_xlsx("../../data/raw_data/Diagnosis-by-Health-Board-of-Residence-Sep19.xlsx", sheet = 4)
 ```
 
-Council Codes
+Health Board Codes
 ```{r}
-council_codes <- read_csv("../../data/raw_data/council_codes.csv") %>%
+healthboard_codes <- read_csv("../../data/raw_data/healthboard_codes.csv") %>%
 # Clean Names
   clean_names() %>% 
+# Convert healthboard area names to match hospitalstays_by_healthboard
+  mutate(hb_name =
+           str_replace_all(hb_name, " and ", " & ")) %>% 
 # Select Relevant Variables
-  select(ca, ca_name) %>% 
-# Convert council area names to match hospitalstays_by_council
-  mutate(ca_name =
-           str_replace_all(ca_name, " and ", " & ")) %>% 
+  select(hb_name, hb) %>% 
 # Make Readable
-  rename("council_area" = "ca")
+  rename("healthboard_area" = "hb")
 ```
 
 ----
 Wrangling
 ----
 
-Discharges By Council
+Discharges By Health Board
 ```{r}
-# Remove "/[0-9][0-9]" from discharges by ca
-discharges_by_council <- discharges_by_council %>%
+# Remove "/[0-9][0-9]" from discharges by hbr
+discharges_by_healthboard <- discharges_by_healthboard %>%
   mutate(approx_year = as.numeric(str_sub(financial_year, start = 1, end = -4)))
 ```
 
-Hospital Stays by Council
+Hospital Stays by Health Board
 
  - Filter to only relevant diagnoses, allow missing capital letters
 ```{r}
-hospitalstays_by_council <- hospitalstays_by_council %>%  
+hospitalstays_by_healthboard <- hospitalstays_by_healthboard %>%  
   filter(str_detect(lookup, 
       "[Cc]erebrovascular [Dd]isease|[Ss]troke|[Ss]ubarachnoid [Hh]aemorrhage|TIAs|[Tt]ransient [Ii]schemic [Aa]ttack"))
 ```
 
- - Seperate lookup column into financial_year, council_area_named, sex, age_group, diagnosis
+ - Seperate lookup column into financial_year, healthboard_area_named, sex, age_group, diagnosis
 ```{r}
-hospitalstays_by_council <- hospitalstays_by_council %>% 
+hospitalstays_by_healthboard <- hospitalstays_by_healthboard %>% 
 # financial_year
   separate(col = lookup, into = c("financial_year", "lookup_remain1"), sep = 7, remove = FALSE) %>% 
 # diagnosis
@@ -89,15 +89,15 @@ hospitalstays_by_council <- hospitalstays_by_council %>%
     str_detect(lookup, "Female") ~ "Female",
     str_detect(lookup, "Both Sexes") ~ "All"
   )) %>%
-# council_area and age_group
-  separate(col = lookup_remain2, into = c("council_area_named", "age_group"), sep = "Male|Female|Both Sexes")  %>% 
+# healthboard_area and age_group
+  separate(col = lookup_remain2, into = c("healthboard_area_named", "age_group"), sep = "Male|Female|Both Sexes")  %>% 
 # remove original lookup variable from cleaned data
-  select(-lookup)
+  select(-c(lookup, discharge_finyr, hbresname, age_grp, diag))
 ```
 
  - Mutate age_groups to match discharges and mortality
 ```{r}
-hospitalstays_by_council <- hospitalstays_by_council %>% 
+hospitalstays_by_healthboard <- hospitalstays_by_healthboard %>% 
   mutate(age_group =
     case_when(
       age_group  == "00-14 " ~ "0-44 years",
@@ -118,37 +118,37 @@ hospitalstays_by_council <- hospitalstays_by_council %>%
 
  - Mutate diagnosis to match discharges and mortality
 ```{r}
-hospitalstays_by_council <- hospitalstays_by_council %>% 
+hospitalstays_by_healthboard <- hospitalstays_by_healthboard %>% 
   mutate(diagnosis = if_else(
     diagnosis == "Cerebrovascular diseases", "Cerebrovascular Disease", diagnosis
   ))
 
 ```
 
- - Remove errant "p" from council areas
+ - Remove errant "p" from healthboard areas
 ```{r}
-hospitalstays_by_council <- hospitalstays_by_council %>% 
-  mutate(council_area_named = str_remove_all(string = council_area_named, pattern = "^p"))
+hospitalstays_by_healthboard <- hospitalstays_by_healthboard %>% 
+  mutate(healthboard_area_named = str_remove_all(string = healthboard_area_named, pattern = "^p"))
 ```
 
 ----
 Joins
 ----
 
-Council Codes and Hospital Stays
+Health Board Codes and Hospital Stays
 ```{r}
-hospitalstays_by_council <- hospitalstays_by_council %>% 
-  inner_join(council_codes, 
-            by = c("council_area_named" = "ca_name"))
+hospitalstays_by_healthboard <- hospitalstays_by_healthboard %>% 
+  left_join(healthboard_codes, 
+            by = c("healthboard_area_named" = "hb_name"))
 ```
 
 Discharges and Mortality
 ```{r}
-strokes_clean <- discharges_by_council %>% 
-  full_join(mortality_by_council, 
+strokes_byhbr <- discharges_by_healthboard %>% 
+  full_join(mortality_by_healthboard, 
             by = c("approx_year" = "year", 
                    "sex" = "sex",
-                   "council_area" = "council_area",
+                   "healthboard_area" = "healthboard_area",
                    "age_group" = "age_group",
                    "diagnosis" = "diagnosis"
                    ))
@@ -156,8 +156,8 @@ strokes_clean <- discharges_by_council %>%
 
 Discharges and Mortality to Hospital stays
 ```{r}
-strokes_clean <- strokes_clean %>% 
-  inner_join(hospitalstays_by_council,
-            by = c("financial_year", "age_group", "sex", "council_area", "diagnosis"))
+strokes_byhbr <- strokes_byhbr %>% 
+  inner_join(hospitalstays_by_healthboard,
+            by = c("financial_year", "age_group", "sex", "healthboard_area", "diagnosis"))
 ```
 
