@@ -1,0 +1,148 @@
+----
+Libraries
+----
+
+```{r}
+library(tidyverse)
+library(janitor)
+library(stringr)
+library(readxl)
+```
+
+----
+Load datasets
+----
+
+Activity By Council
+```{r}
+discharges_by_council <- read_csv("../../data/raw_data/stroke_activitybyca.csv") %>% 
+# Remove Qualifiers
+  select(-contains("QF")) %>% 
+# Clean Names
+  clean_names() %>% 
+# Make Readable
+  rename(council_area = ca) %>% 
+# Remove Unused Variable
+  select(-admission_type)
+```
+
+Mortality By Council
+```{r}
+mortality_by_council <- read_csv("../../data/raw_data/stroke_mortalitybyca.csv") %>% 
+# Remove Qualifer
+  select(-contains("QF")) %>% 
+# Clean names
+  clean_names() %>% 
+# Make Readable
+  rename(council_area = ca)
+```
+
+Hospital Stays By Council
+```{r}
+hospitalstays_by_council <- read_xlsx("../../data/raw_data/Diagnosis-by-Council-Area-of-Residence-Sep19.xlsx", sheet = 4)
+```
+
+Council Codes
+```{r}
+council_codes <- read_csv("../../data/raw_data/council_codes.csv") %>%
+# Clean Names
+  clean_names() %>% 
+# Select Relevant Variables
+  select(ca, ca_name) %>% 
+# Convert council area names to match hospitalstays_by_council
+  mutate(ca_name =
+           str_replace_all(ca_name, " and ", " & ")) %>% 
+# Make Readable
+  rename("council_area" = "ca")
+```
+
+
+----
+Wrangling
+----
+
+Mortality By Council
+```{r}
+# Remove "/[0-9][0-9]" from activity by ca
+activity_by_council <- activity_by_council %>%
+  mutate(approx_year = as.numeric(str_sub(financial_year, start = 1, end = -4)))
+```
+
+Hospital Stays by Council
+
+Filter to only relevant diagnoses, allow missing capital letters
+```{r}
+diagnosis_by_ca <- diagnosis_by_ca %>%  
+  filter(str_detect(lookup, 
+      "[Cc]erebrovascular [Dd]isease|[Ss]troke|[Ss]ubarachnoid [Hh]aemorrhage|TIAs|[Tt]ransient [Ii]schemic [Aa]ttack"))
+```
+
+Seperate lookup column into financial_year, council_area_named, sex, age_group, diagnosis
+```{r}
+joinable_diagnosis_by_ca  <- diagnosis_by_ca %>% 
+# financial_year
+  separate(col = lookup, into = c("financial_year", "lookup_remain1"), sep = 7, remove = FALSE) %>% 
+# diagnosis
+  separate(col = lookup_remain1, into = c("lookup_remain2", "diagnosis"), sep = " -") %>%
+# sex
+  mutate(sex = case_when(
+    str_detect(lookup, "Male") ~ "Male",
+    str_detect(lookup, "Female") ~ "Female",
+    str_detect(lookup, "Both Sexes") ~ "All"
+  )) %>%
+# council_area and age_group
+  separate(col = lookup_remain2, into = c("council_area_named", "age_group"), sep = "Male|Female|Both Sexes")  %>% 
+# remove original lookup variable from cleaned data
+  select(-lookup)
+```
+
+Mutate age_groups to match activity and mortality
+```{r}
+joinable_diagnosis_by_ca <- joinable_diagnosis_by_ca %>% 
+  mutate(age_group =
+    case_when(
+      age_group  == "00-14 " ~ "0-44 years",
+      age_group  == "15-24 " ~ "0-44 years",
+      age_group  == "25-34 " ~ "0-44 years",
+      age_group  == "35-44 " ~ "0-44 years",
+      age_group  == "45-54 " ~ "45-64 years",
+      age_group  == "55-64 " ~ "45-64 years",
+      age_group  == "65-74 " ~ "65-74 years",
+      age_group  == "65+ " ~ "65-74 years",
+      age_group  == "75+ " ~ "75plus years",
+      age_group  == "75-84 " ~ "75plus years",
+      age_group  == "85+ " ~ "75plus years",
+      age_group  == "All ages " ~ "All"
+    )
+  )
+```
+
+Mutate diagnosis to match activity and mortality
+```{r}
+joinable_diagnosis_by_ca <- joinable_diagnosis_by_ca %>% 
+  mutate(diagnosis = if_else(
+    diagnosis == "Cerebrovascular diseases", "Cerebrovascular Disease", diagnosis
+  ))
+
+```
+
+Remove errant "p" from council areas
+```{r}
+joinable_diagnosis_by_ca <- joinable_diagnosis_by_ca %>% 
+  mutate(council_area_named = str_remove_all(string = council_area_named, pattern = "^p"))
+```
+----
+Joins
+----
+
+Join activity and mortality
+```{r}
+activity_and_mortality <- activity_by_council %>% 
+  full_join(mortality_by_council, 
+            by = c("approx_year" = "year", 
+                   "sex" = "sex",
+                   "council_area" = "council_area",
+                   "age_group" = "age_group",
+                   "diagnosis" = "diagnosis"
+                   ))
+```

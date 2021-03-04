@@ -217,7 +217,9 @@ Link:  https://www.gov.scot/collections/scottish-health-survey/
 All data sourced government or affiliates meeting relevant standards.
 Scottish Stroke Statistics include statistical qualifiers, which have not been explored in this project, but can be accessed at https://www.opendata.nhs.scot/dataset/statistical-qualifiers/resource/b80f9af0-b115-4245-b591-fb22775226c4
 
-Discrepancies between datasets over the age groupings used and the use of calendar versus financial year
+Discrepancies between datasets over the age groupings used and the use of calendar versus financial year.
+
+Significant number of NAs in all data. Left as is in cleaning script to be assessed for each analysis question.
 
 ### Bias
 
