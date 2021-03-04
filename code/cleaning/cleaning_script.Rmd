@@ -138,7 +138,7 @@ Joins
 Council Codes and Hospital Stays
 ```{r}
 hospitalstays_by_council <- hospitalstays_by_council %>% 
-  inner_join(council_codes, 
+  left_join(council_codes, 
             by = c("council_area_named" = "ca_name"))
 ```
 
