@@ -23,15 +23,61 @@ Original brief accessible in documentation folder of this project.
 
 # Project Plan
 
-## Project requirements
+### Project requirements
 
-## Systems and tools to be used
+* Understand business questions
+* Identify data questions
+* Assess relevant available data
+* Select data for analysis
+* Clean and join selected data
+* Answer data questions
+* Produce report which answers business questions
+* Presentation of the project brief, data and results
+
+### Systems and tools to be used
 * RStudio for all exploration, cleaning and analysis.
 * Reports and documentation will be produced as R Markdown files, which can be distributed as html or pdf as required by audience
 * GitHub used for version control
 * Canva used to prepare slides for presentation and dissemination
 
-## Data sources
+### Business Questions
+* How can Scottish health services most effectively prevent and treat stroke diagnoses?
+* What measures have been successful in the treatment and prevention of stroke?
+* Which demographics should we target for stroke intervention?
+
+### Derived Data Questions
+* What is the most common stroke diagnosis in Scotland?
+* Are there any differences in crude rate of hospital stays by health board vs by local authority?
+* Are there any differences in stroke diagnoses between different demographics (e.g. sex, age group)?
+* Are there differences in mortality rates (mortality EASR) for different types of stroke? Does this vary with demographics?
+
+## Definitions
+
+#### Stroke
+* One of three possible diagnoses of Cerebrovascular diseases.
+* Used in report and analysis to refer to all Cerebrovascular Diseases to aid ease of understanding.
+
+#### Subarachnoid Haemorrhage
+* One of three possible diagnoses of Cerebrovascular diseases.
+
+#### TIAs and other symptoms
+* Transient Ischemic Attacks (commonly known as mini-strokes) and other symptoms
+* One of three possible diagnoses of Cerebrovascular diseases.
+
+#### Cerebrovascular Disease
+* "Cerebrovascular Disease (CVD) is a condition that develops as a result of problems with the blood vessels supplying the brain. This can cause a stroke, a transient ischaemic attack (TIA) or a subarachnoid haemorrhage."
+*   - From Scottish Government Stroke Improvement Plan, 2014, accessed at https://www.gov.scot/publications/stroke-improvement-plan/pages/3/
+  
+## Assumptions
+
+* financial year can be compared to calendar year without signifcantly undermining the analysis
+
+* ambiguously named and defined crude rates in individual datasets refer to the crude rate of the dataset's subject variable.
+e.g. EASR and crude rate in mortalitybyca refer to mortality per 100,000, EASR and crude rate in activitybyca refer to discharges per 100,000 and in diagnosis-by-counil-area refer to hospital stays per 100,000.
+
+# Data Assessment
+
+### Sources
 
 * Scottish Stroke Statistics - Activity
 
@@ -165,64 +211,35 @@ Reason: Not directly relevant to question.
 
 Link:  https://www.gov.scot/collections/scottish-health-survey/
 
-## Definitions
 
-### Stroke
-* One of three possible diagnoses of Cerebrovascular diseases.
-* Used in report and analysis to refer to all Cerebrovascular Diseases to aid ease of understanding.
-
-### Subarachnoid Haemorrhage
-* One of three possible diagnoses of Cerebrovascular diseases.
-
-### TIAs and other symptoms
-* Transient Ischemic Attacks (commonly known as mini-strokes) and other symptoms
-* One of three possible diagnoses of Cerebrovascular diseases.
-
-### Cerebrovascular Disease
-* "Cerebrovascular Disease (CVD) is a condition that develops as a result of problems with the blood vessels supplying the brain. This can cause a stroke, a transient ischaemic attack (TIA) or a subarachnoid haemorrhage."
-*   - From Scottish Government Stroke Improvement Plan, 2014, accessed at https://www.gov.scot/publications/stroke-improvement-plan/pages/3/
-  
-## Assumptions
-
-* financial year can be compared to calendar year without signifcantly undermining the analysis
-
-* ambiguously named and defined crude rates in individual datasets refer to the crude rate of the dataset's subject variable.
-e.g. EASR and crude rate in mortalitybyca refer to mortality per 100,000, EASR and crude rate in activitybyca refer to discharges per 100,000 and in diagnosis-by-counil-area refer to hospital stays per 100,000.
-
-## Derived business questions and how these will be answered with available data
-
-### Business Questions
-* How can Scottish health services most effectively prevent and treat stroke diagnoses?
-* What measures have been successful in the treatment and prevention of stroke?
-* Which demographics should we target for stroke intervention?
-
-### Data Questions
-* What is the most common stroke diagnosis in Scotland?
-* Are there any differences in crude rate of hospital stays by health board vs by local authority?
-* Are there any differences in stroke diagnoses between different demographics (e.g. sex, age group)?
-* Are there differences in mortality rates (mortality EASR) for different types of stroke? Does this vary with demographics?
-
-# Data quality 
+### Quality 
 
 All data sourced government or affiliates meeting relevant standards.
 Scottish Stroke Statistics include statistical qualifiers, which have not been explored in this project, but can be accessed at https://www.opendata.nhs.scot/dataset/statistical-qualifiers/resource/b80f9af0-b115-4245-b591-fb22775226c4
 
 Discrepancies between datasets over the age groupings used and the use of calendar versus financial year
 
-# Data bias
+### Bias
 
 As these are national datasets, minimal bias is expected.
 It is worth keeping in mind the variables which affect access to and usage of public health services such as language barriers, citizenship status, distance to services or mistrust of public services, but these biases will not affect the quality of the analysis.
 
-Inexhaustive list of pulications:
+Non-exhaustive list of publications relating to access to healthcare by demographic:
 Use of secondary care in England by international immigrants https://journals.sagepub.com/doi/abs/10.1258/jhsrp.2010.010097
 Gypsy, Roma and Traveller access to and engagement with health services: a systematic review https://pubmed.ncbi.nlm.nih.gov/29346666/
 Factors associated with access to care and healthcare utilization in the homeless population of England https://academic.oup.com/jpubhealth/article/39/1/26/3065715
 
-# Data structure
+### Ethics and Confidentiality
 
+No ethical or confidentiality considerations regarding these datasets, which are public access with Open Government Licences.
+The diagnosis data has been cleaned of identifiable data prior to publication. 
 
+### Structure
+
+```{r, echo=FALSE, out.width = '100%'}
+knitr::include_graphics("../images/stroke_data_model_diagram.png")
+```
 
 # Domain expert collaboration
 
-Collaborate with experienced data analysts at CodeClan to identify the most relevant metric for each of the business questions.
+Collaborate with experienced data analysts at CodeClan to discuss the most suitable metric for each of question.
