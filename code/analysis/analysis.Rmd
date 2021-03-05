@@ -25,7 +25,7 @@ What is the most common stroke diagnosis in Scotland?
 This question can best be answered with the available data by looking to number of hospital stays. The incidence rate would be a more suitable metric, but assimilaing that data is outwith the scope of this project.
 Figures will be generated from both the council area and the healthboard data to provide a check
 
-Average rates for hospital stays, discharges and deaths by healthboard
+## Average rates for hospital stays, discharges and deaths by healthboard
 ```{r}
 diagnosis_totals_byhb <- healthboard_strokesbyhb %>% 
   group_by(diagnosis) %>% 
@@ -39,7 +39,7 @@ diagnosis_totals_byhb %>%
   ggplot(aes(x = diagnosis, y = avg_stays)) +
   geom_col()
 ```
-Average rates for hospital stays, discharges and deaths by council
+## Average rates for hospital stays, discharges and deaths by council
 ```{r}
 diagnosis_totals_byca <- council_strokesbyca %>% 
   group_by(diagnosis) %>% 
@@ -72,7 +72,7 @@ unique(council_strokesbyca$council_area_named)
 unique(healthboard_strokesbyhb$healthboard_area_named)
 ```
 
-Hard Code relationship between healthboard and councilarea with table from: https://en.wikipedia.org/wiki/NHS_Scotland
+## Hard Code relationship between healthboard and councilarea with table from: https://en.wikipedia.org/wiki/NHS_Scotland
 
 ```{r}
 council_strokesbyca <- council_strokesbyca %>% 
@@ -100,7 +100,7 @@ council_strokesbyca <- council_strokesbyca %>%
   mutate(healthboard = na_if(healthboard, "NA"))
 ```
 
-Format data
+## Stay Rates
 ```{r}
 ratestays_byhb <- healthboard_strokesbyhb %>% 
   group_by(healthboard_area_named) %>% 
@@ -126,22 +126,77 @@ ggplot(stayrates) +
   geom_col(aes(y = avg_stayrate_ca), fill = "blue")
 ```
 
-
-
 ```{r}
-ggplot() +
-  geom_col(
-    data = council_strokesbyca,
-    aes(x = healthboard, y = mean(crude_rate_stays, na.rm = TRUE),
-        col = "blue")
+stayrates_pivoted <- stayrates %>% 
+  pivot_longer(
+    cols = c("avg_stayrate_ca", "avg_stayrate_hb"),
+    names_to = "geo",
+    names_prefix = "avg_stayrate_",
+    values_to = "rate"
   )
 
-ggplot() +
-  geom_col(
-    data = healthboard_strokesbyhb,
-    aes(x = healthboard_area_named, y = mean(crude_rate_stays, na.rm = TRUE),
-        col = "red")
-  )
+ggplot(stayrates_pivoted) +
+  aes(x = healthboard_area_named, y = rate, group = geo, fill = geo) +
+  geom_col(position = "dodge")
 ```
 
+No significant differences in stay rates recorded at health board or council area level
 
+```{r}
+ggplot(stayrates) +
+  aes(x = healthboard_area_named, y = avg_stayrate_ca - avg_stayrate_hb) +
+  geom_col() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+
+Differences in average stay rate are most pronounced in Glasgow with a difference in crude rate per 100,000 population of around 10 stays. This does not seem significant.
+
+## Deaths
+```{r}
+ratedeaths_byhb <- healthboard_strokesbyhb %>% 
+  group_by(healthboard_area_named) %>% 
+  summarise(avg_deathrate = mean(easr_mortality, na.rm = TRUE)) %>% 
+  arrange(healthboard_area_named)
+
+ratedeaths_byca <- council_strokesbyca %>% 
+  group_by(healthboard) %>% 
+  summarise(avg_deathrate = mean(easr_mortality, na.rm = TRUE)) %>% 
+  arrange(healthboard)
+
+deathrates <- ratedeaths_byhb %>% 
+  full_join(ratedeaths_byca,
+            by = c("healthboard_area_named" = "healthboard"),
+            suffix = c("_hb", "_ca"))
+
+ggplot(deathrates) +
+  aes(x = healthboard_area_named, y = avg_deathrate_hb - avg_deathrate_ca) +
+  geom_col() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+
+No significant difference in recording of mortalities
+
+## Discharges
+```{r}
+ratedischarges_byhb <- healthboard_strokesbyhb %>% 
+  group_by(healthboard_area_named) %>% 
+  summarise(avg_dischargerate = mean(easr_discharge, na.rm = TRUE)) %>% 
+  arrange(healthboard_area_named)
+
+ratedischarges_byca <- council_strokesbyca %>% 
+  group_by(healthboard) %>% 
+  summarise(avg_dischargerate = mean(easr_discharge, na.rm = TRUE)) %>% 
+  arrange(healthboard)
+
+dischargerates <- ratedischarges_byhb %>% 
+  full_join(ratedischarges_byca,
+            by = c("healthboard_area_named" = "healthboard"),
+            suffix = c("_hb", "_ca"))
+
+ggplot(dischargerates) +
+  aes(x = healthboard_area_named, y = avg_dischargerate_hb - avg_dischargerate_ca) +
+  geom_col() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+
+Less than 30 per 100,000 anomaly between discharge rates by ca vs hb. No significant conclusions.
