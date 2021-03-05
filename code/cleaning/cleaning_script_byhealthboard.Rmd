@@ -217,7 +217,10 @@ strokes_byhb <- strokes_byhb %>%
     healthboard_area_named
   )) %>% 
   select(-c(hb_name))
+```
 
+Ensuring groupings have worked.
+```{r}
 strokes_byhb <- strokes_byhb %>% 
 group_by(approx_year, healthboard_area_named, age_group, sex, diagnosis) %>%
   summarise(
