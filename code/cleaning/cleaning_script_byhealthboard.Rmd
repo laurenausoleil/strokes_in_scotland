@@ -216,7 +216,8 @@ strokes_byhb <- strokes_byhb %>%
     hb_name,
     healthboard_area_named
   )) %>% 
-  select(-c(hb_name))
+  select(-c(hb_name)) %>% 
+  mutate(healthboard_area_named = str_sub(healthboard_area_named, start = 5, end = -1))
 ```
 
 Ensuring groupings have worked.
