@@ -5543,36 +5543,6 @@ approx_year,healthboard_area_named,age_group,sex,diagnosis,number_of_discharges,
 2014,Borders,under75 years,Male,Stroke,38.5,76.34193255225,67.991947649,2,3.965815,4.345986,NA,NA
 2014,Borders,under75 years,Male,Subarachnoid Haemorrhage,3.5,6.94017568525,7.73288424425,1,1.982907,1.707592,NA,NA
 2014,Borders,under75 years,Male,TIAs and related syndromes,11.5,22.803434395,19.839418765,NA,NA,NA,NA,NA
-2014,cotland,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,48.25,7.0249999999999995
-2014,cotland,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,78,11.35
-2014,cotland,0-44 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,27,7.7575
-2014,cotland,0-44 years,Female,Stroke,NA,NA,NA,NA,NA,NA,32,9.137500000000001
-2014,cotland,0-44 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,21.25,6.2325
-2014,cotland,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,46,13.655000000000001
-2014,cotland,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,448.5,62.04
-2014,cotland,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,931.5,130.945
-2014,cotland,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,257.5,69.32
-2014,cotland,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,330.5,90.415
-2014,cotland,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,191,54.379999999999995
-2014,cotland,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,601,173.54500000000002
-2014,cotland,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1104.5,139.625
-2014,cotland,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,4455.5,544.82
-2014,cotland,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,558.5,129.175
-2014,cotland,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,2286,494.475
-2014,cotland,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,546,152.4
-2014,cotland,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,2169.5,602.45
-2014,cotland,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,656.6666666666666,243.98000000000002
-2014,cotland,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,3236.6666666666665,1232.4266666666667
-2014,cotland,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,338,211.63666666666666
-2014,cotland,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,1918.6666666666667,1221.24
-2014,cotland,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,318.6666666666667,294.85
-2014,cotland,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,1318,1235.49
-2014,cotland,All,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2687,50.25
-2014,cotland,All,All,Stroke,NA,NA,NA,NA,NA,NA,9058,169.38
-2014,cotland,All,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1435,52.16
-2014,cotland,All,Female,Stroke,NA,NA,NA,NA,NA,NA,4514,164.08
-2014,cotland,All,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1252,48.22
-2014,cotland,All,Male,Stroke,NA,NA,NA,NA,NA,NA,4544,175
 2014,Dumfries & Galloway,0-44 years,All,Cerebrovascular Disease,10,14.4900236175,15.661518712500001,1,1.449002,1.465404,1.5,9.96
 2014,Dumfries & Galloway,0-44 years,All,Stroke,6,8.69401416975,9.460151582249999,1,1.449002,1.465404,5,31.26
 2014,Dumfries & Galloway,0-44 years,All,Subarachnoid Haemorrhage,4,5.79600944625,6.20136713025,0,0,0,NA,NA
@@ -6251,6 +6221,36 @@ approx_year,healthboard_area_named,age_group,sex,diagnosis,number_of_discharges,
 2014,Other,All,Female,Stroke,NA,NA,NA,NA,NA,NA,43,NA
 2014,Other,All,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4,NA
 2014,Other,All,Male,Stroke,NA,NA,NA,NA,NA,NA,70,NA
+2014,Scotland,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,48.25,7.0249999999999995
+2014,Scotland,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,78,11.35
+2014,Scotland,0-44 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,27,7.7575
+2014,Scotland,0-44 years,Female,Stroke,NA,NA,NA,NA,NA,NA,32,9.137500000000001
+2014,Scotland,0-44 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,21.25,6.2325
+2014,Scotland,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,46,13.655000000000001
+2014,Scotland,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,448.5,62.04
+2014,Scotland,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,931.5,130.945
+2014,Scotland,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,257.5,69.32
+2014,Scotland,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,330.5,90.415
+2014,Scotland,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,191,54.379999999999995
+2014,Scotland,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,601,173.54500000000002
+2014,Scotland,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1104.5,139.625
+2014,Scotland,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,4455.5,544.82
+2014,Scotland,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,558.5,129.175
+2014,Scotland,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,2286,494.475
+2014,Scotland,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,546,152.4
+2014,Scotland,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,2169.5,602.45
+2014,Scotland,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,656.6666666666666,243.98000000000002
+2014,Scotland,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,3236.6666666666665,1232.4266666666667
+2014,Scotland,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,338,211.63666666666666
+2014,Scotland,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,1918.6666666666667,1221.24
+2014,Scotland,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,318.6666666666667,294.85
+2014,Scotland,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,1318,1235.49
+2014,Scotland,All,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2687,50.25
+2014,Scotland,All,All,Stroke,NA,NA,NA,NA,NA,NA,9058,169.38
+2014,Scotland,All,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1435,52.16
+2014,Scotland,All,Female,Stroke,NA,NA,NA,NA,NA,NA,4514,164.08
+2014,Scotland,All,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1252,48.22
+2014,Scotland,All,Male,Stroke,NA,NA,NA,NA,NA,NA,4544,175
 2014,Shetland,0-44 years,All,Cerebrovascular Disease,0,0,16.0830806,0,0,0,NA,NA
 2014,Shetland,0-44 years,All,Stroke,0,0,16.0830806,0,0,0,1,33.08
 2014,Shetland,0-44 years,All,Subarachnoid Haemorrhage,0,0,0,0,0,0,NA,NA
@@ -6683,36 +6683,6 @@ approx_year,healthboard_area_named,age_group,sex,diagnosis,number_of_discharges,
 2015,Borders,under75 years,Male,Stroke,53,105.302894848,89.77225683775,7,13.90793,11.41528,NA,NA
 2015,Borders,under75 years,Male,Subarachnoid Haemorrhage,2.5,4.967117681,4.4320740335,2,3.973694,3.433159,NA,NA
 2015,Borders,under75 years,Male,TIAs and related syndromes,18.5,36.7566708405,31.070699244,NA,NA,NA,NA,NA
-2015,cotland,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,42.5,6.1875
-2015,cotland,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,73.75,10.807500000000001
-2015,cotland,0-44 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,22.5,6.4750000000000005
-2015,cotland,0-44 years,Female,Stroke,NA,NA,NA,NA,NA,NA,36.5,10.5175
-2015,cotland,0-44 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,20,5.8875
-2015,cotland,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,37.25,11.1175
-2015,cotland,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,390.5,53.81
-2015,cotland,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,1000.5,139.35500000000002
-2015,cotland,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,203,54.36
-2015,cotland,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,370,100.35
-2015,cotland,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,187.5,53.225
-2015,cotland,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,630.5,180.485
-2015,cotland,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1066.5,133.075
-2015,cotland,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,4656,561.485
-2015,cotland,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,527,121.185
-2015,cotland,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,2358,504.43500000000006
-2015,cotland,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,539.5,147.535
-2015,cotland,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,2298,626.485
-2015,cotland,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,619.3333333333334,227.20666666666668
-2015,cotland,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,3340,1265.3766666666666
-2015,cotland,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,305.3333333333333,183.11
-2015,cotland,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,1969.3333333333333,1249.1233333333332
-2015,cotland,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,314,302.6933333333333
-2015,cotland,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,1370.6666666666667,1279.9366666666667
-2015,cotland,All,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2482,46.19
-2015,cotland,All,All,Stroke,NA,NA,NA,NA,NA,NA,9457,176.01
-2015,cotland,All,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1252,45.32
-2015,cotland,All,Female,Stroke,NA,NA,NA,NA,NA,NA,4721,170.89
-2015,cotland,All,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1230,47.12
-2015,cotland,All,Male,Stroke,NA,NA,NA,NA,NA,NA,4736,181.42
 2015,Dumfries & Galloway,0-44 years,All,Cerebrovascular Disease,9.5,13.9318658435,14.9976746495,1,1.466512,1.434062,1,6.630000000000001
 2015,Dumfries & Galloway,0-44 years,All,Stroke,6,8.799073165,8.92064201675,1,1.466512,1.434062,2.6666666666666665,17.22
 2015,Dumfries & Galloway,0-44 years,All,Subarachnoid Haemorrhage,1.5,2.199768291,2.6656384515,0,0,0,NA,NA
@@ -7390,6 +7360,36 @@ approx_year,healthboard_area_named,age_group,sex,diagnosis,number_of_discharges,
 2015,Other,All,Female,Stroke,NA,NA,NA,NA,NA,NA,40,NA
 2015,Other,All,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,16,NA
 2015,Other,All,Male,Stroke,NA,NA,NA,NA,NA,NA,58,NA
+2015,Scotland,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,42.5,6.1875
+2015,Scotland,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,73.75,10.807500000000001
+2015,Scotland,0-44 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,22.5,6.4750000000000005
+2015,Scotland,0-44 years,Female,Stroke,NA,NA,NA,NA,NA,NA,36.5,10.5175
+2015,Scotland,0-44 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,20,5.8875
+2015,Scotland,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,37.25,11.1175
+2015,Scotland,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,390.5,53.81
+2015,Scotland,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,1000.5,139.35500000000002
+2015,Scotland,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,203,54.36
+2015,Scotland,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,370,100.35
+2015,Scotland,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,187.5,53.225
+2015,Scotland,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,630.5,180.485
+2015,Scotland,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1066.5,133.075
+2015,Scotland,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,4656,561.485
+2015,Scotland,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,527,121.185
+2015,Scotland,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,2358,504.43500000000006
+2015,Scotland,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,539.5,147.535
+2015,Scotland,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,2298,626.485
+2015,Scotland,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,619.3333333333334,227.20666666666668
+2015,Scotland,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,3340,1265.3766666666666
+2015,Scotland,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,305.3333333333333,183.11
+2015,Scotland,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,1969.3333333333333,1249.1233333333332
+2015,Scotland,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,314,302.6933333333333
+2015,Scotland,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,1370.6666666666667,1279.9366666666667
+2015,Scotland,All,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2482,46.19
+2015,Scotland,All,All,Stroke,NA,NA,NA,NA,NA,NA,9457,176.01
+2015,Scotland,All,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1252,45.32
+2015,Scotland,All,Female,Stroke,NA,NA,NA,NA,NA,NA,4721,170.89
+2015,Scotland,All,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1230,47.12
+2015,Scotland,All,Male,Stroke,NA,NA,NA,NA,NA,NA,4736,181.42
 2015,Shetland,0-44 years,All,Cerebrovascular Disease,0,0,0,0,0,0,NA,NA
 2015,Shetland,0-44 years,All,Stroke,0,0,0,0,0,0,NA,NA
 2015,Shetland,0-44 years,All,Subarachnoid Haemorrhage,0,0,0,0,0,0,NA,NA
@@ -7822,36 +7822,6 @@ approx_year,healthboard_area_named,age_group,sex,diagnosis,number_of_discharges,
 2016,Borders,under75 years,Male,Stroke,49,97.02586036725,83.47726560299999,5,9.900598,8.095914,NA,NA
 2016,Borders,under75 years,Male,Subarachnoid Haemorrhage,12,23.76143519225,20.473251435,0,0,0,NA,NA
 2016,Borders,under75 years,Male,TIAs and related syndromes,17,33.6620331865,27.31976924575,NA,NA,NA,NA,NA
-2016,cotland,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,47.75,6.9624999999999995
-2016,cotland,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,75,10.9125
-2016,cotland,0-44 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,26.25,7.5625
-2016,cotland,0-44 years,Female,Stroke,NA,NA,NA,NA,NA,NA,31.75,9.1125
-2016,cotland,0-44 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,21.5,6.335
-2016,cotland,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,43.25,12.7975
-2016,cotland,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,380,51.81
-2016,cotland,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,1051,145.14
-2016,cotland,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,204,53.91
-2016,cotland,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,402,107.865
-2016,cotland,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,176,49.57
-2016,cotland,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,649,184.535
-2016,cotland,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,959,117.375
-2016,cotland,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,4730,562.0600000000001
-2016,cotland,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,417,92
-2016,cotland,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,2359.5,497.34499999999997
-2016,cotland,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,542,147.10500000000002
-2016,cotland,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,2370.5,635.505
-2016,cotland,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,562.6666666666666,201.76
-2016,cotland,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,3340,1252.3733333333334
-2016,cotland,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,281.3333333333333,167.99666666666667
-2016,cotland,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,1971.3333333333333,1242.6733333333332
-2016,cotland,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,281.3333333333333,256.84666666666664
-2016,cotland,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,1368.6666666666667,1255.8133333333333
-2016,cotland,All,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2332,43.15
-2016,cotland,All,All,Stroke,NA,NA,NA,NA,NA,NA,9637,178.31
-2016,cotland,All,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1141,41.08
-2016,cotland,All,Female,Stroke,NA,NA,NA,NA,NA,NA,4769,171.72
-2016,cotland,All,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1191,45.33
-2016,cotland,All,Male,Stroke,NA,NA,NA,NA,NA,NA,4868,185.27
 2016,Dumfries & Galloway,0-44 years,All,Cerebrovascular Disease,9,13.3455915065,14.413616312,2,2.965687,2.741978,3,19.796666666666667
 2016,Dumfries & Galloway,0-44 years,All,Stroke,2.5,3.7071087515,3.656102227,2,2.965687,2.741978,1.6666666666666667,10.24
 2016,Dumfries & Galloway,0-44 years,All,Subarachnoid Haemorrhage,2.5,3.7071087515,3.7480370065,0,0,0,NA,NA
@@ -8528,6 +8498,36 @@ approx_year,healthboard_area_named,age_group,sex,diagnosis,number_of_discharges,
 2016,Other,All,Female,Stroke,NA,NA,NA,NA,NA,NA,31,NA
 2016,Other,All,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,9,NA
 2016,Other,All,Male,Stroke,NA,NA,NA,NA,NA,NA,72,NA
+2016,Scotland,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,47.75,6.9624999999999995
+2016,Scotland,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,75,10.9125
+2016,Scotland,0-44 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,26.25,7.5625
+2016,Scotland,0-44 years,Female,Stroke,NA,NA,NA,NA,NA,NA,31.75,9.1125
+2016,Scotland,0-44 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,21.5,6.335
+2016,Scotland,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,43.25,12.7975
+2016,Scotland,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,380,51.81
+2016,Scotland,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,1051,145.14
+2016,Scotland,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,204,53.91
+2016,Scotland,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,402,107.865
+2016,Scotland,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,176,49.57
+2016,Scotland,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,649,184.535
+2016,Scotland,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,959,117.375
+2016,Scotland,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,4730,562.0600000000001
+2016,Scotland,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,417,92
+2016,Scotland,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,2359.5,497.34499999999997
+2016,Scotland,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,542,147.10500000000002
+2016,Scotland,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,2370.5,635.505
+2016,Scotland,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,562.6666666666666,201.76
+2016,Scotland,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,3340,1252.3733333333334
+2016,Scotland,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,281.3333333333333,167.99666666666667
+2016,Scotland,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,1971.3333333333333,1242.6733333333332
+2016,Scotland,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,281.3333333333333,256.84666666666664
+2016,Scotland,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,1368.6666666666667,1255.8133333333333
+2016,Scotland,All,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2332,43.15
+2016,Scotland,All,All,Stroke,NA,NA,NA,NA,NA,NA,9637,178.31
+2016,Scotland,All,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1141,41.08
+2016,Scotland,All,Female,Stroke,NA,NA,NA,NA,NA,NA,4769,171.72
+2016,Scotland,All,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1191,45.33
+2016,Scotland,All,Male,Stroke,NA,NA,NA,NA,NA,NA,4868,185.27
 2016,Shetland,0-44 years,All,Cerebrovascular Disease,0,0,0,0,0,0,NA,NA
 2016,Shetland,0-44 years,All,Stroke,0,0,0,0,0,0,NA,NA
 2016,Shetland,0-44 years,All,Subarachnoid Haemorrhage,0,0,0,0,0,0,NA,NA
@@ -8960,36 +8960,6 @@ approx_year,healthboard_area_named,age_group,sex,diagnosis,number_of_discharges,
 2017,Borders,under75 years,Male,Stroke,73,144.08937488825,118.08684335324999,4,7.895308,6.110098,NA,NA
 2017,Borders,under75 years,Male,Subarachnoid Haemorrhage,2.5,4.93456763325,3.9950355025,0,0,0,NA,NA
 2017,Borders,under75 years,Male,TIAs and related syndromes,27,53.29333044325,44.00138784075,NA,NA,NA,NA,NA
-2017,cotland,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,45,6.5
-2017,cotland,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,79,11.530000000000001
-2017,cotland,0-44 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,22.25,6.362500000000001
-2017,cotland,0-44 years,Female,Stroke,NA,NA,NA,NA,NA,NA,30.25,8.7225
-2017,cotland,0-44 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,22.75,6.6075
-2017,cotland,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,48.75,14.417499999999999
-2017,cotland,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,349.5,47.355000000000004
-2017,cotland,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,1038.5,141.37
-2017,cotland,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,199.5,52.42
-2017,cotland,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,377.5,99.57
-2017,cotland,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,150,41.985
-2017,cotland,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,661,185.605
-2017,cotland,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,909,109.44
-2017,cotland,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,4846,569.835
-2017,cotland,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,446.5,98.72
-2017,cotland,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,2499.5,525.435
-2017,cotland,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,462.5,122.1
-2017,cotland,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,2346.5,619.2
-2017,cotland,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,542.6666666666666,194.50666666666666
-2017,cotland,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,3356,1242.04
-2017,cotland,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,279.3333333333333,170.11
-2017,cotland,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,2015.3333333333333,1256.9133333333334
-2017,cotland,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,263.3333333333333,231.78333333333333
-2017,cotland,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,1340.6666666666667,1207.6
-2017,cotland,All,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2195,40.46
-2017,cotland,All,All,Stroke,NA,NA,NA,NA,NA,NA,9756,179.84
-2017,cotland,All,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1144,41.08
-2017,cotland,All,Female,Stroke,NA,NA,NA,NA,NA,NA,4887,175.51
-2017,cotland,All,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1051,39.81
-2017,cotland,All,Male,Stroke,NA,NA,NA,NA,NA,NA,4869,184.41
 2017,Dumfries & Galloway,0-44 years,All,Cerebrovascular Disease,29.5,44.209327421,49.954080455,1,1.498621,1.600244,4,27.14
 2017,Dumfries & Galloway,0-44 years,All,Stroke,13,19.48207649,22.2004611975,0,0,0,3,19.240000000000002
 2017,Dumfries & Galloway,0-44 years,All,Subarachnoid Haemorrhage,8,11.988970146,13.8108896535,1,1.498621,1.600244,NA,NA
@@ -9667,6 +9637,36 @@ approx_year,healthboard_area_named,age_group,sex,diagnosis,number_of_discharges,
 2017,Other,All,Female,Stroke,NA,NA,NA,NA,NA,NA,38,NA
 2017,Other,All,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,18,NA
 2017,Other,All,Male,Stroke,NA,NA,NA,NA,NA,NA,72,NA
+2017,Scotland,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,45,6.5
+2017,Scotland,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,79,11.530000000000001
+2017,Scotland,0-44 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,22.25,6.362500000000001
+2017,Scotland,0-44 years,Female,Stroke,NA,NA,NA,NA,NA,NA,30.25,8.7225
+2017,Scotland,0-44 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,22.75,6.6075
+2017,Scotland,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,48.75,14.417499999999999
+2017,Scotland,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,349.5,47.355000000000004
+2017,Scotland,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,1038.5,141.37
+2017,Scotland,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,199.5,52.42
+2017,Scotland,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,377.5,99.57
+2017,Scotland,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,150,41.985
+2017,Scotland,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,661,185.605
+2017,Scotland,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,909,109.44
+2017,Scotland,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,4846,569.835
+2017,Scotland,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,446.5,98.72
+2017,Scotland,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,2499.5,525.435
+2017,Scotland,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,462.5,122.1
+2017,Scotland,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,2346.5,619.2
+2017,Scotland,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,542.6666666666666,194.50666666666666
+2017,Scotland,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,3356,1242.04
+2017,Scotland,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,279.3333333333333,170.11
+2017,Scotland,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,2015.3333333333333,1256.9133333333334
+2017,Scotland,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,263.3333333333333,231.78333333333333
+2017,Scotland,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,1340.6666666666667,1207.6
+2017,Scotland,All,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2195,40.46
+2017,Scotland,All,All,Stroke,NA,NA,NA,NA,NA,NA,9756,179.84
+2017,Scotland,All,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1144,41.08
+2017,Scotland,All,Female,Stroke,NA,NA,NA,NA,NA,NA,4887,175.51
+2017,Scotland,All,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1051,39.81
+2017,Scotland,All,Male,Stroke,NA,NA,NA,NA,NA,NA,4869,184.41
 2017,Shetland,0-44 years,All,Cerebrovascular Disease,0,0,13.292833195,NA,NA,7.798764,2,69.81
 2017,Shetland,0-44 years,All,Stroke,0,0,3.8993817705,0,0,0,1,40.23
 2017,Shetland,0-44 years,All,Subarachnoid Haemorrhage,0,0,9.39345142,NA,NA,7.798764,NA,NA
@@ -10099,36 +10099,6 @@ approx_year,healthboard_area_named,age_group,sex,diagnosis,number_of_discharges,
 2018,Borders,under75 years,Male,Stroke,68,134.0641142,111.90024285999999,8,15.77225,11.94573,NA,NA
 2018,Borders,under75 years,Male,Subarachnoid Haemorrhage,4,7.8861243655,6.282426484,0,0,0,NA,NA
 2018,Borders,under75 years,Male,TIAs and related syndromes,16.5,32.53026300025,24.9669125295,NA,NA,NA,NA,NA
-2018,cotland,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,45,6.4825
-2018,cotland,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,67,9.772499999999999
-2018,cotland,0-44 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,25,7.1175
-2018,cotland,0-44 years,Female,Stroke,NA,NA,NA,NA,NA,NA,29.75,8.5
-2018,cotland,0-44 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,20,5.8175
-2018,cotland,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,37.25,11.102500000000001
-2018,cotland,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,378,50.905
-2018,cotland,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,1082.5,146.42000000000002
-2018,cotland,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,210.5,54.94500000000001
-2018,cotland,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,377.5,99.075
-2018,cotland,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,167.5,46.595
-2018,cotland,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,705,196.66
-2018,cotland,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,923,110.31
-2018,cotland,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,4886,566.95
-2018,cotland,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,439.5,97.16499999999999
-2018,cotland,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,2444.5,509.895
-2018,cotland,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,483.5,125.84
-2018,cotland,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,2441.5,631.5899999999999
-2018,cotland,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,530.6666666666666,183.19333333333333
-2018,cotland,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,3393.3333333333335,1232.1066666666666
-2018,cotland,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,258,152.16666666666666
-2018,cotland,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,1947.3333333333333,1202.1599999999999
-2018,cotland,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,272.6666666666667,230.38333333333333
-2018,cotland,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,1446,1268.3333333333335
-2018,cotland,All,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2257,41.5
-2018,cotland,All,All,Stroke,NA,NA,NA,NA,NA,NA,9864,181.39
-2018,cotland,All,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1154,41.37
-2018,cotland,All,Female,Stroke,NA,NA,NA,NA,NA,NA,4779,171.33
-2018,cotland,All,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1103,41.64
-2018,cotland,All,Male,Stroke,NA,NA,NA,NA,NA,NA,5085,191.98
 2018,Dumfries & Galloway,0-44 years,All,Cerebrovascular Disease,5,7.558464725,8.3882218505,2,3.023386,3.201403,2,13.79
 2018,Dumfries & Galloway,0-44 years,All,Stroke,1.5,2.2675394175,2.483952897,0,0,0,1,6.805
 2018,Dumfries & Galloway,0-44 years,All,Subarachnoid Haemorrhage,1.5,2.2675394175,2.5213231905,2,3.023386,3.201403,NA,NA
@@ -10807,6 +10777,36 @@ approx_year,healthboard_area_named,age_group,sex,diagnosis,number_of_discharges,
 2018,Other,All,Female,Stroke,NA,NA,NA,NA,NA,NA,49,NA
 2018,Other,All,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,9,NA
 2018,Other,All,Male,Stroke,NA,NA,NA,NA,NA,NA,75,NA
+2018,Scotland,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,45,6.4825
+2018,Scotland,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,67,9.772499999999999
+2018,Scotland,0-44 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,25,7.1175
+2018,Scotland,0-44 years,Female,Stroke,NA,NA,NA,NA,NA,NA,29.75,8.5
+2018,Scotland,0-44 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,20,5.8175
+2018,Scotland,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,37.25,11.102500000000001
+2018,Scotland,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,378,50.905
+2018,Scotland,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,1082.5,146.42000000000002
+2018,Scotland,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,210.5,54.94500000000001
+2018,Scotland,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,377.5,99.075
+2018,Scotland,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,167.5,46.595
+2018,Scotland,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,705,196.66
+2018,Scotland,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,923,110.31
+2018,Scotland,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,4886,566.95
+2018,Scotland,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,439.5,97.16499999999999
+2018,Scotland,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,2444.5,509.895
+2018,Scotland,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,483.5,125.84
+2018,Scotland,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,2441.5,631.5899999999999
+2018,Scotland,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,530.6666666666666,183.19333333333333
+2018,Scotland,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,3393.3333333333335,1232.1066666666666
+2018,Scotland,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,258,152.16666666666666
+2018,Scotland,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,1947.3333333333333,1202.1599999999999
+2018,Scotland,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,272.6666666666667,230.38333333333333
+2018,Scotland,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,1446,1268.3333333333335
+2018,Scotland,All,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2257,41.5
+2018,Scotland,All,All,Stroke,NA,NA,NA,NA,NA,NA,9864,181.39
+2018,Scotland,All,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1154,41.37
+2018,Scotland,All,Female,Stroke,NA,NA,NA,NA,NA,NA,4779,171.33
+2018,Scotland,All,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1103,41.64
+2018,Scotland,All,Male,Stroke,NA,NA,NA,NA,NA,NA,5085,191.98
 2018,Shetland,0-44 years,All,Cerebrovascular Disease,0,0,36.4646800325,0,0,0,1,35.96
 2018,Shetland,0-44 years,All,Stroke,0,0,18.15541031,0,0,0,2,71.92
 2018,Shetland,0-44 years,All,Subarachnoid Haemorrhage,0,0,18.30926972025,0,0,0,NA,NA
