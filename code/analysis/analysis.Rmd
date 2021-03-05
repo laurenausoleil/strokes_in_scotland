@@ -10,7 +10,95 @@ library(tidyverse)
 Data
 ----
 ```{r}
-ca_strokes <- read_csv("../../data/clean_data/strokes_byca.csv")
-hb_strokes <- read_csv("../../data/clean_data/strokes_byhb.csv")
+council_strokesbyca <- read_csv("../../data/clean_data/strokes_byca.csv",
+                                col_types = cols(hospitalstays = col_double(),
+                                            crude_rate_stays = col_double()))
+healthboard_strokesbyhb <- read_csv("../../data/clean_data/strokes_byhb.csv",
+                                col_types = cols(hospitalstays = col_double(),
+                                            crude_rate_stays = col_double()))
 ```
+
+----
+What is the most common stroke diagnosis in Scotland?
+----
+
+This question can best be answered with the available data by looking to number of hospital stays. The incidence rate would be a more suitable metric, but assimilaing that data is outwith the scope of this project.
+Figures will be generated from both the council area and the healthboard data to provide a check
+
+Average rates for hospital stays, discharges and deaths by healthboard
+```{r}
+diagnosis_totals_byhb <- healthboard_strokesbyhb %>% 
+  group_by(diagnosis) %>% 
+  summarise(avg_stays = mean(crude_rate_mortality, na.rm = TRUE),
+            avg_discharge = mean(easr_discharge, na.rm = TRUE),
+            avg_deaths = mean(easr_mortality, na.rm = TRUE))
+```
+
+```{r}
+diagnosis_totals_byhb %>% 
+  ggplot(aes(x = diagnosis, y = avg_stays)) +
+  geom_col()
+```
+Average rates for hospital stays, discharges and deaths by council
+```{r}
+diagnosis_totals_byca <- council_strokesbyca %>% 
+  group_by(diagnosis) %>% 
+  summarise(avg_stays = mean(crude_rate_mortality, na.rm = TRUE),
+            avg_discharge = mean(easr_discharge, na.rm = TRUE),
+            avg_deaths = mean(easr_mortality, na.rm = TRUE))
+```
+
+```{r}
+diagnosis_totals_byca %>% 
+  ggplot(aes(x = diagnosis, y = avg_stays)) +
+  geom_col()
+```
+
+For both healthboard and council area, CD is the most common stroke diagnosis recorded for hospital stays, hospital discharges and deaths.
+From the available data, I conclude that CD is the most common stroke diagnosis in Scotland. This makes sense as the term can cover any form of CD, where it would be more difficult, and potentially more costly in administrative terms to diagnosis stroke, SH or TIA specifically.
+This observation does not really give us any actionable results, so we may consider looking for datasets where diagnoses are recorded in more detail or run a short data collection if we want to understand the distribution of stroke diagnoses in more detail.
+
+----
+Are there any differences in crude rate of hospital stays by health board vs by local authority?
+----
+
+A bar chart grouped by health board or ca observation
+OR
+a line plot.
+
+Compare ca and healthboard names
+```{r}
+unique(council_strokesbyca$council_area_named)
+unique(healthboard_strokesbyhb$healthboard_area_named)
+```
+
+Hard Code relationship between healthboard and councilarea with table from: https://en.wikipedia.org/wiki/NHS_Scotland
+
+```{r}
+council_strokesbyca <- council_strokesbyca %>% 
+  mutate(healthboard = case_when(
+    council_area_named %in% c("East Ayrshire", "North Ayrshire", "South Ayrshire") ~ "Ayrshire & Arran",
+    council_area_named == "Scottish Borders" ~ "Borders",
+    council_area_named == "Dumfries & Galloway" ~ "Dumfries & Galloway",
+    council_area_named == "Na h-Eileanan Siar" ~ "Western Isles",
+    council_area_named == "Fife" ~ "Fife",
+    council_area_named %in% c("Clackmannanshire", "Falkirk", "Stirling") ~ "Forth Valley",
+    council_area_named == "Aberdeenshire" | council_area_named == "Aberdeen City" | council_area_named == "Moray" ~ "Grampian",
+    council_area_named %in% c("City of Glasgow", "East Dunbartonshire", "East Renfrewshire", "Inverclyde", "Renfrewshire", "West Dunbartonshire") ~ "Greater Glasgow & Clyde",
+    council_area_named %in% c("Highland", "Argyll & Bute") ~ "Highland",
+    council_area_named %in% c("North Lanarkshire", "South Lanarkshire") ~ "Lanarkshire",
+    council_area_named %in% c("City of Edinburgh", "East Lothian", "Midlothian", "West Lothian") ~ "Lothian",
+    council_area_named == "Orkney Islands" ~ "Orkney",
+    council_area_named == "Shetland Islands" ~ "Shetland",
+    council_area_named %in% c("Angus", "Dundee City", "Perth & Kinross") ~ "Tayside",
+    council_area_named == "Scotland" ~ "Scotland",
+    council_area_named == "Other" ~ "Other",
+    is.na(council_area_named) ~ "NA"
+    )
+  )
+council_strokesbyca <- council_strokesbyca %>% 
+  mutate(healthboard = na_if(healthboard, "NA"))
+```
+
+
 
