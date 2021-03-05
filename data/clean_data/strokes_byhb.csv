@@ -6221,36 +6221,36 @@ approx_year,healthboard_area_named,age_group,sex,diagnosis,number_of_discharges,
 2014,Orkney,under75 years,Male,Stroke,0,0,121.97461496,NA,NA,8.594757,NA,NA
 2014,Orkney,under75 years,Male,Subarachnoid Haemorrhage,0,0,0,0,0,0,NA,NA
 2014,Orkney,under75 years,Male,TIAs and related syndromes,0,0,27.401835005,NA,NA,NA,NA,NA
-2014,r,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
-2014,r,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,2,NA
-2014,r,0-44 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1,NA
-2014,r,0-44 years,Female,Stroke,NA,NA,NA,NA,NA,NA,2,NA
-2014,r,0-44 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1,NA
-2014,r,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,1,NA
-2014,r,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,5.5,NA
-2014,r,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,18.5,NA
-2014,r,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,5,NA
-2014,r,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,2.5,NA
-2014,r,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1,NA
-2014,r,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,16,NA
-2014,r,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,6,NA
-2014,r,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,51,NA
-2014,r,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,5,NA
-2014,r,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,24,NA
-2014,r,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
-2014,r,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,27,NA
-2014,r,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4,NA
-2014,r,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,28,NA
-2014,r,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2.6666666666666665,NA
-2014,r,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,16,NA
-2014,r,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1.3333333333333333,NA
-2014,r,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,12,NA
-2014,r,All,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,22,NA
-2014,r,All,All,Stroke,NA,NA,NA,NA,NA,NA,113,NA
-2014,r,All,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,18,NA
-2014,r,All,Female,Stroke,NA,NA,NA,NA,NA,NA,43,NA
-2014,r,All,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4,NA
-2014,r,All,Male,Stroke,NA,NA,NA,NA,NA,NA,70,NA
+2014,Other,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
+2014,Other,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,2,NA
+2014,Other,0-44 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1,NA
+2014,Other,0-44 years,Female,Stroke,NA,NA,NA,NA,NA,NA,2,NA
+2014,Other,0-44 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1,NA
+2014,Other,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,1,NA
+2014,Other,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,5.5,NA
+2014,Other,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,18.5,NA
+2014,Other,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,5,NA
+2014,Other,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,2.5,NA
+2014,Other,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1,NA
+2014,Other,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,16,NA
+2014,Other,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,6,NA
+2014,Other,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,51,NA
+2014,Other,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,5,NA
+2014,Other,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,24,NA
+2014,Other,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
+2014,Other,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,27,NA
+2014,Other,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4,NA
+2014,Other,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,28,NA
+2014,Other,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2.6666666666666665,NA
+2014,Other,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,16,NA
+2014,Other,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1.3333333333333333,NA
+2014,Other,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,12,NA
+2014,Other,All,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,22,NA
+2014,Other,All,All,Stroke,NA,NA,NA,NA,NA,NA,113,NA
+2014,Other,All,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,18,NA
+2014,Other,All,Female,Stroke,NA,NA,NA,NA,NA,NA,43,NA
+2014,Other,All,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4,NA
+2014,Other,All,Male,Stroke,NA,NA,NA,NA,NA,NA,70,NA
 2014,Shetland,0-44 years,All,Cerebrovascular Disease,0,0,16.0830806,0,0,0,NA,NA
 2014,Shetland,0-44 years,All,Stroke,0,0,16.0830806,0,0,0,1,33.08
 2014,Shetland,0-44 years,All,Subarachnoid Haemorrhage,0,0,0,0,0,0,NA,NA
@@ -7361,35 +7361,35 @@ approx_year,healthboard_area_named,age_group,sex,diagnosis,number_of_discharges,
 2015,Orkney,under75 years,Male,Stroke,0,0,86.38752774,0,0,0,NA,NA
 2015,Orkney,under75 years,Male,Subarachnoid Haemorrhage,0,0,12.21823998025,0,0,0,NA,NA
 2015,Orkney,under75 years,Male,TIAs and related syndromes,0,0,38.843369145,NA,NA,NA,NA,NA
-2015,r,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1.5,NA
-2015,r,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,1.3333333333333333,NA
-2015,r,0-44 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1,NA
-2015,r,0-44 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1,NA
-2015,r,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,1.3333333333333333,NA
-2015,r,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,5.5,NA
-2015,r,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,15.5,NA
-2015,r,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1.5,NA
-2015,r,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,7,NA
-2015,r,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4,NA
-2015,r,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,12,NA
-2015,r,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,7,NA
-2015,r,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,44.5,NA
-2015,r,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,3,NA
-2015,r,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,23,NA
-2015,r,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4,NA
-2015,r,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,21.5,NA
-2015,r,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4,NA
-2015,r,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,24.666666666666668,NA
-2015,r,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
-2015,r,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,13.333333333333334,NA
-2015,r,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2.6666666666666665,NA
-2015,r,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,11.333333333333334,NA
-2015,r,All,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,24,NA
-2015,r,All,All,Stroke,NA,NA,NA,NA,NA,NA,98,NA
-2015,r,All,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,8,NA
-2015,r,All,Female,Stroke,NA,NA,NA,NA,NA,NA,40,NA
-2015,r,All,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,16,NA
-2015,r,All,Male,Stroke,NA,NA,NA,NA,NA,NA,58,NA
+2015,Other,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1.5,NA
+2015,Other,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,1.3333333333333333,NA
+2015,Other,0-44 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1,NA
+2015,Other,0-44 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1,NA
+2015,Other,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,1.3333333333333333,NA
+2015,Other,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,5.5,NA
+2015,Other,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,15.5,NA
+2015,Other,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1.5,NA
+2015,Other,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,7,NA
+2015,Other,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4,NA
+2015,Other,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,12,NA
+2015,Other,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,7,NA
+2015,Other,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,44.5,NA
+2015,Other,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,3,NA
+2015,Other,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,23,NA
+2015,Other,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4,NA
+2015,Other,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,21.5,NA
+2015,Other,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4,NA
+2015,Other,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,24.666666666666668,NA
+2015,Other,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
+2015,Other,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,13.333333333333334,NA
+2015,Other,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2.6666666666666665,NA
+2015,Other,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,11.333333333333334,NA
+2015,Other,All,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,24,NA
+2015,Other,All,All,Stroke,NA,NA,NA,NA,NA,NA,98,NA
+2015,Other,All,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,8,NA
+2015,Other,All,Female,Stroke,NA,NA,NA,NA,NA,NA,40,NA
+2015,Other,All,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,16,NA
+2015,Other,All,Male,Stroke,NA,NA,NA,NA,NA,NA,58,NA
 2015,Shetland,0-44 years,All,Cerebrovascular Disease,0,0,0,0,0,0,NA,NA
 2015,Shetland,0-44 years,All,Stroke,0,0,0,0,0,0,NA,NA
 2015,Shetland,0-44 years,All,Subarachnoid Haemorrhage,0,0,0,0,0,0,NA,NA
@@ -8500,34 +8500,34 @@ approx_year,healthboard_area_named,age_group,sex,diagnosis,number_of_discharges,
 2016,Orkney,under75 years,Male,Stroke,0,0,59.863341,0,0,0,NA,NA
 2016,Orkney,under75 years,Male,Subarachnoid Haemorrhage,0,0,15.6985871275,NA,NA,8.60758,NA,NA
 2016,Orkney,under75 years,Male,TIAs and related syndromes,0,0,0,NA,NA,NA,NA,NA
-2016,r,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1,NA
-2016,r,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,2,NA
-2016,r,0-44 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1,NA
-2016,r,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,2,NA
-2016,r,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4,NA
-2016,r,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,16.5,NA
-2016,r,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2.5,NA
-2016,r,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,3,NA
-2016,r,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1.5,NA
-2016,r,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,13.5,NA
-2016,r,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,10,NA
-2016,r,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,50,NA
-2016,r,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,5,NA
-2016,r,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,16.5,NA
-2016,r,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,5,NA
-2016,r,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,33.5,NA
-2016,r,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4,NA
-2016,r,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,24,NA
-2016,r,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
-2016,r,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,11.333333333333334,NA
-2016,r,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
-2016,r,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,12.666666666666666,NA
-2016,r,All,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,21,NA
-2016,r,All,All,Stroke,NA,NA,NA,NA,NA,NA,103,NA
-2016,r,All,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,12,NA
-2016,r,All,Female,Stroke,NA,NA,NA,NA,NA,NA,31,NA
-2016,r,All,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,9,NA
-2016,r,All,Male,Stroke,NA,NA,NA,NA,NA,NA,72,NA
+2016,Other,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1,NA
+2016,Other,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,2,NA
+2016,Other,0-44 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1,NA
+2016,Other,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,2,NA
+2016,Other,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4,NA
+2016,Other,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,16.5,NA
+2016,Other,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2.5,NA
+2016,Other,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,3,NA
+2016,Other,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1.5,NA
+2016,Other,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,13.5,NA
+2016,Other,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,10,NA
+2016,Other,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,50,NA
+2016,Other,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,5,NA
+2016,Other,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,16.5,NA
+2016,Other,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,5,NA
+2016,Other,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,33.5,NA
+2016,Other,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4,NA
+2016,Other,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,24,NA
+2016,Other,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
+2016,Other,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,11.333333333333334,NA
+2016,Other,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
+2016,Other,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,12.666666666666666,NA
+2016,Other,All,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,21,NA
+2016,Other,All,All,Stroke,NA,NA,NA,NA,NA,NA,103,NA
+2016,Other,All,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,12,NA
+2016,Other,All,Female,Stroke,NA,NA,NA,NA,NA,NA,31,NA
+2016,Other,All,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,9,NA
+2016,Other,All,Male,Stroke,NA,NA,NA,NA,NA,NA,72,NA
 2016,Shetland,0-44 years,All,Cerebrovascular Disease,0,0,0,0,0,0,NA,NA
 2016,Shetland,0-44 years,All,Stroke,0,0,0,0,0,0,NA,NA
 2016,Shetland,0-44 years,All,Subarachnoid Haemorrhage,0,0,0,0,0,0,NA,NA
@@ -9638,35 +9638,35 @@ approx_year,healthboard_area_named,age_group,sex,diagnosis,number_of_discharges,
 2017,Orkney,under75 years,Male,Stroke,0,0,37.355591415,NA,NA,16.66808,NA,NA
 2017,Orkney,under75 years,Male,Subarachnoid Haemorrhage,0,0,0,0,0,0,NA,NA
 2017,Orkney,under75 years,Male,TIAs and related syndromes,0,0,16.522624255,NA,NA,NA,NA,NA
-2017,r,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1.3333333333333333,NA
-2017,r,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,2.3333333333333335,NA
-2017,r,0-44 years,Female,Stroke,NA,NA,NA,NA,NA,NA,1,NA
-2017,r,0-44 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1.3333333333333333,NA
-2017,r,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,3,NA
-2017,r,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,8,NA
-2017,r,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,17.5,NA
-2017,r,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,3.5,NA
-2017,r,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,4.5,NA
-2017,r,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4.5,NA
-2017,r,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,13,NA
-2017,r,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,9.5,NA
-2017,r,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,50.5,NA
-2017,r,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,6,NA
-2017,r,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,18,NA
-2017,r,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,3.5,NA
-2017,r,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,32.5,NA
-2017,r,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4.666666666666667,NA
-2017,r,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,23.333333333333332,NA
-2017,r,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2.6666666666666665,NA
-2017,r,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,13.333333333333334,NA
-2017,r,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
-2017,r,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,10,NA
-2017,r,All,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,33,NA
-2017,r,All,All,Stroke,NA,NA,NA,NA,NA,NA,110,NA
-2017,r,All,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,15,NA
-2017,r,All,Female,Stroke,NA,NA,NA,NA,NA,NA,38,NA
-2017,r,All,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,18,NA
-2017,r,All,Male,Stroke,NA,NA,NA,NA,NA,NA,72,NA
+2017,Other,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1.3333333333333333,NA
+2017,Other,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,2.3333333333333335,NA
+2017,Other,0-44 years,Female,Stroke,NA,NA,NA,NA,NA,NA,1,NA
+2017,Other,0-44 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1.3333333333333333,NA
+2017,Other,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,3,NA
+2017,Other,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,8,NA
+2017,Other,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,17.5,NA
+2017,Other,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,3.5,NA
+2017,Other,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,4.5,NA
+2017,Other,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4.5,NA
+2017,Other,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,13,NA
+2017,Other,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,9.5,NA
+2017,Other,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,50.5,NA
+2017,Other,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,6,NA
+2017,Other,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,18,NA
+2017,Other,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,3.5,NA
+2017,Other,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,32.5,NA
+2017,Other,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4.666666666666667,NA
+2017,Other,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,23.333333333333332,NA
+2017,Other,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2.6666666666666665,NA
+2017,Other,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,13.333333333333334,NA
+2017,Other,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
+2017,Other,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,10,NA
+2017,Other,All,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,33,NA
+2017,Other,All,All,Stroke,NA,NA,NA,NA,NA,NA,110,NA
+2017,Other,All,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,15,NA
+2017,Other,All,Female,Stroke,NA,NA,NA,NA,NA,NA,38,NA
+2017,Other,All,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,18,NA
+2017,Other,All,Male,Stroke,NA,NA,NA,NA,NA,NA,72,NA
 2017,Shetland,0-44 years,All,Cerebrovascular Disease,0,0,13.292833195,NA,NA,7.798764,2,69.81
 2017,Shetland,0-44 years,All,Stroke,0,0,3.8993817705,0,0,0,1,40.23
 2017,Shetland,0-44 years,All,Subarachnoid Haemorrhage,0,0,9.39345142,NA,NA,7.798764,NA,NA
@@ -10777,36 +10777,36 @@ approx_year,healthboard_area_named,age_group,sex,diagnosis,number_of_discharges,
 2018,Orkney,under75 years,Male,Stroke,NA,NA,70.23318009775,NA,NA,7.747134,NA,NA
 2018,Orkney,under75 years,Male,Subarachnoid Haemorrhage,0,0,13.542795235,0,0,0,NA,NA
 2018,Orkney,under75 years,Male,TIAs and related syndromes,0,0,12.0771952,NA,NA,NA,NA,NA
-2018,r,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
-2018,r,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,5.5,NA
-2018,r,0-44 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1,NA
-2018,r,0-44 years,Female,Stroke,NA,NA,NA,NA,NA,NA,2,NA
-2018,r,0-44 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1,NA
-2018,r,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,3.5,NA
-2018,r,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4,NA
-2018,r,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,19.5,NA
-2018,r,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
-2018,r,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,6,NA
-2018,r,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
-2018,r,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,13.5,NA
-2018,r,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,7,NA
-2018,r,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,57.5,NA
-2018,r,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4.5,NA
-2018,r,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,24,NA
-2018,r,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2.5,NA
-2018,r,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,33.5,NA
-2018,r,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4,NA
-2018,r,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,22,NA
-2018,r,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
-2018,r,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,12,NA
-2018,r,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,3,NA
-2018,r,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,10,NA
-2018,r,All,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,20,NA
-2018,r,All,All,Stroke,NA,NA,NA,NA,NA,NA,124,NA
-2018,r,All,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,11,NA
-2018,r,All,Female,Stroke,NA,NA,NA,NA,NA,NA,49,NA
-2018,r,All,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,9,NA
-2018,r,All,Male,Stroke,NA,NA,NA,NA,NA,NA,75,NA
+2018,Other,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
+2018,Other,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,5.5,NA
+2018,Other,0-44 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1,NA
+2018,Other,0-44 years,Female,Stroke,NA,NA,NA,NA,NA,NA,2,NA
+2018,Other,0-44 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1,NA
+2018,Other,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,3.5,NA
+2018,Other,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4,NA
+2018,Other,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,19.5,NA
+2018,Other,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
+2018,Other,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,6,NA
+2018,Other,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
+2018,Other,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,13.5,NA
+2018,Other,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,7,NA
+2018,Other,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,57.5,NA
+2018,Other,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4.5,NA
+2018,Other,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,24,NA
+2018,Other,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2.5,NA
+2018,Other,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,33.5,NA
+2018,Other,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4,NA
+2018,Other,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,22,NA
+2018,Other,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
+2018,Other,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,12,NA
+2018,Other,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,3,NA
+2018,Other,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,10,NA
+2018,Other,All,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,20,NA
+2018,Other,All,All,Stroke,NA,NA,NA,NA,NA,NA,124,NA
+2018,Other,All,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,11,NA
+2018,Other,All,Female,Stroke,NA,NA,NA,NA,NA,NA,49,NA
+2018,Other,All,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,9,NA
+2018,Other,All,Male,Stroke,NA,NA,NA,NA,NA,NA,75,NA
 2018,Shetland,0-44 years,All,Cerebrovascular Disease,0,0,36.4646800325,0,0,0,1,35.96
 2018,Shetland,0-44 years,All,Stroke,0,0,18.15541031,0,0,0,2,71.92
 2018,Shetland,0-44 years,All,Subarachnoid Haemorrhage,0,0,18.30926972025,0,0,0,NA,NA
