@@ -1,0 +1,258 @@
+----
+Libraries
+----
+
+```{r}
+library(tidyverse)
+```
+
+---- 
+Data
+----
+```{r}
+council_strokesbyca <- read_csv("../../data/clean_data/strokes_byca.csv",
+                                col_types = cols(hospitalstays = col_double(),
+                                            crude_rate_stays = col_double()))
+healthboard_strokesbyhb <- read_csv("../../data/clean_data/strokes_byhb.csv",
+                                col_types = cols(hospitalstays = col_double(),
+                                            crude_rate_stays = col_double()))
+```
+
+----
+Are there any differences in stroke diagnoses between different demographics (e.g. sex, age group)?
+----
+
+Demographics available:
+* gender
+* age
+* healthboard
+
+Outcome variables:
+* rate of hospital stays
+* easr mortalities
+* (easr rate discharges - will this tell us anything?)
+
+# Gender
+
+## Stays
+```{r}
+council_strokesbyca %>% 
+  group_by(sex) %>% 
+  summarise(hospital_stays = mean(crude_rate_stays, na.rm = TRUE)) %>% 
+  ggplot() +
+  aes(x = sex, y = hospital_stays) +
+  geom_col()
+```
+Men have slightly more hospital stays than women and all genders.
+
+## Mortality
+```{r}
+council_strokesbyca %>% 
+  group_by(sex) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  ggplot() +
+  aes(x = sex, y = mortality) +
+  geom_col()
+```
+Looking at crude rates, women and all genders are recorded with slightly higher mortality rates than males. Though this difference is 10 people per 100,000 of the population or a difference of 0.1%. 
+
+Considering the fact that men are admitted to hospital more often than those with female or all genders and that there is a slightly lower rate of mortality for men, we may want to investigate the impact of hospital admissions on stroke outcomes and test whether the difference between hospital stay rates by gender is significant. With this information, we may conclude that targetting female and all genders with information about when to seek medical help and ensuring that stroke symptoms in women are sufficiently understood.
+
+# Age
+
+## Stays
+```{r}
+council_strokesbyca %>% 
+  group_by(age_group) %>% 
+  summarise(hospital_stays = mean(crude_rate_stays, na.rm = TRUE)) %>% 
+  ggplot() +
+  aes(x = age_group, y = hospital_stays) +
+  geom_col()
+```
+
+
+## Mortality
+```{r}
+council_strokesbyca %>% 
+  group_by(age_group) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  ggplot() +
+  aes(x = age_group, y = mortality) +
+  geom_col()
+```
+Both graphs show us that stroke diagnoses are more common with age, affecting the 75 + age group more significantly than any other group.
+This is not surprising information, but the mortality rates for age group do suggest that if our aim is to reduce mortalities by stroke diagnoses, we should target inerventions a the 65+ or 75+ age groups.
+
+## Trends in age group diagnoses over time
+```{r}
+council_strokesbyca %>% 
+  group_by(age_group, approx_year) %>% 
+  summarise(hospital_stays = mean(crude_rate_stays, na.rm = TRUE)) %>% 
+  ggplot() +
+  aes(x = approx_year, y = hospital_stays, group = age_group, col = age_group) +
+  geom_line()
+```
+This graph shows decline or stasis for hospital admission rates for allage groups between 2014 and 2018. The only noticeable change in hospital stays is a reduction in hospital admissions for the over 75s, which may indicate succesful strategies in these years that could be reproduced for other age groups.
+
+```{r}
+council_strokesbyca %>% 
+  group_by(age_group, approx_year) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  ggplot() +
+  aes(x = approx_year, y = mortality, group = age_group, col = age_group) +
+  geom_line()
+```
+ No upwards trends in mortality by stroke. Note that mortality has decreased significantly for the over 75 group so we may be able to identify and copy strategies which have been implemented and extend these to 65 - 74 age group whose mortality has decreased less dramatically since 2009. Alternatively, this may reflect an increase in mortalities from other factors or a change in recording of cause of death. 
+
+
+# Gender and Age
+
+## Stays
+```{r}
+council_strokesbyca %>% 
+  group_by(age_group, sex) %>% 
+  summarise(stays = mean(crude_rate_stays, na.rm = TRUE)) %>% 
+  ggplot() +
+  aes(x = age_group, y = stays, group = sex, fill = sex) +
+  geom_col(position = "dodge")
+```
+
+## Mortality
+```{r}
+council_strokesbyca %>% 
+  group_by(age_group, sex) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  ggplot() +
+  aes(x = age_group, y = mortality, group = sex, fill = sex) +
+  geom_col(position = "dodge")
+```
+These graphs reinforce the idea that men are accessing hospital care more often than women and all genders, particularly in the 75 + group and that women in this age group have slightly higher mortalities.
+Inconclusive, but it might make sense to explore the grouping of women over the age of 75 and perhaps this group could be contacted with stroke symptoms and actions leaflets.
+
+# Healthboard
+
+## Stays
+```{r}
+healthboard_strokesbyhb %>% 
+  group_by(healthboard_area_named) %>% 
+  summarise(hospital_stays = mean(crude_rate_stays, na.rm = TRUE)) %>% 
+  ggplot() +
+  aes(x = reorder(healthboard_area_named, -hospital_stays), y = hospital_stays) +
+  geom_col() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+This shows little variation in hospital admission by health board. The highes admissions being Orkney makes me want to consider access to primary care facilities, while we may wish to see whether any strategies have been used in Grampian and not elsewhere. Unfortunately this data is not normalised for population demographics so we could be looking at differences in demographics rather than stroke experiences.
+
+## Mortality
+```{r}
+healthboard_strokesbyhb %>% 
+  group_by(healthboard_area_named) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  ggplot() +
+  aes(x = reorder(healthboard_area_named, -mortality), y = mortality) +
+  geom_col() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+Differences between health boards of 12.5 deaths per 100,000 population (adjusted). Though this is a small proportion, it does tally with other health inequalities and may encourage some action to target health in Lanarkshire, Highlands and Glasgow.
+
+# Council
+
+## Stays
+```{r}
+council_strokesbyca %>% 
+  group_by(council_area_named) %>% 
+  summarise(hospital_stays = mean(crude_rate_stays, na.rm = TRUE)) %>% 
+  ggplot() +
+  aes(x = reorder(council_area_named, -hospital_stays), y = hospital_stays) +
+  geom_col() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+Seeing differences of up to 100 in crude_rate for hospital stays.
+
+## Mortality
+
+```{r}
+council_strokesbyca %>% 
+  group_by(council_area_named) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  ggplot() +
+  aes(x = reorder(council_area_named, -mortality), y = mortality) +
+  geom_col() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+
+These adjusted mortality rates show that there is a difference in stroke mortality between different council areas. We will want to investigate whether East Renfrewshire and East Dunbartonshire have helpful strategies in place and may wish to target interventions at Inverclyde and Renfrewshire.
+
+## Council mortality rates over time for highest and lowest mortality rate councils
+
+```{r}
+high_mortality_council <- council_strokesbyca %>% 
+  group_by(council_area_named) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  slice_max(mortality, n = 10) %>% 
+  pull(council_area_named)
+
+low_mortality_council <- council_strokesbyca %>% 
+  group_by(council_area_named) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  slice_min(mortality, n = 10) %>% 
+  pull(council_area_named)
+```
+
+
+
+```{r}
+council_strokesbyca %>% 
+  filter(council_area_named %in% high_mortality_council |
+           council_area_named %in% low_mortality_council) %>% 
+  mutate(high_low = if_else(
+    council_area_named %in% high_mortality_council, "high", "low"
+  )) %>% 
+  group_by(high_low, approx_year) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  ggplot() +
+  aes(x = approx_year, y = mortality, group = high_low, col = high_low) +
+  geom_line()
+```
+
+Greatest divergences in 2010 and 2015, which are the years after the two government strategies, but these distinctions are less clear with 5 highest and lowest mortality councils.
+
+```{r}
+high_mortality_council_2018 <- council_strokesbyca %>% 
+  filter(approx_year == 2018) %>% 
+  group_by(council_area_named) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  slice_max(mortality, n = 10) %>% 
+  pull(council_area_named)
+
+low_mortality_council_2018 <- council_strokesbyca %>%  
+  filter(approx_year == 2018) %>% 
+  group_by(council_area_named) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  slice_min(mortality, n = 10) %>% 
+  pull(council_area_named)
+```
+
+
+
+```{r}
+council_strokesbyca %>% 
+  filter(council_area_named %in% high_mortality_council_2018 |
+           council_area_named %in% low_mortality_council_2018) %>% 
+  mutate(high_low = if_else(
+    council_area_named %in% high_mortality_council, "high", "low"
+  )) %>% 
+  group_by(high_low, approx_year) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  ggplot() +
+  aes(x = approx_year, y = mortality, group = high_low, col = high_low) +
+  geom_line() +
+  labs(
+    title = "Adjusted mortality rates by council",
+    subtitle = "Mortality rates for the 10 highest and lowest adjusted mortality rates from stroke in 2018"
+  )
+```
+
+The 10 councils with the highest recent mortality rates showed increase in adjusted mortality in 2010, 2013 and 2015 despite an overall downward trend.
+
+The 10 councils with the lowest recent mortality rates show much more stable decline. Could this be explaiend by more consistency in healthcare approaches or even a political or financial shift in these areas.
