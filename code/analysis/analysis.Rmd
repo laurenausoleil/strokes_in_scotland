@@ -100,5 +100,48 @@ council_strokesbyca <- council_strokesbyca %>%
   mutate(healthboard = na_if(healthboard, "NA"))
 ```
 
+Format data
+```{r}
+ratestays_byhb <- healthboard_strokesbyhb %>% 
+  group_by(healthboard_area_named) %>% 
+  summarise(avg_stayrate = mean(crude_rate_stays, na.rm = TRUE)) %>% 
+  arrange(healthboard_area_named)
+
+ratestays_byca <- council_strokesbyca %>% 
+  group_by(healthboard) %>% 
+  summarise(avg_stayrate = mean(crude_rate_stays, na.rm = TRUE)) %>% 
+  arrange(healthboard)
+
+stayrates <- ratestays_byhb %>% 
+  full_join(ratestays_byca,
+            by = c("healthboard_area_named" = "healthboard"),
+            suffix = c("_hb", "_ca"))
+
+ggplot(stayrates) +
+  aes(x = healthboard_area_named) +
+  geom_col(aes(y = avg_stayrate_hb), fill = "red") 
+
+ggplot(stayrates) +
+  aes(x = healthboard_area_named) +
+  geom_col(aes(y = avg_stayrate_ca), fill = "blue")
+```
+
+
+
+```{r}
+ggplot() +
+  geom_col(
+    data = council_strokesbyca,
+    aes(x = healthboard, y = mean(crude_rate_stays, na.rm = TRUE),
+        col = "blue")
+  )
+
+ggplot() +
+  geom_col(
+    data = healthboard_strokesbyhb,
+    aes(x = healthboard_area_named, y = mean(crude_rate_stays, na.rm = TRUE),
+        col = "red")
+  )
+```
 
 
