@@ -1,0 +1,16 @@
+----
+Libraries
+----
+
+```{r}
+library(tidyverse)
+```
+
+---- 
+Data
+----
+```{r}
+ca_strokes <- read_csv("../../data/clean_data/strokes_byca.csv")
+hb_strokes <- read_csv("../../data/clean_data/strokes_byhb.csv")
+```
+

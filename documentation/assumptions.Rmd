@@ -6,4 +6,7 @@ Data joined by approximate year where discreopancies in financial year and calen
 EASR and crude rate in mortality refer to mortality per 100,000 and in hospital stays refer to hospital stays per 100,000 
 (https://www.scotpho.org.uk/health-wellbeing-and-disease/stroke/data/scottish-data/)
 
-Qualifiers removed, but could be used for extension work
+Qualifiers removed, but could be used for extension work.
+
+Losing detail of age groupings from hospital stays will not affect analysis /
+The larger age groupings will allow for a broader, but easier to interpret analysis.

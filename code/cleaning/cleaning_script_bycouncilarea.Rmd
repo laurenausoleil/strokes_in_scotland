@@ -61,11 +61,23 @@ Wrangling
 ----
 
 Discharges By Council
+
+ - Remove admission type groupings to get the correct number of observations
+```{r}
+discharges_by_council <- discharges_by_council %>% 
+  group_by(financial_year, council_area, age_group, sex, diagnosis) %>% 
+  summarise(number_of_discharges = mean(number_of_discharges, na.rm = TRUE),
+            crude_rate = mean(crude_rate, na.rm = TRUE),
+            easr = mean(easr, na.rm = TRUE)
+            )
+```
+ -  Add approx year to match mortality
 ```{r}
 # Remove "/[0-9][0-9]" from discharges by ca
 discharges_by_council <- discharges_by_council %>%
   mutate(approx_year = as.numeric(str_sub(financial_year, start = 1, end = -4)))
 ```
+
 
 Hospital Stays by Council
 
@@ -131,6 +143,31 @@ hospitalstays_by_council <- hospitalstays_by_council %>%
   mutate(council_area_named = str_remove_all(string = council_area_named, pattern = "^p"))
 ```
 
+ - Group to get correct number of observations
+```{r}
+hospitalstays_by_council <- hospitalstays_by_council  %>% 
+  rename("hospitalstays" = "stays", "crude_rate_stays" = "rate") %>% 
+  mutate(hospitalstays = as.numeric(hospitalstays),
+         crude_rate_stays = as.numeric(crude_rate_stays)) %>% 
+  group_by(financial_year, council_area_named, age_group, sex, diagnosis) %>%
+  summarise(hospitalstays = mean(hospitalstays, na.rm = TRUE),
+            crude_rate_stays = mean(crude_rate_stays, na.rm = TRUE)
+            )
+```
+
+Mortality By Council Area
+this code has no effect on current data, but ensures joins will work if new variables and observations are introduced into future versions of this dataset.
+```{r}
+mortality_by_council <- mortality_by_council %>% 
+  group_by(year, council_area, age_group, sex, diagnosis) %>%
+  summarise(number_of_deaths = mean(number_of_deaths),
+            crude_rate = mean(crude_rate, na.rm = TRUE),
+            easr = mean(easr, na.rm = TRUE)
+            )
+```
+
+
+
 ----
 Joins
 ----
@@ -160,8 +197,7 @@ Discharges and Mortality to Hospital stays
 ```{r}
 strokes_bycouncil <- strokes_bycouncil %>% 
   full_join(hospitalstays_by_council,
-            by = c("financial_year", "age_group", "sex", "council_area", "diagnosis")) %>% 
-  rename("hospitalstays" = "stays", "crude_rate_stays" = "rate")
+            by = c("financial_year", "age_group", "sex", "council_area", "diagnosis"))
 ```
 
 ----
