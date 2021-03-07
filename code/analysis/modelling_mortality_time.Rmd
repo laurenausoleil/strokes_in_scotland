@@ -1,0 +1,59 @@
+----
+Libraries
+----
+```{r}
+library(tidyverse)
+library(modelr)
+library(fable)
+library(tsibble)
+```
+
+----
+Data
+----
+```{r}
+mortality_bysimd <- read_csv("../../data/clean_data/mortality_bysimd2013-2017")
+
+strokes_byhb <- read_csv("../../data/clean_data/strokes_byhb.csv")
+```
+
+----
+Model
+----
+
+Output variable:
+* mortality
+
+Predictor variables:
+* SIMD
+* age group
+OR
+* age group
+* year observed
+* healthboard
+* sex
+* diagnosis
+
+----
+Time Series Model
+----
+
+```{r}
+time_series_data <- strokes_byhb %>% 
+  select(approx_year, easr_mortality) %>% 
+  group_by(approx_year) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = T)) %>% 
+  arrange(desc(approx_year))
+
+time_series_data <- as_tsibble(time_series_data, index = approx_year, key = mortality)
+```
+
+# Build models
+```{r}
+model_tests <- time_series_data %>%
+  model(
+    snaive = NAIVE("mortality")
+  )
+model_tests
+```
+
