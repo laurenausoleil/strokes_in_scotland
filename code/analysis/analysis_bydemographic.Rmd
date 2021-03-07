@@ -50,12 +50,12 @@ Men have slightly more hospital stays than women and all genders.
 ```{r}
 council_strokesbyca %>% 
   group_by(sex) %>% 
-  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  summarise(mortality = mean(crude_rate_mortality, na.rm = TRUE)) %>% 
   ggplot() +
   aes(x = sex, y = mortality) +
   geom_col()
 ```
-Looking at crude rates, women and all genders are recorded with slightly higher mortality rates than males. Though this difference is 10 people per 100,000 of the population or a difference of 0.1%. 
+Looking at crude rates, women and all genders are recorded with significantly higher mortality rates than males. Though this difference is 10 people per 100,000 of the population or a difference of 0.1%. 
 
 Considering the fact that men are admitted to hospital more often than those with female or all genders and that there is a slightly lower rate of mortality for men, we may want to investigate the impact of hospital admissions on stroke outcomes and test whether the difference between hospital stay rates by gender is significant. With this information, we may conclude that targetting female and all genders with information about when to seek medical help and ensuring that stroke symptoms in women are sufficiently understood.
 
@@ -68,7 +68,7 @@ council_strokesbyca %>%
     aes(x = diagnosis, y = mortality, group = sex, fill = sex) +
   geom_col(position = "fill")
 ```
-Women die from SH proportionally more than men.
+Women die from SH proportionally more than men. If we wish to improve mortalityy outcomes for women we might want to look at treatment and knowledge of SH.
 
 # Age
 
@@ -116,7 +116,7 @@ council_strokesbyca %>%
 ```
  No upwards trends in mortality by stroke. Note that mortality has decreased significantly for the over 75 group so we may be able to identify and copy strategies which have been implemented and extend these to 65 - 74 age group whose mortality has decreased less dramatically since 2009. Alternatively, this may reflect an increase in mortalities from other factors or a change in recording of cause of death. 
  
- ## Diagnosis
+## Diagnosis
 ```{r}
 council_strokesbyca %>% 
   group_by(age_group, diagnosis) %>%
@@ -124,7 +124,10 @@ council_strokesbyca %>%
   ggplot() +
     aes(x = diagnosis, y = mortality, group = age_group, fill = age_group) +
   geom_col(position = "fill")
+```
 
+
+```{r}
 council_strokesbyca %>% 
   group_by(age_group, diagnosis) %>%
   summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
@@ -182,6 +185,16 @@ council_strokesbyca %>%
 ```
 These graphs reinforce the idea that men are accessing hospital care more often than women and all genders, particularly in the 75 + group and that women in this age group have slightly higher mortalities.
 Inconclusive, but it might make sense to explore the grouping of women over the age of 75 and perhaps this group could be contacted with stroke symptoms and actions leaflets.
+
+```{r}
+council_strokesbyca %>% 
+  group_by(age_group, sex) %>% 
+  summarise(mortality = mean(crude_rate_mortality, na.rm = TRUE)) %>% 
+  ggplot() +
+  aes(x = age_group, y = mortality, group = sex, fill = sex) +
+  geom_col(position = "dodge")
+```
+The disparity in mortalities by gender is most pronounced in the 75 plus age group. 
 
 # Healthboard
 
