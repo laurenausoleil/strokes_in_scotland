@@ -16,6 +16,8 @@ council_strokesbyca <- read_csv("../../data/clean_data/strokes_byca.csv",
 healthboard_strokesbyhb <- read_csv("../../data/clean_data/strokes_byhb.csv",
                                 col_types = cols(hospitalstays = col_double(),
                                             crude_rate_stays = col_double()))
+
+incidence_by_hb <- read_csv("../../data/clean_data/incidence_byhb.csv")
 ```
 
 ----
@@ -32,6 +34,7 @@ Outcome variables:
 * rate of hospital stays
 * easr mortalities
 * (easr rate discharges - will this tell us anything?)
+* Incidence
 
 # Gender
 
@@ -68,7 +71,19 @@ council_strokesbyca %>%
     aes(x = diagnosis, y = mortality, group = sex, fill = sex) +
   geom_col(position = "fill")
 ```
-Women die from SH proportionally more than men. If we wish to improve mortalityy outcomes for women we might want to look at treatment and knowledge of SH.
+Women die from SH proportionally more than men. If we wish to improve mortality outcomes for women we might want to look at treatment and knowledge of SH.
+
+## Incidence
+
+```{r}
+incidence_by_hb %>% 
+  group_by(sex) %>% 
+  summarise(incidence = mean(easr, na.rm = TRUE)) %>% 
+  ggplot() +
+  aes(x = sex, y = incidence) +
+  geom_col()
+```
+Men have higher rates of incidence than women and other genders, but lower rates of mortality.
 
 # Age
 
@@ -162,6 +177,16 @@ council_strokesbyca %>%
 ```
 No worrying trends here!
 
+## Incidence
+```{r}
+incidence_by_hb %>% 
+  group_by(age) %>% 
+  summarise(incidence = mean(easr, na.rm = TRUE)) %>% 
+  ggplot() +
+  aes(x = age, y = incidence) +
+  geom_col()
+```
+
 # Gender and Age
 
 ## Stays
@@ -194,7 +219,31 @@ council_strokesbyca %>%
   aes(x = age_group, y = mortality, group = sex, fill = sex) +
   geom_col(position = "dodge")
 ```
-The disparity in mortalities by gender is most pronounced in the 75 plus age group. 
+The disparity in mortalities by gender is most pronounced in the 75 plus age group.
+
+## Diagnosis
+```{r}
+council_strokesbyca %>% 
+  group_by(sex, age_group, diagnosis) %>%
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  ggplot() +
+    aes(x = age_group, y = mortality, group = diagnosis, fill = diagnosis) +
+  geom_col(position = "fill") +
+  facet_wrap(~sex) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+We start to see that younger women with SH, especially the 45-64 age group, are dying more often from SH than male and all genders, where men in this age group are more likely to die from stroke.
+
+## Incidence
+```{r}
+incidence_by_hb %>% 
+  group_by(sex, age) %>% 
+  summarise(incidence = mean(easr, na.rm = TRUE)) %>% 
+  ggplot() +
+  aes(x = age, y = incidence, group = sex, fill = sex) +
+  geom_col(position = "dodge")
+```
+No unseen trends here.
 
 # Healthboard
 
@@ -221,6 +270,150 @@ healthboard_strokesbyhb %>%
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 ```
 Differences between health boards of 12.5 deaths per 100,000 population (adjusted). Though this is a small proportion, it does tally with other health inequalities and may encourage some action to target health in Lanarkshire, Highlands and Glasgow.
+
+## Incidence
+```{r}
+incidence_by_hb %>% 
+  group_by(health_board) %>% 
+  summarise(incidence = mean(easr, na.rm = TRUE)) %>% 
+  ggplot(aes(x = reorder(health_board, -incidence), y = incidence)) +
+  geom_col() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+
+Table of values
+```{r}
+healthboard_table <- healthboard_strokesbyhb %>% 
+  group_by(healthboard_area_named) %>% 
+  summarise(hospital_stays = mean(crude_rate_stays, na.rm = TRUE),
+            mortality = mean(easr_mortality, na.rm = TRUE)
+  ) 
+
+healthboard_table <- incidence_by_hb %>% 
+  group_by(health_board) %>% 
+  summarise(incidence = mean(easr, na.rm = TRUE)) %>%
+  mutate(health_board = if_else(
+    str_detect(health_board, "NHS"),
+    str_sub(health_board, start = 5, end = -1),
+    health_board
+    )
+  ) %>% 
+  full_join(healthboard_table, by = c("health_board" = "healthboard_area_named"))
+```
+
+incidence and hospital stays
+```{r}
+healthboard_table %>% 
+  ggplot(aes(x = incidence, y = hospital_stays)) +
+  geom_point() +
+  geom_text(aes(label = health_board), hjust = -.2) +
+  labs(
+    title = "Comparing incidence rates and hospital visits by Health Board"
+  )
+```
+Island health boards have more hospital stays per incident of stroke than land based health board.
+
+incidence mortality
+```{r}
+healthboard_table %>% 
+  ggplot(aes(x = incidence, y = mortality)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  geom_text(aes(label = health_board), hjust = -.2) +
+  labs(
+    title = "Mortalities per incident by Health Board"
+  )
+```
+Higher mortalities per incidence in Lanarkshire, Highlands, Grampian and Western Isles.
+Lower mortalities per incidence in the Borders, Tayside, Lothian and Fife.
+
+## Mortalities over time by health board
+
+```{r}
+# group = health_board, x = year, y = mortality
+healthboard_strokesbyhb %>% 
+  group_by(healthboard_area_named, approx_year) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  ggplot() +
+  aes(x = approx_year, y = mortality, group = healthboard_area_named, col = healthboard_area_named) +
+  geom_line() +
+  geom_point()
+  
+```
+Outliers in 2011, 2013, 2015 and 2018.
+
+```{r}
+high_mortality_healthboard_2018 <- healthboard_strokesbyhb %>% 
+  filter(approx_year == 2018) %>% 
+  group_by(healthboard_area_named) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  slice_max(mortality, n = 8) %>% 
+  pull(healthboard_area_named)
+
+low_mortality_healthboard_2018 <- healthboard_strokesbyhb %>%  
+  filter(approx_year == 2018) %>% 
+  group_by(healthboard_area_named) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  slice_min(mortality, n = 9) %>% 
+  pull(healthboard_area_named)
+```
+```{r}
+healthboard_strokesbyhb %>% 
+  filter(healthboard_area_named %in% high_mortality_healthboard_2018 |
+           healthboard_area_named %in% low_mortality_healthboard_2018) %>% 
+  mutate(high_low = if_else(
+    healthboard_area_named %in% high_mortality_healthboard_2018, "high", "low"
+  )) %>% 
+  group_by(high_low, approx_year) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  ggplot() +
+  aes(x = approx_year, y = mortality, group = high_low, col = high_low) +
+  geom_line()
+```
+
+```{r}
+high_mortality_healthboard <- healthboard_strokesbyhb %>% 
+  group_by(healthboard_area_named) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  slice_max(mortality, n = 9) %>% 
+  pull(healthboard_area_named)
+
+low_mortality_healthboard <- healthboard_strokesbyhb %>% 
+  group_by(healthboard_area_named) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  slice_min(mortality, n = 8) %>% 
+  pull(healthboard_area_named)
+```
+
+```{r}
+healthboard_strokesbyhb %>% 
+  filter(healthboard_area_named %in% high_mortality_healthboard |
+           healthboard_area_named %in% low_mortality_healthboard) %>% 
+  mutate(high_low = if_else(
+    healthboard_area_named %in% high_mortality_healthboard, "high", "low"
+  )) %>% 
+  group_by(high_low, approx_year) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  ggplot() +
+  aes(x = approx_year, y = mortality, group = high_low, col = high_low) +
+  geom_line()
+```
+
+## Proportion of mortalities by incidents by health board over time
+
+
+## Diagnosis
+```{r}
+healthboard_strokesbyhb %>% 
+  group_by(healthboard_area_named, diagnosis) %>%
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  ggplot() +
+    aes(x = healthboard_area_named, y = mortality, group = diagnosis, fill = diagnosis) +
+  geom_col(position = "fill") +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+Higher mortality from stroke in Shetland vs normal distribution of deaths per diagnosis.
+
 
 # Council
 
@@ -307,7 +500,7 @@ council_strokesbyca %>%
   filter(council_area_named %in% high_mortality_council_2018 |
            council_area_named %in% low_mortality_council_2018) %>% 
   mutate(high_low = if_else(
-    council_area_named %in% high_mortality_council, "high", "low"
+    council_area_named %in% high_mortality_council_2018, "high", "low"
   )) %>% 
   group_by(high_low, approx_year) %>% 
   summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
@@ -320,6 +513,20 @@ council_strokesbyca %>%
   )
 ```
 
-The 10 councils with the highest recent mortality rates showed increase in adjusted mortality in 2010, 2013 and 2015 despite an overall downward trend.
+The 10 councils with the highest recent mortality rates showed increase in adjusted mortality in 2013, 2015 and 2018 with an overall downward trend.
 
-The 10 councils with the lowest recent mortality rates show much more stable decline. Could this be explaiend by more consistency in healthcare approaches or even a political or financial shift in these areas.
+The 10 councils with the lowest recent mortality rates show much more stable decline excluding the year 2013. Could this be explaiend by more consistency in healthcare approaches or even a political or financial shift in these areas.
+
+Are these explainable?
+  Do they correlate with years with big outliers for individual cas?
+```{r}
+council_strokesbyca %>% 
+  group_by(council_area_named, approx_year) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  ggplot() +
+  aes(x = approx_year, y = mortality, group = council_area_named, col = council_area_named) +
+  geom_line()
+```
+Outliers in 2010, 2011, 2013, 2015, 2016 and 2018.
+
+
