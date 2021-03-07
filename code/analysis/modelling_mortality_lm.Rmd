@@ -1,0 +1,86 @@
+----
+Libraries
+----
+```{r}
+library(tidyverse)
+library(glmulti)
+```
+
+----
+Data
+----
+```{r}
+mortality_bysimd <- read_csv("../../data/clean_data/mortality_bysimd2013-2017")
+
+strokes_byhb <- read_csv("../../data/clean_data/strokes_byhb.csv")
+```
+
+----
+Model
+----
+
+Output variable:
+* mortality
+
+Predictor variables:
+* SIMD
+* age group
+OR
+* age group
+* year observed
+* healthboard
+* sex
+* diagnosis
+
+----
+Glmulti
+----
+
+convert to factors
+```{r}
+strokes_byhb_withfactor <- strokes_byhb %>% 
+  filter(age_group != "All" & age_group != "under75 years") %>% 
+  mutate(
+    approx_year = as_factor(approx_year),
+    healthboard_area_named = as_factor(healthboard_area_named),
+    age_group = as_factor(age_group),
+    sex = as_factor(sex),
+    diagnosis = as_factor(diagnosis)
+  ) %>% 
+  select(approx_year, healthboard_area_named, age_group, sex, diagnosis, easr_mortality)
+```
+
+```{r}
+glmulti_fit <- glmulti(
+  easr_mortality ~ ., 
+  data = strokes_byhb_withfactor,
+  level = 2, # 2 = include pairwise interactions
+  minsize = 0, # no min size of model
+  maxsize = 10, 
+  marginality = TRUE, # marginality here means the same as 'strongly hierarchical' interactions, i.e. include pairwise interactions only if both predictors present in the model as main effects.
+  method = "d", # the problem is too large for exhaustive search, so search using a genetic algorithm
+  crit = bic, # criteria for model selection is BIC value (lower is better)
+  plotty = FALSE, # don't plot models as function runs
+  report = TRUE, # do produce reports as function runs
+  confsetsize = 100, # return best 100 solutions
+  fitfunction = lm # fit using the `lm` function
+)
+```
+
+```{r}
+glmulti_fit <- glmulti(
+  easr_mortality ~ ., 
+  data = strokes_byhb_withfactor,
+  level = 2, # 2 = include pairwise interactions
+  minsize = 0, # no min size of model
+  maxsize = 10, # -1 = no max size of model
+  marginality = TRUE, # marginality here means the same as 'strongly hierarchical' interactions, i.e. include pairwise interactions only if both predictors present in the model as main effects.
+  method = "g", # the problem is too large for exhaustive search, so search using a genetic algorithm
+  crit = bic, # criteria for model selection is BIC value (lower is better)
+  plotty = FALSE, # don't plot models as function runs
+  report = TRUE, # do produce reports as function runs
+  confsetsize = 100, # return best 100 solutions
+  fitfunction = lm # fit using the `lm` function
+)
+```
+
