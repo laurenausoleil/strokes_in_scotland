@@ -56,11 +56,18 @@ healthboard_codes <- read_csv("../../data/raw_data/healthboard_codes.csv") %>%
   rename("healthboard_area" = "hb")
 ```
 
+Incidence by Health Board
+```{r}
+incidence_by_healthboard <- read_xlsx("../../data/raw_data/incidence_byhb.xls", sheet = 3) %>%
+  clean_names() %>% 
+  rename("sex" = "sex_desc")
+```
+
 ----
 Wrangling
 ----
 
-Discharges By Health Board
+# Discharges By Health Board
 
  -  Add approx year to match mortality
 ```{r}
@@ -80,7 +87,7 @@ discharges_by_healthboard <- discharges_by_healthboard %>%
             )
 ```
 
-Hospital Stays by Health Board
+# Hospital Stays by Health Board
 
  - Filter to only relevant diagnoses, allow missing capital letters
 ```{r}
@@ -164,7 +171,7 @@ hospitalstays_by_healthboard <- hospitalstays_by_healthboard  %>%
             )
 ```
 
-Mortality By Health Board
+# Mortality By Health Board
 this code has no effect on current data, but ensures joins will work if new variables and observations are introduced into future versions of this dataset.
 ```{r}
 mortality_by_healthboard <- mortality_by_healthboard %>% 
@@ -174,6 +181,26 @@ mortality_by_healthboard <- mortality_by_healthboard %>%
             easr = mean(easr, na.rm = TRUE)
             )
 ```
+
+# Incidence by Healthboard
+```{r}
+incidence_by_healthboard <- incidence_by_healthboard %>% 
+  mutate(sex = case_when(
+    sex == "MALE" ~ "Male",
+    sex == "FEMALE" ~ "Female",
+    sex == "BOTH SEXES" ~ "All"
+    ),
+  age = case_when(
+      age  == "0-44" ~ "0-44 years",
+      age  == "45-64" ~ "45-64 years",
+      age  == "65-74" ~ "65-74 years",
+      age  == "75+" ~ "75plus years",
+      age  == "ALL AGES" ~ "All",
+      age == "<75" ~ "under75 years"
+    )
+  )
+```
+
 
 ----
 Joins
@@ -247,11 +274,12 @@ group_by(approx_year, healthboard_area_named, age_group, sex, diagnosis) %>%
             )
 ```
 
-
 ----
 Write Clean Data
 ----
 ```{r}
 write_csv(strokes_byhb, "../../data/clean_data/strokes_byhb.csv")
+
+write_csv(incidence_by_healthboard, "../../data/clean_data/incidence_byhb.csv")
 ```
 
