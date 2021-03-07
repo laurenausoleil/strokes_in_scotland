@@ -5,8 +5,6 @@ Libraries
 ```{r}
 library(tidyverse)
 library(janitor)
-library(stringr)
-library(readxl)
 ```
 
 ----
@@ -52,7 +50,7 @@ discharges_bysimd <- discharges_bysimd %>%
          "crude_rate_discharge" = "Crude Discharge Rate per 100,000 Population",
          "easr_discharge" = "Age-Sex Standardised Discharge Rate2 per 100,000 Population")
 ```
- 
+
 ----
 Write Clean Data
 ----

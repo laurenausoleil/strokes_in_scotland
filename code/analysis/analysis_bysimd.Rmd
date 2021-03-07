@@ -1,5 +1,116 @@
-# SIMD
+----
+Libraries
+----
 
-## Stays
+```{r}
+library(tidyverse)
+```
+
+---- 
+Data
+----
+```{r}
+discharges_bysimd <- read_csv("../../data/clean_data/discharges_bysimd.csv")
+
+mortality_bysimd <- read_csv("../../data/clean_data/mortality_bysimd2013-2017")
+```
+Discharges by quintile 2008-2017
+Mortalities by decile 2013-2017
+
+## Discharges
+```{r}
+discharges_bysimd %>% 
+  group_by(deprivation_quintile) %>% 
+  summarise(avg_discharges = mean(easr_discharge, na.rm = T)) %>% 
+  ggplot(aes(x = deprivation_quintile, y = avg_discharges)) +
+  geom_col()
+```
+
+## discharges over time
+```{r}
+discharges_bysimd %>% 
+  group_by(deprivation_quintile, approx_year) %>% 
+  summarise(avg_discharges = mean(easr_discharge, na.rm = T)) %>% 
+  ggplot(aes(x = approx_year, y = avg_discharges, group = deprivation_quintile, col = deprivation_quintile)) +
+  geom_line() +
+  labs(
+    title = "hospital activity by deprivation quintile over time"
+  )
+```
+Difference between hospital activity rates for deprivation quintiles is increasing over time, particularly for the 2 most deprived quintiles.
 
 ## Mortality
+```{r}
+mortality_bysimd %>% 
+  group_by(simd_decile) %>% 
+  summarise(mortality = mean(smr_mortality)) %>% 
+  ggplot(aes(x = simd_decile, y= mortality)) +
+  geom_col()
+```
+Chance of dying from stroke doubles from the least to the most deprived deciles.
+
+See if number of discharges for same period doubles
+```{r}
+discharges_bysimd %>% 
+  filter(approx_year %in% 2013:2017) %>% 
+  group_by(deprivation_quintile) %>% 
+  summarise(avg_discharges = mean(easr_discharge, na.rm = T))
+```
+
+## Num mortalities per hospital discharge by quintile
+```{r}
+mort_per_discharge <- mortality_bysimd %>% 
+  mutate(
+    quintile = case_when(
+      simd_decile %in% 1:2 ~ 1,
+      simd_decile %in% 3:4 ~ 2,
+      simd_decile %in% 5:6 ~ 3,
+      simd_decile %in% 7:8 ~ 4,
+      simd_decile %in% 9:10 ~ 5
+    )
+  ) %>% 
+  select(quintile, smr_mortality) %>% 
+  group_by(quintile) %>% 
+  summarise(avg_mortality = mean(smr_mortality, na.rm = T))
+
+mort_per_discharge <- discharges_bysimd %>%
+  filter(approx_year %in% 2013:2017) %>%
+  select(deprivation_quintile, easr_discharge) %>% 
+  group_by(deprivation_quintile) %>% 
+  summarise(avg_discharge = mean(easr_discharge, na.rm = T)) %>% 
+  inner_join(
+    mort_per_discharge, by = c("deprivation_quintile" = "quintile")
+  )
+```
+```{r}
+mort_per_discharge %>% 
+  ggplot(aes(x = deprivation_quintile, y = avg_mortality / avg_discharge * 100)) +
+  geom_col()
+```
+Highest ratio of deaths:hospital discharge actually occurs in the 4th quintile, or the 2nd least dperived quintile.
+
+## Mortalities by age group and SIMD
+
+```{r}
+mortality_bysimd %>% 
+  filter(age_group == "under65") %>% 
+  group_by(simd_decile) %>% 
+  summarise(avg_mortality = mean(smr_mortality, na.rm = T)) %>% 
+  ggplot(aes(x = simd_decile, y = avg_mortality)) +
+  geom_col() +
+  labs(
+    title = "Adjusted stroke mortality rates by SIMD for under 65s"
+  )
+```
+
+```{r}
+mortality_bysimd %>% 
+  group_by(simd_decile, age_group) %>% 
+  filter(age_group != "All") %>% 
+  summarise(avg_mortality = mean(smr_mortality, na.rm = T)) %>% 
+  ggplot(aes(x = simd_decile, y = avg_mortality, group = age_group, fill = age_group, col = age_group)) +
+  geom_col()
+```
+
+SIMD has the highest impact on mortality for the under 65 age group. 189.5 people per 100,000 adjusted die of strokes in the most deprived decile, compared to just 42.3 of those in the least deprived decile.
+We could target health interventions in the most deprived areas for th under 65 age group.
