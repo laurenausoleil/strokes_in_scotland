@@ -46,7 +46,7 @@ discharges_bysimd <- discharges_bysimd %>%
 
  - add num_discharge, crude_rate and easr
 ```{r}
-discharges_bysimd %>% 
+discharges_bysimd <- discharges_bysimd %>% 
   pivot_wider(names_from = "indicator") %>% 
   rename("number_discharges" = "Number of Discharges",
          "crude_rate_discharge" = "Crude Discharge Rate per 100,000 Population",
