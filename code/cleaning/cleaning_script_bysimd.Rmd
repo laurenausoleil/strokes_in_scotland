@@ -1,0 +1,65 @@
+----
+Libraries
+----
+
+```{r}
+library(tidyverse)
+library(janitor)
+library(stringr)
+library(readxl)
+```
+
+----
+Load datasets
+----
+
+mortality_bysimd
+```{r}
+mortality_bysimd <- read_csv("../../data/raw_data/edited_mortality_bysimd2013-2017.csv") %>% 
+  clean_names() %>% 
+  rename("crude_rate_mortality" = "crude_rate_per_100000_population",
+         "smr_mortality" = "smr")
+```
+
+discharges_bysimd
+```{r}
+discharges_bysimd <- read_csv("../../data/raw_data/edited_discharges_bysimd.csv")
+```
+
+----
+Wrangling
+----
+
+discharges_bysimd
+
+ - add year column
+```{r}
+discharges_bysimd <- discharges_bysimd %>% 
+  pivot_longer(
+    cols = starts_with("20"),
+    names_to = c("approx_year", "cut"),
+    names_sep = "/"
+  ) %>% 
+  select(-cut) %>% 
+  clean_names()
+```
+
+ - add num_discharge, crude_rate and easr
+```{r}
+discharges_bysimd %>% 
+  pivot_wider(names_from = "indicator") %>% 
+  rename("number_discharges" = "Number of Discharges",
+         "crude_rate_discharge" = "Crude Discharge Rate per 100,000 Population",
+         "easr_discharge" = "Age-Sex Standardised Discharge Rate2 per 100,000 Population")
+```
+ 
+----
+Write Clean Data
+----
+
+```{r}
+write_csv(discharges_bysimd, "../../data/clean_data/discharges_bysimd.csv")
+
+write_csv(mortality_bysimd, "../../data/clean_data/mortality_bysimd2013-2017")
+```
+
