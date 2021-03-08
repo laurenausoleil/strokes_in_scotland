@@ -243,7 +243,7 @@ council_strokesbyca %>%
     subtitle = "shown by diagnoses and age group"
   )
 ```
-
+Explore SH across time
 ```{r}
 council_strokesbyca %>% 
   filter(diagnosis == "Subarachnoid Haemorrhage") %>% 
@@ -253,9 +253,12 @@ council_strokesbyca %>%
   aes(x = approx_year, y = mortality, group = age_group, col = age_group) +
   geom_line()
 ```
+
+Mortality by age and diagnosis over time
 ```{r}
 council_strokesbyca %>% 
-  filter(age_group != "All" & age_group != "under75 years") %>% 
+# filter year to remove high values from years prior to 2013 in order to make graph mor readable
+  filter(age_group != "All" & age_group != "under75 years" & approx_year > 2013) %>% 
   group_by(age_group, approx_year, diagnosis) %>% 
   summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
   ggplot() +
@@ -263,7 +266,7 @@ council_strokesbyca %>%
   geom_line() +
   facet_wrap(~age_group)
 ```
-No worrying trends here!
+We see decrease in mortalities for the 75 plus age group with CD and stroke, but not SH. All other age groups have consistent mortality rates for all diagnoses.
 
 ## Incidence
 ```{r}
