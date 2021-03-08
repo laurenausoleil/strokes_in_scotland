@@ -95,9 +95,31 @@ analysis_bydemographic/healthboard/incidence mortality
   Higher mortalities per incidence in Lanarkshire, Highlands, Grampian and Western Isles.
   Lower mortalities per incidence in the Borders, Tayside, Lothian and Fife.
 
-analysis_bydemographic/healthboard/
+analysis_bydemographic/healthboard/diagnosis
+  Slightly higher mortality from stroke in Shetland vs normal distribution of deaths per diagnosis.
 
-analysis_bydemographic/healthboard/
+# Council
+
+Unable to explore incidence rates by council area.
+
+analysis_bydemographic/council/mortality
+  These adjusted mortality rates show that there is a difference in stroke mortality between different council areas. 
+  Highest adjusted mortality in Inverclyde and Renfrewshire.
+  Lowest adjusted mortality rates in East Renfrewshire and East Dunbartonshire.
+
+analysis_bydemographic/council/Council mortality rates over time for highest and lowest mortality rate councils/10 highest and lowest all time mortality rates, mean
+  Greatest divergences in 2010 and 2015.
+  Note that these are the years after the two government strategies published.
+  
+analysis_bydemographic/council/Council mortality rates over time for highest and lowest mortality rate councils/10 highest and lowest mortality councils in 2018, Mean 
+  The 10 councils with the highest recent mortality rates showed increase in adjusted mortality in 2013, 2015 and 2018 with an overall downward trend.
+  The 10 councils with the lowest recent mortality rates show much more stable decline excluding a rise in mortalities in 2013.
+  
+analysis_bydemographic/council/Council mortality rates over time for highest and lowest mortality rate councils/10 highest and lowest all time mortality rates, Median
+  Downward trend in mortalities for both groupings, with all time highest mortality councils decreasing more significantly than lowest.
+  Seeing greatest divergence in 2011 and 2016.
+  Looking at small differences here of around 5 deaths per 100,000.
+
   
   
   

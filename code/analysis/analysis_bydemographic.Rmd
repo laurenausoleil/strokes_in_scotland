@@ -440,33 +440,6 @@ healthboard_strokesbyhb %>%
 ```
 Outliers in 2011, 2013, 2015 and 2018.
 
-Grouping high and low mortality boards for 2018 values, Mean.
-```{r}
-high_mortality_healthboard_2018 <- healthboard_strokesbyhb %>% 
-  filter(approx_year == 2018) %>% 
-  group_by(healthboard_area_named) %>% 
-  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
-  slice_max(mortality, n = 8) %>% 
-  pull(healthboard_area_named)
-
-low_mortality_healthboard_2018 <- healthboard_strokesbyhb %>%  
-  filter(approx_year == 2018) %>% 
-  group_by(healthboard_area_named) %>% 
-  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
-  slice_min(mortality, n = 9) %>% 
-  pull(healthboard_area_named)
-```
-```{r}
-healthboard_strokesbyhb %>% 
-  mutate(high_low = if_else(
-    healthboard_area_named %in% high_mortality_healthboard_2018, "high", "low"
-  )) %>% 
-  group_by(high_low, approx_year) %>% 
-  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
-  ggplot() +
-  aes(x = approx_year, y = mortality, group = high_low, col = high_low) +
-  geom_line()
-```
 Grouping high and low mortality boards for all values, Mean.
 ```{r}
 high_mortality_healthboard <- healthboard_strokesbyhb %>% 
@@ -599,6 +572,7 @@ These adjusted mortality rates show that there is a difference in stroke mortali
 
 ## Council mortality rates over time for highest and lowest mortality rate councils
 
+10 highest and lowest all time mortality rates, mean
 ```{r}
 high_mortality_council <- council_strokesbyca %>% 
   group_by(council_area_named) %>% 
@@ -612,8 +586,6 @@ low_mortality_council <- council_strokesbyca %>%
   slice_min(mortality, n = 10) %>% 
   pull(council_area_named)
 ```
-
-
 
 ```{r}
 council_strokesbyca %>% 
@@ -631,7 +603,7 @@ council_strokesbyca %>%
 
 Greatest divergences in 2010 and 2015, which are the years after the two government strategies, but these distinctions are less clear with 5 highest and lowest mortality councils.
 
-### Mean 
+### 10 highest and lowest mortality councils in 2018, Mean 
 ```{r}
 high_mortality_council_2018 <- council_strokesbyca %>% 
   filter(approx_year == 2018) %>% 
@@ -673,7 +645,8 @@ The 10 councils with the highest recent mortality rates showed increase in adjus
 The 10 councils with the lowest recent mortality rates show much more stable decline excluding the year 2013. Could this be explaiend by more consistency in healthcare approaches or even a political or financial shift in these areas.
 
 Are these explainable?
-  Do they correlate with years with big outliers for individual cas?
+
+Do they correlate with years with big outliers for individual cas?
 ```{r}
 council_strokesbyca %>% 
   group_by(council_area_named, approx_year) %>% 
@@ -684,41 +657,35 @@ council_strokesbyca %>%
 ```
 Outliers in 2010, 2011, 2013, 2015, 2016 and 2018.
 
-### Median
+### 10 highest and lowest all time mortality rates, Median
 ```{r}
-high_mortality_council_2018_median <- council_strokesbyca %>% 
-  filter(approx_year == 2018) %>% 
+high_mortality_council_median <- council_strokesbyca %>% 
   group_by(council_area_named) %>% 
   summarise(mortality = median(easr_mortality, na.rm = TRUE)) %>% 
   slice_max(mortality, n = 10) %>% 
   pull(council_area_named)
 
-low_mortality_council_2018_median <- council_strokesbyca %>%  
-  filter(approx_year == 2018) %>% 
+low_mortality_council_median <- council_strokesbyca %>% 
   group_by(council_area_named) %>% 
   summarise(mortality = median(easr_mortality, na.rm = TRUE)) %>% 
   slice_min(mortality, n = 10) %>% 
   pull(council_area_named)
 ```
-
-
-
 ```{r}
 council_strokesbyca %>% 
-  filter(council_area_named %in% high_mortality_council_2018_median |
-           council_area_named %in% low_mortality_council_2018_median) %>% 
+  filter(council_area_named %in% high_mortality_council_median |
+           council_area_named %in% low_mortality_council_median) %>% 
   mutate(high_low = if_else(
-    council_area_named %in% high_mortality_council_2018_median, "high", "low"
+    council_area_named %in% high_mortality_council_median, "high", "low"
   )) %>% 
   group_by(high_low, approx_year) %>% 
   summarise(mortality = median(easr_mortality, na.rm = TRUE)) %>% 
   ggplot() +
   aes(x = approx_year, y = mortality, group = high_low, col = high_low) +
   geom_line() +
-  labs(
-    title = "Adjusted mortality rates by council",
-    subtitle = "Mortality rates for the 10 highest and lowest adjusted mortality rates from stroke in 2018 using median"
-  )
+  geom_point()
 ```
 
-
+Downward trend in mortalities for both groupings, with all time highest mortality councils decreasing more significantly than lowest.
+Seeing greatest divergence in 2011 and 2016.
+Looking at small differences here of around 5 deaths per 100,000.
