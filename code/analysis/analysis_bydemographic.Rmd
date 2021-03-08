@@ -299,20 +299,38 @@ council_strokesbyca %>%
   aes(x = age_group, y = mortality, group = sex, fill = sex) +
   geom_col(position = "dodge")
 ```
-These graphs reinforce the idea that men are accessing hospital care more often than women and all genders, particularly in the 75 + group and that women in this age group have slightly higher mortalities.
-Inconclusive, but it might make sense to explore the grouping of women over the age of 75 and perhaps this group could be contacted with stroke symptoms and actions leaflets.
+Men have slightly higher mortality rates for all age groups under 74.
+For the 75+ group, women have the highest mortality.
 
+## Incidence
 ```{r}
-council_strokesbyca %>% 
-  group_by(age_group, sex) %>% 
-  summarise(mortality = mean(crude_rate_mortality, na.rm = TRUE)) %>% 
+incidence_by_hb %>% 
+  group_by(age, sex) %>% 
+  summarise(incidence = mean(easr, na.rm = TRUE)) %>% 
   ggplot() +
-  aes(x = age_group, y = mortality, group = sex, fill = sex) +
+  aes(x = age, y = incidence, group = sex, fill = sex) +
   geom_col(position = "dodge")
 ```
-The disparity in mortalities by gender is most pronounced in the 75 plus age group.
+Men have higher incidence rates than women and all genders in all age groups. 
 
-## Diagnosis
+## Percent death by incidence by age and gender
+```{r}
+percent_table <- incidence_by_hb %>% 
+  group_by(age, sex) %>% 
+  summarise(incidence = mean(easr, na.rm = TRUE)) %>% 
+  rename("age_group" = "age")
+
+healthboard_strokesbyhb %>% 
+  group_by(age_group, sex) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  inner_join(percent_table) %>% 
+  ggplot() +
+  aes(x = age_group, y = mortality / incidence * 100, group = sex, fill = sex) +
+  geom_col(position = "dodge")
+```
+From 45 years upwards, women have the highest number of deaths per incident. Under 44 males have the highest number of deaths per incident
+
+## Mortality by Diagnosis
 ```{r}
 council_strokesbyca %>% 
   group_by(sex, age_group, diagnosis) %>%
@@ -325,16 +343,9 @@ council_strokesbyca %>%
 ```
 We start to see that younger women with SH, especially the 45-64 age group, are dying more often from SH than male and all genders, where men in this age group are more likely to die from stroke.
 
-## Incidence
-```{r}
-incidence_by_hb %>% 
-  group_by(sex, age) %>% 
-  summarise(incidence = mean(easr, na.rm = TRUE)) %>% 
-  ggplot() +
-  aes(x = age, y = incidence, group = sex, fill = sex) +
-  geom_col(position = "dodge")
-```
-No unseen trends here.
+## Incidence per diagnosis
+
+## Percent deaths per incidence by diagnosis.
 
 # Healthboard
 
