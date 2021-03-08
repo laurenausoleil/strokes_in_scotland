@@ -13,3 +13,64 @@ analysis_q1_q2/difference in discharges
 ----
 
 No significant differences. Greatest difference is in discharges rates in Glasgow with a difference of 30 discharges per 100,000 population.
+
+----
+Are there any differences in stroke metrics between different demographics (e.g. sex, age group)?
+----
+
+# Gender
+analysis_bydemographic/gender/diagnosis
+  Women die from SH proportionally more than men.
+  
+analysis_bydemographic/gender/incidence
+  Men have higher rates of incidence than women and other genders
+  
+analysis_bydemographic/gender/gender incidence over time
+With mean:
+  All groups trending in decrease, with female incidence rates being the most volatile.
+  Female incidents rising since 2016, all genders slightly increasing since 2016.
+With median: 
+  Most significant decrease in 2010, then no significant change. 
+  Fluctuation 2010-2014, stasis or increase 2014-2018.
+  
+analysis_bydemographic/gender/Gender mortality over time
+  Mortalities for male have outstripped females in 2013, 2016 and 2018.
+  All mortality rates declining.
+  Mortality rates for the most recent figures showed male with highest mortalities
+  
+# Age
+
+analysis_bydemographic/age/mortality
+  Most deaths in 75 plus age group (435 deaths per 100,000 EASR), followed by 65-74 group (57), 45-64 (11) then 0-44 (1).
+  
+analysis_bydemographic/age/Trends in age group diagnoses over time/mortality
+  No upwards trends in mortality by stroke.
+  Mortality has decreased significantly for the over 75 group and remained static for all other age groups.
+  
+analysis_bydemographic/age/diagnosis/mortality
+  Stroke accounts for consistent proportion of mortalities across all age groups.
+  CD is the highest killer for all age groups and proportion of death by CD increases with age.
+  Proportion of death by SH decreases with age group.
+  
+analysis_bydemographic/age/diagnosis/discharges
+  Stroke discharges increase with age group.
+  CD is the most common diagnosis and accounts for consistent proportion of discharges across all age groups.
+  Proportion of SH hospital activity decreases with age group
+  
+Combined
+  Although we see more hospital activity for stroke as age group increase, we do not see the proportion of deaths by stroke increasing.
+  Although proportion of hospital activity for CD is consistent across age groups, it accounts for a higher proportion of mortalities for older age groups. i.e CD appears to be more fatal for older groups.
+  SH is affecting and killing younger age groups more than older age groups.
+  
+analysis_bydemographic/age/diagnosis/Ratio activity to deaths
+  Percentage of deaths by hospital activity increases with age group.
+  SH is the most fatal diagnosis for all groups under 75 years.
+  Death by stroke does not increase as significantly for stroke diagnosis in the 75 plus age group as it does for all other age groups.
+  
+analysis_bydemographic/age/diagnosis/Mortality by age and diagnosis over time
+  We see decrease in mortalities for the 75 plus age group with CD and stroke, but not SH. All other age groups have consistent mortality rates for all diagnoses.
+  
+
+  
+  
+  
