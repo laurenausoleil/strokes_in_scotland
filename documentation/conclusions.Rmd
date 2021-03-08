@@ -119,8 +119,23 @@ analysis_bydemographic/council/Council mortality rates over time for highest and
   Downward trend in mortalities for both groupings, with all time highest mortality councils decreasing more significantly than lowest.
   Seeing greatest divergence in 2011 and 2016.
   Looking at small differences here of around 5 deaths per 100,000.
+  
+# SIMD
 
+analysis_bysimd/discharges
+  More hospital activity with higher deprivation.
   
+analysis_bysimd/discharges over time
+  Difference between hospital activity rates for deprivation quintiles is increasing over time, particularly for the 2 most deprived quintiles.
+
+analysis_bysimd/mortality
+  Mortalities increase with deprivation.
+  Chance of dying from stroke doubles from the least to the most deprived deciles.
   
-  
-  
+analysis_bysimd/Num mortalities per hospital discharge by quintile
+  Highest ratio of deaths:hospital discharge actually occurs in the 4th quintile, or the 2nd least dperived quintile.
+
+analysis_bysimd/Mortalities by age group and SIMD
+  Mortality is higher for those in the most deprived decile.
+  SIMD has the highest impact on mortality for the under 65 age group. 
+  189.5 people per 100,000 under 65 (adjusted) die of strokes in the most deprived decile, compared to just 42.3 of those in the least deprived decile.

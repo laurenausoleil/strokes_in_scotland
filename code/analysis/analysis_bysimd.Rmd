@@ -25,6 +25,7 @@ discharges_bysimd %>%
   ggplot(aes(x = deprivation_quintile, y = avg_discharges)) +
   geom_col()
 ```
+More hospital activity with higher deprivation.
 
 ## discharges over time
 ```{r}
@@ -93,6 +94,16 @@ Highest ratio of deaths:hospital discharge actually occurs in the 4th quintile, 
 
 ```{r}
 mortality_bysimd %>% 
+  group_by(simd_decile, age_group) %>% 
+  summarise(avg_mortality = mean(smr_mortality, na.rm = T)) %>% 
+  ggplot(aes(x = simd_decile, y = avg_mortality, group = age_group, fill = age_group)) +
+  geom_col(position = "dodge")
+```
+Mortality is higher for those in the most deprived decile.
+This is most pronounced for the under 65 age group.
+
+```{r}
+mortality_bysimd %>% 
   filter(age_group == "under65") %>% 
   group_by(simd_decile) %>% 
   summarise(avg_mortality = mean(smr_mortality, na.rm = T)) %>% 
@@ -109,7 +120,7 @@ mortality_bysimd %>%
   filter(age_group != "All") %>% 
   summarise(avg_mortality = mean(smr_mortality, na.rm = T)) %>% 
   ggplot(aes(x = simd_decile, y = avg_mortality, group = age_group, fill = age_group, col = age_group)) +
-  geom_col()
+  geom_col(position = "dodge")
 ```
 
 SIMD has the highest impact on mortality for the under 65 age group. 189.5 people per 100,000 adjusted die of strokes in the most deprived decile, compared to just 42.3 of those in the least deprived decile.
