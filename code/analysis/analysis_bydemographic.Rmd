@@ -104,7 +104,7 @@ incidence_by_hb %>%
   aes(x = year, y = incidence, group = sex, col = sex) +
   geom_line() +
   labs(
-    title = "Incidents by Gender 2009-2018"
+    title = "Median incidents by Gender 2009-2018"
   )
 ```
 ```{r}
@@ -165,6 +165,7 @@ Both graphs show us that stroke diagnoses are more common with age, affecting th
 This is not surprising information, but the mortality rates for age group do suggest that if our aim is to reduce mortalities by stroke diagnoses, we should target inerventions a the 65+ or 75+ age groups.
 
 ## Trends in age group diagnoses over time
+stays
 ```{r}
 council_strokesbyca %>% 
   group_by(age_group, approx_year) %>% 
@@ -175,6 +176,7 @@ council_strokesbyca %>%
 ```
 This graph shows decline or stasis for hospital admission rates for allage groups between 2014 and 2018. The only noticeable change in hospital stays is a reduction in hospital admissions for the over 75s, which may indicate succesful strategies in these years that could be reproduced for other age groups.
 
+mortality
 ```{r}
 council_strokesbyca %>% 
   group_by(age_group, approx_year) %>% 
@@ -183,9 +185,10 @@ council_strokesbyca %>%
   aes(x = approx_year, y = mortality, group = age_group, col = age_group) +
   geom_line()
 ```
- No upwards trends in mortality by stroke. Note that mortality has decreased significantly for the over 75 group so we may be able to identify and copy strategies which have been implemented and extend these to 65 - 74 age group whose mortality has decreased less dramatically since 2009. Alternatively, this may reflect an increase in mortalities from other factors or a change in recording of cause of death. 
+No upwards trends in mortality by stroke. Note that mortality has decreased significantly for the over 75 group so we may be able to identify and copy strategies which have been implemented and extend these to 65 - 74 age group whose mortality has decreased less dramatically since 2009. Alternatively, this may reflect an increase in mortalities from other factors or a change in recording of cause of death. 
  
 ## Diagnosis
+Mortality
 ```{r}
 council_strokesbyca %>% 
   group_by(age_group, diagnosis) %>%
@@ -208,7 +211,38 @@ council_strokesbyca %>%
     title = "Proportion of diagnoses by age group"
   )
 ```
-This shows that if we want to decrease mortalities overall we should focus on CD, but that there SH acts differently to the other diagnoses and actually decreases in fatality with age.
+This shows that if we want to decrease mortalities overall we should focus on CD, but that SH acts differently to the other diagnoses and actually decreases in fatality with age.
+
+discharges
+```{r}
+council_strokesbyca %>% 
+  group_by(age_group, diagnosis) %>%
+  summarise(discharges = mean(easr_discharge, na.rm = TRUE)) %>% 
+  ggplot() +
+    aes(x = age_group, y = discharges, group = diagnosis, fill = diagnosis) +
+  geom_col(position = "fill") +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+  labs(
+    title = "Proportion of discharges by diagnoses and age group"
+  )
+```
+
+Ratio activity to deaths
+```{r}
+council_strokesbyca %>% 
+  group_by(age_group, diagnosis) %>%
+  summarise(discharges = mean(easr_discharge, na.rm = TRUE),
+            mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  ggplot() +
+    aes(x = age_group, y = mortality / discharges * 100, 
+        group = diagnosis, fill = diagnosis) +
+  geom_col(position = "dodge") +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+  labs(
+    title = "Percentage of deaths by hospital discharges",
+    subtitle = "shown by diagnoses and age group"
+  )
+```
 
 ```{r}
 council_strokesbyca %>% 
