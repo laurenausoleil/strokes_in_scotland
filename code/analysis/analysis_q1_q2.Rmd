@@ -142,6 +142,7 @@ ggplot(stayrates_pivoted) +
 
 No significant differences in stay rates recorded at health board or council area level
 
+### Difference in stay rates
 ```{r}
 ggplot(stayrates) +
   aes(x = healthboard_area_named, y = avg_stayrate_ca - avg_stayrate_hb) +
@@ -151,7 +152,7 @@ ggplot(stayrates) +
 
 Differences in average stay rate are most pronounced in Glasgow with a difference in crude rate per 100,000 population of around 10 stays. This does not seem significant.
 
-## Deaths
+## Difference in Mortalities
 ```{r}
 ratedeaths_byhb <- healthboard_strokesbyhb %>% 
   group_by(healthboard_area_named) %>% 
@@ -176,7 +177,7 @@ ggplot(deathrates) +
 
 No significant difference in recording of mortalities
 
-## Discharges
+## Difference in Discharges
 ```{r}
 ratedischarges_byhb <- healthboard_strokesbyhb %>% 
   group_by(healthboard_area_named) %>% 
@@ -199,4 +200,4 @@ ggplot(dischargerates) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 ```
 
-Less than 30 per 100,000 anomaly between discharge rates by ca vs hb. No significant conclusions.
+Greatest anomaly = just over 30 per 100,000 anomaly between discharge rates by ca vs hb. No significant conclusions.
