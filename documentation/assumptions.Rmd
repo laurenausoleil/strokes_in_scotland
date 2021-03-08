@@ -10,3 +10,8 @@ Qualifiers removed, but could be used for extension work.
 
 Losing detail of age groupings from hospital stays will not affect analysis /
 The larger age groupings will allow for a broader, but easier to interpret analysis.
+
+Use EASR whenever available to normalise rates by European standards.
+Order of preference for adjusted metrics: EASR, SMR, crude.
+
+Use mean as standard method of assimilating rates in order to visualise differences in demographics more clearly.
