@@ -68,7 +68,7 @@ council_strokesbyca %>%
   geom_col()
 ```
 Looking at crude rates, women and all genders are recorded with significantly higher mortality rates than males. Though this difference is 10 people per 100,000 of the population or a difference of 0.1%. 
-With standardised rates, we see very little difference
+With standardised rates, we see very little difference.
 
 Considering the fact that men are admitted to hospital more often than those with female or all genders and that there is a slightly lower rate of mortality for men, we may want to investigate the impact of hospital admissions on stroke outcomes and test whether the difference between hospital stay rates by gender is significant. With this information, we may conclude that targetting female and all genders with information about when to seek medical help and ensuring that stroke symptoms in women are sufficiently understood.
 
@@ -99,6 +99,17 @@ Men have higher rates of incidence than women and other genders, but lower rates
 ```{r}
 incidence_by_hb %>% 
   group_by(sex, year) %>% 
+  summarise(incidence = median(easr, na.rm = TRUE)) %>% 
+  ggplot() +
+  aes(x = year, y = incidence, group = sex, col = sex) +
+  geom_line() +
+  labs(
+    title = "Incidents by Gender 2009-2018"
+  )
+```
+```{r}
+incidence_by_hb %>% 
+  group_by(sex, year) %>% 
   summarise(incidence = mean(easr, na.rm = TRUE)) %>% 
   ggplot() +
   aes(x = year, y = incidence, group = sex, col = sex) +
@@ -107,8 +118,12 @@ incidence_by_hb %>%
     title = "Incidents by Gender 2009-2018"
   )
 ```
-Female incidents rising since 2018, all genders slightly increasing since 2018.
-All groups trending in decrease, with female incidence rates being the most volatile.
+
+With mean: All groups trending in decrease, with female incidence rates being the most volatile. Female incidents rising since 2016, all genders slightly increasing since 2016.
+
+With median: Most significant decrease in 2010, then no significant change. Fluctuation 2010-2014, stasis or increase 2014-2018.
+
+Does this mean we're seeing significant reductions in some demogreaphics which are disproportionally affecting the mean values.
 
 ## Gender mortality over time
 ```{r}
