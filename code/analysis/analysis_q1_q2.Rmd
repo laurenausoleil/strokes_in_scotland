@@ -22,35 +22,35 @@ healthboard_strokesbyhb <- read_csv("../../data/clean_data/strokes_byhb.csv",
 What is the most common stroke diagnosis in Scotland?
 ----
 
-This question can best be answered with the available data by looking to number of hospital stays. The incidence rate would be a more suitable metric, but incidence rates by diagnosis were not located during the timeframe of this project.
+This question can best be answered with the available data by looking to number of hospital discharges. The incidence rate would be a more suitable metric, but incidence rates by diagnosis were not located during the timeframe of this project.
 Figures will be generated from both the council area and the healthboard data to provide a check
 
 ## Average rates for hospital stays, discharges and deaths by healthboard
 ```{r}
 diagnosis_totals_byhb <- healthboard_strokesbyhb %>% 
   group_by(diagnosis) %>% 
-  summarise(avg_stays = mean(crude_rate_mortality, na.rm = TRUE),
+  summarise(avg_stays = mean(crude_rate_stays, na.rm = TRUE),
             avg_discharge = mean(easr_discharge, na.rm = TRUE),
             avg_deaths = mean(easr_mortality, na.rm = TRUE))
 ```
 
 ```{r}
 diagnosis_totals_byhb %>% 
-  ggplot(aes(x = diagnosis, y = avg_stays)) +
+  ggplot(aes(x = diagnosis, y = avg_discharge)) +
   geom_col()
 ```
 ## Average rates for hospital stays, discharges and deaths by council
 ```{r}
 diagnosis_totals_byca <- council_strokesbyca %>% 
   group_by(diagnosis) %>% 
-  summarise(avg_stays = mean(crude_rate_mortality, na.rm = TRUE),
+  summarise(avg_stays = mean(crude_rate_stays, na.rm = TRUE),
             avg_discharge = mean(easr_discharge, na.rm = TRUE),
             avg_deaths = mean(easr_mortality, na.rm = TRUE))
 ```
 
 ```{r}
 diagnosis_totals_byca %>% 
-  ggplot(aes(x = diagnosis, y = avg_stays)) +
+  ggplot(aes(x = diagnosis, y = avg_discharge)) +
   geom_col()
 ```
 
