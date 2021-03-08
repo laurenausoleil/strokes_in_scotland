@@ -1,0 +1,15 @@
+----
+What is the most common stroke diagnosis in Scotland?
+analysis_q1_q2/Average rates for hospital stays, discharges and deaths by healthboard 
+----
+
+CD is the most common diagnosis, measured by EASR of hospital discharges, with 479 per 100,000. Followed by Stroke (332), TIAs(64) and SH (19).
+
+----
+Are there any differences when we look at the data by health board vs by local authority?
+analysis_q1_q2/difference in stay rates
+analysis_q1_q2/difference in mortalities
+analysis_q1_q2/difference in discharges
+----
+
+No significant differences. Greatest difference is in discharges rates in Glasgow with a difference of 30 discharges per 100,000 population.
