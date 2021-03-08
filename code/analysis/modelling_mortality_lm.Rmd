@@ -84,3 +84,10 @@ glmulti_fit <- glmulti(
 )
 ```
 
+After 540 generations:
+Best model: easr_mortality~1+approx_year+healthboard_area_named+age_group+diagnosis+age_group:approx_year+diagnosis:approx_year+diagnosis:age_group
+Crit= 56747.1369383886
+Mean crit= 57142.7209793599
+Improvements in best and average IC have bebingo en below the specified goals.
+Algorithm is declared to have converged.
+Completed.

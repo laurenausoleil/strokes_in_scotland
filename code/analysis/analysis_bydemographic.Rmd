@@ -516,6 +516,7 @@ council_strokesbyca %>%
 
 Greatest divergences in 2010 and 2015, which are the years after the two government strategies, but these distinctions are less clear with 5 highest and lowest mortality councils.
 
+### Mean 
 ```{r}
 high_mortality_council_2018 <- council_strokesbyca %>% 
   filter(approx_year == 2018) %>% 
@@ -548,7 +549,7 @@ council_strokesbyca %>%
   geom_line() +
   labs(
     title = "Adjusted mortality rates by council",
-    subtitle = "Mortality rates for the 10 highest and lowest adjusted mortality rates from stroke in 2018"
+    subtitle = "Mortality rates for the 10 highest and lowest adjusted mortality rates from stroke in 2018 using mean"
   )
 ```
 
@@ -567,5 +568,42 @@ council_strokesbyca %>%
   geom_line()
 ```
 Outliers in 2010, 2011, 2013, 2015, 2016 and 2018.
+
+### Median
+```{r}
+high_mortality_council_2018_median <- council_strokesbyca %>% 
+  filter(approx_year == 2018) %>% 
+  group_by(council_area_named) %>% 
+  summarise(mortality = median(easr_mortality, na.rm = TRUE)) %>% 
+  slice_max(mortality, n = 10) %>% 
+  pull(council_area_named)
+
+low_mortality_council_2018_median <- council_strokesbyca %>%  
+  filter(approx_year == 2018) %>% 
+  group_by(council_area_named) %>% 
+  summarise(mortality = median(easr_mortality, na.rm = TRUE)) %>% 
+  slice_min(mortality, n = 10) %>% 
+  pull(council_area_named)
+```
+
+
+
+```{r}
+council_strokesbyca %>% 
+  filter(council_area_named %in% high_mortality_council_2018_median |
+           council_area_named %in% low_mortality_council_2018_median) %>% 
+  mutate(high_low = if_else(
+    council_area_named %in% high_mortality_council_2018_median, "high", "low"
+  )) %>% 
+  group_by(high_low, approx_year) %>% 
+  summarise(mortality = median(easr_mortality, na.rm = TRUE)) %>% 
+  ggplot() +
+  aes(x = approx_year, y = mortality, group = high_low, col = high_low) +
+  geom_line() +
+  labs(
+    title = "Adjusted mortality rates by council",
+    subtitle = "Mortality rates for the 10 highest and lowest adjusted mortality rates from stroke in 2018 using median"
+  )
+```
 
 
