@@ -57,20 +57,48 @@ analysis_bydemographic/age/diagnosis/discharges
   CD is the most common diagnosis and accounts for consistent proportion of discharges across all age groups.
   Proportion of SH hospital activity decreases with age group
   
-Combined
-  Although we see more hospital activity for stroke as age group increase, we do not see the proportion of deaths by stroke increasing.
-  Although proportion of hospital activity for CD is consistent across age groups, it accounts for a higher proportion of mortalities for older age groups. i.e CD appears to be more fatal for older groups.
-  SH is affecting and killing younger age groups more than older age groups.
-  
 analysis_bydemographic/age/diagnosis/Ratio activity to deaths
   Percentage of deaths by hospital activity increases with age group.
   SH is the most fatal diagnosis for all groups under 75 years.
   Death by stroke does not increase as significantly for stroke diagnosis in the 75 plus age group as it does for all other age groups.
   
 analysis_bydemographic/age/diagnosis/Mortality by age and diagnosis over time
-  We see decrease in mortalities for the 75 plus age group with CD and stroke, but not SH. All other age groups have consistent mortality rates for all diagnoses.
+  We see decrease in mortalities for the 75 plus age group with CD and stroke, but not SH.     All other age groups have consistent mortality rates for all diagnoses.
   
+# Gender and Age
 
+analysis_bydemographic/gender and age/mortality
+  Men have slightly higher mortality rates for all age groups under 74.
+  For the 75+ group, women have the highest mortality.
+
+analysis_bydemographic/gender and age/incidence
+  Men have the highest incidence rates for all age groups.
+  
+analysis_bydemographic/gender and age/Percent death by incidence by age and gender
+  From 45 years upwards, women have the highest number of deaths per incident. 
+  From 0-44 years males have the highest number of deaths per incident
+  
+analysis_bydemographic/gender and age/Mortality by Diagnosis
+  Younger women with SH, especially the 45-64 age group, are dying more often from SH than male and all genders.
+  Men in the 45-64 age group are more likely to die from stroke.
+  
+# Healthboard
+
+analysis_bydemographic/healthboard/mortality
+  Differences between health boards of 12.5 deaths per 100,000 population (adjusted).
+
+analysis_bydemographic/healthboard/incidence
+  Differences of up to 100 cases per 100,000 (adjusted) between different healthboards.
+  Greater Glasgow & Clyde have the highest incidences and Orkney has the lowest numbers.
+
+analysis_bydemographic/healthboard/incidence mortality
+  Higher mortalities per incidence in Lanarkshire, Highlands, Grampian and Western Isles.
+  Lower mortalities per incidence in the Borders, Tayside, Lothian and Fife.
+
+analysis_bydemographic/healthboard/
+
+analysis_bydemographic/healthboard/
+  
   
   
   

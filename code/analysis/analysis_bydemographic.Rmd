@@ -343,10 +343,6 @@ council_strokesbyca %>%
 ```
 We start to see that younger women with SH, especially the 45-64 age group, are dying more often from SH than male and all genders, where men in this age group are more likely to die from stroke.
 
-## Incidence per diagnosis
-
-## Percent deaths per incidence by diagnosis.
-
 # Healthboard
 
 ## Stays
@@ -413,7 +409,7 @@ healthboard_table %>%
     title = "Comparing incidence rates and hospital visits by Health Board"
   )
 ```
-Island health boards have more hospital stays per incident of stroke than land based health board.
+Island health boards have more hospital stays per incident of stroke than land based health board, but hospital stays are not normalised.
 
 incidence mortality
 ```{r}
@@ -444,6 +440,7 @@ healthboard_strokesbyhb %>%
 ```
 Outliers in 2011, 2013, 2015 and 2018.
 
+Grouping high and low mortality boards for 2018 values, Mean.
 ```{r}
 high_mortality_healthboard_2018 <- healthboard_strokesbyhb %>% 
   filter(approx_year == 2018) %>% 
@@ -472,7 +469,7 @@ healthboard_strokesbyhb %>%
   aes(x = approx_year, y = mortality, group = high_low, col = high_low) +
   geom_line()
 ```
-
+Grouping high and low mortality boards for all values, Mean.
 ```{r}
 high_mortality_healthboard <- healthboard_strokesbyhb %>% 
   group_by(healthboard_area_named) %>% 
