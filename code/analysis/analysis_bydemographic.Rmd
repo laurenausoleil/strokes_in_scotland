@@ -458,8 +458,6 @@ low_mortality_healthboard_2018 <- healthboard_strokesbyhb %>%
 ```
 ```{r}
 healthboard_strokesbyhb %>% 
-  filter(healthboard_area_named %in% high_mortality_healthboard_2018 |
-           healthboard_area_named %in% low_mortality_healthboard_2018) %>% 
   mutate(high_low = if_else(
     healthboard_area_named %in% high_mortality_healthboard_2018, "high", "low"
   )) %>% 
@@ -499,6 +497,64 @@ healthboard_strokesbyhb %>%
 ```
 
 ## Proportion of mortalities by incidents by health board over time
+```{r}
+percent_table2 <- incidence_by_hb %>% 
+  group_by(health_board, year) %>% 
+  summarise(incidence = mean(easr, na.rm = TRUE)) %>% 
+  rename("healthboard_area_named" = "health_board",
+         "approx_year" = "year") %>% 
+  mutate(healthboard_area_named = if_else(
+    str_detect(healthboard_area_named, "NHS"),
+    str_sub(healthboard_area_named, start = 5, end = -1),
+    healthboard_area_named
+    )
+  )
+
+healthboard_strokesbyhb %>% 
+  group_by(healthboard_area_named, approx_year) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  inner_join(percent_table2) %>% 
+  mutate(percent_deathbyincident = mortality / incidence * 100) %>% 
+  ggplot() +
+  aes(x = approx_year, y = percent_deathbyincident, group = healthboard_area_named, col = healthboard_area_named) +
+  geom_line() +
+  geom_point()
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+
+Percent deaths over time grouped by high and low mortality boards
+```{r}
+percent_table2 <- incidence_by_hb %>% 
+  rename("healthboard_area_named" = "health_board",
+         "approx_year" = "year") %>% 
+  mutate(healthboard_area_named = if_else(
+    str_detect(healthboard_area_named, "NHS"),
+    str_sub(healthboard_area_named, start = 5, end = -1),
+    healthboard_area_named
+    )
+  ) %>% 
+  mutate(high_low = if_else(
+    healthboard_area_named %in% high_mortality_healthboard, "high", "low"
+  )) %>% 
+  group_by(high_low, approx_year) %>% 
+  summarise(incidence = mean(easr, na.rm = TRUE))
+
+
+healthboard_strokesbyhb %>% 
+  mutate(high_low = if_else(
+    healthboard_area_named %in% high_mortality_healthboard, "high", "low"
+  )) %>% 
+  group_by(high_low, approx_year) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  inner_join(percent_table2) %>% 
+  group_by(high_low, approx_year) %>% 
+  mutate(percent_deathbyincident = mortality / incidence * 100) %>% 
+  ggplot() +
+  aes(x = approx_year, y = percent_deathbyincident, group = high_low, col = high_low) +
+  geom_line() +
+  geom_point()
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
 
 
 ## Diagnosis
@@ -512,7 +568,6 @@ healthboard_strokesbyhb %>%
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 ```
 Higher mortality from stroke in Shetland vs normal distribution of deaths per diagnosis.
-
 
 # Council
 
