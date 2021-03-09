@@ -18,38 +18,38 @@ Original brief accessible in documentation folder of this project.
 
 #### Data
 
-*Sources*
+##### Sources
 
-* Scottish Stroke Statistics: Stroke Activity By Health Board/Council Area 2009 - 2018
+**Scottish Stroke Statistics: Stroke Activity By Health Board/Council Area 2009 - 2018**
 Number of discharges, crude rate and EASR per 100,000 population by year, gender, age, sex and council area OR NHS board.
 https://www.opendata.nhs.scot/dataset/scottish-stroke-statistics
 
-* Scottish Stroke Statistics: Stroke Mortality By Health Board/Council Area 2009/10 - 2018/19
+**Scottish Stroke Statistics: Stroke Mortality By Health Board/Council Area 2009/10 - 2018/19**
 Number of mortalities, crude rate and EASR per 100,000 population by year, gender, age, sex and council area OR NHS board.
 https://www.opendata.nhs.scot/dataset/scottish-stroke-statistics
 
-* Inpatient and Daycare Administrative Dataset 2014/15 - 2018/19
+**Inpatient and Daycare Administrative Dataset 2014/15 - 2018/19**
 Hospital stays and crude rate per 100,000 population by year, gender, age, sex and council area OR NHS board.
 https://www.isdscotland.org/Health-Topics/Hospital-Care/Diagnoses/
 
-* IS1 - Cerebrovascular Disease incidence by health board, age group and sex
+**IS1 - Cerebrovascular Disease incidence by health board, age group and sex**
 Cases, crude rate and EASR per 100,000 population per year, health board, age group and sex.
 https://www.isdscotland.org/Health-Topics/Stroke/Publications/data-tables2017.asp
 
-* DS1 - Cerebrovascular Disease and deprivation; standardised mortality ratios (SMR) by age group and SIMD deciles
+**DS1 - Cerebrovascular Disease and deprivation; standardised mortality ratios (SMR) by age group and SIMD deciles**
 https://www.isdscotland.org/Health-Topics/Stroke/Publications/data-tables2017.asp
 
-* DS4 - Trends in stroke hospital activity by SIMD quintile
+**DS4 - Trends in stroke hospital activity by SIMD quintile**
 Hospital stays, crude rate and EASR per 100,000 population by year and SIMD
 https://www.isdscotland.org/Health-Topics/Stroke/Publications/data-tables2017.asp
 
-*Structure*
+##### Structure
 
-```{r, echo=FALSE, out.width = '100%'}
+```{r, echo=FALSE, out.width = '100%', fig.align = 'left'}
 knitr::include_graphics("images/updated_data_model_diagram.png")
 ```
 
-*Data Quality Issues*
+##### Data Quality Issues
 
 * All data from reputable sources. Minimal bias and quality issues assumed.
 
@@ -65,17 +65,76 @@ knitr::include_graphics("images/updated_data_model_diagram.png")
 Analysis - findings and visualisations
 ----
 
-* What is the most common stroke diagnosis in Scotland?
-* Are there any differences when we look at the data by health board vs by local authority?
-* Are there differences in mortality rates (mortality EASR) for different types of stroke? Does this vary with demographics?
-* Are there any differences in stroke diagnoses between different demographics?
-    1. Gender
-    2. Age
-    3. Gender and Age
-    4. Healthboard
-    5. Council
-    6. SIMD
-    7. Age Group and SIMD
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+library(tidyverse)
+```
+
+```{r}
+council_strokesbyca <- read_csv("../data/clean_data/strokes_byca.csv",
+                                col_types = cols(hospitalstays = col_double(),
+                                            crude_rate_stays = col_double()))
+healthboard_strokesbyhb <- read_csv("../data/clean_data/strokes_byhb.csv",
+                                col_types = cols(hospitalstays = col_double(),
+                                            crude_rate_stays = col_double()))
+
+council_strokesbyca <- read_csv("../data/clean_data/strokes_byca.csv",
+                                col_types = cols(hospitalstays = col_double(),
+                                            crude_rate_stays = col_double()))
+healthboard_strokesbyhb <- read_csv("../data/clean_data/strokes_byhb.csv",
+                                col_types = cols(hospitalstays = col_double(),
+                                            crude_rate_stays = col_double()))
+
+incidence_by_hb <- read_csv("../data/clean_data/incidence_byhb.csv")
+
+discharges_bysimd <- read_csv("../data/clean_data/discharges_bysimd.csv")
+
+mortality_bysimd <- read_csv("../data/clean_data/mortality_bysimd2013-2017")
+```
+
+
+#### What is the most common stroke diagnosis in Scotland?
+
+* For both healthboard and council area, CD is the most common stroke diagnosis recorded for hospital stays, hospital discharges and deaths.
+
+**Table summarising key metrics by diagnosis**
+
+```{r}
+knitr::kable(council_strokesbyca %>% 
+  group_by(diagnosis) %>% 
+  summarise(avg_discharge_easr = mean(easr_discharge, na.rm = TRUE),
+            avg_deaths_easr = mean(easr_mortality, na.rm = TRUE),
+            prop_death_by_discharge = avg_deaths_easr / avg_discharge_easr * 100) %>% 
+  rename("Diagnosis" = "diagnosis",
+         "Discharge (EASR)" = "avg_discharge_easr",
+         "Mortality (EASR)" = "avg_deaths_easr",
+         "Number of Deaths per 100 Discharges" = "prop_death_by_discharge")
+)
+```
+
+#### Are there differences in mortality rates for different types of stroke? Does this vary with demographics?
+
+* CD is the biggest killer per 100 discharges from hospital followed by Stroke and SH.
+
+----
+Lauren come back to this section to answer Does this vary with demographics?
+____
+
+#### Are there any differences in reporting between health board and local authority?
+
+* No significant discrepancies found.
+
+#### Are there any differences in stroke diagnoses between different demographics?
+
+##### Gender
+
+
+##### Age
+##### Gender and Age
+##### Healthboard
+##### Council
+##### SIMD
+##### Age Group and SIMD
 
 ----
 Key findings and Recommendations
@@ -86,43 +145,53 @@ Key findings and Recommendations
 *
 *
 
-# How can Scottish health services most effectively prevent and treat stroke diagnoses?
-# What measures have been successful in the treatment and prevention of stroke?
-# Which demographics should we target for stroke intervention?
+#### How can Scottish health services most effectively prevent and treat stroke diagnoses?
+#### What measures have been successful in the treatment and prevention of stroke?
+#### Which demographics should we target for stroke intervention?
 
 
 ----
 Additional Information
 ----
 
-# Methodology
+#### Methodology
 
-## Metrics Chosen
+##### Metrics Chosen
 
 mean/median
 
-## Tools Used
+##### Tools Used
 
-## Project Structure
+##### Project Structure
 
-# Definitions
+#### Definitions
 
-*Stroke*
+**Stroke**
+
 * One of three possible diagnoses of Cerebrovascular diseases.
 * Used in report and analysis to refer to all Cerebrovascular Diseases to aid ease of understanding.
-*Subarachnoid Haemorrhage*
+
+**Subarachnoid Haemorrhage**
+
 * One of three possible diagnoses of Cerebrovascular diseases.
-*TIAs and other symptoms*
+
+**TIAs and other symptoms**
+
 * Transient Ischemic Attacks (commonly known as mini-strokes) and other symptoms
 * One of three possible diagnoses of Cerebrovascular diseases.
-*Cerebrovascular Disease*
+
+**Cerebrovascular Disease**
+
 * "Cerebrovascular Disease (CVD) is a condition that develops as a result of problems with the blood vessels supplying the brain. This can cause a stroke, a transient ischaemic attack (TIA) or a subarachnoid haemorrhage."
 *   - From Scottish Government Stroke Improvement Plan, 2014, accessed at https://www.gov.scot/publications/stroke-improvement-plan/pages/3/
-*Crude Rate*
-*EASR*
-*SMR*
+
+**Crude Rate**
+
+**EASR**
+
+**SMR**
   
-# Assumptions
+#### Assumptions
 
 * financial year can be compared to calendar year without signifcantly undermining the analysis
 
@@ -139,6 +208,6 @@ Order of preference for adjusted metrics: EASR, SMR, crude.
 
 Use mean as standard method of assimilating rates in order to visualise differences in demographics more clearly.
 
-# Data Assessment
+#### Data Assessment
 
 Copy from data analysis plan.

@@ -43,8 +43,8 @@ diagnosis_totals_byhb %>%
 ```{r}
 diagnosis_totals_byca <- council_strokesbyca %>% 
   group_by(diagnosis) %>% 
-  summarise(avg_stays = mean(crude_rate_stays, na.rm = TRUE),
-            avg_discharge = mean(easr_discharge, na.rm = TRUE),
+  summarise(avg_discharge = mean(easr_discharge, na.rm = TRUE),
+            avg_stays = mean(crude_rate_stays, na.rm = TRUE),
             avg_deaths = mean(easr_mortality, na.rm = TRUE))
 ```
 
