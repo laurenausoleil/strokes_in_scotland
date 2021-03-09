@@ -66,7 +66,7 @@ Analysis - findings and visualisations
 ----
 
 ```{r setup, include = FALSE}
-knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, out.width = '100%')
 library(tidyverse)
 ```
 
@@ -116,9 +116,24 @@ knitr::kable(council_strokesbyca %>%
 
 * CD is the biggest killer per 100 discharges from hospital followed by Stroke and SH.
 
-----
-Lauren come back to this section to answer Does this vary with demographics?
-____
+# Come back to this section to answer Does this vary with demographics?
+
+```{r}
+council_strokesbyca %>% 
+# filter year to remove high values from years prior to 2013 in order to make graph more readable
+  filter(age_group != "All" & age_group != "under75 years" & approx_year > 2013) %>% 
+  group_by(age_group, approx_year, diagnosis) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  ggplot() +
+  aes(x = approx_year, y = mortality, group = diagnosis, col = diagnosis) +
+  geom_line() +
+  facet_wrap(~age_group) +
+  labs(
+    title = "Mortality by age and diagnosis over time"
+  )
+```
+* Mortality rates have fallen for the 75+ group with CD and Stroke.
+* Mortality rates have remained static for all other age and diagnosis groupings.
 
 #### Are there any differences in reporting between health board and local authority?
 
@@ -128,8 +143,129 @@ ____
 
 ##### Gender
 
+* Women die from SH proportionally more than men.
+```{r}
+council_strokesbyca %>% 
+  group_by(sex, diagnosis) %>%
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  ggplot() +
+    aes(x = diagnosis, y = mortality, group = sex, fill = sex) +
+  geom_col(position = "fill") +
+  labs(
+    title = "Proportion of mortalities for each diagnosis",
+    subtitle = "Separated by gender"
+  )
+```
+  
+* Men have higher rates of incidence than women and other genders
+
+```{r}
+incidence_by_hb %>% 
+  group_by(sex, year) %>% 
+  summarise(incidence = mean(easr, na.rm = TRUE)) %>% 
+  ggplot() +
+  aes(x = year, y = incidence, group = sex, col = sex) +
+  geom_line() +
+  labs(
+    title = "Incidents by Gender 2009-2018"
+  )
+```
+
+* All genders trending in decrease of incidents
+* Female incidence rates are the most volatile.
+* Female incidents rising since 2016, all genders slightly increasing since 2016.
+
+* Mortality does not vary significantly with gender
+```{r}
+council_strokesbyca %>% 
+  group_by(sex, approx_year) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  ggplot() +
+  aes(x = approx_year, y = mortality, group = sex, col = sex) +
+  geom_line() +
+  labs(
+    title = "Mortality by Gender 2009-2018"
+  )
+```
+
+* Although men have higher incidence rates than women, they have similar levels of mortality. More women die per episode of stroke diagnosis than men.
 
 ##### Age
+
+* Mortality, discharge and proportion of deaths per discharge increase with age.
+
+**Table summarising key metrics by age group**
+```{r}
+knitr::kable(council_strokesbyca %>% 
+  filter(age_group != "All" & age_group != "under75 years") %>% 
+  group_by(age_group) %>% 
+  summarise(avg_discharge_easr = mean(easr_discharge, na.rm = TRUE),
+            avg_deaths_easr = mean(easr_mortality, na.rm = TRUE),
+            prop_death_by_discharge = avg_deaths_easr / avg_discharge_easr * 100) %>% 
+  rename("Age Group" = "age_group",
+         "Discharge (EASR)" = "avg_discharge_easr",
+         "Mortality (EASR)" = "avg_deaths_easr",
+         "Number of Deaths per 100 Discharges" = "prop_death_by_discharge")
+)
+```
+  
+  * Mortality by stroke has decreased significantly for the over 75 group between 2009 and 2018
+  * Mortality rates for all other age groups have remained static in this time
+
+```{r}
+council_strokesbyca %>% 
+  group_by(age_group, diagnosis) %>%
+  summarise(discharges = mean(easr_discharge, na.rm = TRUE)) %>% 
+  ggplot() +
+    aes(x = age_group, y = discharges, group = diagnosis, fill = diagnosis) +
+  geom_col(position = "fill") +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+  labs(
+    title = "Proportion of discharges by diagnoses and age group"
+  )
+```
+* Stroke discharges increase with age group.
+* CD is the most common diagnosis and accounts for consistent proportion of discharges across all age groups.
+* SH accounts for a proportion of hospital activity in younger age groups than in older age groups.
+
+```{r}
+council_strokesbyca %>% 
+  group_by(age_group, diagnosis) %>%
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  ggplot() +
+    aes(x = age_group, y = mortality, group = diagnosis, fill = diagnosis) +
+  geom_col(position = "fill") +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+  labs(
+    title = "Proportion of mortalities by diagnoses and age group"
+  )
+```
+
+  * Stroke accounts for consistent proportion of mortalities across all age groups.
+  * CD is the highest killer for all age groups and proportion of death by CD increases with age.
+  * SH causes a higher proportion of fatalities in younger age groups than in older age groups.
+
+```{r}
+council_strokesbyca %>% 
+  group_by(age_group, diagnosis) %>%
+  summarise(discharges = mean(easr_discharge, na.rm = TRUE),
+            mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  ggplot() +
+    aes(x = age_group, y = mortality / discharges * 100, 
+        group = diagnosis, fill = diagnosis) +
+  geom_col(position = "dodge") +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+  labs(
+    title = "Percentage of deaths by hospital discharges",
+    subtitle = "shown by diagnoses and age group"
+  )
+```
+* Number of deaths per 100 discharges increases with age group.
+* SH is the most fatal diagnosis for all groups under 75 years.
+* Death by stroke does not increase as significantly for stroke diagnosis in the 75 plus age group as it does for all other age groups.
+
+* No trends found in SH diagnosis by age over time
+
 ##### Gender and Age
 ##### Healthboard
 ##### Council
@@ -139,6 +275,20 @@ ____
 ----
 Key findings and Recommendations
 ----
+
+* CD is the most common and fatal diagnosis
+* Mortality rates have fallen for the 75+ group with CD and Stroke, but not for any other age and diagnosis group (most of the change in mortality rates we publicise is in one area, have we been tagertting this are and what can we learn from it?)
+
+* Women die from SH proportionally more than men.
+* All gender mortalities trending in decrease.
+* Female incidence rates are the most volatile.
+* Female incidents rising since 2016, all genders slightly increasing since 2016.
+* More women die per episode of stroke diagnosis than men.
+* SH causes a higher proportion of fatalities in younger age groups than in older age groups.
+* SH is the most fatal diagnosis for all groups under 75 years.
+* CD is the highest killer for all age groups and proportion of death by CD increases with age.
+
+
 
 # Notable findings
 

@@ -257,7 +257,7 @@ council_strokesbyca %>%
 Mortality by age and diagnosis over time
 ```{r}
 council_strokesbyca %>% 
-# filter year to remove high values from years prior to 2013 in order to make graph mor readable
+# filter year to remove high values from years prior to 2013 in order to make graph more readable
   filter(age_group != "All" & age_group != "under75 years" & approx_year > 2013) %>% 
   group_by(age_group, approx_year, diagnosis) %>% 
   summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
