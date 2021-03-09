@@ -5,9 +5,9 @@ date: "09/03/2021"
 output: html_document
 ---
 
-----
-How can Scottish health services most effectively prevent and treat stroke diagnoses?
-----
+
+# How can Scottish health services most effectively prevent and treat stroke diagnoses?
+
 
 #### Background
 "Cerebrovascular disease develops as a result of problems with the blood vessels supplying oxygen rich blood to the brain.
@@ -61,9 +61,9 @@ knitr::include_graphics("images/updated_data_model_diagram.png")
 
 * Significant number of empty fields in the data. Where summary statistics are calculated, empty fields are ignored.
 
-----
-Analysis - findings and visualisations
-----
+
+# Analysis - findings and visualisations
+
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, out.width = '100%')
@@ -217,7 +217,9 @@ council_strokesbyca %>%
   aes(x = approx_year, y = mortality, group = sex, col = sex) +
   geom_line() +
   labs(
-    title = "Mortality by Gender 2009-2018"
+    title = "Mortality by Gender 2009-2018",
+    x = "Year",
+    y = "Mortality (EASR)"
   )
 ```
 </details>
@@ -338,7 +340,7 @@ healthboard_strokesbyhb %>%
 
 ##### Healthboard
 
-**Table summarising key metrics by health board
+**Table summarising key metrics by health board**
 ```{r}
 healthboard_table <- healthboard_strokesbyhb %>% 
   group_by(healthboard_area_named) %>% 
@@ -469,9 +471,11 @@ council_strokesbyca %>%
 
 ##### Age Group and SIMD
 
-----
-Key findings and Recommendations
-----
+
+# Key findings and Recommendations
+
+
+#### Notable findings
 
 * CD is the most common and fatal diagnosis
 * Mortality rates have fallen for the 75+ group with CD and Stroke, but not for any other age and diagnosis group (most of the change in mortality rates we publicise is in one area, have we been tagertting this are and what can we learn from it?)
@@ -489,8 +493,6 @@ Key findings and Recommendations
 
 
 
-# Notable findings
-
 *
 *
 
@@ -499,9 +501,9 @@ Key findings and Recommendations
 #### Which demographics should we target for stroke intervention?
 
 
-----
-Additional Information
-----
+
+# Additional Information
+
 
 #### Methodology
 
