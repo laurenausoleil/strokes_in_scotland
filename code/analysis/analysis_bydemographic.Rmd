@@ -326,7 +326,11 @@ healthboard_strokesbyhb %>%
   inner_join(percent_table) %>% 
   ggplot() +
   aes(x = age_group, y = mortality / incidence * 100, group = sex, fill = sex) +
-  geom_col(position = "dodge")
+  geom_col(position = "dodge") +
+  labs(
+    title = "Deaths per 100 incidents",
+    subtitle = "grouped by age and gender"
+  )
 ```
 From 45 years upwards, women have the highest number of deaths per incident. Under 44 males have the highest number of deaths per incident
 

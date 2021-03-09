@@ -267,6 +267,37 @@ council_strokesbyca %>%
 * No trends found in SH diagnosis by age over time
 
 ##### Gender and Age
+
+* Men have slightly higher mortality rates for all age groups under 74.
+* For the 75+ group, women have the highest mortality.
+
+* Men have the highest incidence rates for all age groups.
+
+```{r}
+percent_table <- incidence_by_hb %>% 
+  group_by(age, sex) %>% 
+  summarise(incidence = mean(easr, na.rm = TRUE)) %>% 
+  rename("age_group" = "age")
+
+healthboard_strokesbyhb %>% 
+  group_by(age_group, sex) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  inner_join(percent_table) %>% 
+  ggplot() +
+  aes(x = age_group, y = mortality / incidence * 100, group = sex, fill = sex) +
+  geom_col(position = "dodge") +
+  labs(
+    title = "Deaths per 100 incidents",
+    subtitle = "grouped by age and gender"
+  )
+```
+
+* From 45 years upwards, women have the highest number of deaths per incident. 
+* From 0-44 years males have the highest number of deaths per incident
+
+* Younger women with SH, especially the 45-64 age group, are dying more often from SH than male and all genders.
+* Men in the 45-64 age group are more likely to die from stroke.
+
 ##### Healthboard
 ##### Council
 ##### SIMD
