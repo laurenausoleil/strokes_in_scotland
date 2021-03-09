@@ -1,0 +1,144 @@
+---
+title: "Strokes in Scotland Data Report"
+author: "Lauren Davidson"
+date: "09/03/2021"
+output: html_document
+---
+
+----
+How can Scottish health services most effectively prevent and treat stroke diagnoses?
+----
+
+#### Background
+"Cerebrovascular disease develops as a result of problems with the blood vessels supplying oxygen rich blood to the brain.
+Scotland has a high prevalence of the risk factors associated with cerebrovascular disease such as smoking and high blood pressure. Despite a substantial decrease in rates of death over the lastdecade, treating and preventing stroke is a national clinical priority for Scotland as outlined in the Stroke Improvement Plan."
+  - 2020-01-28-stroke-summary.pdf from https://beta.isdscotland.org/find-publications-and-data/conditions-and-diseases/stroke-statistics/scottish-stroke-statistics/
+
+Original brief accessible in documentation folder of this project.
+
+#### Data
+
+*Sources*
+
+* Scottish Stroke Statistics: Stroke Activity By Health Board/Council Area 2009 - 2018
+Number of discharges, crude rate and EASR per 100,000 population by year, gender, age, sex and council area OR NHS board.
+https://www.opendata.nhs.scot/dataset/scottish-stroke-statistics
+
+* Scottish Stroke Statistics: Stroke Mortality By Health Board/Council Area 2009/10 - 2018/19
+Number of mortalities, crude rate and EASR per 100,000 population by year, gender, age, sex and council area OR NHS board.
+https://www.opendata.nhs.scot/dataset/scottish-stroke-statistics
+
+* Inpatient and Daycare Administrative Dataset 2014/15 - 2018/19
+Hospital stays and crude rate per 100,000 population by year, gender, age, sex and council area OR NHS board.
+https://www.isdscotland.org/Health-Topics/Hospital-Care/Diagnoses/
+
+* IS1 - Cerebrovascular Disease incidence by health board, age group and sex
+Cases, crude rate and EASR per 100,000 population per year, health board, age group and sex.
+https://www.isdscotland.org/Health-Topics/Stroke/Publications/data-tables2017.asp
+
+* DS1 - Cerebrovascular Disease and deprivation; standardised mortality ratios (SMR) by age group and SIMD deciles
+https://www.isdscotland.org/Health-Topics/Stroke/Publications/data-tables2017.asp
+
+* DS4 - Trends in stroke hospital activity by SIMD quintile
+Hospital stays, crude rate and EASR per 100,000 population by year and SIMD
+https://www.isdscotland.org/Health-Topics/Stroke/Publications/data-tables2017.asp
+
+*Structure*
+
+```{r, echo=FALSE, out.width = '100%'}
+knitr::include_graphics("images/updated_data_model_diagram.png")
+```
+
+*Data Quality Issues*
+
+* All data from reputable sources. Minimal bias and quality issues assumed.
+
+* All identifiable data removed by publishers.
+
+* Datasets vary in use of financial or calendar year so an approximate calendar year is generated from financial year in order to compare datasets.
+
+* Datasets vary in age groupings presented.
+
+* Significant number of empty fields in the data. Where summary statistics are calculated, empty fields are ignored.
+
+----
+Analysis - findings and visualisations
+----
+
+* What is the most common stroke diagnosis in Scotland?
+* Are there any differences when we look at the data by health board vs by local authority?
+* Are there differences in mortality rates (mortality EASR) for different types of stroke? Does this vary with demographics?
+* Are there any differences in stroke diagnoses between different demographics?
+    1. Gender
+    2. Age
+    3. Gender and Age
+    4. Healthboard
+    5. Council
+    6. SIMD
+    7. Age Group and SIMD
+
+----
+Key findings and Recommendations
+----
+
+# Notable findings
+
+*
+*
+
+# How can Scottish health services most effectively prevent and treat stroke diagnoses?
+# What measures have been successful in the treatment and prevention of stroke?
+# Which demographics should we target for stroke intervention?
+
+
+----
+Additional Information
+----
+
+# Methodology
+
+## Metrics Chosen
+
+mean/median
+
+## Tools Used
+
+## Project Structure
+
+# Definitions
+
+*Stroke*
+* One of three possible diagnoses of Cerebrovascular diseases.
+* Used in report and analysis to refer to all Cerebrovascular Diseases to aid ease of understanding.
+*Subarachnoid Haemorrhage*
+* One of three possible diagnoses of Cerebrovascular diseases.
+*TIAs and other symptoms*
+* Transient Ischemic Attacks (commonly known as mini-strokes) and other symptoms
+* One of three possible diagnoses of Cerebrovascular diseases.
+*Cerebrovascular Disease*
+* "Cerebrovascular Disease (CVD) is a condition that develops as a result of problems with the blood vessels supplying the brain. This can cause a stroke, a transient ischaemic attack (TIA) or a subarachnoid haemorrhage."
+*   - From Scottish Government Stroke Improvement Plan, 2014, accessed at https://www.gov.scot/publications/stroke-improvement-plan/pages/3/
+*Crude Rate*
+*EASR*
+*SMR*
+  
+# Assumptions
+
+* financial year can be compared to calendar year without signifcantly undermining the analysis
+
+* ambiguously named and defined crude rates in individual datasets refer to the crude rate of the dataset's subject variable.
+e.g. EASR and crude rate in mortalitybyca refer to mortality per 100,000, EASR and crude rate in activitybyca refer to discharges per 100,000 and in diagnosis-by-counil-area refer to hospital stays per 100,000.
+
+Qualifiers removed, but could be used for extension work.
+
+Losing detail of age groupings from hospital stays will not affect analysis /
+The larger age groupings will allow for a broader, but easier to interpret analysis.
+
+Use EASR whenever available to normalise rates by European standards.
+Order of preference for adjusted metrics: EASR, SMR, crude.
+
+Use mean as standard method of assimilating rates in order to visualise differences in demographics more clearly.
+
+# Data Assessment
+
+Copy from data analysis plan.

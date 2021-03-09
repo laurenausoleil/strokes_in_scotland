@@ -133,9 +133,11 @@ analysis_bysimd/mortality
   Chance of dying from stroke doubles from the least to the most deprived deciles.
   
 analysis_bysimd/Num mortalities per hospital discharge by quintile
+Compares CD deaths with stroke activity
   Highest ratio of deaths:hospital discharge actually occurs in the 4th quintile, or the 2nd least dperived quintile.
 
 analysis_bysimd/Mortalities by age group and SIMD
+Compares CD deaths with stroke activity
   Mortality is higher for those in the most deprived decile.
   SIMD has the highest impact on mortality for the under 65 age group. 
   189.5 people per 100,000 under 65 (adjusted) die of strokes in the most deprived decile, compared to just 42.3 of those in the least deprived decile.

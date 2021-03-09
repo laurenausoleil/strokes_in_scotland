@@ -79,7 +79,7 @@ e.g. EASR and crude rate in mortalitybyca refer to mortality per 100,000, EASR a
 
 ### Sources
 
-* Scottish Stroke Statistics - Activity
+* Scottish Stroke Statistics - Stroke Activity By Health Board/Council Area
 
 Provider: Public Health Scotland
 
@@ -95,7 +95,7 @@ Reason: Provided with brief.
 
 Link: https://www.opendata.nhs.scot/dataset/scottish-stroke-statistics
 
-* Scottish Stroke Statistics - Mortality
+* Scottish Stroke Statistics - Stroke Mortality By Health Board/Council Area
 
 Provider: Public Health Scotland
 
