@@ -299,6 +299,61 @@ healthboard_strokesbyhb %>%
 * Men in the 45-64 age group are more likely to die from stroke.
 
 ##### Healthboard
+
+**Table summarising key metrics by health board
+```{r}
+healthboard_table <- healthboard_strokesbyhb %>% 
+  group_by(healthboard_area_named) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) 
+
+knitr::kable(healthboard_table <- incidence_by_hb %>% 
+  group_by(health_board) %>% 
+  summarise(incidence = mean(easr, na.rm = TRUE)) %>%
+  mutate(health_board = if_else(
+    str_detect(health_board, "NHS"),
+    str_sub(health_board, start = 5, end = -1),
+    health_board
+    )
+  ) %>% 
+  full_join(healthboard_table, by = c("health_board" = "healthboard_area_named")) %>% 
+  rename("Health Board" = "health_board",
+         "Incidents (EASR)" = "incidence",
+         "Mortality (EASR)" = "mortality")
+)
+```
+
+* No significant differences in mortality by health boards (maximum of 12.5 deaths per 100,000 population adjusted).
+
+* Differences in number of incidents by health board of up 100 cases per 100,000 (adjusted) between different healthboards.
+* Greater Glasgow & Clyde have the highest incidences and Orkney has the lowest.
+
+```{r}
+healthboard_table %>% 
+    rename("health_board" = "Health Board",
+         "incidence" = "Incidents (EASR)",
+         "mortality" = "Mortality (EASR)") %>% 
+  ggplot(aes(x = incidence, y = mortality)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  geom_text(aes(label = health_board), hjust = -.2) +
+  labs(
+    title = "Mortalities per incident by Health Board"
+  )
+```
+* Higher mortalities per incidence in Lanarkshire, Highlands, Grampian and Western Isles.
+* Lower mortalities per incidence in the Borders, Tayside, Lothian and Fife.
+
+```{r}
+healthboard_strokesbyhb %>% 
+  group_by(healthboard_area_named, diagnosis) %>%
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  ggplot() +
+    aes(x = healthboard_area_named, y = mortality, group = diagnosis, fill = diagnosis) +
+  geom_col(position = "fill") +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+* Slightly higher mortality from stroke in Shetland vs normal distribution of deaths per diagnosis.
+
 ##### Council
 ##### SIMD
 ##### Age Group and SIMD
