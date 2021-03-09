@@ -14,7 +14,7 @@ output: html_document
 Scotland has a high prevalence of the risk factors associated with cerebrovascular disease such as smoking and high blood pressure. Despite a substantial decrease in rates of death over the lastdecade, treating and preventing stroke is a national clinical priority for Scotland as outlined in the Stroke Improvement Plan."
   - 2020-01-28-stroke-summary.pdf from https://beta.isdscotland.org/find-publications-and-data/conditions-and-diseases/stroke-statistics/scottish-stroke-statistics/
 
-Original brief accessible in documentation folder of this project.
+* Original brief accessible in documentation folder of this project.
 
 #### Data
 
@@ -92,7 +92,8 @@ discharges_bysimd <- read_csv("../data/clean_data/discharges_bysimd.csv")
 mortality_bysimd <- read_csv("../data/clean_data/mortality_bysimd2013-2017")
 ```
 
-
+\n
+\n
 #### What is the most common stroke diagnosis in Scotland?
 
 * For both healthboard and council area, CD is the most common stroke diagnosis recorded for hospital stays, hospital discharges and deaths.
@@ -205,8 +206,8 @@ incidence_by_hb %>%
 * All genders trending in decrease of incidents
 * Female incidence rates are the most volatile.
 * Female incidents rising since 2016, all genders slightly increasing since 2016.
-
 * Mortality does not vary significantly with gender
+
 <details>
 <summary>**See graph**</summary>
 ```{r}
@@ -224,6 +225,7 @@ council_strokesbyca %>%
 ```
 </details>
 
+
 * Although men have higher incidence rates than women, they have similar levels of mortality. i.e. more women die per episode of stroke diagnosis than men.
 
 ##### Age
@@ -231,6 +233,7 @@ council_strokesbyca %>%
 * Mortality, discharge and proportion of deaths per discharge increase with age.
 * Mortality by stroke has decreased significantly for the over 75 group between 2009 and 2018
 * Mortality rates for all other age groups have remained static in this time
+
 **Table summarising key metrics by age group**
 ```{r}
 knitr::kable(council_strokesbyca %>% 
@@ -356,6 +359,8 @@ knitr::kable(healthboard_table <- incidence_by_hb %>%
     )
   ) %>% 
   full_join(healthboard_table, by = c("health_board" = "healthboard_area_named")) %>% 
+  filter(health_board != "Scotland" & health_board != "NA") %>% 
+  arrange(desc(incidence)) %>% 
   rename("Health Board" = "health_board",
          "Incidents (EASR)" = "incidence",
          "Mortality (EASR)" = "mortality")
@@ -428,6 +433,7 @@ council_strokesbyca %>%
 
 </details>
 
+
 * The 10 councils with the highest recent mortality rates showed increase in adjusted mortality in 2013, 2015 and 2018 with an overall downward trend.
 * The 10 councils with the lowest recent mortality rates show much more stable decline excluding a rise in mortalities in 2013.
 
@@ -467,9 +473,54 @@ council_strokesbyca %>%
 
 ##### SIMD
 
+* More hospital activity with higher deprivation.
+
+* Difference between hospital activity rates for deprivation quintiles is increasing over time, particularly for the 2 most deprived quintiles.
+
+```{r}
+discharges_bysimd %>% 
+  group_by(deprivation_quintile, approx_year) %>% 
+  summarise(avg_discharges = mean(easr_discharge, na.rm = T)) %>% 
+  ggplot(aes(x = approx_year, y = avg_discharges, group = deprivation_quintile, col = deprivation_quintile)) +
+  geom_line() +
+  labs(
+    title = "hospital activity by deprivation quintile over time"
+  )
+```
+
+* Mortalities increase with deprivation.
+* Chance of dying from stroke doubles from the least to the most deprived deciles.
+
+**Table showing standardised mortality rates by SIMD decile**
+```{r}
+knitr::kable(mortality_bysimd %>% 
+  group_by(simd_decile) %>% 
+  summarise(mortality = mean(smr_mortality)) %>% 
+  rename("Decile" = "simd_decile",
+         "Mortality (SMR)" = "mortality")
+)
+```
 
 
 ##### Age Group and SIMD
+
+* Mortality is higher for those in the most deprived decile.
+* SIMD has the highest impact on mortality for the under 65 age group. 
+* 189.5 people per 100,000 under 65 (adjusted) die of strokes in the most deprived decile, compared to just 42.3 of those in the least deprived decile.
+
+```{r}
+mortality_bysimd %>% 
+  group_by(simd_decile, age_group) %>% 
+  filter(age_group != "All") %>% 
+  summarise(avg_mortality = mean(smr_mortality, na.rm = T)) %>% 
+  ggplot(aes(x = simd_decile, y = avg_mortality, group = age_group, fill = age_group, col = age_group)) +
+  geom_col(position = "dodge") +
+  labs(
+    title = "Adjusted stroke mortality rates by SIMD",
+    x = "SIMD Decile",
+    y = "Mortality (SMR)"
+  )
+```
 
 
 # Key findings and Recommendations
@@ -491,10 +542,17 @@ council_strokesbyca %>%
 
 * Council mortality rates over time for the 10 highest and lowest mortality rate councils (2009-2018 average totals by mean) show greatest divergence in 2010 and 2015.
 
+* The 10 councils with the highest recent mortality rates showed increase in adjusted mortality in 2013, 2015 and 2018 with an overall downward trend.
+* The 10 councils with the lowest recent mortality rates show much more stable decline excluding a rise in mortalities in 2013.
+
+* Difference between hospital activity rates for deprivation quintiles is increasing over time, particularly for the 2 most deprived quintiles.
+
+* Chance of dying from stroke doubles from the least to the most deprived deciles.
+
+* SIMD has the highest impact on mortality for the under 65 age group. 
+* 189.5 people per 100,000 under 65 (adjusted) die of strokes in the most deprived decile, compared to just 42.3 of those in the least deprived decile.
 
 
-*
-*
 
 #### How can Scottish health services most effectively prevent and treat stroke diagnoses?
 #### What measures have been successful in the treatment and prevention of stroke?

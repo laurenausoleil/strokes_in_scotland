@@ -120,7 +120,12 @@ mortality_bysimd %>%
   filter(age_group != "All") %>% 
   summarise(avg_mortality = mean(smr_mortality, na.rm = T)) %>% 
   ggplot(aes(x = simd_decile, y = avg_mortality, group = age_group, fill = age_group, col = age_group)) +
-  geom_col(position = "dodge")
+  geom_col(position = "dodge") +
+  labs(
+    title = "Adjusted stroke mortality rates by SIMD",
+    x = "SIMD Decile",
+    y = "Mortality (SMR)"
+  )
 ```
 
 SIMD has the highest impact on mortality for the under 65 age group. 189.5 people per 100,000 adjusted die of strokes in the most deprived decile, compared to just 42.3 of those in the least deprived decile.
