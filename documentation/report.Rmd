@@ -82,7 +82,7 @@ knitr::kable(council_strokesbyca %>%
 ```{r}
 council_strokesbyca %>% 
 # filter year to remove high values from years prior to 2013 in order to make graph more readable
-  filter(age_group != "All" & age_group != "under75 years" & approx_year > 2013) %>% 
+  filter(approx_year > 2013) %>% 
   group_by(age_group, approx_year, diagnosis) %>% 
   summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
   ggplot() +
@@ -90,11 +90,13 @@ council_strokesbyca %>%
   geom_line() +
   facet_wrap(~age_group) +
   labs(
-    title = "Mortality by age and diagnosis over time"
+    title = "Mortality by age and diagnosis over time",
+    x = "Year",
+    y = "Mortality (EASR)"
   )
 ```
-* CD is the biggest killer per 100 discharges from hospital followed by Stroke and SH.
 
+* CD is the biggest killer per 100 discharges from hospital followed by Stroke and SH.
 * Mortality rates have fallen for the 75+ group with CD and Stroke.
 * Mortality rates have remained static for all other age and diagnosis groupings.
 ```{r}
@@ -121,7 +123,12 @@ council_strokesbyca %>%
     aes(x = age_group, y = mortality, group = diagnosis, fill = diagnosis) +
   geom_col(position = "fill") +
   facet_wrap(~sex) +
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+  labs(
+    title = "Proportion of mortalitis by age, diagnosis and gender",
+    x = "Age Group",
+    y = "Mortality (EASR)"
+  )
 ```
 
 * Younger women with SH, especially the 45-64 age group, are dying more often from SH than male and all genders.
@@ -137,6 +144,7 @@ council_strokesbyca %>%
 
 ```{r}
 council_strokesbyca %>% 
+  filter(diagnosis != "TIAs and related syndromes") %>% 
   group_by(sex, diagnosis) %>%
   summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
   ggplot() +
@@ -144,7 +152,9 @@ council_strokesbyca %>%
   geom_col(position = "fill") +
   labs(
     title = "Proportion of mortalities for each diagnosis",
-    subtitle = "Separated by gender"
+    subtitle = "Separated by gender",
+    x = "Diagnosis",
+    y = "Mortality (EASR)"
   )
 ```
 
@@ -157,15 +167,18 @@ incidence_by_hb %>%
   ggplot() +
   aes(x = year, y = incidence, group = sex, col = sex) +
   geom_line() +
+  geom_point() +
   labs(
-    title = "Incidents by Gender 2009-2018"
+    title = "Incidents by Gender 2009-2018",
+    x = "Year",
+    y = "Incidents (EASR)"
   )
 ```
   
 * Men have higher rates of incidence than women and other genders
 
 <details>
-<summary>**See graph**</summary>
+<summary>**See Mortality by Gender**</summary>
 ```{r}
 council_strokesbyca %>% 
   group_by(sex, approx_year) %>% 
@@ -173,6 +186,7 @@ council_strokesbyca %>%
   ggplot() +
   aes(x = approx_year, y = mortality, group = sex, col = sex) +
   geom_line() +
+  geom_point() +
   labs(
     title = "Mortality by Gender 2009-2018",
     x = "Year",
@@ -193,7 +207,6 @@ council_strokesbyca %>%
 **Table summarising key metrics by age group**
 ```{r}
 knitr::kable(council_strokesbyca %>% 
-  filter(age_group != "All" & age_group != "under75 years") %>% 
   group_by(age_group) %>% 
   summarise(avg_discharge_easr = mean(easr_discharge, na.rm = TRUE),
             avg_deaths_easr = mean(easr_mortality, na.rm = TRUE),
@@ -211,8 +224,7 @@ knitr::kable(council_strokesbyca %>%
 
 
 ```{r}
-council_strokesbyca %>%  
-  filter(age_group != "All" & age_group != "under75 years") %>% 
+council_strokesbyca %>%
   group_by(age_group, diagnosis) %>%
   summarise(discharges = mean(easr_discharge, na.rm = TRUE)) %>% 
   ggplot() +
@@ -220,7 +232,9 @@ council_strokesbyca %>%
   geom_col(position = "fill") +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
   labs(
-    title = "Proportion of discharges by diagnoses and age group"
+    title = "Proportion of hospital activity by diagnoses and age group",
+    x = "Age group",
+    y = "Discharges (EASR)"
   )
 ```
 
@@ -230,8 +244,7 @@ council_strokesbyca %>%
 * SH accounts for a proportion of hospital activity in younger age groups than in older age groups.
 
 ```{r}
-council_strokesbyca %>%  
-  filter(age_group != "All" & age_group != "under75 years") %>% 
+council_strokesbyca %>%
   group_by(age_group, diagnosis) %>%
   summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
   ggplot() +
@@ -239,7 +252,9 @@ council_strokesbyca %>%
   geom_col(position = "fill") +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
   labs(
-    title = "Proportion of mortalities by diagnoses and age group"
+    title = "Proportion of mortalities by diagnoses and age group",
+    x = "Age Group",
+    y = "Mortality (EASR)"
   )
 ```
 
@@ -248,8 +263,7 @@ council_strokesbyca %>%
 * SH causes a higher proportion of fatalities in younger age groups than in older age groups.
 
 ```{r}
-council_strokesbyca %>%  
-  filter(age_group != "All" & age_group != "under75 years") %>% 
+council_strokesbyca %>%
   group_by(age_group, diagnosis) %>%
   summarise(discharges = mean(easr_discharge, na.rm = TRUE),
             mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
@@ -259,29 +273,28 @@ council_strokesbyca %>%
   geom_col(position = "dodge") +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
   labs(
-    title = "Percentage of deaths by hospital discharges",
-    subtitle = "shown by diagnoses and age group"
+    title = "Mortality per 100 discharges",
+    subtitle = "Broken down by diagnoses and age group",
+    x = "Age Group",
+    y = "Rate of Mortality by Discharges (%)"
   )
 ```
 
 * Number of deaths per 100 discharges increases with age group.
 * SH is the most fatal diagnosis for all groups under 75 years.
 * Death by stroke does not increase as significantly for stroke diagnosis in the 75 plus age group as it does for all other age groups.
-
 * No trends found in SH diagnosis by age over time
 
 ##### Gender and Age
 
 
 ```{r}
-percent_table <- incidence_by_hb %>%  
-  filter(age!= "All" & age != "under75 years") %>% 
+percent_table <- incidence_by_hb %>%
   group_by(age, sex) %>% 
   summarise(incidence = mean(easr, na.rm = TRUE)) %>% 
   rename("age_group" = "age")
 
-healthboard_strokesbyhb %>%  
-  filter(age_group != "All" & age_group != "under75 years") %>% 
+healthboard_strokesbyhb %>%
   group_by(age_group, sex) %>% 
   summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
   inner_join(percent_table) %>% 
@@ -290,7 +303,9 @@ healthboard_strokesbyhb %>%
   geom_col(position = "dodge") +
   labs(
     title = "Deaths per 100 incidents",
-    subtitle = "grouped by age and gender"
+    subtitle = "Grouped by age and gender",
+    x = "Age group",
+    y = "Rate of Mortality by Incident (%)"
   )
 ```
 * Men have slightly higher mortality rates for all age groups under 74.
@@ -328,11 +343,8 @@ knitr::kable(healthboard_table <- incidence_by_hb %>%
 ```
 
 * No significant differences in mortality by health boards (maximum of 12.5 deaths per 100,000 population adjusted).
-
 * Differences in number of incidents by health board of up 100 cases per 100,000 (adjusted) between different healthboards.
 * Greater Glasgow & Clyde have the highest incidences and Orkney has the lowest.
-
-
 
 ```{r}
 healthboard_table %>% 
@@ -349,18 +361,31 @@ healthboard_table %>%
     y = "Number of Mortalities (EASR)"
   )
 ```
+
 * Higher mortalities per incidence in Lanarkshire, Highlands, Grampian and Western Isles.
 * Lower mortalities per incidence in the Borders, Tayside, Lothian and Fife.
 
-
 ##### Council
+
+<details>
+<summary>**See table summarising mortality by Council Area**</summary>
+```{r}
+knitr::kable(council_strokesbyca %>% 
+  group_by(council_area_named) %>% 
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  arrange(desc(mortality)) %>% 
+  rename("Council Area" = "council_area_named",
+         "Mortality (EASR)" = "mortality")
+)
+```
+</details>
 
 * There is a difference in stroke mortality of up to 25 per 100,000 between different council areas. 
 * Highest adjusted mortality in Inverclyde and Renfrewshire.
 * Lowest adjusted mortality rates in East Renfrewshire and East Dunbartonshire.
 
 <details>
-<summary>**See graph**</summary>
+<summary>**See graph Council mortality rates over time for the 10 highest and lowest mortality rate councils (2009-2018 average rates)**</summary>
 ```{r}
 high_mortality_council <- council_strokesbyca %>% 
   group_by(council_area_named) %>% 
@@ -384,13 +409,18 @@ council_strokesbyca %>%
   summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
   ggplot() +
   aes(x = approx_year, y = mortality, group = high_low, col = high_low) +
-  geom_line()
+  geom_line() +
+  geom_point() +
+  labs(
+    title = "Council mortality rates over time for the 10 highest and lowest mortality rate councils (2009-2018 average rates)",
+    x = "Year",
+    y = "Mortality (EASR)"
+  )
 ```
-
-* Council mortality rates over time for the 10 highest and lowest mortality rate councils (2009-2018 average rates) show greatest divergence in 2010 and 2015.
 </details>
 
-  
+* Council mortality rates over time for the 10 highest and lowest mortality rate councils (2009-2018 average rates) show greatest divergence in 2010 and 2015.
+
 ```{r}
 high_mortality_council_2018 <- council_strokesbyca %>% 
   filter(approx_year == 2018) %>% 
@@ -417,9 +447,12 @@ council_strokesbyca %>%
   ggplot() +
   aes(x = approx_year, y = mortality, group = high_low, col = high_low) +
   geom_line() +
+  geom_point() +
   labs(
     title = "Adjusted mortality rates by council",
-    subtitle = "Mortality rates for the 10 highest and lowest adjusted mortality rates council areas"
+    subtitle = "Mortality rates for the 10 highest and lowest adjusted mortality rates council areas",
+    x = "Year",
+    y = "Mortality (EASR)"
   )
 ```
 
@@ -432,12 +465,14 @@ council_strokesbyca %>%
 
 ```{r}
 discharges_bysimd %>% 
+  mutate(approx_year = as.character(approx_year)) %>% 
   group_by(deprivation_quintile, approx_year) %>% 
   summarise(avg_discharges = mean(easr_discharge, na.rm = T)) %>% 
   ggplot(aes(x = approx_year, y = avg_discharges, group = deprivation_quintile, col = deprivation_quintile)) +
   geom_line() +
+  geom_point() +
   labs(
-    title = "hospital activity by deprivation quintile over time"
+    title = "Hospital activity by SIMD quintile over time"
   )
 ```
 
@@ -573,7 +608,7 @@ SIMD has the highest impact on mortality for the under 65 age group.
 * A leak of blood as a result of the rupture of one of the blood vessels beneath one of the layers of membrane that covers the brain.
 * One of three possible diagnoses of Cerebrovascular diseases.
 
-**TIAs and other symptoms**
+**Transient Ischemic Attack / TIA**
 
 * A transient ischemic attack is a temporary disruption to the blood supply to the brain as a result of a blockage of a blood vessel supplying the brain.
 * Transient Ischemic Attacks (commonly known as mini-strokes) and other symptoms
