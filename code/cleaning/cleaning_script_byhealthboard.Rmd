@@ -275,7 +275,8 @@ group_by(approx_year, healthboard_area_named, age_group, sex, diagnosis) %>%
   filter(age_group != "All" & age_group != "under75 years") %>% 
   filter(healthboard_area_named != "Scotland"
          & healthboard_area_named != "NA"
-         & healthboard_area_named != "Other")
+         & healthboard_area_named != "Other") %>% 
+  filter(sex != "All")
 ```
 
 ----
