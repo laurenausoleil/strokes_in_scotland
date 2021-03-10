@@ -20,8 +20,6 @@ mortality_bysimd <- read_csv("../../data/raw_data/edited_mortality_bysimd2013-20
   filter(age_group != "All" & age_group != "under75 years")
 ```
 
-```
-
 discharges_bysimd
 ```{r}
 discharges_bysimd <- read_csv("../../data/raw_data/edited_discharges_bysimd.csv")

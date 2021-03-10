@@ -334,7 +334,6 @@ knitr::kable(healthboard_table <- incidence_by_hb %>%
     )
   ) %>% 
   full_join(healthboard_table, by = c("health_board" = "healthboard_area_named")) %>% 
-  filter(health_board != "Scotland" & health_board != "NA") %>% 
   arrange(desc(incidence)) %>% 
   rename("Health Board" = "health_board",
          "Incidents (EASR)" = "incidence",

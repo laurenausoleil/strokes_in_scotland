@@ -272,7 +272,10 @@ group_by(approx_year, healthboard_area_named, age_group, sex, diagnosis) %>%
             hospitalstays = mean(hospitalstays, na.rm = TRUE),
             crude_rate_stays = mean(crude_rate_stays, na.rm = TRUE)
             ) %>% 
-  filter(age_group != "All" & age_group != "under75 years")
+  filter(age_group != "All" & age_group != "under75 years") %>% 
+  filter(healthboard_area_named != "Scotland"
+         & healthboard_area_named != "NA"
+         & healthboard_area_named != "Other")
 ```
 
 ----

@@ -1535,54 +1535,6 @@ approx_year,council_area_named,age_group,sex,diagnosis,number_of_discharges,crud
 2009,West Lothian,75plus years,Male,Stroke,NA,NA,1249.543560355,NA,NA,476.66,NA,NA
 2009,West Lothian,75plus years,Male,Subarachnoid Haemorrhage,0,0,0,0,0,0,NA,NA
 2009,West Lothian,75plus years,Male,TIAs and related syndromes,0,0,229.86736797499998,NA,NA,NA,NA,NA
-2009,NA,0-44 years,All,Cerebrovascular Disease,607.5,20.59862485975,20.547442990500002,60,2.03,2.04,NA,NA
-2009,NA,0-44 years,All,Stroke,288.5,9.7822276095,9.80101420375,29,0.98,0.98,NA,NA
-2009,NA,0-44 years,All,Subarachnoid Haemorrhage,140.5,4.763961799,4.75094087225,24,0.81,0.82,NA,NA
-2009,NA,0-44 years,All,TIAs and related syndromes,45.5,1.5427776645,1.53008366525,NA,NA,NA,NA,NA
-2009,NA,0-44 years,Female,Cerebrovascular Disease,284.5,19.236087304250002,18.9845315585,25,1.69,1.64,NA,NA
-2009,NA,0-44 years,Female,Stroke,114.5,7.74176448575,7.65432191925,9,0.61,0.59,NA,NA
-2009,NA,0-44 years,Female,Subarachnoid Haemorrhage,79,5.34147942875,5.27189313125,14,0.95,0.92,NA,NA
-2009,NA,0-44 years,Female,TIAs and related syndromes,23,1.55511426375,1.531835875,NA,NA,NA,NA,NA
-2009,NA,0-44 years,Male,Cerebrovascular Disease,323,21.96927702225,22.11035442,35,2.38,2.44,NA,NA
-2009,NA,0-44 years,Male,Stroke,174,11.834842729,11.94770649025,20,1.36,1.37,NA,NA
-2009,NA,0-44 years,Male,Subarachnoid Haemorrhage,61.5,4.1830047575,4.229988612,10,0.68,0.73,NA,NA
-2009,NA,0-44 years,Male,TIAs and related syndromes,22.5,1.5303675945,1.528331455,NA,NA,NA,NA,NA
-2009,NA,45-64 years,All,Cerebrovascular Disease,2807,198.7820967275,201.1793488525,358,25.35,25.64,NA,NA
-2009,NA,45-64 years,All,Stroke,1658.5,117.44927231125,119.38715783525,198,14.02,14.23,NA,NA
-2009,NA,45-64 years,All,Subarachnoid Haemorrhage,328,23.227833174,23.0801463805,84,5.95,5.94,NA,NA
-2009,NA,45-64 years,All,TIAs and related syndromes,390,27.6184601795,27.8510043545,NA,NA,NA,NA,NA
-2009,NA,45-64 years,Female,Cerebrovascular Disease,1192.5,165.33657951,166.3147167825,168,23.29,23.44,NA,NA
-2009,NA,45-64 years,Female,Stroke,613.5,85.05995096150001,85.83760814474999,88,12.2,12.31,NA,NA
-2009,NA,45-64 years,Female,Subarachnoid Haemorrhage,222.5,30.8489634765,30.75454112125,51,7.07,7.06,NA,NA
-2009,NA,45-64 years,Female,TIAs and related syndromes,168.5,23.36202402575,23.48527777925,NA,NA,NA,NA,NA
-2009,NA,45-64 years,Male,Cerebrovascular Disease,1614.5,233.69998685,236.04398095,190,27.5,27.84,NA,NA
-2009,NA,45-64 years,Male,Stroke,1045,151.2644696455,152.936707543,110,15.92,16.15,NA,NA
-2009,NA,45-64 years,Male,Subarachnoid Haemorrhage,105.5,15.271197653,15.40575164,33,4.78,4.82,NA,NA
-2009,NA,45-64 years,Male,TIAs and related syndromes,221.5,32.06227753425,32.216730929499995,NA,NA,NA,NA,NA
-2009,NA,65-74 years,All,Cerebrovascular Disease,3005,634.4132785075,646.920636095,627,132.37,134.95,NA,NA
-2009,NA,65-74 years,All,Stroke,2015.5,425.51080297000004,434.588697425,398,84.03,85.26,NA,NA
-2009,NA,65-74 years,All,Subarachnoid Haemorrhage,157,33.1457187125,32.356954966000004,33,6.97,6.84,NA,NA
-2009,NA,65-74 years,All,TIAs and related syndromes,370,78.11411416175001,79.793877208,NA,NA,NA,NA,NA
-2009,NA,65-74 years,Female,Cerebrovascular Disease,1328.5,523.218948525,524.1976758725,298,117.36,117.77,NA,NA
-2009,NA,65-74 years,Female,Stroke,867.5,341.65783804,342.390786075,195,76.8,77.03,NA,NA
-2009,NA,65-74 years,Female,Subarachnoid Haemorrhage,111.5,43.91337053825,43.95522926675,23,9.06,9.08,NA,NA
-2009,NA,65-74 years,Female,TIAs and related syndromes,166.5,65.57467439375,65.70880345825,NA,NA,NA,NA,NA
-2009,NA,65-74 years,Male,Cerebrovascular Disease,1676.5,762.8880990725,769.6435965425,329,149.71,152.12,NA,NA
-2009,NA,65-74 years,Male,Stroke,1148,522.395191015,526.7866089,203,92.37,93.5,NA,NA
-2009,NA,65-74 years,Male,Subarachnoid Haemorrhage,45.5,20.70468745075,20.758680668,10,4.55,4.61,NA,NA
-2009,NA,65-74 years,Male,TIAs and related syndromes,203.5,92.6022834285,93.87895096,NA,NA,NA,NA,NA
-2009,NA,75plus years,All,Cerebrovascular Disease,6353,1600.6187816175,1664.152288945,3866,974.03,1047.43,NA,NA
-2009,NA,75plus years,All,Stroke,4657,1173.316805635,1212.415196405,2107,530.85,546.85,NA,NA
-2009,NA,75plus years,All,Subarachnoid Haemorrhage,77,19.3999128275,17.53173174525,48,12.09,10.97,NA,NA
-2009,NA,75plus years,All,TIAs and related syndromes,745,187.70045526425,193.03889910225,NA,NA,NA,NA,NA
-2009,NA,75plus years,Female,Cerebrovascular Disease,3763,1531.0751704250001,1511.89332586,2577,1048.52,1069.11,NA,NA
-2009,NA,75plus years,Female,Stroke,2847.5,1158.58000191,1141.84516057,1452,590.78,597.41,NA,NA
-2009,NA,75plus years,Female,Subarachnoid Haemorrhage,58.5,23.8022581645,23.823696560749998,37,15.05,14.26,NA,NA
-2009,NA,75plus years,Female,TIAs and related syndromes,439.5,178.82209339675,178.00120908925,NA,NA,NA,NA,NA
-2009,NA,75plus years,Male,Cerebrovascular Disease,2590,1713.711011425,1816.411251775,1289,852.89,1025.75,NA,NA
-2009,NA,75plus years,Male,Stroke,1809.5,1197.2818824899998,1282.9852322375,655,433.39,496.28,NA,NA
-2009,NA,75plus years,Male,Subarachnoid Haemorrhage,18.5,12.24079294,11.23976693,11,7.28,7.68,NA,NA
-2009,NA,75plus years,Male,TIAs and related syndromes,305.5,202.1384995955,208.07658911525,NA,NA,NA,NA,NA
 2010,Aberdeen City,0-44 years,All,Cerebrovascular Disease,NA,NA,11.31799023075,NA,NA,2.63,NA,NA
 2010,Aberdeen City,0-44 years,All,Stroke,0,0,3.7674400475,NA,NA,0.87,NA,NA
 2010,Aberdeen City,0-44 years,All,Subarachnoid Haemorrhage,0,0,4.168477141,NA,NA,0.89,NA,NA
@@ -3119,54 +3071,6 @@ approx_year,council_area_named,age_group,sex,diagnosis,number_of_discharges,crud
 2010,West Lothian,75plus years,Male,Stroke,0,0,1334.0129095,NA,NA,523.14,NA,NA
 2010,West Lothian,75plus years,Male,Subarachnoid Haemorrhage,0,0,0,0,0,0,NA,NA
 2010,West Lothian,75plus years,Male,TIAs and related syndromes,0,0,259.47122275,NA,NA,NA,NA,NA
-2010,NA,0-44 years,All,Cerebrovascular Disease,576.5,19.58330530975,19.88505059075,56,1.9,1.9,NA,NA
-2010,NA,0-44 years,All,Stroke,320.5,10.8871627955,11.06308021,28,0.95,0.97,NA,NA
-2010,NA,0-44 years,All,Subarachnoid Haemorrhage,112.5,3.821547003,3.89120639375,20,0.68,0.67,NA,NA
-2010,NA,0-44 years,All,TIAs and related syndromes,35.5,1.2059103875,1.2072630455,NA,NA,NA,NA,NA
-2010,NA,0-44 years,Female,Cerebrovascular Disease,265.5,17.98400337975,17.961617327749998,17,1.15,1.13,NA,NA
-2010,NA,0-44 years,Female,Stroke,154,10.431399325,10.45604894875,6,0.41,0.41,NA,NA
-2010,NA,0-44 years,Female,Subarachnoid Haemorrhage,48.5,3.28521342375,3.25377705825,9,0.61,0.58,NA,NA
-2010,NA,0-44 years,Female,TIAs and related syndromes,11,0.74509995225,0.721818708,NA,NA,NA,NA,NA
-2010,NA,0-44 years,Male,Cerebrovascular Disease,311,21.1921865555,21.808483851,39,2.66,2.68,NA,NA
-2010,NA,0-44 years,Male,Stroke,166.5,11.34565614625,11.67011147175,22,1.5,1.54,NA,NA
-2010,NA,0-44 years,Male,Subarachnoid Haemorrhage,64,4.3610930535,4.528635729,11,0.75,0.75,NA,NA
-2010,NA,0-44 years,Male,TIAs and related syndromes,24.5,1.6694809345,1.692707383,NA,NA,NA,NA,NA
-2010,NA,45-64 years,All,Cerebrovascular Disease,2826,196.7769248925,198.8632090975,326,22.7,22.89,NA,NA
-2010,NA,45-64 years,All,Stroke,1692,117.81548368125,119.36854280749999,184,12.81,12.93,NA,NA
-2010,NA,45-64 years,All,Subarachnoid Haemorrhage,313,21.794471864749998,21.6911221475,69,4.8,4.8,NA,NA
-2010,NA,45-64 years,All,TIAs and related syndromes,378.5,26.3552958495,26.56808774175,NA,NA,NA,NA,NA
-2010,NA,45-64 years,Female,Cerebrovascular Disease,1179.5,160.76534939249999,161.9532313725,149,20.31,20.47,NA,NA
-2010,NA,45-64 years,Female,Stroke,612.5,83.48349004275,83.971327257,77,10.5,10.54,NA,NA
-2010,NA,45-64 years,Female,Subarachnoid Haemorrhage,200,27.259915115,27.44870000125,41,5.59,5.66,NA,NA
-2010,NA,45-64 years,Female,TIAs and related syndromes,180.5,24.602073389,24.83759070075,NA,NA,NA,NA,NA
-2010,NA,45-64 years,Male,Cerebrovascular Disease,1646.5,234.3885682525,235.7731867975,177,25.2,25.31,NA,NA
-2010,NA,45-64 years,Male,Stroke,1079.5,153.67291797375,154.76575830299998,107,15.23,15.33,NA,NA
-2010,NA,45-64 years,Male,Subarachnoid Haemorrhage,113,16.086187801,15.933544296500001,28,3.99,3.95,NA,NA
-2010,NA,45-64 years,Male,TIAs and related syndromes,198,28.186417564,28.298584782749998,NA,NA,NA,NA,NA
-2010,NA,65-74 years,All,Cerebrovascular Disease,3032,634.2101134825,646.110798405,560,117.14,119.79,NA,NA
-2010,NA,65-74 years,All,Stroke,2058.5,430.580975785,439.06910368875003,342,71.54,73.05,NA,NA
-2010,NA,65-74 years,All,Subarachnoid Haemorrhage,131,27.401558333249998,26.546678590499997,32,6.69,6.59,NA,NA
-2010,NA,65-74 years,All,TIAs and related syndromes,415.5,86.91104951075,87.88641589375,NA,NA,NA,NA,NA
-2010,NA,65-74 years,Female,Cerebrovascular Disease,1355,530.6151219625,531.87149103,250,97.9,98.36,NA,NA
-2010,NA,65-74 years,Female,Stroke,904,354.00447989875,355.0696835605,151,59.13,59.43,NA,NA
-2010,NA,65-74 years,Female,Subarachnoid Haemorrhage,94,36.8102003415,36.76663305075,21,8.22,8.24,NA,NA
-2010,NA,65-74 years,Female,TIAs and related syndromes,207.5,81.256559248,81.3664242575,NA,NA,NA,NA,NA
-2010,NA,65-74 years,Male,Cerebrovascular Disease,1677,752.9937900875,760.3501055275,310,139.19,141.22,NA,NA
-2010,NA,65-74 years,Male,Stroke,1154.5,518.3848125625,523.06852391725,191,85.76,86.68,NA,NA
-2010,NA,65-74 years,Male,Subarachnoid Haemorrhage,37,16.6134586985,16.3267241305,11,4.94,4.94,NA,NA
-2010,NA,65-74 years,Male,TIAs and related syndromes,208,93.3945786225,94.40640757999999,NA,NA,NA,NA,NA
-2010,NA,75plus years,All,Cerebrovascular Disease,6579.5,1627.9967438525,1656.8279059775,3825,946.44,1001.21,NA,NA
-2010,NA,75plus years,All,Stroke,4783,1183.48026844,1192.5338497275,2059,509.47,528.39,NA,NA
-2010,NA,75plus years,All,Subarachnoid Haemorrhage,80,19.794777643,18.553966429749998,46,11.38,10.11,NA,NA
-2010,NA,75plus years,All,TIAs and related syndromes,857,212.05155550275,214.5796515975,NA,NA,NA,NA,NA
-2010,NA,75plus years,Female,Cerebrovascular Disease,3973.5,1598.1707609125,1570.0611254824998,2462,990.23,983.23,NA,NA
-2010,NA,75plus years,Female,Stroke,2946.5,1185.1038498725,1162.7414463375,1368,550.22,546.84,NA,NA
-2010,NA,75plus years,Female,Subarachnoid Haemorrhage,58,23.32802419675,22.99706101225,37,14.88,14.18,NA,NA
-2010,NA,75plus years,Female,TIAs and related syndromes,529.5,212.968772631,209.30084590225002,NA,NA,NA,NA,NA
-2010,NA,75plus years,Male,Cerebrovascular Disease,2606,1675.679499055,1743.5946864725,1363,876.42,1019.18,NA,NA
-2010,NA,75plus years,Male,Stroke,1836.5,1180.88465081,1222.3262536175,691,444.32,509.95,NA,NA
-2010,NA,75plus years,Male,Subarachnoid Haemorrhage,22,14.1461814975,14.11087184975,9,5.79,6.05,NA,NA
-2010,NA,75plus years,Male,TIAs and related syndromes,327.5,210.585201812,219.85845724275,NA,NA,NA,NA,NA
 2011,Aberdeen City,0-44 years,All,Cerebrovascular Disease,0,0,12.680452185,NA,NA,3.3,NA,NA
 2011,Aberdeen City,0-44 years,All,Stroke,0,0,7.652800545,NA,NA,1.75,NA,NA
 2011,Aberdeen City,0-44 years,All,Subarachnoid Haemorrhage,0,0,4.18633784325,NA,NA,1.55,NA,NA
@@ -4703,54 +4607,6 @@ approx_year,council_area_named,age_group,sex,diagnosis,number_of_discharges,crud
 2011,West Lothian,75plus years,Male,Stroke,0,0,1068.5327321999998,NA,NA,403.06,NA,NA
 2011,West Lothian,75plus years,Male,Subarachnoid Haemorrhage,0,0,0,0,0,0,NA,NA
 2011,West Lothian,75plus years,Male,TIAs and related syndromes,0,0,238.4702064,NA,NA,NA,NA,NA
-2011,NA,0-44 years,All,Cerebrovascular Disease,533,18.0858027145,18.512298900250002,47,1.59,1.65,NA,NA
-2011,NA,0-44 years,All,Stroke,291.5,9.891203546,10.20875093,18,0.61,0.64,NA,NA
-2011,NA,0-44 years,All,Subarachnoid Haemorrhage,103.5,3.511971071,3.572455783,23,0.78,0.8,NA,NA
-2011,NA,0-44 years,All,TIAs and related syndromes,62,2.103789434,2.14746228525,NA,NA,NA,NA,NA
-2011,NA,0-44 years,Female,Cerebrovascular Disease,266,18.02028840675,18.132503943,20,1.35,1.39,NA,NA
-2011,NA,0-44 years,Female,Stroke,137,9.28112598425,9.416659564,10,0.68,0.7,NA,NA
-2011,NA,0-44 years,Female,Subarachnoid Haemorrhage,54.5,3.69212675975,3.673133639,10,0.68,0.69,NA,NA
-2011,NA,0-44 years,Female,TIAs and related syndromes,31.5,2.13398152175,2.15246323725,NA,NA,NA,NA,NA
-2011,NA,0-44 years,Male,Cerebrovascular Disease,267,18.151547060749998,18.89209385525,27,1.84,1.9,NA,NA
-2011,NA,0-44 years,Male,Stroke,154.5,10.50342330175,11.0008422945,8,0.54,0.57,NA,NA
-2011,NA,0-44 years,Male,Subarachnoid Haemorrhage,49,3.33118279425,3.4717779275000002,13,0.88,0.91,NA,NA
-2011,NA,0-44 years,Male,TIAs and related syndromes,30.5,2.07349133125,2.1424613325,NA,NA,NA,NA,NA
-2011,NA,45-64 years,All,Cerebrovascular Disease,2893,198.63052730500002,200.866108915,305,20.94,21.23,NA,NA
-2011,NA,45-64 years,All,Stroke,1747,119.94729733525,121.4435728405,179,12.29,12.5,NA,NA
-2011,NA,45-64 years,All,Subarachnoid Haemorrhage,349.5,23.99632536875,24.11821277475,57,3.91,3.94,NA,NA
-2011,NA,45-64 years,All,TIAs and related syndromes,410,28.15019571325,28.50424993775,NA,NA,NA,NA,NA
-2011,NA,45-64 years,Female,Cerebrovascular Disease,1259,169.17949960250002,170.418055635,133,17.87,18.07,NA,NA
-2011,NA,45-64 years,Female,Stroke,670,90.031981505,90.61791879924999,67,9,9.1,NA,NA
-2011,NA,45-64 years,Female,Subarachnoid Haemorrhage,213,28.622107556499998,28.7460720025,35,4.7,4.73,NA,NA
-2011,NA,45-64 years,Female,TIAs and related syndromes,191,25.665833533500003,25.8937606345,NA,NA,NA,NA,NA
-2011,NA,45-64 years,Male,Cerebrovascular Disease,1634,229.39998005,231.31416221749998,172,24.15,24.39,NA,NA
-2011,NA,45-64 years,Male,Stroke,1077,151.201822838,152.2692268395,112,15.72,15.9,NA,NA
-2011,NA,45-64 years,Male,Subarachnoid Haemorrhage,136.5,19.16346222575,19.490353552,22,3.09,3.15,NA,NA
-2011,NA,45-64 years,Male,TIAs and related syndromes,219,30.74577456175,31.114739240749998,NA,NA,NA,NA,NA
-2011,NA,65-74 years,All,Cerebrovascular Disease,3050,629.1513675625,641.5021124075,588,121.29,124.91,NA,NA
-2011,NA,65-74 years,All,Stroke,2020,416.68385659375,425.79620751025,345,71.17,73.06,NA,NA
-2011,NA,65-74 years,All,Subarachnoid Haemorrhage,145.5,30.01361442375,29.154347385500003,40,8.25,8.1,NA,NA
-2011,NA,65-74 years,All,TIAs and related syndromes,455,93.85700729025001,95.40905805125,NA,NA,NA,NA,NA
-2011,NA,65-74 years,Female,Cerebrovascular Disease,1363,528.9075324425,531.7769738925,255,98.95,99.75,NA,NA
-2011,NA,65-74 years,Female,Stroke,871.5,338.18262249325,340.01835200475,164,63.64,64.2,NA,NA
-2011,NA,65-74 years,Female,Subarachnoid Haemorrhage,113.5,44.043290479,44.13953653975,24,9.31,9.27,NA,NA
-2011,NA,65-74 years,Female,TIAs and related syndromes,212.5,82.45990508925,82.911940268,NA,NA,NA,NA,NA
-2011,NA,65-74 years,Male,Cerebrovascular Disease,1687,742.913259385,751.2272509225,333,146.65,150.07,NA,NA
-2011,NA,65-74 years,Male,Stroke,1148.5,505.77111941,511.57406299075,181,79.71,81.92,NA,NA
-2011,NA,65-74 years,Male,Subarachnoid Haemorrhage,32,14.0920120305,14.16915823125,16,7.05,6.92,NA,NA
-2011,NA,65-74 years,Male,TIAs and related syndromes,242.5,106.7910286645,107.90617585724999,NA,NA,NA,NA,NA
-2011,NA,75plus years,All,Cerebrovascular Disease,6636.5,1612.42905452,1644.3121350075,3660,889.25,925.26,NA,NA
-2011,NA,75plus years,All,Stroke,4807.5,1168.04832038475,1186.381341826,1991,483.74,492.32,NA,NA
-2011,NA,75plus years,All,Subarachnoid Haemorrhage,91.5,22.2311848845,21.00989199575,53,12.88,11.79,NA,NA
-2011,NA,75plus years,All,TIAs and related syndromes,849,206.27624008475,204.0835294275,NA,NA,NA,NA,NA
-2011,NA,75plus years,Female,Cerebrovascular Disease,3980.5,1582.043282045,1553.7703736275,2425,963.81,947.88,NA,NA
-2011,NA,75plus years,Female,Stroke,2931.5,1165.1199302300001,1144.120041985,1352,537.35,527.29,NA,NA
-2011,NA,75plus years,Female,Subarachnoid Haemorrhage,67,26.6290415535,26.3395432165,41,16.3,15.98,NA,NA
-2011,NA,75plus years,Female,TIAs and related syndromes,530,210.6476421425,206.874780096,NA,NA,NA,NA,NA
-2011,NA,75plus years,Male,Cerebrovascular Disease,2656,1660.21790354,1734.8538963875,1235,771.98,902.64,NA,NA
-2011,NA,75plus years,Male,Stroke,1876,1172.6539109075,1228.642641567,639,399.43,457.35,NA,NA
-2011,NA,75plus years,Male,Subarachnoid Haemorrhage,24.5,15.31451003,15.680240775,12,7.5,7.6,NA,NA
-2011,NA,75plus years,Male,TIAs and related syndromes,319,199.401171409,201.292278734,NA,NA,NA,NA,NA
 2012,Aberdeen City,0-44 years,All,Cerebrovascular Disease,NA,NA,15.64055692925,NA,NA,0.87,NA,NA
 2012,Aberdeen City,0-44 years,All,Stroke,0,0,3.288369327,NA,NA,0.87,NA,NA
 2012,Aberdeen City,0-44 years,All,Subarachnoid Haemorrhage,0,0,4.9152657665,0,0,0,NA,NA
@@ -6287,54 +6143,6 @@ approx_year,council_area_named,age_group,sex,diagnosis,number_of_discharges,crud
 2012,West Lothian,75plus years,Male,Stroke,0,0,2102.3008525,NA,NA,508.74,NA,NA
 2012,West Lothian,75plus years,Male,Subarachnoid Haemorrhage,0,0,0,NA,NA,21.11,NA,NA
 2012,West Lothian,75plus years,Male,TIAs and related syndromes,0,0,326.183190625,NA,NA,NA,NA,NA
-2012,NA,0-44 years,All,Cerebrovascular Disease,549.5,18.74807870725,19.270489125,45,1.54,1.6,NA,NA
-2012,NA,0-44 years,All,Stroke,268.5,9.16079914975,9.460535175750001,20,0.68,0.72,NA,NA
-2012,NA,0-44 years,All,Subarachnoid Haemorrhage,119,4.06009347775,4.117312188,13,0.44,0.45,NA,NA
-2012,NA,0-44 years,All,TIAs and related syndromes,48.5,1.6547439805,1.719755756,NA,NA,NA,NA,NA
-2012,NA,0-44 years,Female,Cerebrovascular Disease,284.5,19.37446030825,19.54543098375,22,1.5,1.47,NA,NA
-2012,NA,0-44 years,Female,Stroke,122.5,8.34225443925,8.4555242505,8,0.54,0.54,NA,NA
-2012,NA,0-44 years,Female,Subarachnoid Haemorrhage,76.5,5.20965277075,5.174583574,7,0.48,0.45,NA,NA
-2012,NA,0-44 years,Female,TIAs and related syndromes,24.5,1.6684508875,1.7057182765,NA,NA,NA,NA,NA
-2012,NA,0-44 years,Male,Cerebrovascular Disease,265,18.119174943,18.995547269,23,1.57,1.73,NA,NA
-2012,NA,0-44 years,Male,Stroke,146,9.98263977975,10.4655461035,12,0.82,0.91,NA,NA
-2012,NA,0-44 years,Male,Subarachnoid Haemorrhage,42.5,2.905905415,3.06004080325,6,0.41,0.45,NA,NA
-2012,NA,0-44 years,Male,TIAs and related syndromes,24,1.6409818815,1.7337932355,NA,NA,NA,NA,NA
-2012,NA,45-64 years,All,Cerebrovascular Disease,3124.5,214.463391925,217.9309778475,301,20.66,21.01,NA,NA
-2012,NA,45-64 years,All,Stroke,1852,127.119923781,129.663743288,153,10.5,10.76,NA,NA
-2012,NA,45-64 years,All,Subarachnoid Haemorrhage,445.5,30.57879375925,30.527827768999998,80,5.49,5.47,NA,NA
-2012,NA,45-64 years,All,TIAs and related syndromes,376.5,25.84268429025,26.3171575535,NA,NA,NA,NA,NA
-2012,NA,45-64 years,Female,Cerebrovascular Disease,1372,184.1336391475,186.2506892275,135,18.12,18.23,NA,NA
-2012,NA,45-64 years,Female,Stroke,690,92.60365234625,93.63296464525,57,7.65,7.78,NA,NA
-2012,NA,45-64 years,Female,Subarachnoid Haemorrhage,299.5,40.19535344575,40.48200886125,49,6.58,6.52,NA,NA
-2012,NA,45-64 years,Female,TIAs and related syndromes,170.5,22.882496701,23.2871188885,NA,NA,NA,NA,NA
-2012,NA,45-64 years,Male,Cerebrovascular Disease,1752.5,246.21337182,249.61126644249998,166,23.32,23.79,NA,NA
-2012,NA,45-64 years,Male,Stroke,1162,163.2524610865,165.69452193075,96,13.49,13.75,NA,NA
-2012,NA,45-64 years,Male,Subarachnoid Haemorrhage,146,20.51192712375,20.5736466795,31,4.36,4.43,NA,NA
-2012,NA,45-64 years,Male,TIAs and related syndromes,206,28.941486216,29.34719622075,NA,NA,NA,NA,NA
-2012,NA,65-74 years,All,Cerebrovascular Disease,3096.5,610.402769125,627.84627847,550,108.42,112.52,NA,NA
-2012,NA,65-74 years,All,Stroke,2050.5,404.20826041124997,415.55048321274995,312,61.5,63.73,NA,NA
-2012,NA,65-74 years,All,Subarachnoid Haemorrhage,177.5,34.989985966,35.11778213375,52,10.25,10.47,NA,NA
-2012,NA,65-74 years,All,TIAs and related syndromes,404.5,79.7377426625,81.09064095699999,NA,NA,NA,NA,NA
-2012,NA,65-74 years,Female,Cerebrovascular Disease,1390,518.05940158,525.0655889125001,276,102.87,105.72,NA,NA
-2012,NA,65-74 years,Female,Stroke,907,338.04307720975,343.520925459,158,58.89,60.71,NA,NA
-2012,NA,65-74 years,Female,Subarachnoid Haemorrhage,109.5,40.81115430425,40.90213091525,32,11.93,12.18,NA,NA
-2012,NA,65-74 years,Female,TIAs and related syndromes,204.5,76.218091839,76.79632121825,NA,NA,NA,NA,NA
-2012,NA,65-74 years,Male,Cerebrovascular Disease,1706.5,714.07947988,730.6269680275001,274,114.65,119.32,NA,NA
-2012,NA,65-74 years,Male,Stroke,1143.5,478.4939262275,487.58004099174997,154,64.44,66.75,NA,NA
-2012,NA,65-74 years,Male,Subarachnoid Haemorrhage,68,28.45438302,29.333433355,20,8.37,8.76,NA,NA
-2012,NA,65-74 years,Male,TIAs and related syndromes,200,83.68936183574999,85.3849607485,NA,NA,NA,NA,NA
-2012,NA,75plus years,All,Cerebrovascular Disease,6880.5,1644.2706824975,1685.3248674925,3583,856.25,880.23,NA,NA
-2012,NA,75plus years,All,Stroke,4966.5,1186.8716440325,1209.89658917,1979,472.93,475.48,NA,NA
-2012,NA,75plus years,All,Subarachnoid Haemorrhage,99.5,23.778058705,22.842359815,50,11.95,11.35,NA,NA
-2012,NA,75plus years,All,TIAs and related syndromes,866,206.9527521325,207.652866859,NA,NA,NA,NA,NA
-2012,NA,75plus years,Female,Cerebrovascular Disease,4022,1580.589636205,1545.8424581125,2360,927.45,908.21,NA,NA
-2012,NA,75plus years,Female,Stroke,2950,1159.3086589775,1132.871563495,1354,532.1,521.87,NA,NA
-2012,NA,75plus years,Female,Subarachnoid Haemorrhage,68.5,26.91954005,26.85293838,35,13.75,13.53,NA,NA
-2012,NA,75plus years,Female,TIAs and related syndromes,541.5,212.80191147575,208.43919238925,NA,NA,NA,NA,NA
-2012,NA,75plus years,Male,Cerebrovascular Disease,2858.5,1743.08346194,1824.8072763725,1223,745.77,852.25,NA,NA
-2012,NA,75plus years,Male,Stroke,2016.5,1229.6406509175,1286.92161517,625,381.12,429.08,NA,NA
-2012,NA,75plus years,Male,Subarachnoid Haemorrhage,31,18.90347641,18.8317812525,15,9.15,9.17,NA,NA
-2012,NA,75plus years,Male,TIAs and related syndromes,324.5,197.87671276375,206.86654132875,NA,NA,NA,NA,NA
 2013,Aberdeen City,0-44 years,All,Cerebrovascular Disease,NA,NA,17.293972985,NA,NA,1.45,NA,NA
 2013,Aberdeen City,0-44 years,All,Stroke,0,0,7.373504499,NA,NA,0.94,NA,NA
 2013,Aberdeen City,0-44 years,All,Subarachnoid Haemorrhage,0,0,7.66955119475,0,0,0,NA,NA
@@ -7871,54 +7679,6 @@ approx_year,council_area_named,age_group,sex,diagnosis,number_of_discharges,crud
 2013,West Lothian,75plus years,Male,Stroke,0,0,1753.378071,NA,NA,385.28,NA,NA
 2013,West Lothian,75plus years,Male,Subarachnoid Haemorrhage,0,0,77.65353213750001,0,0,0,NA,NA
 2013,West Lothian,75plus years,Male,TIAs and related syndromes,0,0,126.195651,NA,NA,NA,NA,NA
-2013,NA,0-44 years,All,Cerebrovascular Disease,619,21.22175603425,21.8716200705,43,1.47,1.54,NA,NA
-2013,NA,0-44 years,All,Stroke,335,11.48511837225,11.78663812025,20,0.69,0.73,NA,NA
-2013,NA,0-44 years,All,Subarachnoid Haemorrhage,133.5,4.576905381,4.81431844,17,0.58,0.6,NA,NA
-2013,NA,0-44 years,All,TIAs and related syndromes,38,1.3027895465,1.3371564355,NA,NA,NA,NA,NA
-2013,NA,0-44 years,Female,Cerebrovascular Disease,312.5,21.40872859475,21.60871319625,20,1.37,1.38,NA,NA
-2013,NA,0-44 years,Female,Stroke,162.5,11.13253887,11.12602756025,7,0.48,0.49,NA,NA
-2013,NA,0-44 years,Female,Subarachnoid Haemorrhage,74,5.06958693075,5.235458049,9,0.62,0.62,NA,NA
-2013,NA,0-44 years,Female,TIAs and related syndromes,17.5,1.1988888015,1.186715641,NA,NA,NA,NA,NA
-2013,NA,0-44 years,Male,Cerebrovascular Disease,306.5,21.03445601725,22.13452694725,23,1.58,1.71,NA,NA
-2013,NA,0-44 years,Male,Stroke,172.5,11.838315376,12.447248683249999,13,0.89,0.96,NA,NA
-2013,NA,0-44 years,Male,Subarachnoid Haemorrhage,59.5,4.083360956,4.39317883175,8,0.55,0.58,NA,NA
-2013,NA,0-44 years,Male,TIAs and related syndromes,20.5,1.406872262,1.48759723025,NA,NA,NA,NA,NA
-2013,NA,45-64 years,All,Cerebrovascular Disease,3411,232.9943496475,237.1055432075,301,20.56,21.05,NA,NA
-2013,NA,45-64 years,All,Stroke,1918,131.0123607895,133.9415044475,167,11.41,11.69,NA,NA
-2013,NA,45-64 years,All,Subarachnoid Haemorrhage,435,29.71343949025,29.659764361249998,72,4.92,4.96,NA,NA
-2013,NA,45-64 years,All,TIAs and related syndromes,444,30.32820031025,30.968042199,NA,NA,NA,NA,NA
-2013,NA,45-64 years,Female,Cerebrovascular Disease,1504.5,200.6792013825,203.40316759499999,137,18.27,18.71,NA,NA
-2013,NA,45-64 years,Female,Stroke,732,97.6385346785,99.10245054825,76,10.14,10.4,NA,NA
-2013,NA,45-64 years,Female,Subarachnoid Haemorrhage,250,33.346494084,33.47463306,43,5.74,5.82,NA,NA
-2013,NA,45-64 years,Female,TIAs and related syndromes,195,26.0102653845,26.5041553265,NA,NA,NA,NA,NA
-2013,NA,45-64 years,Male,Cerebrovascular Disease,1906.5,266.912135305,270.80791884250004,164,22.96,23.38,NA,NA
-2013,NA,45-64 years,Male,Stroke,1186,166.04132835,168.780558327,91,12.74,12.97,NA,NA
-2013,NA,45-64 years,Male,Subarachnoid Haemorrhage,185,25.9002072,25.844895665,29,4.06,4.1,NA,NA
-2013,NA,45-64 years,Male,TIAs and related syndromes,249,34.86027888,35.431929069,NA,NA,NA,NA,NA
-2013,NA,65-74 years,All,Cerebrovascular Disease,3304,632.5842136225,653.48390206,582,111.43,116.35,NA,NA
-2013,NA,65-74 years,All,Stroke,2232,427.3389724475,443.21549222375,341,65.29,68.23,NA,NA
-2013,NA,65-74 years,All,Subarachnoid Haemorrhage,167,31.97383889,31.44172842,45,8.62,8.66,NA,NA
-2013,NA,65-74 years,All,TIAs and related syndromes,463.5,88.741762436,91.54034430375,NA,NA,NA,NA,NA
-2013,NA,65-74 years,Female,Cerebrovascular Disease,1439,522.6835204525,534.657889945,275,99.89,103.09,NA,NA
-2013,NA,65-74 years,Female,Stroke,920.5,334.35036869124997,342.60517489075,155,56.3,58.17,NA,NA
-2013,NA,65-74 years,Female,Subarachnoid Haemorrhage,129,46.856271115,47.3457344775,35,12.71,13,NA,NA
-2013,NA,65-74 years,Female,TIAs and related syndromes,202.5,73.5534488535,75.32619719224999,NA,NA,NA,NA,NA
-2013,NA,65-74 years,Male,Cerebrovascular Disease,1865,755.0851849675,772.3099144225,307,124.3,129.61,NA,NA
-2013,NA,65-74 years,Male,Stroke,1311.5,530.9888579770001,543.8258095065,186,75.31,78.29,NA,NA
-2013,NA,65-74 years,Male,Subarachnoid Haemorrhage,38,15.3851136875,15.5377223625,10,4.05,4.32,NA,NA
-2013,NA,65-74 years,Male,TIAs and related syndromes,261,105.67143875075,107.7544914655,NA,NA,NA,NA,NA
-2013,NA,75plus years,All,Cerebrovascular Disease,7165.5,1687.6042164175,1709.9472228875,3526,830.44,866.86,NA,NA
-2013,NA,75plus years,All,Stroke,5182.5,1220.572026175,1228.717022065,1955,460.44,468.63,NA,NA
-2013,NA,75plus years,All,Subarachnoid Haemorrhage,131.5,30.97061677675,30.13866289275,41,9.66,9.43,NA,NA
-2013,NA,75plus years,All,TIAs and related syndromes,965.5,227.39262736524998,229.919775802,NA,NA,NA,NA,NA
-2013,NA,75plus years,Female,Cerebrovascular Disease,4225.5,1648.51884936,1620.850785415,2244,875.46,856.83,NA,NA
-2013,NA,75plus years,Female,Stroke,3119.5,1217.028647645,1196.4325278875,1287,502.1,491.23,NA,NA
-2013,NA,75plus years,Female,Subarachnoid Haemorrhage,92,35.892494178250004,36.3978100255,32,12.48,12.88,NA,NA
-2013,NA,75plus years,Female,TIAs and related syndromes,561.5,219.061255214,215.693659742,NA,NA,NA,NA,NA
-2013,NA,75plus years,Male,Cerebrovascular Disease,2940,1747.140097935,1799.04366086,1282,761.85,876.9,NA,NA
-2013,NA,75plus years,Male,Stroke,2063,1225.969395455,1261.0015165925,668,396.97,446.02,NA,NA
-2013,NA,75plus years,Male,Subarachnoid Haemorrhage,39.5,23.47348091,23.87951576,9,5.35,5.99,NA,NA
-2013,NA,75plus years,Male,TIAs and related syndromes,404,240.08319716325,244.14589191175,NA,NA,NA,NA,NA
 2014,Aberdeen City,0-44 years,All,Cerebrovascular Disease,NA,NA,20.8669997805,NA,NA,3.6,3.6666666666666665,10.833333333333334
 2014,Aberdeen City,0-44 years,All,Stroke,0,0,6.373742256,NA,NA,0.92,2.3333333333333335,7.38
 2014,Aberdeen City,0-44 years,All,Subarachnoid Haemorrhage,0,0,10.7273450845,NA,NA,1.8,NA,NA
@@ -9023,30 +8783,6 @@ approx_year,council_area_named,age_group,sex,diagnosis,number_of_discharges,crud
 2014,Orkney Islands,75plus years,Male,Stroke,0,0,515.3558121,NA,NA,290.9,3.3333333333333335,673.99
 2014,Orkney Islands,75plus years,Male,Subarachnoid Haemorrhage,0,0,0,0,0,0,NA,NA
 2014,Orkney Islands,75plus years,Male,TIAs and related syndromes,0,0,220.884972675,NA,NA,NA,NA,NA
-2014,Other,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
-2014,Other,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,2,NA
-2014,Other,0-44 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1,NA
-2014,Other,0-44 years,Female,Stroke,NA,NA,NA,NA,NA,NA,2,NA
-2014,Other,0-44 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1,NA
-2014,Other,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,1,NA
-2014,Other,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,5.5,NA
-2014,Other,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,18.5,NA
-2014,Other,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,5,NA
-2014,Other,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,2.5,NA
-2014,Other,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1,NA
-2014,Other,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,16,NA
-2014,Other,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,6,NA
-2014,Other,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,51,NA
-2014,Other,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,5,NA
-2014,Other,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,24,NA
-2014,Other,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
-2014,Other,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,27,NA
-2014,Other,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4,NA
-2014,Other,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,28,NA
-2014,Other,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2.6666666666666665,NA
-2014,Other,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,16,NA
-2014,Other,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1.3333333333333333,NA
-2014,Other,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,12,NA
 2014,Perth & Kinross,0-44 years,All,Cerebrovascular Disease,NA,NA,19.478970609250002,0,0,0,1.5,8.865
 2014,Perth & Kinross,0-44 years,All,Stroke,0,0,13.442667995,0,0,0,2.6666666666666665,15.77
 2014,Perth & Kinross,0-44 years,All,Subarachnoid Haemorrhage,0,0,0,0,0,0,NA,NA
@@ -9143,30 +8879,6 @@ approx_year,council_area_named,age_group,sex,diagnosis,number_of_discharges,crud
 2014,Renfrewshire,75plus years,Male,Stroke,0,0,980.531056475,NA,NA,326.57,40,1136.3966666666668
 2014,Renfrewshire,75plus years,Male,Subarachnoid Haemorrhage,0,0,88.3010541575,0,0,0,NA,NA
 2014,Renfrewshire,75plus years,Male,TIAs and related syndromes,0,0,227.4777585,NA,NA,NA,NA,NA
-2014,Scotland,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,48.25,7.0249999999999995
-2014,Scotland,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,78,11.35
-2014,Scotland,0-44 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,27,7.7575
-2014,Scotland,0-44 years,Female,Stroke,NA,NA,NA,NA,NA,NA,32,9.137500000000001
-2014,Scotland,0-44 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,21.25,6.2325
-2014,Scotland,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,46,13.655000000000001
-2014,Scotland,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,448.5,62.04
-2014,Scotland,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,931.5,130.945
-2014,Scotland,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,257.5,69.32
-2014,Scotland,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,330.5,90.415
-2014,Scotland,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,191,54.379999999999995
-2014,Scotland,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,601,173.54500000000002
-2014,Scotland,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1104.5,139.625
-2014,Scotland,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,4455.5,544.82
-2014,Scotland,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,558.5,129.175
-2014,Scotland,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,2286,494.475
-2014,Scotland,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,546,152.4
-2014,Scotland,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,2169.5,602.45
-2014,Scotland,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,656.6666666666666,243.98000000000002
-2014,Scotland,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,3236.6666666666665,1232.4266666666667
-2014,Scotland,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,338,211.63666666666666
-2014,Scotland,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,1918.6666666666667,1221.24
-2014,Scotland,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,318.6666666666667,294.85
-2014,Scotland,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,1318,1235.49
 2014,Scottish Borders,0-44 years,All,Cerebrovascular Disease,0,0,14.555361675,NA,NA,2.44,1,7.65
 2014,Scottish Borders,0-44 years,All,Stroke,0,0,7.79138589025,NA,NA,2.44,1.3333333333333333,11.23
 2014,Scottish Borders,0-44 years,All,Subarachnoid Haemorrhage,0,0,3.6618539445,0,0,0,NA,NA
@@ -9503,54 +9215,6 @@ approx_year,council_area_named,age_group,sex,diagnosis,number_of_discharges,crud
 2014,West Lothian,75plus years,Male,Stroke,0,0,1818.97087775,NA,NA,464.18,33.333333333333336,1113.8166666666666
 2014,West Lothian,75plus years,Male,Subarachnoid Haemorrhage,0,0,0,0,0,0,NA,NA
 2014,West Lothian,75plus years,Male,TIAs and related syndromes,0,0,58.5192928075,NA,NA,NA,NA,NA
-2014,NA,0-44 years,All,Cerebrovascular Disease,677,23.2936297955,24.4605056135,33,1.14,1.22,NA,NA
-2014,NA,0-44 years,All,Stroke,361,12.420975415,13.1083237655,16,0.55,0.6,NA,NA
-2014,NA,0-44 years,All,Subarachnoid Haemorrhage,170.5,5.8664163655,6.17715634025,13,0.45,0.49,NA,NA
-2014,NA,0-44 years,All,TIAs and related syndromes,35,1.204249694,1.2864617855,NA,NA,NA,NA,NA
-2014,NA,0-44 years,Female,Cerebrovascular Disease,306,21.041716236,21.62794180825,16,1.1,1.14,NA,NA
-2014,NA,0-44 years,Female,Stroke,142,9.76445655375,9.93833185625,7,0.48,0.5,NA,NA
-2014,NA,0-44 years,Female,Subarachnoid Haemorrhage,94.5,6.49817707125,6.76840269125,7,0.48,0.51,NA,NA
-2014,NA,0-44 years,Female,TIAs and related syndromes,12.5,0.859547232,0.902753656,NA,NA,NA,NA,NA
-2014,NA,0-44 years,Male,Cerebrovascular Disease,371,25.548852709,27.2930694165,17,1.17,1.3,NA,NA
-2014,NA,0-44 years,Male,Stroke,219,15.08139823075,16.278315679,9,0.62,0.69,NA,NA
-2014,NA,0-44 years,Male,Subarachnoid Haemorrhage,76,5.23372724025,5.58590998975,6,0.41,0.46,NA,NA
-2014,NA,0-44 years,Male,TIAs and related syndromes,22.5,1.5494587225,1.670169915,NA,NA,NA,NA,NA
-2014,NA,45-64 years,All,Cerebrovascular Disease,3547.5,240.8716600375,244.8697199575,276,18.74,19.13,NA,NA
-2014,NA,45-64 years,All,Stroke,2101,142.65577385075,145.95003604,138,9.37,9.65,NA,NA
-2014,NA,45-64 years,All,Subarachnoid Haemorrhage,472,32.04832235075,31.86433403425,75,5.09,5.08,NA,NA
-2014,NA,45-64 years,All,TIAs and related syndromes,417.5,28.34782750475,28.841262043500002,NA,NA,NA,NA,NA
-2014,NA,45-64 years,Female,Cerebrovascular Disease,1558.5,206.33065066,208.77457481000002,131,17.34,17.62,NA,NA
-2014,NA,45-64 years,Female,Stroke,744.5,98.56475420449999,99.977795997,55,7.28,7.44,NA,NA
-2014,NA,45-64 years,Female,Subarachnoid Haemorrhage,313,41.43823782925,41.610291416,50,6.62,6.66,NA,NA
-2014,NA,45-64 years,Female,TIAs and related syndromes,206.5,27.338645722749998,27.75431308475,NA,NA,NA,NA,NA
-2014,NA,45-64 years,Male,Cerebrovascular Disease,1989,277.2376591775,280.96486503250003,145,20.21,20.64,NA,NA
-2014,NA,45-64 years,Male,Stroke,1356.5,189.07636230775,191.92227604575,83,11.57,11.85,NA,NA
-2014,NA,45-64 years,Male,Subarachnoid Haemorrhage,159,22.1622864795,22.11837665525,25,3.48,3.51,NA,NA
-2014,NA,45-64 years,Male,TIAs and related syndromes,211,29.4103298555,29.92821099975,NA,NA,NA,NA,NA
-2014,NA,65-74 years,All,Cerebrovascular Disease,3528,659.1780454350001,680.2204129425,498,93.05,96.97,NA,NA
-2014,NA,65-74 years,All,Stroke,2380,444.683602005,461.1654764,298,55.68,57.8,NA,NA
-2014,NA,65-74 years,All,Subarachnoid Haemorrhage,206.5,38.582841939,37.5480476855,49,9.16,8.93,NA,NA
-2014,NA,65-74 years,All,TIAs and related syndromes,462,86.32093450275,89.2996892415,NA,NA,NA,NA,NA
-2014,NA,65-74 years,Female,Cerebrovascular Disease,1579.5,561.32657155,571.1195225525,233,82.8,84.47,NA,NA
-2014,NA,65-74 years,Female,Stroke,987.5,350.940164249,358.22977226425,137,48.69,49.76,NA,NA
-2014,NA,65-74 years,Female,Subarachnoid Haemorrhage,170.5,60.59270684575,60.6846314015,39,13.86,13.75,NA,NA
-2014,NA,65-74 years,Female,TIAs and related syndromes,219.5,78.0064466445,79.45075544675001,NA,NA,NA,NA,NA
-2014,NA,65-74 years,Male,Cerebrovascular Disease,1948.5,767.65488043,789.32130306,265,104.4,109.47,NA,NA
-2014,NA,65-74 years,Male,Stroke,1392.5,548.60632338,564.101180485,161,63.43,65.83,NA,NA
-2014,NA,65-74 years,Male,Subarachnoid Haemorrhage,36,14.18300009875,14.41146396975,10,3.94,4.11,NA,NA
-2014,NA,65-74 years,Male,TIAs and related syndromes,242.5,95.53826454725,99.148623034,NA,NA,NA,NA,NA
-2014,NA,75plus years,All,Cerebrovascular Disease,7664.5,1769.11997548,1784.76713706,3317,765.63,789.56,NA,NA
-2014,NA,75plus years,All,Stroke,5638.5,1301.4786330625,1302.7620377125,1866,430.71,437.65,NA,NA
-2014,NA,75plus years,All,Subarachnoid Haemorrhage,122,28.160041365,28.090143295,50,11.54,10.37,NA,NA
-2014,NA,75plus years,All,TIAs and related syndromes,997,230.12755115325,229.5175586295,NA,NA,NA,NA,NA
-2014,NA,75plus years,Female,Cerebrovascular Disease,4497.5,1729.222417095,1686.641263435,2139,822.41,797.83,NA,NA
-2014,NA,75plus years,Female,Stroke,3370.5,1295.9075389375,1262.37060351,1256,482.91,468.26,NA,NA
-2014,NA,75plus years,Female,Subarachnoid Haemorrhage,89.5,34.4114299775,34.226527795,41,15.76,15.34,NA,NA
-2014,NA,75plus years,Female,TIAs and related syndromes,606,232.998062218,227.4435950065,NA,NA,NA,NA,NA
-2014,NA,75plus years,Male,Cerebrovascular Disease,3167,1829.049956735,1882.8930106825,1178,680.33,781.3,NA,NA
-2014,NA,75plus years,Male,Stroke,2268,1309.8469536974999,1343.15347194,610,352.3,407.05,NA,NA
-2014,NA,75plus years,Male,Subarachnoid Haemorrhage,32.5,18.769852727500002,21.9537588,9,5.2,5.39,NA,NA
-2014,NA,75plus years,Male,TIAs and related syndromes,391,225.81576669275,231.59152230225,NA,NA,NA,NA,NA
 2015,Aberdeen City,0-44 years,All,Cerebrovascular Disease,NA,NA,10.820737109,NA,NA,1.75,2,5.993333333333333
 2015,Aberdeen City,0-44 years,All,Stroke,0,0,5.30514271875,0,0,0,3,9.129999999999999
 2015,Aberdeen City,0-44 years,All,Subarachnoid Haemorrhage,NA,NA,2.8624169795,NA,NA,1.75,NA,NA
@@ -10655,29 +10319,6 @@ approx_year,council_area_named,age_group,sex,diagnosis,number_of_discharges,crud
 2015,Orkney Islands,75plus years,Male,Stroke,0,0,568.217705625,NA,NA,96.41,3.3333333333333335,515.35
 2015,Orkney Islands,75plus years,Male,Subarachnoid Haemorrhage,0,0,0,0,0,0,NA,NA
 2015,Orkney Islands,75plus years,Male,TIAs and related syndromes,0,0,55.92841165,NA,NA,NA,NA,NA
-2015,Other,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1.5,NA
-2015,Other,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,1.3333333333333333,NA
-2015,Other,0-44 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1,NA
-2015,Other,0-44 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1,NA
-2015,Other,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,1.3333333333333333,NA
-2015,Other,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,5.5,NA
-2015,Other,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,15.5,NA
-2015,Other,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1.5,NA
-2015,Other,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,7,NA
-2015,Other,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4,NA
-2015,Other,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,12,NA
-2015,Other,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,7,NA
-2015,Other,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,44.5,NA
-2015,Other,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,3,NA
-2015,Other,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,23,NA
-2015,Other,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4,NA
-2015,Other,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,21.5,NA
-2015,Other,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4,NA
-2015,Other,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,24.666666666666668,NA
-2015,Other,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
-2015,Other,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,13.333333333333334,NA
-2015,Other,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2.6666666666666665,NA
-2015,Other,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,11.333333333333334,NA
 2015,Perth & Kinross,0-44 years,All,Cerebrovascular Disease,NA,NA,11.9796889165,0,0,0,1.5,8.945
 2015,Perth & Kinross,0-44 years,All,Stroke,0,0,6.9194488849999995,0,0,0,1,4.38
 2015,Perth & Kinross,0-44 years,All,Subarachnoid Haemorrhage,0,0,0,0,0,0,NA,NA
@@ -10774,30 +10415,6 @@ approx_year,council_area_named,age_group,sex,diagnosis,number_of_discharges,crud
 2015,Renfrewshire,75plus years,Male,Stroke,NA,NA,1180.1440796925,NA,NA,252.85,40.666666666666664,1077.3333333333333
 2015,Renfrewshire,75plus years,Male,Subarachnoid Haemorrhage,0,0,8.200082,0,0,0,NA,NA
 2015,Renfrewshire,75plus years,Male,TIAs and related syndromes,NA,NA,127.65762658999999,NA,NA,NA,NA,NA
-2015,Scotland,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,42.5,6.1875
-2015,Scotland,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,73.75,10.807500000000001
-2015,Scotland,0-44 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,22.5,6.4750000000000005
-2015,Scotland,0-44 years,Female,Stroke,NA,NA,NA,NA,NA,NA,36.5,10.5175
-2015,Scotland,0-44 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,20,5.8875
-2015,Scotland,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,37.25,11.1175
-2015,Scotland,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,390.5,53.81
-2015,Scotland,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,1000.5,139.35500000000002
-2015,Scotland,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,203,54.36
-2015,Scotland,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,370,100.35
-2015,Scotland,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,187.5,53.225
-2015,Scotland,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,630.5,180.485
-2015,Scotland,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1066.5,133.075
-2015,Scotland,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,4656,561.485
-2015,Scotland,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,527,121.185
-2015,Scotland,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,2358,504.43500000000006
-2015,Scotland,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,539.5,147.535
-2015,Scotland,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,2298,626.485
-2015,Scotland,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,619.3333333333334,227.20666666666668
-2015,Scotland,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,3340,1265.3766666666666
-2015,Scotland,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,305.3333333333333,183.11
-2015,Scotland,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,1969.3333333333333,1249.1233333333332
-2015,Scotland,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,314,302.6933333333333
-2015,Scotland,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,1370.6666666666667,1279.9366666666667
 2015,Scottish Borders,0-44 years,All,Cerebrovascular Disease,NA,NA,17.56087919325,0,0,0,NA,NA
 2015,Scottish Borders,0-44 years,All,Stroke,NA,NA,13.38268597325,0,0,0,4,32.464999999999996
 2015,Scottish Borders,0-44 years,All,Subarachnoid Haemorrhage,0,0,0,0,0,0,NA,NA
@@ -11134,54 +10751,6 @@ approx_year,council_area_named,age_group,sex,diagnosis,number_of_discharges,crud
 2015,West Lothian,75plus years,Male,Stroke,0,0,1819.32314,NA,NA,476.22,36.666666666666664,1251.6599999999999
 2015,West Lothian,75plus years,Male,Subarachnoid Haemorrhage,0,0,38.959015115,0,0,0,NA,NA
 2015,West Lothian,75plus years,Male,TIAs and related syndromes,0,0,263.60880625,NA,NA,NA,NA,NA
-2015,NA,0-44 years,All,Cerebrovascular Disease,598.5,20.57356415375,21.842270375,47,1.62,1.76,NA,NA
-2015,NA,0-44 years,All,Stroke,347.5,11.94538604025,12.7835483705,19,0.65,0.7,NA,NA
-2015,NA,0-44 years,All,Subarachnoid Haemorrhage,115.5,3.9703369425,4.1525816465,23,0.79,0.88,NA,NA
-2015,NA,0-44 years,All,TIAs and related syndromes,46.5,1.59844734025,1.69020310125,NA,NA,NA,NA,NA
-2015,NA,0-44 years,Female,Cerebrovascular Disease,304.5,20.9366126015,21.814616275,21,1.44,1.54,NA,NA
-2015,NA,0-44 years,Female,Stroke,168.5,11.5856132115,12.13594958275,7,0.48,0.49,NA,NA
-2015,NA,0-44 years,Female,Subarachnoid Haemorrhage,63,4.331712952,4.51900305475,11,0.76,0.84,NA,NA
-2015,NA,0-44 years,Female,TIAs and related syndromes,26,1.7876910595,1.89376308,NA,NA,NA,NA,NA
-2015,NA,0-44 years,Male,Cerebrovascular Disease,294,20.21058883575,21.869924472250002,26,1.79,1.97,NA,NA
-2015,NA,0-44 years,Male,Stroke,179,12.3050864005,13.43114715825,12,0.82,0.91,NA,NA
-2015,NA,0-44 years,Male,Subarachnoid Haemorrhage,52.5,3.6090337205,3.7861602385,12,0.82,0.92,NA,NA
-2015,NA,0-44 years,Male,TIAs and related syndromes,20.5,1.40924173825,1.48664312325,NA,NA,NA,NA,NA
-2015,NA,45-64 years,All,Cerebrovascular Disease,3803,256.798266515,260.7432968175,283,19.11,19.5,NA,NA
-2015,NA,45-64 years,All,Stroke,2391.5,161.48647233425,164.74389198949999,147,9.93,10.19,NA,NA
-2015,NA,45-64 years,All,Subarachnoid Haemorrhage,469,31.669310279999998,31.5332391245,69,4.66,4.64,NA,NA
-2015,NA,45-64 years,All,TIAs and related syndromes,422,28.495626729,28.930415251,NA,NA,NA,NA,NA
-2015,NA,45-64 years,Female,Cerebrovascular Disease,1626,213.715655645,215.70248916,123,16.17,16.41,NA,NA
-2015,NA,45-64 years,Female,Stroke,891,117.109870348,118.32036124525001,58,7.62,7.77,NA,NA
-2015,NA,45-64 years,Female,Subarachnoid Haemorrhage,272,35.75071238325,35.78679542325,43,5.65,5.71,NA,NA
-2015,NA,45-64 years,Female,TIAs and related syndromes,200,26.287288519,26.66859318725,NA,NA,NA,NA,NA
-2015,NA,45-64 years,Male,Cerebrovascular Disease,2177,302.3170232125,305.7841044525,160,22.22,22.59,NA,NA
-2015,NA,45-64 years,Male,Stroke,1500.5,208.37239014725,211.16742270625,89,12.36,12.6,NA,NA
-2015,NA,45-64 years,Male,Subarachnoid Haemorrhage,197,27.357121531,27.27968282825,26,3.61,3.57,NA,NA
-2015,NA,45-64 years,Male,TIAs and related syndromes,222,30.8288374595,31.192237309750002,NA,NA,NA,NA,NA
-2015,NA,65-74 years,All,Cerebrovascular Disease,3627.5,665.2533280475,686.3185090725,530,97.2,101.22,NA,NA
-2015,NA,65-74 years,All,Stroke,2500,458.479206154,474.30316219725,294,53.92,56.06,NA,NA
-2015,NA,65-74 years,All,Subarachnoid Haemorrhage,178.5,32.73541531875,32.849633105500004,47,8.62,8.6,NA,NA
-2015,NA,65-74 years,All,TIAs and related syndromes,446.5,81.884386216,84.62376004625,NA,NA,NA,NA,NA
-2015,NA,65-74 years,Female,Cerebrovascular Disease,1586.5,554.9686574075,566.9115700375,248,86.75,89.09,NA,NA
-2015,NA,65-74 years,Female,Stroke,1033,361.35053449475,368.8494401685,136,47.57,48.91,NA,NA
-2015,NA,65-74 years,Female,Subarachnoid Haemorrhage,131,45.82470476325,47.07926930325,30,10.49,10.55,NA,NA
-2015,NA,65-74 years,Female,TIAs and related syndromes,209,73.10964348975,75.622520708,NA,NA,NA,NA,NA
-2015,NA,65-74 years,Male,Cerebrovascular Disease,2041,786.7884305425,805.725448105,282,108.71,113.36,NA,NA
-2015,NA,65-74 years,Male,Stroke,1467,565.5162310475,579.7568841,158,60.91,63.22,NA,NA
-2015,NA,65-74 years,Male,Subarachnoid Haemorrhage,47.5,18.31085274675,18.619996910250002,17,6.55,6.64,NA,NA
-2015,NA,65-74 years,Male,TIAs and related syndromes,237.5,91.55426374025001,93.624999402,NA,NA,NA,NA,NA
-2015,NA,75plus years,All,Cerebrovascular Disease,7937.5,1813.38627458,1837.511358025,3450,788.18,815.73,NA,NA
-2015,NA,75plus years,All,Stroke,5962,1362.067271875,1370.9210653625,1816,414.88,418.43,NA,NA
-2015,NA,75plus years,All,Subarachnoid Haemorrhage,131,29.928012849250003,29.19956912375,45,10.28,9.27,NA,NA
-2015,NA,75plus years,All,TIAs and related syndromes,979.5,223.7747220135,224.299332563,NA,NA,NA,NA,NA
-2015,NA,75plus years,Female,Cerebrovascular Disease,4596,1757.9223163125,1719.9390220325001,2188,836.89,816.19,NA,NA
-2015,NA,75plus years,Female,Stroke,3520.5,1346.55472478,1315.2875545775,1204,460.52,448.5,NA,NA
-2015,NA,75plus years,Female,Subarachnoid Haemorrhage,89,34.04157662,35.036782304,38,14.53,14.27,NA,NA
-2015,NA,75plus years,Female,TIAs and related syndromes,584.5,223.5651857935,218.89766350424998,NA,NA,NA,NA,NA
-2015,NA,75plus years,Male,Cerebrovascular Disease,3341.5,1895.6499044500001,1955.08369452,1262,715.94,815.28,NA,NA
-2015,NA,75plus years,Male,Stroke,2441.5,1385.075338055,1426.554576575,612,347.19,388.37,NA,NA
-2015,NA,75plus years,Male,Subarachnoid Haemorrhage,42,23.826813106,23.36235594575,7,3.97,4.27,NA,NA
-2015,NA,75plus years,Male,TIAs and related syndromes,395,224.0855042025,229.7010015965,NA,NA,NA,NA,NA
 2016,Aberdeen City,0-44 years,All,Cerebrovascular Disease,NA,NA,22.740016814,NA,NA,1.31,6.5,19.875
 2016,Aberdeen City,0-44 years,All,Stroke,0,0,9.99398913025,NA,NA,0.42,5.5,16.02
 2016,Aberdeen City,0-44 years,All,Subarachnoid Haemorrhage,NA,NA,9.51981926875,NA,NA,0.89,NA,NA
@@ -12286,28 +11855,6 @@ approx_year,council_area_named,age_group,sex,diagnosis,number_of_discharges,crud
 2016,Orkney Islands,75plus years,Male,Stroke,0,0,1162.870251,NA,NA,374.39,8.666666666666666,1251.05
 2016,Orkney Islands,75plus years,Male,Subarachnoid Haemorrhage,0,0,0,0,0,0,NA,NA
 2016,Orkney Islands,75plus years,Male,TIAs and related syndromes,0,0,162.63006385,NA,NA,NA,NA,NA
-2016,Other,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1,NA
-2016,Other,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,2,NA
-2016,Other,0-44 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1,NA
-2016,Other,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,2,NA
-2016,Other,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4,NA
-2016,Other,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,16.5,NA
-2016,Other,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2.5,NA
-2016,Other,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,3,NA
-2016,Other,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1.5,NA
-2016,Other,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,13.5,NA
-2016,Other,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,10,NA
-2016,Other,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,50,NA
-2016,Other,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,5,NA
-2016,Other,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,16.5,NA
-2016,Other,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,5,NA
-2016,Other,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,33.5,NA
-2016,Other,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4,NA
-2016,Other,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,24,NA
-2016,Other,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
-2016,Other,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,11.333333333333334,NA
-2016,Other,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
-2016,Other,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,12.666666666666666,NA
 2016,Perth & Kinross,0-44 years,All,Cerebrovascular Disease,NA,NA,19.73832394475,NA,NA,1.62,3,17.755
 2016,Perth & Kinross,0-44 years,All,Stroke,0,0,7.39311988525,0,0,0,3.5,20.660000000000004
 2016,Perth & Kinross,0-44 years,All,Subarachnoid Haemorrhage,0,0,5.41911426025,0,0,0,NA,NA
@@ -12404,30 +11951,6 @@ approx_year,council_area_named,age_group,sex,diagnosis,number_of_discharges,crud
 2016,Renfrewshire,75plus years,Male,Stroke,NA,NA,1333.8508506,NA,NA,295.92,45.333333333333336,1135.7066666666667
 2016,Renfrewshire,75plus years,Male,Subarachnoid Haemorrhage,0,0,0,NA,NA,15.68,NA,NA
 2016,Renfrewshire,75plus years,Male,TIAs and related syndromes,0,0,179.2287898,NA,NA,NA,NA,NA
-2016,Scotland,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,47.75,6.9624999999999995
-2016,Scotland,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,75,10.9125
-2016,Scotland,0-44 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,26.25,7.5625
-2016,Scotland,0-44 years,Female,Stroke,NA,NA,NA,NA,NA,NA,31.75,9.1125
-2016,Scotland,0-44 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,21.5,6.335
-2016,Scotland,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,43.25,12.7975
-2016,Scotland,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,380,51.81
-2016,Scotland,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,1051,145.14
-2016,Scotland,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,204,53.91
-2016,Scotland,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,402,107.865
-2016,Scotland,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,176,49.57
-2016,Scotland,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,649,184.535
-2016,Scotland,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,959,117.375
-2016,Scotland,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,4730,562.0600000000001
-2016,Scotland,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,417,92
-2016,Scotland,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,2359.5,497.34499999999997
-2016,Scotland,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,542,147.10500000000002
-2016,Scotland,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,2370.5,635.505
-2016,Scotland,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,562.6666666666666,201.76
-2016,Scotland,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,3340,1252.3733333333334
-2016,Scotland,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,281.3333333333333,167.99666666666667
-2016,Scotland,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,1971.3333333333333,1242.6733333333332
-2016,Scotland,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,281.3333333333333,256.84666666666664
-2016,Scotland,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,1368.6666666666667,1255.8133333333333
 2016,Scottish Borders,0-44 years,All,Cerebrovascular Disease,NA,NA,20.9947082865,0,0,0,4,32.41
 2016,Scottish Borders,0-44 years,All,Stroke,NA,NA,12.91516716075,0,0,0,5,40.51
 2016,Scottish Borders,0-44 years,All,Subarachnoid Haemorrhage,0,0,5.317047975,0,0,0,NA,NA
@@ -12764,54 +12287,6 @@ approx_year,council_area_named,age_group,sex,diagnosis,number_of_discharges,crud
 2016,West Lothian,75plus years,Male,Stroke,0,0,1515.000341,NA,NA,298.97,32,1120.5733333333333
 2016,West Lothian,75plus years,Male,Subarachnoid Haemorrhage,0,0,0,NA,NA,39.97,NA,NA
 2016,West Lothian,75plus years,Male,TIAs and related syndromes,0,0,325.51950045,NA,NA,NA,NA,NA
-2016,NA,0-44 years,All,Cerebrovascular Disease,639.5,21.94176563,23.580322715,45,1.54,1.66,NA,NA
-2016,NA,0-44 years,All,Stroke,352.5,12.09456197575,13.016663314,24,0.82,0.87,NA,NA
-2016,NA,0-44 years,All,Subarachnoid Haemorrhage,140,4.8035139765,5.151960531,13,0.45,0.48,NA,NA
-2016,NA,0-44 years,All,TIAs and related syndromes,47,1.6126082635,1.73099694775,NA,NA,NA,NA,NA
-2016,NA,0-44 years,Female,Cerebrovascular Disease,306,21.025436655500002,22.29642311625,25,1.72,1.83,NA,NA
-2016,NA,0-44 years,Female,Stroke,150.5,10.34094188375,10.83527806775,13,0.89,0.94,NA,NA
-2016,NA,0-44 years,Female,Subarachnoid Haemorrhage,86,5.90910964925,6.355036856,5,0.34,0.37,NA,NA
-2016,NA,0-44 years,Female,TIAs and related syndromes,20.5,1.40856683475,1.53284839325,NA,NA,NA,NA,NA
-2016,NA,0-44 years,Male,Cerebrovascular Disease,333.5,22.8557252055,24.8642223115,20,1.37,1.49,NA,NA
-2016,NA,0-44 years,Male,Stroke,202,13.84364765025,15.198048559750001,11,0.75,0.81,NA,NA
-2016,NA,0-44 years,Male,Subarachnoid Haemorrhage,54,3.7007770945,3.9488842065,8,0.55,0.6,NA,NA
-2016,NA,0-44 years,Male,TIAs and related syndromes,26.5,1.81612209275,1.9291455025,NA,NA,NA,NA,NA
-2016,NA,45-64 years,All,Cerebrovascular Disease,3999.5,268.18613105,271.41916504,319,21.39,21.75,NA,NA
-2016,NA,45-64 years,All,Stroke,2560.5,171.69410890225,174.43679415175,171,11.47,11.69,NA,NA
-2016,NA,45-64 years,All,Subarachnoid Haemorrhage,453.5,30.40940377975,30.197455945,57,3.82,3.81,NA,NA
-2016,NA,45-64 years,All,TIAs and related syndromes,479,32.11930410625,32.54271009,NA,NA,NA,NA,NA
-2016,NA,45-64 years,Female,Cerebrovascular Disease,1730.5,225.5249106875,227.23418732000002,134,17.46,17.7,NA,NA
-2016,NA,45-64 years,Female,Stroke,991,129.1506422915,130.37525703575,60,7.82,7.95,NA,NA
-2016,NA,45-64 years,Female,Subarachnoid Haemorrhage,289.5,37.728668965749996,37.75394273575,37,4.82,4.83,NA,NA
-2016,NA,45-64 years,Female,TIAs and related syndromes,204,26.586005074,26.781707874749998,NA,NA,NA,NA,NA
-2016,NA,45-64 years,Male,Cerebrovascular Disease,2269,313.4003873,315.6041427875,185,25.55,25.8,NA,NA
-2016,NA,45-64 years,Male,Stroke,1569.5,216.783564504,218.49833131525,111,15.33,15.43,NA,NA
-2016,NA,45-64 years,Male,Subarachnoid Haemorrhage,164,22.65212142525,22.64096915675,20,2.76,2.79,NA,NA
-2016,NA,45-64 years,Male,TIAs and related syndromes,275,37.983740196,38.30371231025,NA,NA,NA,NA,NA
-2016,NA,65-74 years,All,Cerebrovascular Disease,3892.5,699.40687409,721.9205489075,531,95.41,99.43,NA,NA
-2016,NA,65-74 years,All,Stroke,2751,494.30142864775,511.19438137575,302,54.26,56.56,NA,NA
-2016,NA,65-74 years,All,Subarachnoid Haemorrhage,158.5,28.47938074925,28.13769624975,34,6.11,6.18,NA,NA
-2016,NA,65-74 years,All,TIAs and related syndromes,532,95.59009816475,98.088654713,NA,NA,NA,NA,NA
-2016,NA,65-74 years,Female,Cerebrovascular Disease,1604.5,550.98263444,562.0236674825,251,86.19,88.7,NA,NA
-2016,NA,65-74 years,Female,Stroke,1119.5,384.434440108,392.3975248565,132,45.33,46.4,NA,NA
-2016,NA,65-74 years,Female,Subarachnoid Haemorrhage,88,30.219053799250002,30.60985709025,26,8.93,9.13,NA,NA
-2016,NA,65-74 years,Female,TIAs and related syndromes,233,80.011812901,81.766056643,NA,NA,NA,NA,NA
-2016,NA,65-74 years,Male,Cerebrovascular Disease,2288,862.30289146,881.8174299825,280,105.53,110.16,NA,NA
-2016,NA,65-74 years,Male,Stroke,1631.5,614.88075498825,629.9912375697501,170,64.07,66.71,NA,NA
-2016,NA,65-74 years,Male,Subarachnoid Haemorrhage,70.5,26.5700847235,25.665535412,8,3.02,3.24,NA,NA
-2016,NA,65-74 years,Male,TIAs and related syndromes,299,112.68730968475,114.41125279775,NA,NA,NA,NA,NA
-2016,NA,75plus years,All,Cerebrovascular Disease,8256,1866.5683946175,1880.12464451,3258,736.59,758.68,NA,NA
-2016,NA,75plus years,All,Stroke,6147.5,1389.86545603,1394.4124300225,1684,380.73,382.65,NA,NA
-2016,NA,75plus years,All,Subarachnoid Haemorrhage,134.5,30.408605748,28.934385589,52,11.76,11.72,NA,NA
-2016,NA,75plus years,All,TIAs and related syndromes,1160,262.26009421475004,260.961792292,NA,NA,NA,NA,NA
-2016,NA,75plus years,Female,Cerebrovascular Disease,4837.5,1837.3346399275001,1792.8066634724998,2027,769.88,742.66,NA,NA
-2016,NA,75plus years,Female,Stroke,3636.5,1381.18189514125,1347.92867901875,1102,418.55,404,NA,NA
-2016,NA,75plus years,Female,Subarachnoid Haemorrhage,99,37.601267048749996,38.15134650125,35,13.29,13.07,NA,NA
-2016,NA,75plus years,Female,TIAs and related syndromes,719,273.08394959675,265.004689408,NA,NA,NA,NA,NA
-2016,NA,75plus years,Male,Cerebrovascular Disease,3418.5,1909.5631774325,1967.442625295,1231,687.63,774.71,NA,NA
-2016,NA,75plus years,Male,Stroke,2511,1402.636577085,1440.8961817525,582,325.1,361.3,NA,NA
-2016,NA,75plus years,Male,Subarachnoid Haemorrhage,35.5,19.83018657125,19.71742467425,17,9.5,10.38,NA,NA
-2016,NA,75plus years,Male,TIAs and related syndromes,441,246.3411909225,256.918895176,NA,NA,NA,NA,NA
 2017,Aberdeen City,0-44 years,All,Cerebrovascular Disease,NA,NA,23.533248866500003,NA,NA,1.38,4.666666666666667,14.89
 2017,Aberdeen City,0-44 years,All,Stroke,0,0,8.612875056250001,NA,NA,1.38,3.3333333333333335,9.776666666666667
 2017,Aberdeen City,0-44 years,All,Subarachnoid Haemorrhage,0,0,9.253101765,0,0,0,NA,NA
@@ -13916,29 +13391,6 @@ approx_year,council_area_named,age_group,sex,diagnosis,number_of_discharges,crud
 2017,Orkney Islands,75plus years,Male,Stroke,0,0,516.8031454000001,NA,NA,388.69,2,331.87666666666667
 2017,Orkney Islands,75plus years,Male,Subarachnoid Haemorrhage,0,0,0,0,0,0,NA,NA
 2017,Orkney Islands,75plus years,Male,TIAs and related syndromes,0,0,101.8685821,NA,NA,NA,NA,NA
-2017,Other,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1.3333333333333333,NA
-2017,Other,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,2.3333333333333335,NA
-2017,Other,0-44 years,Female,Stroke,NA,NA,NA,NA,NA,NA,1,NA
-2017,Other,0-44 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1.3333333333333333,NA
-2017,Other,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,3,NA
-2017,Other,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,8,NA
-2017,Other,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,17.5,NA
-2017,Other,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,3.5,NA
-2017,Other,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,4.5,NA
-2017,Other,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4.5,NA
-2017,Other,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,13,NA
-2017,Other,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,9.5,NA
-2017,Other,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,50.5,NA
-2017,Other,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,6,NA
-2017,Other,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,18,NA
-2017,Other,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,3.5,NA
-2017,Other,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,32.5,NA
-2017,Other,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4.666666666666667,NA
-2017,Other,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,23.333333333333332,NA
-2017,Other,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2.6666666666666665,NA
-2017,Other,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,13.333333333333334,NA
-2017,Other,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
-2017,Other,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,10,NA
 2017,Perth & Kinross,0-44 years,All,Cerebrovascular Disease,NA,NA,24.37317603,0,0,0,4,23.74
 2017,Perth & Kinross,0-44 years,All,Stroke,0,0,19.0433535775,0,0,0,4,23.913333333333334
 2017,Perth & Kinross,0-44 years,All,Subarachnoid Haemorrhage,0,0,0.754186814,0,0,0,NA,NA
@@ -14035,30 +13487,6 @@ approx_year,council_area_named,age_group,sex,diagnosis,number_of_discharges,crud
 2017,Renfrewshire,75plus years,Male,Stroke,NA,NA,1373.7541665800002,NA,NA,463.82,46,1381.6066666666668
 2017,Renfrewshire,75plus years,Male,Subarachnoid Haemorrhage,0,0,65.23955149,NA,NA,16.31,NA,NA
 2017,Renfrewshire,75plus years,Male,TIAs and related syndromes,0,0,180.86440435,NA,NA,NA,NA,NA
-2017,Scotland,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,45,6.5
-2017,Scotland,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,79,11.530000000000001
-2017,Scotland,0-44 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,22.25,6.362500000000001
-2017,Scotland,0-44 years,Female,Stroke,NA,NA,NA,NA,NA,NA,30.25,8.7225
-2017,Scotland,0-44 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,22.75,6.6075
-2017,Scotland,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,48.75,14.417499999999999
-2017,Scotland,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,349.5,47.355000000000004
-2017,Scotland,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,1038.5,141.37
-2017,Scotland,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,199.5,52.42
-2017,Scotland,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,377.5,99.57
-2017,Scotland,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,150,41.985
-2017,Scotland,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,661,185.605
-2017,Scotland,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,909,109.44
-2017,Scotland,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,4846,569.835
-2017,Scotland,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,446.5,98.72
-2017,Scotland,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,2499.5,525.435
-2017,Scotland,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,462.5,122.1
-2017,Scotland,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,2346.5,619.2
-2017,Scotland,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,542.6666666666666,194.50666666666666
-2017,Scotland,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,3356,1242.04
-2017,Scotland,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,279.3333333333333,170.11
-2017,Scotland,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,2015.3333333333333,1256.9133333333334
-2017,Scotland,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,263.3333333333333,231.78333333333333
-2017,Scotland,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,1340.6666666666667,1207.6
 2017,Scottish Borders,0-44 years,All,Cerebrovascular Disease,NA,NA,19.193690610250002,0,0,0,1,8.975000000000001
 2017,Scottish Borders,0-44 years,All,Stroke,0,0,11.81095241275,0,0,0,1,8.485
 2017,Scottish Borders,0-44 years,All,Subarachnoid Haemorrhage,0,0,0,0,0,0,NA,NA
@@ -14395,54 +13823,6 @@ approx_year,council_area_named,age_group,sex,diagnosis,number_of_discharges,crud
 2017,West Lothian,75plus years,Male,Stroke,0,0,1137.57785905,NA,NA,219.55,28,1003.7666666666667
 2017,West Lothian,75plus years,Male,Subarachnoid Haemorrhage,0,0,63.2730230525,0,0,0,NA,NA
 2017,West Lothian,75plus years,Male,TIAs and related syndromes,0,0,234.63910945,NA,NA,NA,NA,NA
-2017,NA,0-44 years,All,Cerebrovascular Disease,661.5,22.714653473,24.6016719305,45,1.55,1.7,NA,NA
-2017,NA,0-44 years,All,Stroke,387,13.288844891,14.456643278,18,0.62,0.69,NA,NA
-2017,NA,0-44 years,All,Subarachnoid Haemorrhage,124.5,4.275093511,4.6426118105,19,0.65,0.72,NA,NA
-2017,NA,0-44 years,All,TIAs and related syndromes,49,1.682566924,1.794003901,NA,NA,NA,NA,NA
-2017,NA,0-44 years,Female,Cerebrovascular Disease,296,20.392402178,21.8863040705,23,1.58,1.73,NA,NA
-2017,NA,0-44 years,Female,Stroke,156.5,10.78179371975,11.57985265175,9,0.62,0.67,NA,NA
-2017,NA,0-44 years,Female,Subarachnoid Haemorrhage,59.5,4.0991484105,4.412688145,13,0.9,0.99,NA,NA
-2017,NA,0-44 years,Female,TIAs and related syndromes,25,1.72233126525,1.86711492975,NA,NA,NA,NA,NA
-2017,NA,0-44 years,Male,Cerebrovascular Disease,365.5,25.02231812925,27.31703979025,22,1.51,1.67,NA,NA
-2017,NA,0-44 years,Male,Stroke,230.5,15.78014863925,17.333433904,9,0.62,0.71,NA,NA
-2017,NA,0-44 years,Male,Subarachnoid Haemorrhage,65,4.4499334565,4.872535476,6,0.41,0.45,NA,NA
-2017,NA,0-44 years,Male,TIAs and related syndromes,24,1.643052353,1.720892872,NA,NA,NA,NA,NA
-2017,NA,45-64 years,All,Cerebrovascular Disease,3856,257.06392466,258.47318176,279,18.6,18.78,NA,NA
-2017,NA,45-64 years,All,Stroke,2440,162.66493156675,164.25167279975,149,9.93,10.07,NA,NA
-2017,NA,45-64 years,All,Subarachnoid Haemorrhage,448,29.8663480915,29.39543258975,58,3.87,3.83,NA,NA
-2017,NA,45-64 years,All,TIAs and related syndromes,558.5,37.23293618275,37.4718221555,NA,NA,NA,NA,NA
-2017,NA,45-64 years,Female,Cerebrovascular Disease,1637.5,211.9376210875,212.2747354,123,15.92,16.07,NA,NA
-2017,NA,45-64 years,Female,Stroke,871,112.73140028575,113.00718245425,53,6.86,6.93,NA,NA
-2017,NA,45-64 years,Female,Subarachnoid Haemorrhage,325,42.06395533125,42.019213076250004,43,5.57,5.59,NA,NA
-2017,NA,45-64 years,Female,TIAs and related syndromes,241.5,31.25675449975,31.3549902015,NA,NA,NA,NA,NA
-2017,NA,45-64 years,Male,Cerebrovascular Disease,2218.5,304.9975047475,304.6716280475,156,21.45,21.48,NA,NA
-2017,NA,45-64 years,Male,Stroke,1569,215.7047937575,215.49616312,96,13.2,13.21,NA,NA
-2017,NA,45-64 years,Male,Subarachnoid Haemorrhage,123,16.90993603075,16.771652106,15,2.06,2.06,NA,NA
-2017,NA,45-64 years,Male,TIAs and related syndromes,317,43.58089204675,43.5886541095,NA,NA,NA,NA,NA
-2017,NA,65-74 years,All,Cerebrovascular Disease,4080,722.6406139075,731.70356504,480,85.02,86.74,NA,NA
-2017,NA,65-74 years,All,Stroke,2934.5,519.75217688075,527.4901620785,277,49.06,50.06,NA,NA
-2017,NA,65-74 years,All,Subarachnoid Haemorrhage,174,30.81849676625,30.4693659715,33,5.84,5.77,NA,NA
-2017,NA,65-74 years,All,TIAs and related syndromes,570,100.9571445925,101.5541882175,NA,NA,NA,NA,NA
-2017,NA,65-74 years,Female,Cerebrovascular Disease,1841,624.3429308825,626.69316798,212,71.9,72.49,NA,NA
-2017,NA,65-74 years,Female,Stroke,1257.5,426.459117573,428.43448853350003,117,39.68,40,NA,NA
-2017,NA,65-74 years,Female,Subarachnoid Haemorrhage,122,41.37416488675,41.392784221250004,24,8.14,8.2,NA,NA
-2017,NA,65-74 years,Female,TIAs and related syndromes,281,95.29623225075001,95.44252597975,NA,NA,NA,NA,NA
-2017,NA,65-74 years,Male,Cerebrovascular Disease,2239,830.10165861,836.7139621,268,99.36,101,NA,NA
-2017,NA,65-74 years,Male,Stroke,1677,621.74206410225,626.5458358735,160,59.32,60.11,NA,NA
-2017,NA,65-74 years,Male,Subarachnoid Haemorrhage,52,19.27882369475,19.54594771925,9,3.34,3.33,NA,NA
-2017,NA,65-74 years,Male,TIAs and related syndromes,289,107.14577014150001,107.66585045525,NA,NA,NA,NA,NA
-2017,NA,75plus years,All,Cerebrovascular Disease,8368.5,1868.0896753375,1866.6783121925,3131,698.93,713.76,NA,NA
-2017,NA,75plus years,All,Stroke,6234,1391.6079389239999,1385.396463071,1668,372.35,368.74,NA,NA
-2017,NA,75plus years,All,Subarachnoid Haemorrhage,114.5,25.559690248,24.72355816375,63,14.06,13.56,NA,NA
-2017,NA,75plus years,All,TIAs and related syndromes,1232,275.01780250225,273.48425100149996,NA,NA,NA,NA,NA
-2017,NA,75plus years,Female,Cerebrovascular Disease,4972,1872.8623305675,1815.120205655,1976,744.32,715.27,NA,NA
-2017,NA,75plus years,Female,Stroke,3760.5,1416.5122272019998,1370.501896173,1122,422.64,406.23,NA,NA
-2017,NA,75plus years,Female,Subarachnoid Haemorrhage,81.5,30.6995735975,30.5530407125,41,15.44,15.15,NA,NA
-2017,NA,75plus years,Female,TIAs and related syndromes,734,276.4845033135,268.7278096365,NA,NA,NA,NA,NA
-2017,NA,75plus years,Male,Cerebrovascular Disease,3396.5,1861.14688056,1918.23641898,1155,632.89,712.24,NA,NA
-2017,NA,75plus years,Male,Stroke,2473.5,1355.37959934,1400.29103022,546,299.19,331.24,NA,NA
-2017,NA,75plus years,Male,Subarachnoid Haemorrhage,33,18.0826871965,18.89407561525,22,12.06,11.97,NA,NA
-2017,NA,75plus years,Male,TIAs and related syndromes,498,272.88418861775,278.24069239125,NA,NA,NA,NA,NA
 2018,Aberdeen City,0-44 years,All,Cerebrovascular Disease,NA,NA,9.05961469425,NA,NA,1.68,1.5,3.88
 2018,Aberdeen City,0-44 years,All,Stroke,NA,NA,7.54672311,0,0,0,4,10.843333333333334
 2018,Aberdeen City,0-44 years,All,Subarachnoid Haemorrhage,0,0,0,NA,NA,0.9,NA,NA
@@ -15547,30 +14927,6 @@ approx_year,council_area_named,age_group,sex,diagnosis,number_of_discharges,crud
 2018,Orkney Islands,75plus years,Male,Stroke,0,0,1092.8958745,NA,NA,402.41,8.666666666666666,1362.8666666666668
 2018,Orkney Islands,75plus years,Male,Subarachnoid Haemorrhage,0,0,0,0,0,0,NA,NA
 2018,Orkney Islands,75plus years,Male,TIAs and related syndromes,0,0,0,NA,NA,NA,NA,NA
-2018,Other,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
-2018,Other,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,5.5,NA
-2018,Other,0-44 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1,NA
-2018,Other,0-44 years,Female,Stroke,NA,NA,NA,NA,NA,NA,2,NA
-2018,Other,0-44 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,1,NA
-2018,Other,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,3.5,NA
-2018,Other,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4,NA
-2018,Other,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,19.5,NA
-2018,Other,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
-2018,Other,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,6,NA
-2018,Other,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
-2018,Other,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,13.5,NA
-2018,Other,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,7,NA
-2018,Other,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,57.5,NA
-2018,Other,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4.5,NA
-2018,Other,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,24,NA
-2018,Other,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2.5,NA
-2018,Other,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,33.5,NA
-2018,Other,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,4,NA
-2018,Other,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,22,NA
-2018,Other,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,2,NA
-2018,Other,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,12,NA
-2018,Other,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,3,NA
-2018,Other,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,10,NA
 2018,Perth & Kinross,0-44 years,All,Cerebrovascular Disease,NA,NA,10.523818435,NA,NA,1.51,2,11.895
 2018,Perth & Kinross,0-44 years,All,Stroke,0,0,4.5989677655,NA,NA,1.51,4,23.72
 2018,Perth & Kinross,0-44 years,All,Subarachnoid Haemorrhage,0,0,0.8163074915,0,0,0,NA,NA
@@ -15667,30 +15023,6 @@ approx_year,council_area_named,age_group,sex,diagnosis,number_of_discharges,crud
 2018,Renfrewshire,75plus years,Male,Stroke,NA,NA,1654.5531810625,NA,NA,357.91,52,1410.8333333333333
 2018,Renfrewshire,75plus years,Male,Subarachnoid Haemorrhage,0,0,0,0,0,0,NA,NA
 2018,Renfrewshire,75plus years,Male,TIAs and related syndromes,0,0,270.35219915,NA,NA,NA,NA,NA
-2018,Scotland,0-44 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,45,6.4825
-2018,Scotland,0-44 years,All,Stroke,NA,NA,NA,NA,NA,NA,67,9.772499999999999
-2018,Scotland,0-44 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,25,7.1175
-2018,Scotland,0-44 years,Female,Stroke,NA,NA,NA,NA,NA,NA,29.75,8.5
-2018,Scotland,0-44 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,20,5.8175
-2018,Scotland,0-44 years,Male,Stroke,NA,NA,NA,NA,NA,NA,37.25,11.102500000000001
-2018,Scotland,45-64 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,378,50.905
-2018,Scotland,45-64 years,All,Stroke,NA,NA,NA,NA,NA,NA,1082.5,146.42000000000002
-2018,Scotland,45-64 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,210.5,54.94500000000001
-2018,Scotland,45-64 years,Female,Stroke,NA,NA,NA,NA,NA,NA,377.5,99.075
-2018,Scotland,45-64 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,167.5,46.595
-2018,Scotland,45-64 years,Male,Stroke,NA,NA,NA,NA,NA,NA,705,196.66
-2018,Scotland,65-74 years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,923,110.31
-2018,Scotland,65-74 years,All,Stroke,NA,NA,NA,NA,NA,NA,4886,566.95
-2018,Scotland,65-74 years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,439.5,97.16499999999999
-2018,Scotland,65-74 years,Female,Stroke,NA,NA,NA,NA,NA,NA,2444.5,509.895
-2018,Scotland,65-74 years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,483.5,125.84
-2018,Scotland,65-74 years,Male,Stroke,NA,NA,NA,NA,NA,NA,2441.5,631.5899999999999
-2018,Scotland,75plus years,All,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,530.6666666666666,183.19333333333333
-2018,Scotland,75plus years,All,Stroke,NA,NA,NA,NA,NA,NA,3393.3333333333335,1232.1066666666666
-2018,Scotland,75plus years,Female,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,258,152.16666666666666
-2018,Scotland,75plus years,Female,Stroke,NA,NA,NA,NA,NA,NA,1947.3333333333333,1202.1599999999999
-2018,Scotland,75plus years,Male,Cerebrovascular Disease,NA,NA,NA,NA,NA,NA,272.6666666666667,230.38333333333333
-2018,Scotland,75plus years,Male,Stroke,NA,NA,NA,NA,NA,NA,1446,1268.3333333333335
 2018,Scottish Borders,0-44 years,All,Cerebrovascular Disease,NA,NA,33.064829409,0,0,0,1,8.45
 2018,Scottish Borders,0-44 years,All,Stroke,0,0,27.441491272500002,0,0,0,3,25.895
 2018,Scottish Borders,0-44 years,All,Subarachnoid Haemorrhage,0,0,0,0,0,0,NA,NA
@@ -16027,51 +15359,3 @@ approx_year,council_area_named,age_group,sex,diagnosis,number_of_discharges,crud
 2018,West Lothian,75plus years,Male,Stroke,0,0,1479.611457,NA,NA,183.3,33.333333333333336,1030.96
 2018,West Lothian,75plus years,Male,Subarachnoid Haemorrhage,0,0,0,0,0,0,NA,NA
 2018,West Lothian,75plus years,Male,TIAs and related syndromes,0,0,361.49033325,NA,NA,NA,NA,NA
-2018,NA,0-44 years,All,Cerebrovascular Disease,595.5,20.46359404625,22.18176704025,30,1.03,1.14,NA,NA
-2018,NA,0-44 years,All,Stroke,327,11.236935773499999,12.324690768750001,12,0.41,0.46,NA,NA
-2018,NA,0-44 years,All,Subarachnoid Haemorrhage,91,3.1270983345,3.33157819525,12,0.41,0.45,NA,NA
-2018,NA,0-44 years,All,TIAs and related syndromes,51.5,1.76973147525,1.92819657875,NA,NA,NA,NA,NA
-2018,NA,0-44 years,Female,Cerebrovascular Disease,288.5,19.91212438175,21.11769724,12,0.83,0.9,NA,NA
-2018,NA,0-44 years,Female,Stroke,138.5,9.55920009075,10.141567026,4,0.28,0.31,NA,NA
-2018,NA,0-44 years,Female,Subarachnoid Haemorrhage,46.5,3.209406529,3.404880311,6,0.41,0.44,NA,NA
-2018,NA,0-44 years,Female,TIAs and related syndromes,24,1.656467886,1.7837945475,NA,NA,NA,NA,NA
-2018,NA,0-44 years,Male,Cerebrovascular Disease,307,21.01041623975,23.24583683825,18,1.23,1.38,NA,NA
-2018,NA,0-44 years,Male,Stroke,188.5,12.900532447,14.507814515,8,0.55,0.62,NA,NA
-2018,NA,0-44 years,Male,Subarachnoid Haemorrhage,44.5,3.0454837872500002,3.25827608,6,0.41,0.45,NA,NA
-2018,NA,0-44 years,Male,TIAs and related syndromes,27.5,1.88204054275,2.0725986095,NA,NA,NA,NA,NA
-2018,NA,45-64 years,All,Cerebrovascular Disease,3976.5,264.757580195,264.1536314475,283,18.84,18.76,NA,NA
-2018,NA,45-64 years,All,Stroke,2480.5,165.15306870825,165.408560838,158,10.52,10.45,NA,NA
-2018,NA,45-64 years,All,Subarachnoid Haemorrhage,491.5,32.724343183500004,32.325785030249996,58,3.86,3.79,NA,NA
-2018,NA,45-64 years,All,TIAs and related syndromes,492.5,32.790923741,32.69831905,NA,NA,NA,NA,NA
-2018,NA,45-64 years,Female,Cerebrovascular Disease,1690.5,218.3501998675,216.9869010525,126,16.27,16.12,NA,NA
-2018,NA,45-64 years,Female,Stroke,860.5,111.14483703425,110.2264903455,61,7.88,7.76,NA,NA
-2018,NA,45-64 years,Female,Subarachnoid Haemorrhage,343,44.3029391055,44.29213767375,40,5.17,5.11,NA,NA
-2018,NA,45-64 years,Female,TIAs and related syndromes,222,28.674205484250002,28.51913365775,NA,NA,NA,NA,NA
-2018,NA,45-64 years,Male,Cerebrovascular Disease,2286,314.129650625,311.320361865,157,21.57,21.4,NA,NA
-2018,NA,45-64 years,Male,Stroke,1620,222.61156343324998,220.5906313505,97,13.33,13.14,NA,NA
-2018,NA,45-64 years,Male,Subarachnoid Haemorrhage,148.5,20.4060599805,20.35943238925,18,2.47,2.47,NA,NA
-2018,NA,45-64 years,Male,TIAs and related syndromes,270.5,37.170634510250004,36.87750443975,NA,NA,NA,NA,NA
-2018,NA,65-74 years,All,Cerebrovascular Disease,3925.5,687.0233015175,693.4286399,528,92.41,93.07,NA,NA
-2018,NA,65-74 years,All,Stroke,2767.5,484.355365447,489.46012825625,294,51.45,51.81,NA,NA
-2018,NA,65-74 years,All,Subarachnoid Haemorrhage,171,29.9276485945,29.62461636675,31,5.43,5.31,NA,NA
-2018,NA,65-74 years,All,TIAs and related syndromes,534.5,93.5457787965,94.50691440325,NA,NA,NA,NA,NA
-2018,NA,65-74 years,Female,Cerebrovascular Disease,1668,559.7146394975,559.2550935325,241,80.87,80.76,NA,NA
-2018,NA,65-74 years,Female,Stroke,1130.5,379.35095920475,378.996686409,134,44.97,44.88,NA,NA
-2018,NA,65-74 years,Female,Subarachnoid Haemorrhage,113,37.918317905500004,37.95651133725,24,8.05,8.07,NA,NA
-2018,NA,65-74 years,Female,TIAs and related syndromes,225.5,75.6688556445,75.5942462905,NA,NA,NA,NA,NA
-2018,NA,65-74 years,Male,Cerebrovascular Disease,2257.5,825.8068764775,827.602185995,287,104.99,105.38,NA,NA
-2018,NA,65-74 years,Male,Stroke,1637,598.8242998775,599.923570055,160,58.53,58.74,NA,NA
-2018,NA,65-74 years,Male,Subarachnoid Haemorrhage,58,21.21674367175,21.29272139375,7,2.56,2.55,NA,NA
-2018,NA,65-74 years,Male,TIAs and related syndromes,309,113.03403093125,113.41958248600001,NA,NA,NA,NA,NA
-2018,NA,75plus years,All,Cerebrovascular Disease,8172,1797.08666142,1818.4564037475,2994,658.4,677.97,NA,NA
-2018,NA,75plus years,All,Stroke,6156.5,1353.8624607855,1360.79023592225,1608,353.61,355.44,NA,NA
-2018,NA,75plus years,All,Subarachnoid Haemorrhage,132,29.02783153475,27.54494883525,46,10.12,9.78,NA,NA
-2018,NA,75plus years,All,TIAs and related syndromes,1140,250.6949087165,254.05409856225,NA,NA,NA,NA,NA
-2018,NA,75plus years,Female,Cerebrovascular Disease,4593,1712.1513166275,1671.8328901625,1834,683.67,664.14,NA,NA
-2018,NA,75plus years,Female,Stroke,3520.5,1312.3511234187501,1277.250317062,1033,385.08,373.75,NA,NA
-2018,NA,75plus years,Female,Subarachnoid Haemorrhage,95.5,35.59992395575,35.31103024075,29,10.81,10.62,NA,NA
-2018,NA,75plus years,Female,TIAs and related syndromes,645.5,240.62566401175002,236.298726431,NA,NA,NA,NA,NA
-2018,NA,75plus years,Male,Cerebrovascular Disease,3579,1919.2715455175,1965.0799168325,1160,622.06,691.79,NA,NA
-2018,NA,75plus years,Male,Stroke,2636,1413.57915457175,1444.33015503225,575,308.35,337.12,NA,NA
-2018,NA,75plus years,Male,Subarachnoid Haemorrhage,36.5,19.573459460749998,19.7788674295,17,9.12,8.94,NA,NA
-2018,NA,75plus years,Male,TIAs and related syndromes,494.5,265.18015624,271.80947069325003,NA,NA,NA,NA,NA
