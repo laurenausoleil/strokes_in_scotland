@@ -5,62 +5,26 @@ date: "09/03/2021"
 output: html_document
 ---
 
+#### Aim
 
-# How can Scottish health services most effectively prevent and treat stroke diagnoses?
+**How can Scottish health services most effectively prevent and treat stroke diagnoses?**
 
+This project examines data on stroke diagnosis in Scotland to inform decision making on stroke care and intervention for public health bodies.
 
 #### Background
-"Cerebrovascular disease develops as a result of problems with the blood vessels supplying oxygen rich blood to the brain.
-Scotland has a high prevalence of the risk factors associated with cerebrovascular disease such as smoking and high blood pressure. Despite a substantial decrease in rates of death over the lastdecade, treating and preventing stroke is a national clinical priority for Scotland as outlined in the Stroke Improvement Plan."
-  - 2020-01-28-stroke-summary.pdf from https://beta.isdscotland.org/find-publications-and-data/conditions-and-diseases/stroke-statistics/scottish-stroke-statistics/
 
-* Original brief accessible in documentation folder of this project.
+* Stroke is a disease of the cerebrovascular system, the system which supplies blood to the brain.
+* Cerebrovascular disease include stroke, SH or Transient Ischemic Attacks (commonly known as mini-strokes).
+* The treatment and prevention of stroke is a national clinical priority for Scotland
+* Scotland has launched major stroke care plans in 2009 and 2014.
 
-#### Data
+#### Data and Methodology
 
-##### Sources
-
-**Scottish Stroke Statistics: Stroke Activity By Health Board/Council Area 2009 - 2018**
-Number of discharges, crude rate and EASR per 100,000 population by year, gender, age, sex and council area OR NHS board.
-https://www.opendata.nhs.scot/dataset/scottish-stroke-statistics
-
-**Scottish Stroke Statistics: Stroke Mortality By Health Board/Council Area 2009/10 - 2018/19**
-Number of mortalities, crude rate and EASR per 100,000 population by year, gender, age, sex and council area OR NHS board.
-https://www.opendata.nhs.scot/dataset/scottish-stroke-statistics
-
-**Inpatient and Daycare Administrative Dataset 2014/15 - 2018/19**
-Hospital stays and crude rate per 100,000 population by year, gender, age, sex and council area OR NHS board.
-https://www.isdscotland.org/Health-Topics/Hospital-Care/Diagnoses/
-
-**IS1 - Cerebrovascular Disease incidence by health board, age group and sex**
-Cases, crude rate and EASR per 100,000 population per year, health board, age group and sex.
-https://www.isdscotland.org/Health-Topics/Stroke/Publications/data-tables2017.asp
-
-**DS1 - Cerebrovascular Disease and deprivation; standardised mortality ratios (SMR) by age group and SIMD deciles**
-https://www.isdscotland.org/Health-Topics/Stroke/Publications/data-tables2017.asp
-
-**DS4 - Trends in stroke hospital activity by SIMD quintile**
-Hospital stays, crude rate and EASR per 100,000 population by year and SIMD
-https://www.isdscotland.org/Health-Topics/Stroke/Publications/data-tables2017.asp
-
-##### Structure
-
-```{r, echo=FALSE, out.width = '100%', fig.align = 'left'}
-knitr::include_graphics("images/updated_data_model_diagram.png")
-```
-
-##### Data Quality Issues
-
-* All data from reputable sources. Minimal bias and quality issues assumed.
-
-* All identifiable data removed by publishers.
-
-* Datasets vary in use of financial or calendar year so an approximate calendar year is generated from financial year in order to compare datasets.
-
-* Datasets vary in age groupings presented.
-
-* Significant number of empty fields in the data. Where summary statistics are calculated, empty fields are ignored.
-
+* This project uses publicly available published by Public Health Scotland
+* Available data covers the years 2009-2018
+* The data includes information on hospital activity (stays and  discharges), mortality rates and incidence rates.
+* Demographic detail varies by dataset and include age, gender, Council Area or Health Board and SIMD (Scottish Index of Multiple Deprivation)
+* Data is cleaned, analysed and presented in R using Rstudio and Tidyverse.
 
 # Analysis - findings and visualisations
 
@@ -96,8 +60,6 @@ mortality_bysimd <- read_csv("../data/clean_data/mortality_bysimd2013-2017")
 \n
 #### What is the most common stroke diagnosis in Scotland?
 
-* For both healthboard and council area, CD is the most common stroke diagnosis recorded for hospital stays, hospital discharges and deaths.
-
 **Table summarising key metrics by diagnosis**
 
 ```{r}
@@ -112,15 +74,10 @@ knitr::kable(council_strokesbyca %>%
          "Number of Deaths per 100 Discharges" = "prop_death_by_discharge")
 )
 ```
+* For both healthboard and council area, CD is the most common stroke diagnosis recorded for hospital stays, hospital discharges and deaths.
 
 #### Are there differences in mortality rates for different types of stroke? Does this vary with demographics?
 
-* CD is the biggest killer per 100 discharges from hospital followed by Stroke and SH.
-
-# Come back to this section to answer Does this vary with demographics?
-
-* Mortality rates have fallen for the 75+ group with CD and Stroke.
-* Mortality rates have remained static for all other age and diagnosis groupings.
 
 ```{r}
 council_strokesbyca %>% 
@@ -136,8 +93,10 @@ council_strokesbyca %>%
     title = "Mortality by age and diagnosis over time"
   )
 ```
+* CD is the biggest killer per 100 discharges from hospital followed by Stroke and SH.
 
-* Slightly higher mortality from stroke in Shetland vs normal distribution of deaths per diagnosis.
+* Mortality rates have fallen for the 75+ group with CD and Stroke.
+* Mortality rates have remained static for all other age and diagnosis groupings.
 ```{r}
 healthboard_strokesbyhb %>% 
   group_by(healthboard_area_named, diagnosis) %>%
@@ -153,9 +112,7 @@ healthboard_strokesbyhb %>%
   )
 ```
 
-* Younger women with SH, especially the 45-64 age group, are dying more often from SH than male and all genders.
-* Men in the 45-64 age group are more likely to die from stroke.
-
+* Slightly higher mortality from stroke in Shetland vs normal distribution of deaths per diagnosis.
 ```{r}
 council_strokesbyca %>% 
   group_by(sex, age_group, diagnosis) %>%
@@ -167,6 +124,9 @@ council_strokesbyca %>%
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 ```
 
+* Younger women with SH, especially the 45-64 age group, are dying more often from SH than male and all genders.
+* Men in the 45-64 age group are more likely to die from stroke.
+
 #### Are there any differences in reporting between health board and local authority?
 
 * No significant discrepancies found.
@@ -175,7 +135,6 @@ council_strokesbyca %>%
 
 ##### Gender
 
-* Women die from SH proportionally more than men.
 ```{r}
 council_strokesbyca %>% 
   group_by(sex, diagnosis) %>%
@@ -188,8 +147,8 @@ council_strokesbyca %>%
     subtitle = "Separated by gender"
   )
 ```
-  
-* Men have higher rates of incidence than women and other genders
+
+* Women die from SH proportionally more than men.
 
 ```{r}
 incidence_by_hb %>% 
@@ -202,11 +161,8 @@ incidence_by_hb %>%
     title = "Incidents by Gender 2009-2018"
   )
 ```
-
-* All genders trending in decrease of incidents
-* Female incidence rates are the most volatile.
-* Female incidents rising since 2016, all genders slightly increasing since 2016.
-* Mortality does not vary significantly with gender
+  
+* Men have higher rates of incidence than women and other genders
 
 <details>
 <summary>**See graph**</summary>
@@ -226,13 +182,13 @@ council_strokesbyca %>%
 </details>
 
 
+* All genders trending in decrease of incidents
+* Female incidence rates are the most volatile.
+* Female incidents rising since 2016, all genders slightly increasing since 2016.
+* Mortality does not vary significantly with gender
 * Although men have higher incidence rates than women, they have similar levels of mortality. i.e. more women die per episode of stroke diagnosis than men.
 
 ##### Age
-
-* Mortality, discharge and proportion of deaths per discharge increase with age.
-* Mortality by stroke has decreased significantly for the over 75 group between 2009 and 2018
-* Mortality rates for all other age groups have remained static in this time
 
 **Table summarising key metrics by age group**
 ```{r}
@@ -248,11 +204,10 @@ knitr::kable(council_strokesbyca %>%
          "Number of Deaths per 100 Discharges" = "prop_death_by_discharge")
 )
 ```
-  
 
-* Stroke discharges increase with age group.
-* CD is the most common diagnosis and accounts for consistent proportion of discharges across all age groups.
-* SH accounts for a proportion of hospital activity in younger age groups than in older age groups.
+* Mortality, discharge and proportion of deaths per discharge increase with age.
+* Mortality by stroke has decreased significantly for the over 75 group between 2009 and 2018
+* Mortality rates for all other age groups have remained static in this time
 
 
 ```{r}
@@ -269,9 +224,10 @@ council_strokesbyca %>%
   )
 ```
 
-* Stroke accounts for consistent proportion of mortalities across all age groups.
-* CD is the highest killer for all age groups and proportion of death by CD increases with age.
-* SH causes a higher proportion of fatalities in younger age groups than in older age groups.
+
+* Stroke discharges increase with age group.
+* CD is the most common diagnosis and accounts for consistent proportion of discharges across all age groups.
+* SH accounts for a proportion of hospital activity in younger age groups than in older age groups.
 
 ```{r}
 council_strokesbyca %>%  
@@ -287,9 +243,9 @@ council_strokesbyca %>%
   )
 ```
 
-* Number of deaths per 100 discharges increases with age group.
-* SH is the most fatal diagnosis for all groups under 75 years.
-* Death by stroke does not increase as significantly for stroke diagnosis in the 75 plus age group as it does for all other age groups.
+* Stroke accounts for consistent proportion of mortalities across all age groups.
+* CD is the highest killer for all age groups and proportion of death by CD increases with age.
+* SH causes a higher proportion of fatalities in younger age groups than in older age groups.
 
 ```{r}
 council_strokesbyca %>%  
@@ -308,17 +264,14 @@ council_strokesbyca %>%
   )
 ```
 
+* Number of deaths per 100 discharges increases with age group.
+* SH is the most fatal diagnosis for all groups under 75 years.
+* Death by stroke does not increase as significantly for stroke diagnosis in the 75 plus age group as it does for all other age groups.
+
 * No trends found in SH diagnosis by age over time
 
 ##### Gender and Age
 
-* Men have slightly higher mortality rates for all age groups under 74.
-* For the 75+ group, women have the highest mortality.
-
-* Men have the highest incidence rates for all age groups.
-
-* From 45 years upwards, women have the highest number of deaths per incident. 
-* From 0-44 years males have the highest number of deaths per incident
 
 ```{r}
 percent_table <- incidence_by_hb %>%  
@@ -340,6 +293,13 @@ healthboard_strokesbyhb %>%
     subtitle = "grouped by age and gender"
   )
 ```
+* Men have slightly higher mortality rates for all age groups under 74.
+* For the 75+ group, women have the highest mortality.
+
+* Men have the highest incidence rates for all age groups.
+
+* From 45 years upwards, women have the highest number of deaths per incident. 
+* From 0-44 years males have the highest number of deaths per incident
 
 ##### Healthboard
 
@@ -372,8 +332,7 @@ knitr::kable(healthboard_table <- incidence_by_hb %>%
 * Differences in number of incidents by health board of up 100 cases per 100,000 (adjusted) between different healthboards.
 * Greater Glasgow & Clyde have the highest incidences and Orkney has the lowest.
 
-* Higher mortalities per incidence in Lanarkshire, Highlands, Grampian and Western Isles.
-* Lower mortalities per incidence in the Borders, Tayside, Lothian and Fife.
+
 
 ```{r}
 healthboard_table %>% 
@@ -390,7 +349,8 @@ healthboard_table %>%
     y = "Number of Mortalities (EASR)"
   )
 ```
-
+* Higher mortalities per incidence in Lanarkshire, Highlands, Grampian and Western Isles.
+* Lower mortalities per incidence in the Borders, Tayside, Lothian and Fife.
 
 
 ##### Council
@@ -398,8 +358,6 @@ healthboard_table %>%
 * There is a difference in stroke mortality of up to 25 per 100,000 between different council areas. 
 * Highest adjusted mortality in Inverclyde and Renfrewshire.
 * Lowest adjusted mortality rates in East Renfrewshire and East Dunbartonshire.
-
-* Council mortality rates over time for the 10 highest and lowest mortality rate councils (2009-2018 average rates) show greatest divergence in 2010 and 2015.
 
 <details>
 <summary>**See graph**</summary>
@@ -415,9 +373,7 @@ low_mortality_council <- council_strokesbyca %>%
   summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
   slice_min(mortality, n = 10) %>% 
   pull(council_area_named)
-```
 
-```{r}
 council_strokesbyca %>% 
   filter(council_area_named %in% high_mortality_council |
            council_area_named %in% low_mortality_council) %>% 
@@ -431,11 +387,8 @@ council_strokesbyca %>%
   geom_line()
 ```
 
+* Council mortality rates over time for the 10 highest and lowest mortality rate councils (2009-2018 average rates) show greatest divergence in 2010 and 2015.
 </details>
-
-
-* The 10 councils with the highest recent mortality rates showed increase in adjusted mortality in 2013, 2015 and 2018 with an overall downward trend.
-* The 10 councils with the lowest recent mortality rates show much more stable decline excluding a rise in mortalities in 2013.
 
   
 ```{r}
@@ -452,8 +405,7 @@ low_mortality_council_2018 <- council_strokesbyca %>%
   summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
   slice_min(mortality, n = 10) %>% 
   pull(council_area_named)
-```
-```{r}
+
 council_strokesbyca %>% 
   filter(council_area_named %in% high_mortality_council_2018 |
            council_area_named %in% low_mortality_council_2018) %>% 
@@ -471,11 +423,12 @@ council_strokesbyca %>%
   )
 ```
 
+
+* The 10 councils with the highest recent mortality rates showed increase in adjusted mortality in 2013, 2015 and 2018 with an overall downward trend.
+* The 10 councils with the lowest recent mortality rates show much more stable decline excluding a rise in mortalities in 2013.
+
 ##### SIMD
 
-* More hospital activity with higher deprivation.
-
-* Difference between hospital activity rates for deprivation quintiles is increasing over time, particularly for the 2 most deprived quintiles.
 
 ```{r}
 discharges_bysimd %>% 
@@ -488,8 +441,8 @@ discharges_bysimd %>%
   )
 ```
 
-* Mortalities increase with deprivation.
-* Chance of dying from stroke doubles from the least to the most deprived deciles.
+* Hospital activity increases with deprivation.
+* Difference between hospital activity rates for deprivation quintiles is increasing over time, particularly for the 2 most deprived quintiles.
 
 **Table showing standardised mortality rates by SIMD decile**
 ```{r}
@@ -501,12 +454,13 @@ knitr::kable(mortality_bysimd %>%
 )
 ```
 
+* Mortalities increase with deprivation.
+* Chance of dying from stroke doubles from the least to the most deprived deciles.
+
 
 ##### Age Group and SIMD
 
-* Mortality is higher for those in the most deprived decile.
-* SIMD has the highest impact on mortality for the under 65 age group. 
-* 189.5 people per 100,000 under 65 (adjusted) die of strokes in the most deprived decile, compared to just 42.3 of those in the least deprived decile.
+
 
 ```{r}
 mortality_bysimd %>% 
@@ -521,102 +475,203 @@ mortality_bysimd %>%
     y = "Mortality (SMR)"
   )
 ```
-
-
-# Key findings and Recommendations
-
-
-#### Notable findings
-
-* CD is the most common and fatal diagnosis
-* Mortality rates have fallen for the 75+ group with CD and Stroke, but not for any other age and diagnosis group (most of the change in mortality rates we publicise is in one area, have we been tagertting this are and what can we learn from it?)
-
-* Women die from SH proportionally more than men.
-* All gender mortalities trending in decrease.
-* Female incidence rates are the most volatile.
-* Female incidents rising since 2016, all genders slightly increasing since 2016.
-* More women die per episode of stroke diagnosis than men.
-* SH causes a higher proportion of fatalities in younger age groups than in older age groups.
-* SH is the most fatal diagnosis for all groups under 75 years.
-* CD is the highest killer for all age groups and proportion of death by CD increases with age.
-
-* Council mortality rates over time for the 10 highest and lowest mortality rate councils (2009-2018 average totals by mean) show greatest divergence in 2010 and 2015.
-
-* The 10 councils with the highest recent mortality rates showed increase in adjusted mortality in 2013, 2015 and 2018 with an overall downward trend.
-* The 10 councils with the lowest recent mortality rates show much more stable decline excluding a rise in mortalities in 2013.
-
-* Difference between hospital activity rates for deprivation quintiles is increasing over time, particularly for the 2 most deprived quintiles.
-
-* Chance of dying from stroke doubles from the least to the most deprived deciles.
-
+* Mortality is higher for those in the most deprived decile.
 * SIMD has the highest impact on mortality for the under 65 age group. 
 * 189.5 people per 100,000 under 65 (adjusted) die of strokes in the most deprived decile, compared to just 42.3 of those in the least deprived decile.
 
+# Key findings and Recommendations
 
+### How can Scottish health services most effectively prevent and treat stroke diagnoses?
 
-#### How can Scottish health services most effectively prevent and treat stroke diagnoses?
 #### What measures have been successful in the treatment and prevention of stroke?
+
+Due to the timeframe, this project did not explore the impact of different treatment and prevention strategies.
+However, the analysis does highlight significant changes at various time points and differences in demographic groupings which can give direction to further research into the effect of intervention and treatment strategies.
+
+**Finding**
+Mortality rates have fallen for the 75+ group with CD and Stroke, but not for any other age and diagnosis group
+
+**Recommendation**
+* Research interventions for this age group and diagnosis
+
+**Findings**
+Council mortality rates over time for the 10 highest and lowest mortality rate councils (2009-2018 average totals by mean) show greatest divergence in 2010 and 2015.
+The 10 councils with the highest recent mortality rates showed increase in adjusted mortality in 2013, 2015 and 2018 with an overall downward trend.
+The 10 councils with the lowest recent mortality rates show much more stable decline excluding a rise in mortalities in 2013.
+
+**Recommendations**
+* Research dissemination and implementation of the 2009 and 2014 stroke action plans, particularly focussing on changes in treatmen and intervention at council level.
+* Conduct research into mortalities in 2013.
+* Explore the impact of council policies and politics on health measures.
+
+
 #### Which demographics should we target for stroke intervention?
 
+**Finding**
+CD is the highest killer for all age groups.
+Proportion of death by CD increases with age.
+
+**Recommendation**
+* Further analysis to identify succesful treatment of CD.
+
+##### Gender
+
+**Findings**
+Female incidence rates are the most volatile.
+Female incidents rising since 2016.
+More women die per episode of stroke diagnosis than men.
+Women die from SH proportionally more than men.
+
+**Recommendations**
+* Model social factors which contribute to stroke incidence and mortality in women, such as smoking, high blood pressure, caring duties, mental wellbeing.
+* Compare diagnosis rates on presentation and discharge hospital to identify whether misdiagnosis of SH is more common in women.
+* Conduct research on the understanding and identification of SH in women.
+* Identify or develop successful treatment and intervention plans for SH.
+* Information campaign on stroke symptoms and when to visit the hospital targetted for women's symptoms and concerns.
+
+##### Age
+
+**Findings**
+SH causes a higher proportion of fatalities in younger age groups than in older age groups.
+SH is the most fatal diagnosis for all groups under 75 years.
+
+**Recommendations**
+* Compare diagnosis rates on presentation and discharge hospital to identify whether misdiagnosis of SH varies with age.
+* Conduct research on the understanding and identification of SH in young people.
+* Identify or develop successful treatment and intervention plans for SH.
+
+##### SIMD
+
+**Findings**
+Difference between hospital activity rates for deprivation quintiles is increasing over time, particularly for the 2 most deprived quintiles.
+Chance of dying from stroke doubles from the least to the most deprived deciles.
+SIMD has the highest impact on mortality for the under 65 age group. 
+189.5 people per 100,000 under 65 (adjusted) die of strokes in the most deprived decile, compared to just 42.3 of those in the least deprived decile.
+
+**Recommendations**
+* Model social factors which contribute to stroke incidence and mortality over time, with a view to identifying why discrepancy by SIMD is increasing over time.
+* Targetted interventions, such as screenings and information campaigns, for under 65s in most deprived areas.
 
 
 # Additional Information
 
-
-#### Methodology
-
-##### Metrics Chosen
-
-mean/median
-
-##### Tools Used
-
-##### Project Structure
-
 #### Definitions
+
+**Cerebrovascular Disease**
+
+* Cerebrovascular Disease (CVD) is a condition that develops as a result of problems with the blood vessels supplying the brain. 
+* Cerebrovascular diseases include stroke, a transient ischaemic attack (TIA) or a subarachnoid haemorrhage.
 
 **Stroke**
 
+* A stroke occurs when an area of the brain is deprived of its blood supply because of a blockage of a blood vessel supplying the brain.
 * One of three possible diagnoses of Cerebrovascular diseases.
 * Used in report and analysis to refer to all Cerebrovascular Diseases to aid ease of understanding.
 
 **Subarachnoid Haemorrhage**
 
+* A leak of blood as a result of the rupture of one of the blood vessels beneath one of the layers of membrane that covers the brain.
 * One of three possible diagnoses of Cerebrovascular diseases.
 
 **TIAs and other symptoms**
 
+* A transient ischemic attack is a temporary disruption to the blood supply to the brain as a result of a blockage of a blood vessel supplying the brain.
 * Transient Ischemic Attacks (commonly known as mini-strokes) and other symptoms
 * One of three possible diagnoses of Cerebrovascular diseases.
 
-**Cerebrovascular Disease**
-
-* "Cerebrovascular Disease (CVD) is a condition that develops as a result of problems with the blood vessels supplying the brain. This can cause a stroke, a transient ischaemic attack (TIA) or a subarachnoid haemorrhage."
-*   - From Scottish Government Stroke Improvement Plan, 2014, accessed at https://www.gov.scot/publications/stroke-improvement-plan/pages/3/
-
 **Crude Rate**
+
+* Occurence per 100,000 population
 
 **EASR**
 
+* The European Age-Sex Standardised Rate per 100,000 population.
+* The rate that would have been found if the population in Scotland
+had the same age-composition as the hypothetical standard
+European population.
+
 **SMR**
-  
+
+* SMRs are the ratio of actual deaths to expected deaths (calculated using the average Scottish mortality rate) adjusted for the age and sex of the
+population being examined.
+* The expected mortality rate in Scotland is 100.
+
+**SIMD**
+
+* The Scottish Index of Multiple Deprivation (SIMD) is used to measure area
+deprivation.
+* It is a measurement of multiple deprivation which combines information on
+income, employment, education, housing, health, crime and geographical access.
+
+**Discharge**
+
+* A discharge marks the end of an episode of care.
+* Discharges include deaths and transfers to other specialties/significant facilities
+and hospitals as well as routine discharges home.
+
+**Incidence**
+
+* Incidence refers to the number of new cases of a condition.
+* In our data, an incident case is defined as the first admission to hospital (or death without a hospital admission).
+
+#### Data
+
+##### Sources
+
+**Scottish Stroke Statistics: Stroke Activity By Health Board/Council Area 2009 - 2018**
+Number of discharges, crude rate and EASR per 100,000 population by year, gender, age, sex and council area OR NHS board.
+https://www.opendata.nhs.scot/dataset/scottish-stroke-statistics
+
+**Scottish Stroke Statistics: Stroke Mortality By Health Board/Council Area 2009/10 - 2018/19**
+Number of mortalities, crude rate and EASR per 100,000 population by year, gender, age, sex and council area OR NHS board.
+https://www.opendata.nhs.scot/dataset/scottish-stroke-statistics
+
+**Inpatient and Daycare Administrative Dataset 2014/15 - 2018/19**
+Hospital stays and crude rate per 100,000 population by year, gender, age, sex and council area OR NHS board.
+https://www.isdscotland.org/Health-Topics/Hospital-Care/Diagnoses/
+
+**IS1 - Cerebrovascular Disease incidence by health board, age group and sex**
+Cases, crude rate and EASR per 100,000 population per year, health board, age group and sex.
+https://www.isdscotland.org/Health-Topics/Stroke/Publications/data-tables2017.asp
+
+**DS1 - Cerebrovascular Disease and deprivation; standardised mortality ratios (SMR) by age group and SIMD deciles**
+https://www.isdscotland.org/Health-Topics/Stroke/Publications/data-tables2017.asp
+
+**DS4 - Trends in stroke hospital activity by SIMD quintile**
+Hospital stays, crude rate and EASR per 100,000 population by year and SIMD
+https://www.isdscotland.org/Health-Topics/Stroke/Publications/data-tables2017.asp
+
+##### Structure
+
+```{r, echo=FALSE, out.width = '100%', fig.align = 'left'}
+knitr::include_graphics("images/updated_data_model_diagram.png")
+```
+
+##### Quality
+
+* All data from reputable sources. Minimal bias and quality issues assumed.
+
+* All identifiable data removed by publishers.
+
+* Datasets vary in use of financial or calendar year so an approximate calendar year is generated from financial year in order to compare datasets.
+
+* Datasets vary in age groupings presented.
+
+* Significant number of empty fields in the data. Where summary statistics are calculated, empty fields are ignored.
+
 #### Assumptions
 
-* financial year can be compared to calendar year without signifcantly undermining the analysis
+* Financial year can be compared to calendar year without signifcantly undermining the analysis.
 
-* ambiguously named and defined crude rates in individual datasets refer to the crude rate of the dataset's subject variable.
+* Ambiguously named and defined crude rates in individual datasets refer to the crude rate of the dataset's subject variable.
 e.g. EASR and crude rate in mortalitybyca refer to mortality per 100,000, EASR and crude rate in activitybyca refer to discharges per 100,000 and in diagnosis-by-counil-area refer to hospital stays per 100,000.
 
-Qualifiers removed, but could be used for extension work.
+* Data quality is sufficient therefore we do not need to consider qualifier variables.
 
-Losing detail of age groupings from hospital stays will not affect analysis /
-The larger age groupings will allow for a broader, but easier to interpret analysis.
+* Losing detail of age groupings from hospital stays will not affect analysis.
+OR Larger age groupings will allow for a broader, but easier to interpret analysis.
 
-Use EASR whenever available to normalise rates by European standards.
-Order of preference for adjusted metrics: EASR, SMR, crude.
+* EASR is the most suitable metric for demographic comparisons.
+Order of preference for metrics: EASR, SMR, crude.
 
-Use mean as standard method of assimilating rates in order to visualise differences in demographics more clearly.
-
-#### Data Assessment
-
-Copy from data analysis plan.
+* Using mean as the standard method for demographic comparison will more detail therefore we accept the impact of extreme values.
