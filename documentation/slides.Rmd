@@ -91,7 +91,6 @@ council_strokesbyca %>%
 * Cardiovascular Disease is the biggest killer per 100 discharges from hospital followed by Stroke and Subarachnoid Haemorhage.
 * Mortality rates have fallen for the 75+ group with Cardiovascular Disease and Stroke.
 * Mortality rates have remained static for all other age and diagnosis groupings.
-* Slightly higher mortality from stroke in Shetland vs normal distribution of deaths per diagnosis.
 
 ***
 ### Age and Gender
@@ -404,3 +403,141 @@ In future:
 * Model social factors which contribute to stroke incidence and mortality in women, such as smoking, high blood pressure, caring duties, mental wellbeing.
 * Compare diagnosis rates on presentation and discharge hospital to identify whether misdiagnosis of Subarachnoid Haemorhage is more common in women or younger age groups.
 * Conduct research on the understanding and identification of Subarachnoid Haemorhage in women.
+
+
+***
+
+## Definitions
+
+**Cerebrovascular Disease**
+
+* Cerebrovascular Disease (CVD) is a condition that develops as a result of problems with the blood vessels supplying the brain. 
+* Cerebrovascular diseases include stroke, a transient ischaemic attack (TIA) or a subarachnoid haemorrhage.
+
+**Stroke**
+
+* A stroke occurs when an area of the brain is deprived of its blood supply because of a blockage of a blood vessel supplying the brain.
+* One of three possible diagnoses of Cerebrovascular diseases.
+* Used in report and analysis to refer to all Cerebrovascular Diseases to aid ease of understanding.
+
+**Subarachnoid Haemorrhage**
+
+* A leak of blood as a result of the rupture of one of the blood vessels beneath one of the layers of membrane that covers the brain.
+* One of three possible diagnoses of Cerebrovascular diseases.
+
+**Transient Ischemic Attack / TIA**
+
+* A transient ischemic attack is a temporary disruption to the blood supply to the brain as a result of a blockage of a blood vessel supplying the brain.
+* Transient Ischemic Attacks (commonly known as mini-strokes) and other symptoms
+* One of three possible diagnoses of Cerebrovascular diseases.
+
+***
+
+## Definitions
+
+**Crude Rate**
+
+* Occurence per 100,000 population
+
+**EASR**
+
+* The European Age-Sex Standardised Rate per 100,000 population.
+* The rate that would have been found if the population in Scotland
+had the same age-composition as the hypothetical standard
+European population.
+
+**SMR**
+
+* SMRs are the ratio of actual deaths to expected deaths (calculated using the average Scottish mortality rate) adjusted for the age and sex of the
+population being examined.
+* The expected mortality rate in Scotland is 100.
+
+**SIMD**
+
+* The Scottish Index of Multiple Deprivation (SIMD) is used to measure area
+deprivation.
+* It is a measurement of multiple deprivation which combines information on
+income, employment, education, housing, health, crime and geographical access.
+
+**Discharge**
+
+* A discharge marks the end of an episode of care.
+* Discharges include deaths and transfers to other specialties/significant facilities
+and hospitals as well as routine discharges home.
+
+**Incidence**
+
+* Incidence refers to the number of new cases of a condition.
+* In our data, an incident case is defined as the first admission to hospital (or death without a hospital admission).
+
+***
+
+## Data Sources
+
+**Scottish Stroke Statistics: Stroke Activity By Health Board/Council Area 2009 - 2018**
+Number of discharges, crude rate and EASR per 100,000 population by year, gender, age, sex and council area OR NHS board.
+https://www.opendata.nhs.scot/dataset/scottish-stroke-statistics
+
+**Scottish Stroke Statistics: Stroke Mortality By Health Board/Council Area 2009/10 - 2018/19**
+Number of mortalities, crude rate and EASR per 100,000 population by year, gender, age, sex and council area OR NHS board.
+https://www.opendata.nhs.scot/dataset/scottish-stroke-statistics
+
+**Inpatient and Daycare Administrative Dataset 2014/15 - 2018/19**
+Hospital stays and crude rate per 100,000 population by year, gender, age, sex and council area OR NHS board.
+https://www.isdscotland.org/Health-Topics/Hospital-Care/Diagnoses/
+
+**IS1 - Cerebrovascular Disease incidence by health board, age group and sex**
+Cases, crude rate and EASR per 100,000 population per year, health board, age group and sex.
+https://www.isdscotland.org/Health-Topics/Stroke/Publications/data-tables2017.asp
+
+**DS1 - Cerebrovascular Disease and deprivation; standardised mortality ratios (SMR) by age group and SIMD deciles**
+https://www.isdscotland.org/Health-Topics/Stroke/Publications/data-tables2017.asp
+
+**DS4 - Trends in stroke hospital activity by SIMD quintile**
+Hospital stays, crude rate and EASR per 100,000 population by year and SIMD
+https://www.isdscotland.org/Health-Topics/Stroke/Publications/data-tables2017.asp
+
+*** 
+
+## Data Structure
+
+```{r, echo=FALSE, out.width = '100%', fig.align = 'left'}
+knitr::include_graphics("reference/images/updated_data_model_diagram.png")
+```
+
+*** 
+
+## Data Quality
+
+* All data from reputable sources. Minimal bias and quality issues assumed.
+
+* All identifiable data removed by publishers.
+
+* Datasets vary in use of financial or calendar year so an approximate calendar year is generated from financial year in order to compare datasets.
+
+* Datasets vary in age groupings presented.
+
+* Significant number of empty fields in the data. Where summary statistics are calculated, empty fields are ignored.
+
+* Figures for TIA diagnosis are not available for mortality or hospital stays.
+*** 
+## Assumptions
+
+* Financial year can be compared to calendar year without signifcantly undermining the analysis.
+
+* Ambiguously named and defined crude rates in individual datasets refer to the crude rate of the dataset's subject variable.
+e.g. EASR and crude rate in mortalitybyca refer to mortality per 100,000, EASR and crude rate in activitybyca refer to discharges per 100,000 and in diagnosis-by-counil-area refer to hospital stays per 100,000.
+
+* Data quality is sufficient therefore we do not need to consider qualifier variables.
+
+* Losing detail of age groupings from hospital stays will not affect analysis.
+OR Larger age groupings will allow for a broader, but easier to interpret analysis.
+
+* EASR is the most suitable metric for demographic comparisons.
+Order of preference for metrics: EASR, SMR, crude.
+
+* Using mean as the standard method for demographic comparison will more detail therefore we accept the impact of extreme values.
+
+* Definition of all genders group varies with dataset (it is not described in data dictionaries), so it has been removed from analysis.
+
+* NA, Other and Scotland are not useful values for measures by Health Board or Council Area and have been removed from analysis.

@@ -729,7 +729,7 @@ https://www.isdscotland.org/Health-Topics/Stroke/Publications/data-tables2017.as
 ### Structure
 
 ```{r, echo=FALSE, out.width = '100%', fig.align = 'left'}
-knitr::include_graphics("images/updated_data_model_diagram.png")
+knitr::include_graphics("reference/images/updated_data_model_diagram.png")
 ```
 
 ### Quality
