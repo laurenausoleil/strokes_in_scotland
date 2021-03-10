@@ -83,6 +83,7 @@ knitr::kable(council_strokesbyca %>%
 council_strokesbyca %>% 
 # filter year to remove high values from years prior to 2013 in order to make graph more readable
   filter(approx_year > 2013) %>% 
+  filter(diagnosis != "TIAs and related syndromes") %>% 
   group_by(age_group, approx_year, diagnosis) %>% 
   summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
   ggplot() +
@@ -126,7 +127,7 @@ council_strokesbyca %>%
   facet_wrap(~sex) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
   labs(
-    title = "Proportion of mortalitis by age, diagnosis and gender",
+    title = "Proportion of mortalities by age, diagnosis and gender",
     x = "Age Group",
     y = "Mortality (EASR)"
   )
@@ -177,6 +178,9 @@ incidence_by_hb %>%
 ```
   
 * Men have higher rates of incidence than women.
+* All genders trending in decrease of incidents.
+* Female incidence rates are the most volatile.
+* Female incidents rising since 2016.
 
 <details>
 <summary>**See Mortality by Gender**</summary>
@@ -196,10 +200,6 @@ council_strokesbyca %>%
 ```
 </details>
 
-
-* All genders trending in decrease of incidents
-* Female incidence rates are the most volatile.
-* Female incidents rising since 2016.
 * Mortality does not vary significantly with gender
 * Although men have higher incidence rates than women, they have similar levels of mortality. i.e. more women die per episode of stroke diagnosis than men.
 
@@ -695,6 +695,8 @@ knitr::include_graphics("images/updated_data_model_diagram.png")
 * Datasets vary in age groupings presented.
 
 * Significant number of empty fields in the data. Where summary statistics are calculated, empty fields are ignored.
+
+* Figures for TIA diagnosis are not available for mortality or hospital stays.
 
 #### Assumptions
 

@@ -185,10 +185,10 @@ mortality_by_healthboard <- mortality_by_healthboard %>%
 # Incidence by Healthboard
 ```{r}
 incidence_by_healthboard <- incidence_by_healthboard %>% 
+  filter(sex != "BOTH SEXES") %>% 
   mutate(sex = case_when(
     sex == "MALE" ~ "Male",
-    sex == "FEMALE" ~ "Female",
-    sex == "BOTH SEXES" ~ "All"
+    sex == "FEMALE" ~ "Female"
     ),
   age = case_when(
       age  == "0-44" ~ "0-44 years",
