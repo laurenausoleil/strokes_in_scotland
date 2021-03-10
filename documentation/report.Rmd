@@ -5,20 +5,20 @@ date: "09/03/2021"
 output: html_document
 ---
 
-#### Aim
+## Aim
 
 **How can Scottish health services most effectively prevent and treat stroke diagnoses?**
 
 This project examines data on stroke diagnosis in Scotland to inform decision making on stroke care and intervention for public health bodies.
 
-#### Background
+## Background
 
 * Stroke is a disease of the cerebrovascular system, the system which supplies blood to the brain.
-* Cerebrovascular disease include stroke, SH or Transient Ischemic Attacks (commonly known as mini-strokes).
+* Cerebrovascular disease include stroke, Subarachnoid Haemorhage or Transient Ischemic Attacks (commonly known as mini-strokes).
 * The treatment and prevention of stroke is a national clinical priority for Scotland
 * Scotland has launched major stroke care plans in 2009 and 2014.
 
-#### Data and Methodology
+## Data and Methodology
 
 * This project uses publicly available published by Public Health Scotland
 * Available data covers the years 2009-2018
@@ -26,14 +26,16 @@ This project examines data on stroke diagnosis in Scotland to inform decision ma
 * Demographic detail varies by dataset and include age, gender, Council Area or Health Board and SIMD (Scottish Index of Multiple Deprivation)
 * Data is cleaned, analysed and presented in R using Rstudio and Tidyverse.
 
-# Analysis - findings and visualisations
+# Analysis
 
 
 ```{r setup, include = FALSE}
-knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, out.width = '100%')
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, out.width = '70%')
 
 library(tidyverse)
 library(ggthemes)
+
+options(digits = 2) 
 ```
 
 ```{r}
@@ -60,9 +62,9 @@ mortality_bysimd <- read_csv("../data/clean_data/mortality_bysimd2013-2017")
 
 \n
 \n
-#### What is the most common stroke diagnosis in Scotland?
+## What is the most common stroke diagnosis in Scotland?
 
-**Table summarising key metrics by diagnosis**
+#### Table summarising key metrics by diagnosis
 
 ```{r}
 knitr::kable(council_strokesbyca %>% 
@@ -76,12 +78,12 @@ knitr::kable(council_strokesbyca %>%
          "Number of Deaths per 100 Discharges" = "prop_death_by_discharge")
 )
 ```
-* For both healthboard and council area, CD is the most common stroke diagnosis recorded for hospital stays, hospital discharges and deaths.
+* For both healthboard and council area, Cardiovascular Disease is the most common stroke diagnosis recorded for hospital stays, hospital discharges and deaths.
 
-#### Are there differences in mortality rates for different types of stroke? Does this vary with demographics?
+## Are there differences in mortality rates for different types of stroke? Does this vary with demographics?
 
 
-```{r}
+```{r out.width = '100%'}
 council_strokesbyca %>% 
 # filter year to remove high values from years prior to 2013 in order to make graph more readable
   filter(approx_year > 2013) %>% 
@@ -95,15 +97,16 @@ council_strokesbyca %>%
   labs(
     title = "Mortality by age and diagnosis over time",
     x = "Year",
-    y = "Mortality (EASR)"
+    y = "Mortality (EASR)",
+    col = "Diagnosis"
   ) +
-  scale_fill_calc()
+  scale_color_calc()
 ```
 
-* CD is the biggest killer per 100 discharges from hospital followed by Stroke and SH.
-* Mortality rates have fallen for the 75+ group with CD and Stroke.
+* Cardiovascular Disease is the biggest killer per 100 discharges from hospital followed by Stroke and Subarachnoid Haemorhage.
+* Mortality rates have fallen for the 75+ group with Cardiovascular Disease and Stroke.
 * Mortality rates have remained static for all other age and diagnosis groupings.
-```{r}
+```{r out.width = '90%'}
 healthboard_strokesbyhb %>% 
   group_by(healthboard_area_named, diagnosis) %>%
   summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
@@ -115,7 +118,8 @@ healthboard_strokesbyhb %>%
   labs(
     title = "Proportion of Mortalities by Diagnosis",
     x = "Health Board",
-    y = "Mortality (EASR)"
+    y = "Mortality (EASR)",
+    fill = "Diagnosis"
   ) +
   scale_fill_calc()
 ```
@@ -133,21 +137,22 @@ council_strokesbyca %>%
   labs(
     title = "Proportion of mortalities by age, diagnosis and gender",
     x = "Age Group",
-    y = "Mortality (EASR)"
+    y = "Mortality (EASR)",
+    fill = "Diagnosis"
   )  +
   scale_fill_calc()
 ```
 
-* Younger women with SH are dying more often from SH than males.
+* Younger women with Subarachnoid Haemorhage are dying more often from Subarachnoid Haemorhage than males.
 * Men in the 45-64 age group are more likely to die from stroke.
 
-#### Are there any differences in reporting between health board and local authority?
+## Are there any differences in reporting between health board and local authority?
 
 * No significant discrepancies found.
 
-#### Are there any differences in stroke diagnoses between different demographics?
+## Are there any differences in stroke diagnoses between different demographics?
 
-##### Gender
+### Gender
 
 ```{r}
 council_strokesbyca %>% 
@@ -161,12 +166,13 @@ council_strokesbyca %>%
     title = "Proportion of mortalities for each diagnosis",
     subtitle = "Separated by gender",
     x = "Diagnosis",
-    y = "Mortality (EASR)"
+    y = "Mortality (EASR)",
+    fill = "Gender"
   ) +
   scale_fill_calc()
 ```
 
-* Women die from SH proportionally more than men.
+* Women die from Subarachnoid Haemorhage proportionally more than men.
 
 ```{r}
 incidence_by_hb %>% 
@@ -179,7 +185,8 @@ incidence_by_hb %>%
   labs(
     title = "Incidents by Gender 2009-2018",
     x = "Year",
-    y = "Incidents (EASR)"
+    y = "Incidents (EASR)",
+    col = "Gender"
   ) +
   scale_color_calc()
 ```
@@ -202,18 +209,19 @@ council_strokesbyca %>%
   labs(
     title = "Mortality by Gender 2009-2018",
     x = "Year",
-    y = "Mortality (EASR)"
+    y = "Mortality (EASR)",
+    col = "Gender"
   ) +
-  scale_fill_calc()
+  scale_color_calc()
 ```
 </details>
 
 * Mortality does not vary significantly with gender
 * Although men have higher incidence rates than women, they have similar levels of mortality. i.e. more women die per episode of stroke diagnosis than men.
 
-##### Age
+### Age
 
-**Table summarising key metrics by age group**
+#### Table summarising key metrics by age group
 ```{r}
 knitr::kable(council_strokesbyca %>% 
   group_by(age_group) %>% 
@@ -244,15 +252,16 @@ council_strokesbyca %>%
   labs(
     title = "Proportion of hospital activity by diagnoses and age group",
     x = "Age group",
-    y = "Discharges (EASR)"
+    y = "Discharges (EASR)",
+    fill = "Diagnosis"
   ) +
   scale_fill_calc()
 ```
 
 
 * Stroke discharges increase with age group.
-* CD is the most common diagnosis and accounts for consistent proportion of discharges across all age groups.
-* SH accounts for a proportion of hospital activity in younger age groups than in older age groups.
+* Cardiovascular Disease is the most common diagnosis and accounts for consistent proportion of discharges across all age groups.
+* Subarachnoid Haemorhage accounts for a proportion of hospital activity in younger age groups than in older age groups.
 
 ```{r}
 council_strokesbyca %>%
@@ -266,17 +275,19 @@ council_strokesbyca %>%
   labs(
     title = "Proportion of mortalities by diagnoses and age group",
     x = "Age Group",
-    y = "Mortality (EASR)"
+    y = "Mortality (EASR)",
+    fill = "Diagnosis"
   ) +
   scale_fill_calc()
 ```
 
 * Stroke accounts for consistent proportion of mortalities across all age groups.
-* CD is the highest killer for all age groups and proportion of death by CD increases with age.
-* SH causes a higher proportion of fatalities in younger age groups than in older age groups.
+* Cardiovascular Disease is the highest killer for all age groups and proportion of death by Cardiovascular Disease increases with age.
+* Subarachnoid Haemorhage causes a higher proportion of fatalities in younger age groups than in older age groups.
 
 ```{r}
 council_strokesbyca %>%
+  filter(diagnosis != "TIAs and related syndromes") %>% 
   group_by(age_group, diagnosis) %>%
   summarise(discharges = mean(easr_discharge, na.rm = TRUE),
             mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
@@ -289,17 +300,18 @@ council_strokesbyca %>%
     title = "Mortality per 100 discharges",
     subtitle = "Broken down by diagnoses and age group",
     x = "Age Group",
-    y = "Rate of Mortality by Discharges (%)"
+    y = "Rate of Mortality by Discharges (%)",
+    fill = "Diagnosis"
   ) +
   scale_fill_calc()
 ```
 
 * Number of deaths per 100 discharges increases with age group.
-* SH is the most fatal diagnosis for all groups under 75 years.
+* Subarachnoid Haemorhage is the most fatal diagnosis for all groups under 75 years.
 * Death by stroke does not increase as significantly for stroke diagnosis in the 75 plus age group as it does for all other age groups.
-* No trends found in SH diagnosis by age over time
+* No trends found in Subarachnoid Haemorhage diagnosis by age over time
 
-##### Gender and Age
+### Gender and Age
 
 
 ```{r}
@@ -319,10 +331,12 @@ healthboard_strokesbyhb %>%
     title = "Deaths per 100 incidents",
     subtitle = "Grouped by age and gender",
     x = "Age group",
-    y = "Rate of Mortality by Incident (%)"
+    y = "Rate of Mortality by Incident (%)",
+    fill = "Gender"
   ) +
   scale_fill_calc()
 ```
+
 * Men have slightly higher mortality rates for all age groups under 74.
 * For the 75+ group, women have the highest mortality.
 
@@ -331,9 +345,9 @@ healthboard_strokesbyhb %>%
 * From 45 years upwards, women have the highest number of deaths per incident. 
 * From 0-44 years males have the highest number of deaths per incident
 
-##### Healthboard
+### Healthboard
 
-**Table summarising key metrics by health board**
+#### Table summarising key metrics by health board
 ```{r}
 healthboard_table <- healthboard_strokesbyhb %>% 
   group_by(healthboard_area_named) %>% 
@@ -367,7 +381,7 @@ healthboard_table %>%
          "mortality" = "Mortality (EASR)") %>% 
   ggplot(aes(x = incidence, y = mortality)) +
   geom_point() +
-  geom_smooth(method = "lm", se = FALSE) +
+  geom_smooth(method = "lm", se = FALSE, colour = "navy") +
   geom_text(aes(label = health_board), hjust = -.2) +
   labs(
     title = "Mortalities per incident by Health Board",
@@ -379,10 +393,12 @@ healthboard_table %>%
 * Higher mortalities per incidence in Lanarkshire, Highlands, Grampian and Western Isles.
 * Lower mortalities per incidence in the Borders, Tayside, Lothian and Fife.
 
-##### Council
+### Council
 
 <details>
-<summary>**See table summarising mortality by Council Area**</summary>
+<summary> #### See table summarising mortality by Council Area</summary>
+
+**Mortality by Council Area**
 ```{r}
 knitr::kable(council_strokesbyca %>% 
   group_by(council_area_named) %>% 
@@ -417,7 +433,7 @@ council_strokesbyca %>%
   filter(council_area_named %in% high_mortality_council |
            council_area_named %in% low_mortality_council) %>% 
   mutate(high_low = if_else(
-    council_area_named %in% high_mortality_council, "high", "low"
+    council_area_named %in% high_mortality_council, "High", "Low"
   )) %>% 
   group_by(high_low, approx_year) %>% 
   summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
@@ -428,9 +444,10 @@ council_strokesbyca %>%
   labs(
     title = "Council mortality rates over time for the 10 highest and lowest mortality rate councils (2009-2018 average rates)",
     x = "Year",
-    y = "Mortality (EASR)"
+    y = "Mortality (EASR)",
+    col = "Grouping"
   ) +
-  scale_fill_calc()
+  scale_color_calc()
 ```
 </details>
 
@@ -455,7 +472,7 @@ council_strokesbyca %>%
   filter(council_area_named %in% high_mortality_council_2018 |
            council_area_named %in% low_mortality_council_2018) %>% 
   mutate(high_low = if_else(
-    council_area_named %in% high_mortality_council_2018, "high", "low"
+    council_area_named %in% high_mortality_council_2018, "High", "Low"
   )) %>% 
   group_by(high_low, approx_year) %>% 
   summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
@@ -467,7 +484,8 @@ council_strokesbyca %>%
     title = "Adjusted mortality rates by council",
     subtitle = "Mortality rates for the 10 highest and lowest adjusted mortality rates council areas",
     x = "Year",
-    y = "Mortality (EASR)"
+    y = "Mortality (EASR)",
+    col = "Grouping"
   ) +
   scale_color_calc()
 ```
@@ -476,7 +494,7 @@ council_strokesbyca %>%
 * The 10 councils with the highest recent mortality rates showed increase in adjusted mortality in 2013, 2015 and 2018 with an overall downward trend.
 * The 10 councils with the lowest recent mortality rates show much more stable decline excluding a rise in mortalities in 2013.
 
-##### SIMD
+### SIMD
 
 
 ```{r}
@@ -488,15 +506,17 @@ discharges_bysimd %>%
   geom_line() +
   geom_point() +
   labs(
-    title = "Hospital activity by SIMD quintile over time"
-  ) +
-  scale_fill_calc()
+    title = "Hospital activity by SIMD quintile over time",
+    x = "Year",
+    y = "Discharges (EASR)",
+    col = "SIMD Quintile"
+  )
 ```
 
 * Hospital activity increases with deprivation.
 * Difference between hospital activity rates for deprivation quintiles is increasing over time, particularly for the 2 most deprived quintiles.
 
-**Table showing standardised mortality rates by SIMD decile**
+#### Table showing standardised mortality rates by SIMD decile
 ```{r}
 knitr::kable(mortality_bysimd %>% 
   group_by(simd_decile) %>% 
@@ -510,7 +530,7 @@ knitr::kable(mortality_bysimd %>%
 * Chance of dying from stroke doubles from the least to the most deprived deciles.
 
 
-##### Age Group and SIMD
+### Age Group and SIMD
 
 
 
@@ -519,96 +539,104 @@ mortality_bysimd %>%
   group_by(simd_decile, age_group) %>% 
   filter(age_group != "All") %>% 
   summarise(avg_mortality = mean(smr_mortality, na.rm = T)) %>% 
-  ggplot(aes(x = simd_decile, y = avg_mortality, group = age_group, fill = age_group, col = age_group)) +
+  ggplot(aes(x = simd_decile, y = avg_mortality, group = age_group, fill = age_group)) +
   geom_col(position = "dodge") +
   labs(
     title = "Adjusted stroke mortality rates by SIMD",
     x = "SIMD Decile",
-    y = "Mortality (SMR)"
+    y = "Mortality (SMR)",
+    fill = "Age Group"
   ) +
   scale_fill_calc()
 ```
+
 * Mortality is higher for those in the most deprived decile.
 * SIMD has the highest impact on mortality for the under 65 age group. 
 * 189.5 people per 100,000 under 65 (adjusted) die of strokes in the most deprived decile, compared to just 42.3 of those in the least deprived decile.
 
 # Key findings and Recommendations
 
-### How can Scottish health services most effectively prevent and treat stroke diagnoses?
+## How can Scottish health services most effectively prevent and treat stroke diagnoses?
 
-#### What measures have been successful in the treatment and prevention of stroke?
+## What measures have been successful in the treatment and prevention of stroke?
 
 Due to the timeframe, this project did not explore the impact of different treatment and prevention strategies.
 However, the analysis does highlight significant changes at various time points and differences in demographic groupings which can give direction to further research into the effect of intervention and treatment strategies.
 
-**Finding**
-Mortality rates have fallen for the 75+ group with CD and Stroke, but not for any other age and diagnosis group
+**Finding**\s\s
+Mortality rates have fallen for the 75+ group with Cardiovascular Disease and Stroke, but not for any other age and diagnosis group
 
 **Recommendation**
+
 * Research interventions for this age group and diagnosis
 
-**Findings**
+**Findings**\s\s
 Council mortality rates over time for the 10 highest and lowest mortality rate councils (2009-2018 average totals by mean) show greatest divergence in 2010 and 2015.
 The 10 councils with the highest recent mortality rates showed increase in adjusted mortality in 2013, 2015 and 2018 with an overall downward trend.
 The 10 councils with the lowest recent mortality rates show much more stable decline excluding a rise in mortalities in 2013.
 
 **Recommendations**
+
 * Research dissemination and implementation of the 2009 and 2014 stroke action plans, particularly focussing on changes in treatmen and intervention at council level.
 * Conduct research into mortalities in 2013.
 * Explore the impact of council policies and politics on health measures.
 
 
-#### Which demographics should we target for stroke intervention?
+## Which demographics should we target for stroke intervention?
 
-**Finding**
-CD is the highest killer for all age groups.
-Proportion of death by CD increases with age.
+**Finding**\s\s
+Cardiovascular Disease is the highest killer for all age groups.
+Proportion of death by Cardiovascular Disease increases with age.
 
 **Recommendation**
-* Further analysis to identify succesful treatment of CD.
 
-##### Gender
+* Further analysis to identify succesful treatment of Cardiovascular Disease.
 
-**Findings**
+### Gender
+
+**Findings**\s\s
 Female incidence rates are the most volatile.
 Female incidents rising since 2016.
 More women die per episode of stroke diagnosis than men.
-Women die from SH proportionally more than men.
+Women die from Subarachnoid Haemorhage proportionally more than men.
 
 **Recommendations**
+
 * Model social factors which contribute to stroke incidence and mortality in women, such as smoking, high blood pressure, caring duties, mental wellbeing.
-* Compare diagnosis rates on presentation and discharge hospital to identify whether misdiagnosis of SH is more common in women.
-* Conduct research on the understanding and identification of SH in women.
-* Identify or develop successful treatment and intervention plans for SH.
+* Compare diagnosis rates on presentation and discharge hospital to identify whether misdiagnosis of Subarachnoid Haemorhage is more common in women.
+* Conduct research on the understanding and identification of Subarachnoid Haemorhage in women.
+* Identify or develop successful treatment and intervention plans for Subarachnoid Haemorhage.
 * Information campaign on stroke symptoms and when to visit the hospital targetted for women's symptoms and concerns.
 
-##### Age
+### Age
 
-**Findings**
-SH causes a higher proportion of fatalities in younger age groups than in older age groups.
-SH is the most fatal diagnosis for all groups under 75 years.
+**Findings**\s\s
+Subarachnoid Haemorhage causes a higher proportion of fatalities in younger age groups than in older age groups.
+Subarachnoid Haemorhage is the most fatal diagnosis for all groups under 75 years.
 
 **Recommendations**
-* Compare diagnosis rates on presentation and discharge hospital to identify whether misdiagnosis of SH varies with age.
-* Conduct research on the understanding and identification of SH in young people.
-* Identify or develop successful treatment and intervention plans for SH.
 
-##### SIMD
+* Compare diagnosis rates on presentation and discharge hospital to identify whether misdiagnosis of Subarachnoid Haemorhage varies with age.
+* Conduct research on the understanding and identification of Subarachnoid Haemorhage in young people.
+* Identify or develop successful treatment and intervention plans for Subarachnoid Haemorhage.
 
-**Findings**
+### SIMD
+
+**Findings**\s\s
 Difference between hospital activity rates for deprivation quintiles is increasing over time, particularly for the 2 most deprived quintiles.
 Chance of dying from stroke doubles from the least to the most deprived deciles.
 SIMD has the highest impact on mortality for the under 65 age group. 
 189.5 people per 100,000 under 65 (adjusted) die of strokes in the most deprived decile, compared to just 42.3 of those in the least deprived decile.
 
 **Recommendations**
+
 * Model social factors which contribute to stroke incidence and mortality over time, with a view to identifying why discrepancy by SIMD is increasing over time.
 * Targetted interventions, such as screenings and information campaigns, for under 65s in most deprived areas.
 
 
 # Additional Information
 
-#### Definitions
+## Definitions
 
 **Cerebrovascular Disease**
 
@@ -667,9 +695,9 @@ and hospitals as well as routine discharges home.
 * Incidence refers to the number of new cases of a condition.
 * In our data, an incident case is defined as the first admission to hospital (or death without a hospital admission).
 
-#### Data
+## Data
 
-##### Sources
+### Sources
 
 **Scottish Stroke Statistics: Stroke Activity By Health Board/Council Area 2009 - 2018**
 Number of discharges, crude rate and EASR per 100,000 population by year, gender, age, sex and council area OR NHS board.
@@ -694,13 +722,13 @@ https://www.isdscotland.org/Health-Topics/Stroke/Publications/data-tables2017.as
 Hospital stays, crude rate and EASR per 100,000 population by year and SIMD
 https://www.isdscotland.org/Health-Topics/Stroke/Publications/data-tables2017.asp
 
-##### Structure
+### Structure
 
 ```{r, echo=FALSE, out.width = '100%', fig.align = 'left'}
 knitr::include_graphics("images/updated_data_model_diagram.png")
 ```
 
-##### Quality
+### Quality
 
 * All data from reputable sources. Minimal bias and quality issues assumed.
 
@@ -714,7 +742,7 @@ knitr::include_graphics("images/updated_data_model_diagram.png")
 
 * Figures for TIA diagnosis are not available for mortality or hospital stays.
 
-#### Assumptions
+## Assumptions
 
 * Financial year can be compared to calendar year without signifcantly undermining the analysis.
 
