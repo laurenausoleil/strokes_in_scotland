@@ -14,7 +14,7 @@ This project examines data on stroke diagnosis in Scotland to inform decision ma
 ## Background
 
 * Stroke is a disease of the cerebrovascular system, the system which supplies blood to the brain.
-* Cerebrovascular disease include stroke, Subarachnoid Haemorhage or Transient Ischemic Attacks (commonly known as mini-strokes).
+* Cerebrovascular disease include stroke, Subarachnoid Haemorrhage or Transient Ischemic Attacks (commonly known as mini-strokes).
 * The treatment and prevention of stroke is a national clinical priority for Scotland
 * Scotland has launched major stroke care plans in 2009 and 2014.
 
@@ -82,6 +82,7 @@ knitr::kable(council_strokesbyca %>%
 
 ## Are there differences in mortality rates for different types of stroke? Does this vary with demographics?
 
+### Age
 
 ```{r out.width = '100%'}
 council_strokesbyca %>% 
@@ -103,9 +104,34 @@ council_strokesbyca %>%
   scale_color_calc()
 ```
 
-* Cardiovascular Disease is the biggest killer per 100 discharges from hospital followed by Stroke and Subarachnoid Haemorhage.
+* Cardiovascular Disease is the biggest killer per 100 discharges from hospital followed by Stroke and Subarachnoid Haemorrhage.
 * Mortality rates have fallen for the 75+ group with Cardiovascular Disease and Stroke.
 * Mortality rates have remained static for all other age and diagnosis groupings.
+
+### Gender and Age
+```{r}
+council_strokesbyca %>% 
+  group_by(sex, age_group, diagnosis) %>%
+  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
+  ggplot() +
+    aes(x = age_group, y = mortality, group = diagnosis, fill = diagnosis) +
+  geom_col(position = "fill") +
+  facet_wrap(~sex) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+  labs(
+    title = "Proportion of mortalities by age, diagnosis and gender",
+    x = "Age Group",
+    y = "Mortality (EASR)",
+    fill = "Diagnosis"
+  )  +
+  scale_fill_calc()
+```
+
+* Younger women with Subarachnoid Haemorrhage are dying more often from Subarachnoid Haemorrhage than males.
+* Men in the 45-64 age group are more likely to die from stroke.
+
+### Health Board
+
 ```{r out.width = '90%'}
 healthboard_strokesbyhb %>% 
   group_by(healthboard_area_named, diagnosis) %>%
@@ -125,26 +151,6 @@ healthboard_strokesbyhb %>%
 ```
 
 * Slightly higher mortality from stroke in Shetland vs normal distribution of deaths per diagnosis.
-```{r}
-council_strokesbyca %>% 
-  group_by(sex, age_group, diagnosis) %>%
-  summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
-  ggplot() +
-    aes(x = age_group, y = mortality, group = diagnosis, fill = diagnosis) +
-  geom_col(position = "fill") +
-  facet_wrap(~sex) +
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
-  labs(
-    title = "Proportion of mortalities by age, diagnosis and gender",
-    x = "Age Group",
-    y = "Mortality (EASR)",
-    fill = "Diagnosis"
-  )  +
-  scale_fill_calc()
-```
-
-* Younger women with Subarachnoid Haemorhage are dying more often from Subarachnoid Haemorhage than males.
-* Men in the 45-64 age group are more likely to die from stroke.
 
 ## Are there any differences in reporting between health board and local authority?
 
@@ -172,7 +178,7 @@ council_strokesbyca %>%
   scale_fill_calc()
 ```
 
-* Women die from Subarachnoid Haemorhage proportionally more than men.
+* Women die from Subarachnoid Haemorrhage proportionally more than men.
 
 ```{r}
 incidence_by_hb %>% 
@@ -236,8 +242,6 @@ knitr::kable(council_strokesbyca %>%
 ```
 
 * Mortality, discharge and proportion of deaths per discharge increase with age.
-* Mortality by stroke has decreased significantly for the over 75 group between 2009 and 2018
-* Mortality rates for all other age groups have remained static in this time
 
 
 ```{r}
@@ -261,7 +265,7 @@ council_strokesbyca %>%
 
 * Stroke discharges increase with age group.
 * Cardiovascular Disease is the most common diagnosis and accounts for consistent proportion of discharges across all age groups.
-* Subarachnoid Haemorhage accounts for a proportion of hospital activity in younger age groups than in older age groups.
+* Subarachnoid Haemorrhage accounts for a greater proportion of hospital activity in younger age groups than in older age groups.
 
 ```{r}
 council_strokesbyca %>%
@@ -283,7 +287,7 @@ council_strokesbyca %>%
 
 * Stroke accounts for consistent proportion of mortalities across all age groups.
 * Cardiovascular Disease is the highest killer for all age groups and proportion of death by Cardiovascular Disease increases with age.
-* Subarachnoid Haemorhage causes a higher proportion of fatalities in younger age groups than in older age groups.
+* Subarachnoid Haemorrhage causes a higher proportion of fatalities in younger age groups than in older age groups.
 
 ```{r}
 council_strokesbyca %>%
@@ -307,9 +311,9 @@ council_strokesbyca %>%
 ```
 
 * Number of deaths per 100 discharges increases with age group.
-* Subarachnoid Haemorhage is the most fatal diagnosis for all groups under 75 years.
+* Subarachnoid Haemorrhage is the most fatal diagnosis for all groups under 75 years.
 * Death by stroke does not increase as significantly for stroke diagnosis in the 75 plus age group as it does for all other age groups.
-* No trends found in Subarachnoid Haemorhage diagnosis by age over time
+* No trends found in Subarachnoid Haemorrhage diagnosis by age over time
 
 ### Gender and Age
 
@@ -598,27 +602,27 @@ Proportion of death by Cardiovascular Disease increases with age.
 Female incidence rates are the most volatile.
 Female incidents rising since 2016.
 More women die per episode of stroke diagnosis than men.
-Women die from Subarachnoid Haemorhage proportionally more than men.
+Women die from Subarachnoid Haemorrhage proportionally more than men.
 
 **Recommendations**
 
 * Model social factors which contribute to stroke incidence and mortality in women, such as smoking, high blood pressure, caring duties, mental wellbeing.
-* Compare diagnosis rates on presentation and discharge hospital to identify whether misdiagnosis of Subarachnoid Haemorhage is more common in women.
-* Conduct research on the understanding and identification of Subarachnoid Haemorhage in women.
-* Identify or develop successful treatment and intervention plans for Subarachnoid Haemorhage.
+* Compare diagnosis rates on presentation and discharge hospital to identify whether misdiagnosis of Subarachnoid Haemorrhage is more common in women.
+* Conduct research on the understanding and identification of Subarachnoid Haemorrhage in women.
+* Identify or develop successful treatment and intervention plans for Subarachnoid Haemorrhage.
 * Information campaign on stroke symptoms and when to visit the hospital targetted for women's symptoms and concerns.
 
 ### Age
 
 **Findings**\s\s
-Subarachnoid Haemorhage causes a higher proportion of fatalities in younger age groups than in older age groups.
-Subarachnoid Haemorhage is the most fatal diagnosis for all groups under 75 years.
+Subarachnoid Haemorrhage causes a higher proportion of fatalities in younger age groups than in older age groups.
+Subarachnoid Haemorrhage is the most fatal diagnosis for all groups under 75 years.
 
 **Recommendations**
 
-* Compare diagnosis rates on presentation and discharge hospital to identify whether misdiagnosis of Subarachnoid Haemorhage varies with age.
-* Conduct research on the understanding and identification of Subarachnoid Haemorhage in young people.
-* Identify or develop successful treatment and intervention plans for Subarachnoid Haemorhage.
+* Compare diagnosis rates on presentation and discharge hospital to identify whether misdiagnosis of Subarachnoid Haemorrhage varies with age.
+* Conduct research on the understanding and identification of Subarachnoid Haemorrhage in young people.
+* Identify or develop successful treatment and intervention plans for Subarachnoid Haemorrhage.
 
 ### SIMD
 
