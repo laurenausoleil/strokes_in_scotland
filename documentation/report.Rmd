@@ -31,7 +31,9 @@ This project examines data on stroke diagnosis in Scotland to inform decision ma
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, out.width = '100%')
+
 library(tidyverse)
+library(ggthemes)
 ```
 
 ```{r}
@@ -94,7 +96,8 @@ council_strokesbyca %>%
     title = "Mortality by age and diagnosis over time",
     x = "Year",
     y = "Mortality (EASR)"
-  )
+  ) +
+  scale_fill_calc()
 ```
 
 * CD is the biggest killer per 100 discharges from hospital followed by Stroke and SH.
@@ -113,7 +116,8 @@ healthboard_strokesbyhb %>%
     title = "Proportion of Mortalities by Diagnosis",
     x = "Health Board",
     y = "Mortality (EASR)"
-  )
+  ) +
+  scale_fill_calc()
 ```
 
 * Slightly higher mortality from stroke in Shetland vs normal distribution of deaths per diagnosis.
@@ -130,7 +134,8 @@ council_strokesbyca %>%
     title = "Proportion of mortalities by age, diagnosis and gender",
     x = "Age Group",
     y = "Mortality (EASR)"
-  )
+  )  +
+  scale_fill_calc()
 ```
 
 * Younger women with SH are dying more often from SH than males.
@@ -157,7 +162,8 @@ council_strokesbyca %>%
     subtitle = "Separated by gender",
     x = "Diagnosis",
     y = "Mortality (EASR)"
-  )
+  ) +
+  scale_fill_calc()
 ```
 
 * Women die from SH proportionally more than men.
@@ -174,7 +180,8 @@ incidence_by_hb %>%
     title = "Incidents by Gender 2009-2018",
     x = "Year",
     y = "Incidents (EASR)"
-  )
+  ) +
+  scale_color_calc()
 ```
   
 * Men have higher rates of incidence than women.
@@ -196,7 +203,8 @@ council_strokesbyca %>%
     title = "Mortality by Gender 2009-2018",
     x = "Year",
     y = "Mortality (EASR)"
-  )
+  ) +
+  scale_fill_calc()
 ```
 </details>
 
@@ -237,7 +245,8 @@ council_strokesbyca %>%
     title = "Proportion of hospital activity by diagnoses and age group",
     x = "Age group",
     y = "Discharges (EASR)"
-  )
+  ) +
+  scale_fill_calc()
 ```
 
 
@@ -258,7 +267,8 @@ council_strokesbyca %>%
     title = "Proportion of mortalities by diagnoses and age group",
     x = "Age Group",
     y = "Mortality (EASR)"
-  )
+  ) +
+  scale_fill_calc()
 ```
 
 * Stroke accounts for consistent proportion of mortalities across all age groups.
@@ -280,7 +290,8 @@ council_strokesbyca %>%
     subtitle = "Broken down by diagnoses and age group",
     x = "Age Group",
     y = "Rate of Mortality by Discharges (%)"
-  )
+  ) +
+  scale_fill_calc()
 ```
 
 * Number of deaths per 100 discharges increases with age group.
@@ -309,7 +320,8 @@ healthboard_strokesbyhb %>%
     subtitle = "Grouped by age and gender",
     x = "Age group",
     y = "Rate of Mortality by Incident (%)"
-  )
+  ) +
+  scale_fill_calc()
 ```
 * Men have slightly higher mortality rates for all age groups under 74.
 * For the 75+ group, women have the highest mortality.
@@ -417,7 +429,8 @@ council_strokesbyca %>%
     title = "Council mortality rates over time for the 10 highest and lowest mortality rate councils (2009-2018 average rates)",
     x = "Year",
     y = "Mortality (EASR)"
-  )
+  ) +
+  scale_fill_calc()
 ```
 </details>
 
@@ -455,7 +468,8 @@ council_strokesbyca %>%
     subtitle = "Mortality rates for the 10 highest and lowest adjusted mortality rates council areas",
     x = "Year",
     y = "Mortality (EASR)"
-  )
+  ) +
+  scale_color_calc()
 ```
 
 
@@ -475,7 +489,8 @@ discharges_bysimd %>%
   geom_point() +
   labs(
     title = "Hospital activity by SIMD quintile over time"
-  )
+  ) +
+  scale_fill_calc()
 ```
 
 * Hospital activity increases with deprivation.
@@ -510,7 +525,8 @@ mortality_bysimd %>%
     title = "Adjusted stroke mortality rates by SIMD",
     x = "SIMD Decile",
     y = "Mortality (SMR)"
-  )
+  ) +
+  scale_fill_calc()
 ```
 * Mortality is higher for those in the most deprived decile.
 * SIMD has the highest impact on mortality for the under 65 age group. 

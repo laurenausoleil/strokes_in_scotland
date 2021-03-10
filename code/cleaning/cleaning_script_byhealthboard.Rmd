@@ -198,7 +198,10 @@ incidence_by_healthboard <- incidence_by_healthboard %>%
       age  == "ALL AGES" ~ "All",
       age == "<75" ~ "under75 years"
     )
-  )
+  ) %>% 
+  filter(health_board != "Scotland" &
+           health_board != "NA" &
+           health_board != "Other")
 ```
 
 
