@@ -1,5 +1,7 @@
 ---
-output: ioslides_presentation
+output:
+  revealjs::revealjs_presentation:
+    css: style.css
 ---
 
 ```{r setup, include = FALSE}
@@ -14,24 +16,24 @@ library(ggthemes)
 options(digits = 2) 
 
 # Data 
-council_strokesbyca <- read_csv("../data/clean_data/strokes_byca.csv",
+council_strokesbyca <- read_csv("../../../data/clean_data/strokes_byca.csv",
                                 col_types = cols(hospitalstays = col_double(),
                                             crude_rate_stays = col_double()))
-healthboard_strokesbyhb <- read_csv("../data/clean_data/strokes_byhb.csv",
+healthboard_strokesbyhb <- read_csv("../../../data/clean_data/strokes_byhb.csv",
                                 col_types = cols(hospitalstays = col_double(),
                                             crude_rate_stays = col_double()))
 
-council_strokesbyca <- read_csv("../data/clean_data/strokes_byca.csv",
+council_strokesbyca <- read_csv("../../../data/clean_data/strokes_byca.csv",
                                 col_types = cols(hospitalstays = col_double(),
                                             crude_rate_stays = col_double()))
-healthboard_strokesbyhb <- read_csv("../data/clean_data/strokes_byhb.csv",
+healthboard_strokesbyhb <- read_csv("../../../data/clean_data/strokes_byhb.csv",
                                 col_types = cols(hospitalstays = col_double(),
                                             crude_rate_stays = col_double()))
-incidence_by_hb <- read_csv("../data/clean_data/incidence_byhb.csv")
+incidence_by_hb <- read_csv("../../../data/clean_data/incidence_byhb.csv")
 
-discharges_bysimd <- read_csv("../data/clean_data/discharges_bysimd.csv")
+discharges_bysimd <- read_csv("../../../data/clean_data/discharges_bysimd.csv")
 
-mortality_bysimd <- read_csv("../data/clean_data/mortality_bysimd2013-2017")
+mortality_bysimd <- read_csv("../../../data/clean_data/mortality_bysimd2013-2017")
 ```
 
 ## Strokes In Scotland Data Report
@@ -45,8 +47,14 @@ This project examines data on stroke diagnosis in Scotland in order to inform de
 ## Background
 
 * Stroke is a disease of the cerebrovascular system, the system which supplies blood to the brain.
+
 * Cerebrovascular disease include stroke, Subarachnoid Haemorhage or Transient Ischemic Attacks (commonly known as mini-strokes).
+
+* The main preventable risk factors for stroke are smoking, high blood pressure, lack of
+exercise and a poor diet.
+
 * The treatment and prevention of stroke is a national clinical priority for Scotland
+
 * Scotland has launched major stroke care plans in 2009 and 2014.
 
 ***
@@ -54,20 +62,39 @@ This project examines data on stroke diagnosis in Scotland in order to inform de
 ## Data and Methodology
 
 * This project uses publicly available published by Public Health Scotland
+
 * Available data covers the years 2009-2018
+
 * The data includes information on hospital activity (stays and  discharges), mortality rates and incidence rates.
+
 * Demographic detail varies by dataset and include age, gender, Council Area or Health Board and SIMD (Scottish Index of Multiple Deprivation)
+
 * Data is cleaned, analysed and presented in R using Rstudio and Tidyverse.
+
+***
+
+## Key assumptions
+
+* Financial year can be compared to calendar year without significantly undermining the analysis.
+
+* Ambiguously named and defined crude rates in individual datasets refer to the crude rate of the dataset's subject variable.
+
+* Definition of all genders group varies with dataset, so it has been removed from analysis.
+
+* NA, Other and Scotland are not useful values for measures by Health Board or Council Area and have been removed from analysis.
+
+* Cerebrovascular Disease is not a catch-all for stroke, TIAs and SH and therefore contains useful information on unidentified diagnosis.
 
 ***
 
 ### How do mortality rates vary with diagnosis and demographics? Age
 
-```{r}
+```{r out.with = '80%'}
 council_strokesbyca %>% 
 # filter year to remove high values from years prior to 2013 in order to make graph more readable
   filter(approx_year > 2013) %>% 
   filter(diagnosis != "TIAs and related syndromes") %>% 
+  mutate(age_group = if_else(age_group == "75plus years", "75+", "under 75")) %>% 
   group_by(age_group, approx_year, diagnosis) %>% 
   summarise(mortality = mean(easr_mortality, na.rm = TRUE)) %>% 
   ggplot() +
@@ -83,7 +110,6 @@ council_strokesbyca %>%
   scale_color_calc()
 ```
 
-* Cardiovascular Disease is the biggest killer per 100 discharges from hospital followed by Stroke and Subarachnoid Haemorhage.
 * Mortality rates have fallen for the 75+ group with Cardiovascular Disease and Stroke.
 * Mortality rates have remained static for all other age and diagnosis groupings.
 
@@ -134,7 +160,7 @@ council_strokesbyca %>%
 ```
 
 * Younger women with Subarachnoid Haemorhage are dying more often from Subarachnoid Haemorhage than males.
-* Men in the 45-64 age group are more likely to die from stroke.
+* Under 65, men have higher proportion of mortality by stroke than women
 
 ***
 
@@ -183,11 +209,9 @@ council_strokesbyca %>%
   scale_fill_calc()
 ```
 
-* Stroke discharges increase with age group, but account for a consistent proportion of mortality across all age groups.
-* Cardiovascular Disease is the most common diagnosis for all age groups.
-* Cardiovascular Disease is the highest killer for all age groups and proportion of death by Cardiovascular Disease increases with age.
-* Subarachnoid Haemorhage causes a higher proportion of fatalities in younger age groups than in older age groups.
-
+* Stroke discharges increase with age group, but account for consistent mortality proportion.
+* CD is the highest killer for and proportion of deaths increases with age.
+* SH causes a higher proportion of fatalities in younger age groups.
 
 ***
 
@@ -322,22 +346,29 @@ discharges_bysimd %>%
   )
 ```
 
+<br>
+
 * Hospital activity increases with deprivation.
 * Difference between hospital activity rates for deprivation quintiles is increasing over time, particularly for the 2 most deprived quintiles.
 
 ***
 
-#### How do stroke outcomes vary with demographics? SIMD
-
-###### Table showing standardised mortality rates by SIMD decile
+### Table showing standardised mortality rates by SIMD decile
 ```{r}
-knitr::kable(mortality_bysimd %>% 
+mortality_bysimd %>% 
   group_by(simd_decile) %>% 
   summarise(mortality = mean(smr_mortality)) %>% 
-  rename("Decile" = "simd_decile",
-         "Mortality (SMR)" = "mortality")
-)
+    ggplot(aes(x = simd_decile, y = mortality, fill = "navy")) +
+    geom_col() +
+    scale_fill_calc() +
+  labs(
+    title = "Mortality by SIMD Decile",
+    x = "Mortality (EASR)",
+    y = "SIMD Decile"
+  ) +
+  theme(legend.position = "none")
 ```
+<br>
 
 * Mortalities increase with deprivation.
 * Chance of dying from stroke doubles from the least to the most deprived deciles.
@@ -374,25 +405,25 @@ Direct answer unavailable in the available data, but useful information obtained
 **Recommendations for future research:**
 
 * Research interventions that have targetted the 75+ age group, particularly with Stroke and Cardiovascular Disease
-* Research dissemination and implementation of the 2009 and 2014 stroke action plans, particularly focussing on changes in treatment and intervention at council level.
+
 * Explore the impact of council policies and politics on health measures.
 
 ***
 
 ### Which demographics should we target for stroke intervention?
 
+**Future research:**
+
+* Explore data collection to find diagnosis which accounts for excess figures in CD diagnosis.
+* Model social factors which contribute to stroke incidence and mortality, such as smoking, high blood pressure, caring duties, mental wellbeing.
+* Compare diagnosis rates on presentation and discharge hospital to identify whether misdiagnosis of Subarachnoid Haemorhage is more common in women or younger age groups.
+* Conduct research on the understanding and identification of Subarachnoid Haemorhage in women.
+* Generate adjusted figures for hospital activity to explore hospital attendance by demographic.
+
 **Recommended interventions:**
 
-* Focus efforts on Cardiovascular Disease
 * Targetted interventions for women and younger people in deprived areas.
 * Publicise stroke symptoms with an emphasis on women and hospital attendance
 
-**Future research:**
 
-* Model social factors which contribute to stroke incidence and mortality in women, such as smoking, high blood pressure, caring duties, mental wellbeing.
-* Compare diagnosis rates on presentation and discharge hospital to identify whether misdiagnosis of Subarachnoid Haemorhage is more common in women or younger age groups.
-* Conduct research on the understanding and identification of Subarachnoid Haemorhage in women.
-
-***
-
-# Further information on data and methodology available on request.
+## Further information on data and methodology available on request

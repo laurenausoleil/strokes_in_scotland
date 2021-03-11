@@ -1,9 +1,8 @@
 ---
-title: "Strokes in Scotland Data Report"
-author: "Lauren Davidson"
-date: "09/03/2021"
-output: slidy_presentation
-font_adjustment: -10
+output:
+  revealjs::revealjs_presentation:
+    css: "style.css"
+    
 ---
 
 
@@ -50,8 +49,14 @@ This project examines data on stroke diagnosis in Scotland to inform decision ma
 ## Background
 
 * Stroke is a disease of the cerebrovascular system, the system which supplies blood to the brain.
+
 * Cerebrovascular disease include stroke, Subarachnoid Haemorhage or Transient Ischemic Attacks (commonly known as mini-strokes).
+
+* The main preventable risk factors for stroke are smoking, high blood pressure, lack of
+exercise and a poor diet.
+
 * The treatment and prevention of stroke is a national clinical priority for Scotland
+
 * Scotland has launched major stroke care plans in 2009 and 2014.
 
 ***
@@ -59,10 +64,29 @@ This project examines data on stroke diagnosis in Scotland to inform decision ma
 ## Data and Methodology
 
 * This project uses publicly available published by Public Health Scotland
+
 * Available data covers the years 2009-2018
+
 * The data includes information on hospital activity (stays and  discharges), mortality rates and incidence rates.
+
 * Demographic detail varies by dataset and include age, gender, Council Area or Health Board and SIMD (Scottish Index of Multiple Deprivation)
+
 * Data is cleaned, analysed and presented in R using Rstudio and Tidyverse.
+
+***
+
+## Key assumptions
+
+* Financial year can be compared to calendar year without significantly undermining the analysis.
+
+* Ambiguously named and defined crude rates in individual datasets refer to the crude rate of the dataset's subject variable.
+e.g. EASR and crude rate in mortalitybyca refer to mortality per 100,000, EASR and crude rate in activitybyca refer to discharges per 100,000 and in diagnosis-by-counil-area refer to hospital stays per 100,000.
+
+* Definition of all genders group varies with dataset (it is not described in data dictionaries), so it has been removed from analysis.
+
+* NA, Other and Scotland are not useful values for measures by Health Board or Council Area and have been removed from analysis.
+
+* Looking at the numbers, Cerebrovascular Disease is not a catch-all for stroke, TIAs and Subarachnoid Haemorrhage and therefore contains useful information on unidentified diagnosis.
 
 ***
 
@@ -520,7 +544,9 @@ knitr::include_graphics("reference/images/updated_data_model_diagram.png")
 * Significant number of empty fields in the data. Where summary statistics are calculated, empty fields are ignored.
 
 * Figures for TIA diagnosis are not available for mortality or hospital stays.
+
 *** 
+
 ## Assumptions
 
 * Financial year can be compared to calendar year without signifcantly undermining the analysis.
