@@ -353,7 +353,7 @@ discharges_bysimd %>%
 
 ***
 
-### Table showing standardised mortality rates by SIMD decile
+### How do stroke outcomes vary with demographics? SIMD
 ```{r}
 mortality_bysimd %>% 
   group_by(simd_decile) %>% 
@@ -363,10 +363,11 @@ mortality_bysimd %>%
     scale_fill_calc() +
   labs(
     title = "Mortality by SIMD Decile",
-    x = "Mortality (EASR)",
-    y = "SIMD Decile"
+    x = "SIMD Decile",
+    y = "Mortality (EASR)"
   ) +
-  theme(legend.position = "none")
+  theme(legend.position = "none") +
+  scale_x_continuous(breaks = 1:10)
 ```
 <br>
 
